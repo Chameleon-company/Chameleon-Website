@@ -1,25 +1,33 @@
 const contacts = [
     {
       id: 1,
-      name: "Beyonce",
+      name: "IoT services, Planning and Operations",
       imgURL:
-        "https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg",
+      require("../assets/images/services1.png"),
       
     },
     {
       id: 2,
-      name: "Jack Bauer",
+      name: "IoT Support Services",
       imgURL:
-        "https://pbs.twimg.com/profile_images/625247595825246208/X3XLea04_400x400.jpg",
+      require("../assets/images/services2.png"),
       
     },
     {
       id: 3,
-      name: "Chuck Norris",
+      name: "Smart Homes and Offices",
       imgURL:
-        "https://i.pinimg.com/originals/e3/94/47/e39447de921955826b1e498ccf9a39af.png",
+      require("../assets/images/services3.png")
       
-    }
+    },
+    {
+      id: 4,
+      name: "IoT Based Energy System",
+      imgURL:
+      require("../assets/images/services4.png"),
+      
+    },
+    
   ];
 
   export  default contacts;

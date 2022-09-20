@@ -1,6 +1,7 @@
 import React from 'react'
 import Heading from '../../components/heading/Heading'
 import CompanyInfoSection from './components/CompanyInfoSection'
+import CompanyInfoSection from './components/CompanyInfoSection'
 import './components/CompanyInfoSection.css'
 
 function AboutUs() {
@@ -8,6 +9,7 @@ function AboutUs() {
     <main>
       <Heading name = "About Us"/>
       <CompanyInfoSection />
+      <StatsSection />
     </main>
   )
 }

@@ -14,7 +14,10 @@ function Home() {
         <div>
 
         <OurMissionSection/>
-        <TestimonialSection_Content_function/>
+       
+
+        {/* code error */}
+        {/* <TestimonialSection_Content_function/> */}
             {/* <div>Home</div>
             <div className='OurMissionSection'>
                 <OurMissionSection_Heading />

@@ -1,9 +1,26 @@
-.OurMissionSection 
+.OurMissionContainer
 {
-    padding: 40px 40px;
-    margin-top: 60px;
+    width: 60%;
+    margin:auto;
+    text-align: center;
+    background-color:#76ac4d;
+    border-radius: 30px;
+    
 }
-.head 
+
+.missionStatement{
+  color:#fff;
+  font-size: 1.7vw;
+  margin: 20px;
+  padding:20px;
+}
+
+
+
+
+
+
+/* .head 
 {
   display: flex;
   align-items: center;
@@ -25,7 +42,7 @@ font-weight: bold;
 flex: 1;
 height: 3px;
 background: #99c854;
-}
+} */
 
 .main 
 {
@@ -33,11 +50,11 @@ background: #99c854;
   display: flex;
   justify-content: space-around;
 }
-.liRight 
+/* .liRight 
 {
     img 
     {
         height: 350px;
     }
-}
+} */
   

@@ -8,6 +8,7 @@ import OurServices from './pages/OurServices/OurServices';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Resources from './pages/Resources/Resources';
 import Navbar from './components/navbar/Navbar';
+import "./index.css"
 
 function App() {
   return (

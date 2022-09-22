@@ -5,7 +5,7 @@ import "./heading.css";
 function Heading(props) {
   return (
     <div className = "main">
-    <h1>
+    <h1 className="globalHeading">
     {props.name}
     </h1>
     </div>

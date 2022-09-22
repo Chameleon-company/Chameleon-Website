@@ -1,6 +1,6 @@
 
 
-h1{
+.globalHeading{
     font-family:sans-serif;
     padding:0;
     text-align: center;
@@ -11,7 +11,7 @@ h1{
     margin-right: auto;
 }
 
-h1:before {
+.globalHeading:before {
     content: "";
     display: block;
     width: 120px;
@@ -22,7 +22,7 @@ h1:before {
     position: absolute;
   }
 
-  h1:after {
+  .globalHeading:after {
     content: "";
     display: block;
     width: 120px;

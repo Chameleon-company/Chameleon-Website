@@ -1,14 +1,51 @@
 .navbar{
     display: flex;
-    justify-content: right;
-    margin: -1% -1% 1% -1%;
-    padding: 0;
-    background-color: beige;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f3f3f3;
 }
 
-.navlink{
-    margin: 10px;
-    text-decoration:none;
-    font-size:large;
+.brandLogo{
+    width:6rem;
+    height:6rem;
+    margin-left: 3rem; 
+}
 
+.brandLogo img{
+    width:6rem;
+    height:6rem;
+}
+
+.navLink{
+    margin-left:3rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.link{
+    margin-right: 0;
+    padding:0;
+    margin: 1rem;
+    text-decoration:none;
+    font-size:1.1vw;
+    color:#76ac4d;
+
+}
+
+.link:hover{
+    color:#faad4a; 
+}
+
+.navButton{
+    background-color:#faad4a;
+    color: azure;
+    width:6rem;
+    height:2rem;
+    border-radius: 5rem;
+    font-size:1vw;
+    border: none;
+}
+
+.navButton:hover{
+    background-color:#76ac4d;
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './TestimonialSection_styling.css'
-import '../../../index.css' //website template
+
 
 function TestimonialSection_Heading_function() {
     return (
@@ -15,7 +15,7 @@ function TestimonialSection_Heading_function() {
 
 function TestimonialSection_Content_function() {
 
-    const leftquotessign1 = require("@/assets/images/left-quotes-sign 1.png");
+    const leftquotessign1 = require("../../../assets/images/left-quotes-sign 1.png");
 
     return(
         <div className='TestimonialSection'>
@@ -53,8 +53,8 @@ function TestimonialSection_Content_function() {
 
 function TestimonialSection_User_function() {
 
-    const Ellipse1 = require("@/assets/images/Ellipse1.png");
-    const Ellipse2 = require("@/assets/images/Ellipse2.png");
+    const Ellipse1 = require("../../../assets/images/Ellipse1.png");
+    const Ellipse2 = require("../../../assets/images/Ellipse2.png");
 
     return (
         <div className='TestimonialSection'>

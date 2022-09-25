@@ -1,0 +1,64 @@
+.ourMissionSection{
+  margin-top: 70px;
+}
+
+.OurMissionContainer
+{
+    width: 60%;
+    margin: 50px auto;
+    text-align: center;
+    background-color:#76ac4d;
+    border-radius: 30px;
+    
+}
+
+.missionStatement{
+  color:#fff;
+  font-size: 1.7vw;
+  margin: 20px;
+  padding:20px;
+}
+
+
+
+
+
+
+/* .head 
+{
+  display: flex;
+  align-items: center;
+}
+.head.div:first-child 
+{
+width: 20%;
+height: 3px;
+background: #99c854;
+}
+.head.div:nth-child(2) 
+{
+padding: 0 20px;
+font-size: 55px;
+font-weight: bold;
+}
+.head.div:last-child 
+{
+flex: 1;
+height: 3px;
+background: #99c854;
+} */
+
+/* .main 
+{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+} */
+/* .liRight 
+{
+    img 
+    {
+        height: 350px;
+    }
+} */
+  

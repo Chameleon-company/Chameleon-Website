@@ -1,11 +1,7 @@
 import React from 'react'
 import OurMissionSection from './components/OurMissionSection'
+import TestimonialSection from './components/TestimonialSection'
 
-
-import TestimonialSection_Heading_function from './components/TestimonialSection_component'
-import TestimonialSection_Content_function from './components/TestimonialSection_component'
-import TestimonialSection_User_function from './components/TestimonialSection_component'
-import './components/TestimonialSection_styling.css'
 
 
 
@@ -14,7 +10,7 @@ function Home() {
         <div>
 
         <OurMissionSection/>
-       
+        <TestimonialSection/>
 
         {/* code error */}
         {/* <TestimonialSection_Content_function/> */}

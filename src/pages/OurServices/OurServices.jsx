@@ -1,12 +1,8 @@
 import React from 'react'
-
-//imported but not used
-//import Card from '../../components/card/Card';
-//import Contacts from '../../data/servicesData';
-
 //Importing progress bar function component & CSS Stylesheet
-import ProgressBar from './ourServicesComponents/progressBar_component';
-import './ourServicesComponents/progressBar_styling.css'
+import ProgressBar from './Components/ProgressBar';
+import Heading from '../../components/heading/Heading'
+import './Components/ProgressBar.css'
 
 function createCard(contact){
   
@@ -15,7 +11,8 @@ function createCard(contact){
 function OurServices() {
   return (
     <div>
-      <h1>Our Services</h1>
+      
+      <Heading name= "Our Services"/>
 
       {/* applying page alignment css to all progress bars within the div */}
       <div className='progressBar_pageAlignment'>

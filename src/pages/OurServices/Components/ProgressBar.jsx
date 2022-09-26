@@ -2,7 +2,7 @@ import React from 'react'
 import { Progress } from 'rsuite' //import progress module from rsuite
 
 //css stylesheets
-import './progressBar_styling.css' //flex box formatting for progress circle
+import './ProgressBar.css' //flex box formatting for progress circle
 import '../../../index.css' //website template
 
 //Define function({specify props}) and export for use and updating of props in OurServices.jsx

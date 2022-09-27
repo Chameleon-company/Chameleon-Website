@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5de24ab3.css",
+    "main.js": "/static/js/main.43867463.js",
+    "static/media/portfolioimg.jpg": "/static/media/portfolioimg.348794d2a1ce6d95f76a.jpg",
+    "static/media/heroImg.jpg": "/static/media/heroImg.10bf6ac0c6b8950a468d.jpg",
+    "static/media/brandLogo.png": "/static/media/brandLogo.5b6c31f47ee64c5d6ecb.png",
+    "static/media/globe.png": "/static/media/globe.deebb46b3abb932f341a.png",
+    "static/media/logo_homefooter.png": "/static/media/logo_homefooter.63743da2c8bf86136f9b.png",
+    "index.html": "/index.html",
+    "main.5de24ab3.css.map": "/static/css/main.5de24ab3.css.map",
+    "main.43867463.js.map": "/static/js/main.43867463.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5de24ab3.css",
+    "static/js/main.43867463.js"
+  ]
+}

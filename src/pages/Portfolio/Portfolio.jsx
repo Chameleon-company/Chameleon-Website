@@ -1,12 +1,25 @@
 import React from 'react'
-import '../Portfolio/components/Portfolio.css'
+import PortfolioCard from './components/PortfolioCard'
+import Portfolios from '../../data/PortfolioData'
 
-function Portfolio() {
+function renderPortfolio(portfolio){
+  return(
+
+  <PortfolioCard
+    key = {portfolio.id}
+    link = {portfolio.imgURL}
+    title = {portfolio.name}
+  />
+  )
+    
+  
+}
+
+function Portfolio(props) {
   return (
-    <div className="portfolioImage">
-      <h1 className="portfolioText">SMART CITIES<br/>OPEN DATA</h1>
-      <a href="" className="portfolioLink">Read More</a>
-    </div>
+   <div>
+    {Portfolios.map(renderPortfolio)}
+   </div>
   )
 }
 

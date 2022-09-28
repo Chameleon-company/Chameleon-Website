@@ -1,0 +1,35 @@
+.center{
+    width: 20vw;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.top{
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0;
+    
+}
+.middle{
+    text-align:center;
+    color: #9acb48;
+    font-size: 72px;
+    margin: 0;
+}
+
+.bottom{
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0;
+    text-align: right;
+}
+
+.blogCard{
+    width:80%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    margin: 40px auto;
+}

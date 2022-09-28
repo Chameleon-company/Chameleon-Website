@@ -1,8 +1,15 @@
 import React from 'react'
+import BlogHeading from './Components/BlogHeading'
+import BlogCards from './Components/BlogCards'
+
+
 
 function Blog() {
   return (
-    <div>Blog</div>
+    <div>
+      <BlogHeading/>
+      <BlogCards/>
+    </div>
   )
 }
 

@@ -2,17 +2,18 @@ import React from 'react'
 //Importing progress bar function component & CSS Stylesheet
 import ProgressBar from './Components/ProgressBar';
 import Heading from '../../components/heading/Heading'
+import ServicesCard from './Components/ServicesCard'
 import './Components/ProgressBar.css'
 
-function createCard(contact){
-  
-}
+
 
 function OurServices() {
   return (
     <div>
       
       <Heading name= "Our Services"/>
+
+      <ServicesCard/>
 
       {/* applying page alignment css to all progress bars within the div */}
       <div className='progressBar_pageAlignment'>

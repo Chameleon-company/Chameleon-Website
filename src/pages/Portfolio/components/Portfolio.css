@@ -1,0 +1,22 @@
+.portfolioImage{
+    background-image: url('../../../assets/images/portfolioimg.jpg');
+    height:25rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    padding-left: 5%;
+    padding-top: 15%;
+}
+
+.portfolioText {
+    text-align: left;
+    color: white;
+    font-size:4.5vw;
+  }
+.portfolioLink{
+    color: white;
+    text-decoration: none;
+}
+.portfolioLink:hover {
+    text-decoration: underline;
+}

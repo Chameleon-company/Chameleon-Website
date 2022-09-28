@@ -1,13 +1,11 @@
 import React from 'react'
-import Heading from '../../components/heading/Heading';
-
-
+import '../Portfolio/components/Portfolio.css'
 
 function Portfolio() {
   return (
-    <div>
-      <Heading name ="Portfolio"/>
-      
+    <div className="portfolioImage">
+      <h1 className="portfolioText">SMART CITIES<br/>OPEN DATA</h1>
+      <a href="" className="portfolioLink">Read More</a>
     </div>
   )
 }

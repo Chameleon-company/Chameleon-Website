@@ -6,8 +6,9 @@ import './Login.css'
 function Login() {
   return (
     <div className="loginBox">
+      <img className ="loginImg" src = {require('../../assets/images/brandLogo.png')}/>
       <div className="loginContainer">
-        <img className ="loginImg" src = {require('../../assets/images/brandLogo.png')}/>
+      <img className ="loginImg1" src = {require('../../assets/images/brandLogo.png')}/>
         <h1 className="loginDetails">Email</h1>
         <input className = "cred" type="email" placeHolder="Deakin Email"/>
         <h1 className="loginDetails">Password</h1>

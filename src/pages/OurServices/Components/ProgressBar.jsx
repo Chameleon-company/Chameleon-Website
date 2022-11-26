@@ -1,5 +1,5 @@
 import React from 'react'
-import { Progress } from 'rsuite' //import progress module from rsuite
+// import { Progress } from 'rsuite' //import progress module from rsuite
 
 //css stylesheets
 import './ProgressBar.css' //flex box formatting for progress circle
@@ -17,7 +17,7 @@ export default function ProgressBar_function({ progressPercent, progressTitle })
             {/* Progres.Circle module called from rsuit for progress bar
             full guide: https://www.geeksforgeeks.org/react-suite-progress-circle/ */}
 
-            <Progress.Circle 
+            {/* <Progress.Circle 
                 percent={progressPercent} //bar size
                 showInfo={0} //0 to hide percentage number (couldn't get it to format properly)
 
@@ -27,7 +27,7 @@ export default function ProgressBar_function({ progressPercent, progressTitle })
 
                 trailColor='#6aa15b' //incomplete bar colour
                 trailWidth={10} //incomplete bar width
-            />
+            /> */}
 
             {/* replacement for Progress.Circle percentage value, css defines layout */}
             <a className='progressBar_percentage'>{progressPercent}%</a>

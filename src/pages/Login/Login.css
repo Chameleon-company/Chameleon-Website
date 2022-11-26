@@ -1,153 +1,172 @@
 /*For tablet and desktop screen format*/
-@media (min-width: 501px){ 
-    .loginBox{
-        height: 90vh;
-        display:flex;  
-    }
+@media(min-width: 501px)
+{
+  .loginBox{
+      height: 90vh;
+      display:flex;
+  }
 
-    .loginContainer{
-      margin-top: 180px;
+  .loginContainer{
       width: 70vh;
       height: 90vh;
       background-color: #d6d6d6;
+      margin:auto auto;
       text-align:center;
       border-radius: 30px;
-    }
-    .loginImg{
-      margin-top: 20px;
+      margin-left: 20px;
+      margin-top: 100px;
+  }
+
+  .loginImgsmall{
+    display: none;
+  }
+  .loginImg{
+      margin-top: 0px;
       width: 100px;
       height: 100px;
-      
-    }
-    .loginImg1{
-      display: none;
-    }
-    .loginDetails{
+  }
+
+  .loginDetails{
       color:
       #76ac4d;
       font-weight: bold;
       font-family: 'Roboto', sans-serif;
-    }
+  }
 
-    .cred{
+  .cred{
       font-family: 'Roboto', sans-serif;
-      color: #333;
-      font-size: 0.8rem;
-      margin: 0 auto;
-      padding: 1.5rem 2rem;
-      border-radius: 0.2rem;
-      background-color: rgb(255, 255, 255);
-      border: none;
-      width: 20vh;
-      height:1px;
-      display: block;
-      border-bottom: 0.3rem solid transparent;
-      transition: all 0.3s;
-    }
+    color: #333;
+    font-size: 0.8rem;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    border-radius: 0.2rem;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    width: 20vh;
+    height:1px;
+    display: block;
+    border-bottom: 0.3rem solid transparent;
+    transition: all 0.3s;
+  }
 
-    .logBtn{
-      appearance: none;
-      backface-visibility: hidden;
-      background-color: #faad4a;
-      border-radius: 10px;
-      border-style: none;
-      box-shadow: none;
-      box-sizing: border-box;
-      color: #fff;
-      cursor: pointer;
-      display: inline-block;
-      font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-      font-size: 15px;
-      font-weight: 500;
-      height: 50px;
-      letter-spacing: normal;
-      line-height: 1.5;
-      outline: none;
-      overflow: hidden;
-      padding: 14px 30px;
-      position: relative;
-      text-align: center;
-      text-decoration: none;
-      transform: translate3d(0, 0, 0);
-      transition: all .3s;
-      vertical-align: top;
-      white-space: nowrap;
-      margin-top:20px;
-    }
+  
 
-    .logBtn:hover {
-      background-color: #1366d6;
-      box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
-      opacity: 1;
-      transform: translateY(0);
-      transition-duration: .35s;
-    }
+  .logBtn{
+    appearance: none;
+    backface-visibility: hidden;
+    background-color: #faad4a;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    height: 50px;
+    letter-spacing: normal;
+    line-height: 1.5;
+    outline: none;
+    overflow: hidden;
+    padding: 14px 30px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transform: translate3d(0, 0, 0);
+    transition: all .3s;
+    vertical-align: top;
+    white-space: nowrap;
+    margin-top:20px;
+  }
 
-    .logBtn:hover:after {
-      opacity: .5;
-    }
+  .logBtn:hover {
+    background-color: #1366d6;
+    box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+  }
 
-    .logBtn:active {
-      box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
-      transform: translateY(2px);
-      transition-duration: .35s;
-    }
+  .logBtn:hover:after {
+    opacity: .5;
+  }
 
-    .logBtn:active:after {
-      opacity: 1;
+  .logBtn:active {
+    box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+    transform: translateY(2px);
+    transition-duration: .35s;
+  }
+
+  .logBtn:active:after {
+    opacity: 1;
+  }
+
+  @media (min-width: 768px) {
+    .logBtn {
+      padding: 14px 22px;
+      width: 176px;
     }
-}
-@media (min-width: 768px) {
-  .logBtn {
-    padding: 14px 22px;
-    width: 176px;
   }
 }
 /*For mobile device format screen */
-@media (max-width: 500px){
-    .loginBox{
+@media screen and(max-width: 500px)
+{
+  .loginBox{
       height: 90vh;
-      display:flex;  
+      margin-left: auto;
+      
   }
 
   .loginContainer{
-    width: 70vh;
-    height: 90vh;
-    background-color: #d6d6d6;
-    margin-top: 10px;
-    text-align:center;
-    border-radius: 30px;
-  }
-  .loginImg1{
-    display: none;
+      margin-top: 10px;
+      margin-left: 50px;
+      width: 70vh;
+      height: 80vh;
+      background-color: #d6d6d6;
+      text-align:center;
+      border-radius: 30px;
+      
   }
 
-  .loginImg{
-    margin-top: 200px;
+  .loginImgsmall{
+    margin-top:0px;
+    margin-left: 190px;
     width: 100px;
     height: 100px;
   }
 
+  .loginImg{
+      display: none;
+  }
+
   .loginDetails{
-    color:
-    #76ac4d;
-    font-weight: bold;
-    font-family: 'Roboto', sans-serif;
-    font-size: 5.0rem;
-    text-align: center;
+    padding-top: 100px;
+      color:
+      #76ac4d;
+      font-weight: bold;
+      font-family: 'Roboto', sans-serif;
+  }
+
+  .loginDetailspaswd{
+      color:
+      #76ac4d;
+      font-weight: bold;
+      font-family: 'Roboto', sans-serif;
   }
 
   .cred{
-    font-family: 'Roboto', sans-serif;
+      font-family: 'Roboto', sans-serif;
     color: #333;
     font-size: 0.8rem;
     margin: 0 auto;
-    padding: 1rem 1rem;
+    padding: 1.5rem 2rem;
     border-radius: 0.2rem;
     background-color: rgb(255, 255, 255);
     border: none;
-    width: 35vh;
-    height: 50px;
+    width: 20vh;
+    height:1px;
     display: block;
     border-bottom: 0.3rem solid transparent;
     transition: all 0.3s;
@@ -157,7 +176,7 @@
     appearance: none;
     backface-visibility: hidden;
     background-color: #faad4a;
-    border-radius: 20px;
+    border-radius: 10px;
     border-style: none;
     box-shadow: none;
     box-sizing: border-box;
@@ -165,15 +184,14 @@
     cursor: pointer;
     display: inline-block;
     font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-    font-size: 60px;
+    font-size: 15px;
     font-weight: 500;
     height: 50px;
-    width: 700px;
     letter-spacing: normal;
-    line-height: 0;
+    line-height: 1.5;
     outline: none;
     overflow: hidden;
-    padding: 50px;
+    padding: 14px 30px;
     position: relative;
     text-align: center;
     text-decoration: none;
@@ -181,7 +199,7 @@
     transition: all .3s;
     vertical-align: top;
     white-space: nowrap;
-    margin-top:50px;
+    margin-top:20px;
   }
 
   .logBtn:hover {

@@ -1,8 +1,13 @@
 {
   "files": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "main.css": "/static/css/main.d9230b8a.css",
     "main.js": "/static/js/main.ac81cc7b.js",
+=======
+    "main.css": "/static/css/main.c781a8e5.css",
+    "main.js": "/static/js/main.bfdaa2f9.js",
+>>>>>>> master
 =======
     "main.css": "/static/css/main.c781a8e5.css",
     "main.js": "/static/js/main.bfdaa2f9.js",
@@ -24,12 +29,21 @@
     "static/media/logo_homefooter.png": "/static/media/logo_homefooter.63743da2c8bf86136f9b.png",
     "index.html": "/index.html",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "main.d9230b8a.css.map": "/static/css/main.d9230b8a.css.map",
     "main.ac81cc7b.js.map": "/static/js/main.ac81cc7b.js.map"
   },
   "entrypoints": [
     "static/css/main.d9230b8a.css",
     "static/js/main.ac81cc7b.js"
+=======
+    "main.c781a8e5.css.map": "/static/css/main.c781a8e5.css.map",
+    "main.bfdaa2f9.js.map": "/static/js/main.bfdaa2f9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c781a8e5.css",
+    "static/js/main.bfdaa2f9.js"
+>>>>>>> master
 =======
     "main.c781a8e5.css.map": "/static/css/main.c781a8e5.css.map",
     "main.bfdaa2f9.js.map": "/static/js/main.bfdaa2f9.js.map"

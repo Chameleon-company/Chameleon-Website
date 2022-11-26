@@ -1,5 +1,5 @@
 import React from 'react'
-import { Progress } from 'rsuite' //import progress module from rsuite
+import { Progress } from 'rsuite';
 
 //css stylesheets
 import './ProgressBar.css' //flex box formatting for progress circle

@@ -10,6 +10,7 @@ import Resources from './pages/Resources/Resources';
 import Navbar from './components/navbar/Navbar';
 import "./index.css"
 
+
 function App() {
   return (
     <div>

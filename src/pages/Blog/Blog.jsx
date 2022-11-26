@@ -6,10 +6,10 @@ import BlogCards from './Components/BlogCards'
 
 function Blog() {
   return (
-    <div>
+    <main>
       <BlogHeading/>
       <BlogCards/>
-    </div>
+    </main>
   )
 }
 

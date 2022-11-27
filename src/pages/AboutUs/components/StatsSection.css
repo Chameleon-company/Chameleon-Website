@@ -13,7 +13,7 @@
 float: left;
 margin-top: 2%;
 max-width:50%;
-}
+} 
 
 .imgtxt-container{
  width:100%;
@@ -23,6 +23,7 @@ max-width:50%;
  text-align: center;
  margin-right: 33%;
 }
+
 .imgcon{
   max-width:40%;
 }
@@ -50,10 +51,11 @@ max-width:50%;
 .li-container{
  margin-left: 20%;
 }
+
 .video-p1 {
   
   min-height:500px;
-  margin-top:40px;
+  margin-top:70px;
   margin:50px 150px;
 
 } 
@@ -69,3 +71,113 @@ max-width:50%;
   flex:0 50% ;
   margin:50px 150px;
 }
+
+.showcase{
+  font-family: 'Courier New', Courier, monospace;
+  position: inherit;
+  background-color: rgb(89, 226, 89);
+  border-radius: 25;
+  position: absolute;
+  top: 130%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+}
+
+.text{
+  font-size: 40;
+}
+
+.horizontal
+{
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  margin-left: 10%;
+}
+
+.vertical
+{
+  display: block;
+  flex-basis: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.text 
+{
+  font-family: 'Raleway';
+  color: black;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 5px;
+  max-width: 40%;
+  margin-right: 50%;
+}
+
+@media only screen and (min-width: 640px) {
+  .vertical {
+    flex-basis: 50%;
+  }
+}
+
+@media only screen and (min-width: 960px ){
+  .vertical{
+    flex-basis: 33.333%;
+  }
+}
+
+@media only screen and (min-width: 1280px ){
+  .vertical{
+    flex-basis: 25%;
+  }
+}
+
+.spacing
+{
+  background-color: white;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.heading
+{
+  font-family:'Times New Roman', Times, serif;
+  font-size: 60px;
+  background-color: rgb(108, 223, 108);
+  border-radius: 25px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.animal
+{
+  position: relative;
+  width: 100%;
+}
+
+.animal img { width: 100%; }
+
+
+.animal{
+  position: relative;
+  width: 100%;
+  border-radius: 25%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.faded{
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.video-p1 iframe {
+  width:100%;
+} 

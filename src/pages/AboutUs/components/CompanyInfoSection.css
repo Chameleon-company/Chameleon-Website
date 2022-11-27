@@ -10,3 +10,8 @@
     font-weight: 500;
     margin:50px 150px;
 }
+
+body {
+    background-color: rgb(30, 198, 30);
+    background-image: linear-gradient(rgb(30, 198, 30), 30%, white);
+}

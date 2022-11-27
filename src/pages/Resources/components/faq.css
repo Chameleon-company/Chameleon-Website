@@ -1,0 +1,36 @@
+.faqSection
+{
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 50px;
+    text-align: left;
+    background-color: #9acb48;
+}
+
+.Title
+{
+    font-weight: 1000;
+    font-size: 32px;
+
+}
+.ques
+{
+    padding-top: 10px;
+    font-size: 15px;
+    font-weight: 700;
+}
+.ans{
+   
+    padding-top: 20px;
+}
+@media(max-width:500px)
+{
+    .faqSection
+{
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 50px;
+    text-align: center;
+    background-color: #9acb48;
+}
+}

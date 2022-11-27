@@ -8,6 +8,7 @@
     padding: 30px 30px 30px 30px;
     margin: 100px 0px 0px 100px;
 }
+
 .react-calendar--doubleView {
     width: 700px;
   }
@@ -15,6 +16,7 @@
     display: flex;
     margin: -0.5em;
   }
+
   .react-calendar--doubleView .react-calendar__viewContainer > * {
     width: 50%;
     margin: 0.5em;
@@ -26,7 +28,7 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-  }                            
+  }
   .react-calendar button {
     margin: 0;
     border: 0.5px;

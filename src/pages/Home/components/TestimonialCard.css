@@ -27,6 +27,14 @@
     
 }
 
+.userCardPhone{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content:flex-end;
+    
+}
+
 .testimonialUser{
     width:90px;
     height:90px;

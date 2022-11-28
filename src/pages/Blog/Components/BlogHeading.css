@@ -27,26 +27,9 @@
 }
 
 .blogCard{
+    width:80%;
+    height: fit-content;
     display: flex;
-    justify-content:space-between;
-    flex:0 50% ;
-    margin:auto;
-    flex-wrap: wrap; 
-    row-gap: 50px;
-    
-    padding-left: 150px;
-    padding-right: 150px;
-  
-}
-.main {
-    margin-top: 40px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-  }
-@media (max-width: 500px) {
-
-
-    .blogCard{
-    flex-direction: column;
-    }
+    justify-content: space-between;
+    margin: 40px auto;
 }

@@ -18,13 +18,9 @@ function blogCard(blog){
 
 function BlogCards() {
   return (
-    <div className = 'main'>
-      <div className = 'blogCard'>
+    <div className = 'blogCard'>
         {Blogs.map(blogCard)}
-      </div>
-        
     </div>
-    
   )
 }
 

@@ -10,6 +10,16 @@
     justify-content: space-between;
 }
 
+.displayTestimonyPhone{
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
 
 
 

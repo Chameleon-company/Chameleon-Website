@@ -1,0 +1,30 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: gray;
+    transition: 0.3s;
+    width:15rem;
+    display:flex;
+    flex-direction: column;
+    border-radius: 30px;
+    
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    padding: 2px 16px;
+    color: rgb(255, 255, 255);
+    text-align: center;    
+    
+  }
+
+  .img{
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 30px;
+
+  }
+  

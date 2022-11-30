@@ -3,7 +3,7 @@ import './BlogHeading.css'
 
 function BlogHeading() {
   return (
-    <div className="info">
+    
      <div className="center">
         <div className="title">
             <h3 className="top"> Latest </h3>
@@ -11,7 +11,7 @@ function BlogHeading() {
             <h3 className="bottom">Blog</h3>
         </div>
      </div>
-    </div>
+    
   )
 }
 

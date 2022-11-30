@@ -1,12 +1,13 @@
 import React from 'react'
-import Card from '../../../components/card/Card'
+
+import Blogcard from '../../../components/Blogcard/Blogcard'
 import Blogs from '../../../data/BlogData'
 import './BlogHeading.css'
 
 
 function blogCard(blog){
     return(
-    <Card
+    <Blogcard
         key={blog.id}
         link={blog.imgURL}
         name={blog.name}
@@ -21,8 +22,9 @@ function BlogCards() {
     <div className = 'main'>
       <div className = 'blogCard'>
         {Blogs.map(blogCard)}
-      </div>
         
+      </div>
+      
     </div>
     
   )

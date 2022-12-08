@@ -30,10 +30,6 @@
     width:80%;
     height: fit-content;
     display: flex;
-<<<<<<< HEAD
-    justify-content: space-between;
-    margin: 40px auto;
-=======
     justify-content:space-between;
     flex:0 50% ;
     margin-left: 5%;
@@ -187,9 +183,4 @@ button[type="submit"]:focus,input[type="search"]:focus {
       
     
   }
-
-
-
-    
->>>>>>> 799be76e5fcc41e8c05bc06c60a276616170aed4
 }

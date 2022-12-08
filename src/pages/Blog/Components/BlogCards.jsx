@@ -21,13 +21,10 @@ function BlogCards() {
   return (
     <div className = 'blogCard'>
         {Blogs.map(blogCard)}
-<<<<<<< HEAD
-=======
         
       </div>
       
->>>>>>> 799be76e5fcc41e8c05bc06c60a276616170aed4
-    </div>
+  
   )
 }
 

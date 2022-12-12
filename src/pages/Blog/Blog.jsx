@@ -7,12 +7,6 @@ import './Components/BlogHeading.css'
 
 function Blog() {
   return (
-<<<<<<< HEAD
-    <div>
-      <BlogHeading/>
-      <BlogCards/>
-    </div>
-=======
     <div className='bgground'>
       <div className='blog' >
       
@@ -35,7 +29,6 @@ function Blog() {
 
     </div>
     
->>>>>>> 799be76e5fcc41e8c05bc06c60a276616170aed4
   )
 }
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import {Routes, Route, Link} from 'react-router-dom';
 import './BlogHeading.css'
 import Blogs from '../../../data/BlogData'
 
@@ -9,8 +8,8 @@ function BlogDescription(props) {
     <div className='blogdescbgground'>
       <div className='blogdesc' >
         <div className="blogdesccontainer">
-            <img className='blogdescimg' src={Blogs[0].imgURL}></img>
-            <h1><u>{props.title}</u></h1>            
+            <img className='blogdescimg' src={Blogs[0].imgURL} alt="img"></img>
+            <h1><u>{Blogs[0].name}</u></h1>            
         </div>
 
         <p>Written By: unknown</p>

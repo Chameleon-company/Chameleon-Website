@@ -8,7 +8,9 @@ import OurServices from './pages/OurServices/OurServices';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Resources from './pages/Resources/Resources';
 import Navbar from './components/navbar/Navbar';
+import BlogDescription from './pages/Blog/Components/BlogDescription'
 import "./index.css"
+
 
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
       <Route path ="/portfolio" element={<Portfolio/>}/>
       <Route path ="/aboutus" element={<AboutUS/>}/>
       <Route path ="/login" element={<Login/>}/>
+      <Route path ="/blogdescription" element={<BlogDescription title = "abc" />}/>
     </Routes> 
    </div>
   )

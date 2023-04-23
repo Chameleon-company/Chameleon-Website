@@ -1,128 +1,70 @@
-# CHAMELEON (Website Project)
+# Getting Started with Create React App
 
-The central repository for the Chameleon front_end_project (react.js) and back_end_project (node.js) .
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-To get started, clone the repo. Then run `npm install` from the root.
+## Available Scripts
 
-The repo is organized as a monorepo, . and follows this structure:
+In the project directory, you can run:
 
-```
-├── back_end_project           # All API to be created here (node.js)
-    ├── controllers
-    ├── routes
-    └── services    
-├── front_end_project          # Customer facing website (React.js)
-    ├── public
-    └── src
-        ├── components
-        ├── layouts
-        ├── pages
-        ├── services
-└── old_website                # Old Chameleon website code
+### `npm start`
 
-```
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Both `back_end_project` and `front_end_project` are workspaces. Most actions, such as installing new npm packages, can and should be performed at the respective folder and not in the root of the project. Specific workspaces can be targeted from the root directory using `cd <workspace>`.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-e.g. To install a new package to the `front_end_project` package only `cd front_end_project` then `npm install package-name`
+### `npm test`
 
-Note: Running `npm add <package>` will install it to the root . T.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `npm run build`
 
----
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## :computer: Development
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-From the root, run `npm run devall` to launch both node server and react app.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-From the root, run `npm run server` to launch node server alone. This can be used by API developers to test their api , through POSTMAN.
+### `npm run eject`
 
-Development should follow the [Feature branch git workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-**:warning: Important: :warning:**
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-> Never commit directly to `main`
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-**:point_right: Note:**:
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-> When pulling the latest from github, you may need to run `npm install` if any packages were added or removed in past commits. If you are experiencing errors unrelated to the code you are writing (or before writing any), try running  `npm install`.
+## Learn More
 
----
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## :100: Code Quality
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-### :pencil: Linting
+### Code Splitting
 
-Code quality is enforced by ES Lint which is configured as an custom eslint plugin shared across the entire project in `eslintrc.js`.
-Each package/app requires their own `.eslintrc.js` file.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-- Components, Component directories, Component files, and Stories all use `PascalCase / UpperCamelCase`
-- Variables and functions use `camelCase`
-- Single quotes for strings
-- Do not use string interpolation for css classes
-- Do not use CSS-in-JS, StyledComponents or Emotion CSS
+### Analyzing the Bundle Size
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-## :crossed_swords: Git etiquette
+### Making a Progressive Web App
 
-### Branching
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-Branches are used for isolated feature development and should **always branch from the source they intend to merge into**. This means that a branch created from `main` must always end up in `main`.
+### Advanced Configuration
 
-Using the example branches of `main`-> `feature-1` -> `feature-2`...
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-- ❌ **do not** merge `feature-1` into `main` before `feature-2` is merged.
-- ❌ **do not** merge `feature-2` directly into `main`, only its parent branch.
-- ✅ **do** branch `feature-2` from `main` since it should not depend on `feature-1`
+### Deployment
 
-> **_NOTE_** if it's entirely necessary to merge `feature-1` before `feature-2`, ensure that no manual commits are made in `feature-2` between the last commit & merge commit to `main` of `feature-1`.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### Commit messages
+### `npm run build` fails to minify
 
-There are no hard constraints imposed on commit messaging, instead the following guidelines show a best-practice approach to producing consumable commit messaging.
-
-The **preferred** format for a commit message looks like this. Note that only `body` is required:
-
-```sh
-# format...
-"type?(scope?): body..."
-
-# examples...
-"fixed some issue"
-"fix: fixed some issue"
-"fix(US-123): fixed some issue"
-"fix(component): fixed some issue"
-```
-
-- `type` refers to what kind of commit is being made. Some example values are:
-
-```js
-[
-  'build', // related to build processes
-  'chore', // small cleanup activities or other pedantry
-  'ci', // related to continuous integration activities
-  'docs', // documentation work
-  'feat', // feature work
-  'fix', // bugfixes or hotfixes
-  'perf', // performance tuning & optimization
-  'refactor', // code refactoring
-  'revert', // reverting previously committed changes.
-  'style', // styling changes
-  'test', // changes to tests
-];
-```
-
-- `scope` provides context to the commit type, most commonly a TRELLO ticket or some project name.
-- `body...` refers to the bulk of the commit message, which can break up into **header** and **footer** sections delimited by newlines.
-  - A **header** is the body section on the first line of the commit message
-  - A **footer** is entered a full newline separated from the header and may contain any length of UTF-8 content.
-
-## :books: Library Docs
-
-**React Bootstrap** - [Docs](https://react-bootstrap.github.io/)
-
-## :copyright: Licenses
-
-To see all licenses for the project run `npx license-checker --summary`
-
-or see [license-checker docs](https://www.npmjs.com/package/license-checker) for more options
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -15,7 +15,7 @@ const articleList = [
   },
   {
     id: 2,
-    title: 'Why should you buy an EV',
+    title: 'Article 3',
     image: 'https://via.placeholder.com/600x400',
     article: Article.whyBuyEv2,
   },

@@ -1,12 +1,13 @@
 import { Container, Row, Col } from "react-bootstrap";
 import React, { Component } from "react";
 
-class Calendar extends Component {
+class Resources extends Component {
   render() {
     return (
       <Container>
         <Row>
-          <h1>Events Calendar</h1>
+          <h1>Emerging Tech</h1>
+          <p>emergingtech displays that p</p>
           <Col xs={12}>
             <div>
              
@@ -18,4 +19,4 @@ class Calendar extends Component {
   }
 }
 
-export default Calendar;
+export default Resources;

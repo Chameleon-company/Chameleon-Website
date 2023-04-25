@@ -7,6 +7,7 @@ import Blog from "./pages/blog/blog";
 import Portfolio from "./pages/portfolio/portfolio";
 import Newsletter from "./pages/newsletter/newsletter";
 import Contact from "./pages/contact/contact";
+
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 

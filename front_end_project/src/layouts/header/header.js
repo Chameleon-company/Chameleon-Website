@@ -17,10 +17,17 @@ function Header() {
           <NavDropdown title="Services" id="services-dropdown">
             <NavDropdown.Item href="#">Service 1</NavDropdown.Item>
             <NavDropdown.Item href="#">Service 2</NavDropdown.Item>
-            <NavDropdown.Divider />
+
             <NavDropdown.Item href="#">All Services</NavDropdown.Item>
           </NavDropdown>
+
+          <NavDropdown title="Resources" id="resources-dropdown">
+            <NavDropdown.Item href="#">Event Calendar</NavDropdown.Item>
+            <NavDropdown.Item href="#">FAQ's</NavDropdown.Item>
+            <NavDropdown.Item href="#">Emerging tech</NavDropdown.Item>
+          </NavDropdown>
         </Nav>
+
         <Nav>
           <Nav.Link href="#">Login</Nav.Link>
         </Nav>

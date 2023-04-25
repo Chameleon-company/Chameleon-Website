@@ -1,0 +1,40 @@
+.list-container::-webkit-scrollbar,
+.article-show::-webkit-scrollbar {
+  width: 10px;
+}
+.list-container::-webkit-scrollbar-track,
+.article-show::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+.list-container::-webkit-scrollbar-thumb,
+.article-show::-webkit-scrollbar-thumb {
+  background: rgb(83, 131, 254);
+  border-radius: 10px;
+}
+.list-container::-webkit-scrollbar-thumb:hover,
+.article-show::-webkit-scrollbar-thumb:hover {
+  background: rgb(97, 140, 250);
+}
+
+.article-view-container {
+  background-color: rgb(242, 242, 242);
+  height: 750px;
+}
+
+.list-container {
+  display: inline-block;
+  width: 30%;
+  background-color: rgb(242, 242, 242);
+  overflow: auto;
+  height: 750px;
+}
+
+.article-show {
+  display: inline-block;
+  background-color: rgb(242, 242, 242);
+  padding: 10px;
+  height: 100%;
+  width: 70%;
+  vertical-align: top;
+  overflow: auto;
+}

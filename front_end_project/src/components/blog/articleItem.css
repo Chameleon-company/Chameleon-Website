@@ -1,0 +1,25 @@
+.item-image {
+  width: 85%;
+  height: 85%;
+  margin: auto;
+  display: block;
+  object-fit: fill;
+}
+
+.item-title {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.item-separator {
+  color: black;
+  margin: 10px 0px 0px;
+}
+
+.item-container {
+  padding-top: 20px;
+}
+
+.active {
+  background-color: rgb(255, 255, 255);
+}

@@ -1,14 +1,22 @@
 .item-image {
-  width: 85%;
-  height: 85%;
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.item-image-container {
   margin: auto;
-  display: block;
-  object-fit: fill;
+  background-color: black;
+  width: 85%;
+  height: 210px;
+  display: flex;
+  overflow: hidden;
 }
 
 .item-title {
   text-align: center;
   margin-top: 5px;
+  font-weight: bold;
 }
 
 .item-separator {

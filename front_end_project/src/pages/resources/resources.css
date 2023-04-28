@@ -92,3 +92,7 @@
     padding-left: 70%;
     padding-right: 10%;
 }
+
+@media only screen and (orientation: portrait) {
+    /* styles for portrait orientation */
+    }

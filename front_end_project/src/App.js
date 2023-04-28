@@ -31,7 +31,8 @@ function App() {
               <Route path="/contact" component={Contact} />
               <Route path="/resources" component={Resources} />
               <Route path="/calendar" component={Calendar} />
-              <Route path="/faq" component={Faq} />    
+              <Route path="/faq" component={Faq} />  
+
             </Switch>
           </main>
           {/* <Footer  /> */}

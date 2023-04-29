@@ -15,12 +15,13 @@ function Header() {
           <Nav.Link href="/newsletter">Newsletters</Nav.Link>
           <Nav.Link href="/contact">Contact</Nav.Link>
           <Nav.Link href="/about">About us</Nav.Link>
+          <Nav.Link href="/report">Report</Nav.Link>
 
-          <NavDropdown title="Services" id="services-dropdown">
+          {/* <NavDropdown title="Services" id="services-dropdown">
             <NavDropdown.Item href="#">Service 1</NavDropdown.Item>
             <NavDropdown.Item href="#">Service 2</NavDropdown.Item>
             <NavDropdown.Item href="#">All Services</NavDropdown.Item>
-          </NavDropdown>
+          </NavDropdown> */}
 
           {/* following is routing and linked up fine, but dropdown menu wont show the names
           - needs to be fixed, this is temporary */}

@@ -10,6 +10,7 @@ import Contact from "./pages/contact/contact";
 import Resources from "./pages/resources/resources";
 import Calendar from "./pages/calendar/calendar";
 import Faq from "./pages/faq/faq";
+import Report from "./pages/report/report";
 
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -28,6 +29,7 @@ function App() {
               <Route path="/blog" component={Blog} />
               <Route path="/newsletter" component={Newsletter} />
               <Route path="/portfolio" component={Portfolio} />
+              <Route path="/report" component={Report} />  
               <Route path="/contact" component={Contact} />
               <Route path="/resources" component={Resources} />
               <Route path="/calendar" component={Calendar} />

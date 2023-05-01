@@ -9,7 +9,8 @@ import Newsletter from "./pages/newsletter/newsletter";
 import Contact from "./pages/contact/contact";
 import Resources from "./pages/resources/resources";
 import Calendar from "./pages/calendar/calendar";
-import Faq from "./pages/faq/faq";
+import Main from "./pages/faq/main";
+import Report from "./pages/report/report";
 
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -28,10 +29,12 @@ function App() {
               <Route path="/blog" component={Blog} />
               <Route path="/newsletter" component={Newsletter} />
               <Route path="/portfolio" component={Portfolio} />
+              <Route path="/report" component={Report} />  
               <Route path="/contact" component={Contact} />
               <Route path="/resources" component={Resources} />
               <Route path="/calendar" component={Calendar} />
-              <Route path="/faq" component={Faq} />    
+              <Route path="/faq" component={Main} />  
+
             </Switch>
           </main>
           {/* <Footer  /> */}

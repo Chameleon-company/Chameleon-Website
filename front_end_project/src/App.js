@@ -9,7 +9,7 @@ import Newsletter from "./pages/newsletter/newsletter";
 import Contact from "./pages/contact/contact";
 import Resources from "./pages/resources/resources";
 import Calendar from "./pages/calendar/calendar";
-import Faq from "./pages/faq/faq";
+import Main from "./pages/faq/main";
 import Report from "./pages/report/report";
 
 import './App.css';
@@ -33,7 +33,7 @@ function App() {
               <Route path="/contact" component={Contact} />
               <Route path="/resources" component={Resources} />
               <Route path="/calendar" component={Calendar} />
-              <Route path="/faq" component={Faq} />  
+              <Route path="/faq" component={Main} />  
 
             </Switch>
           </main>

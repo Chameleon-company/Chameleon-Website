@@ -28,7 +28,7 @@ class Resources extends Component {
                   <h3>What is a smart city?</h3>
                 </div>
 
-                <div className="text">
+                <div className="text4">
                   <p>
                     A smart city uses technology to connect,
                     protect and enhance the lives of citizens

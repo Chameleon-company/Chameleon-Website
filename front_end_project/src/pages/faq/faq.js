@@ -1,6 +1,8 @@
 import { Row, Col } from "react-bootstrap";
-import React, { useState, toggle, button } from "react";
+import React, { useState, toggle, button, useEffect } from "react";
+// import DarkMode from "./components/DarkMode/DarkMode"
 import './faq.css'
+import './darkMode.css'
 
 function Faq() {
   /* toggle function to set function for choosing 
@@ -16,8 +18,10 @@ function Faq() {
     }
     setChoose(i)
   }
+
   return (
     <Row>
+
       <div className="faqheading">
         Frequently Asked Questions
       </div>

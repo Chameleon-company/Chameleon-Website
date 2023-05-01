@@ -81,7 +81,7 @@
     background: #E4F0FF;
     height: 60%;
     width: 35%;
-    padding-left: 25px;
+    padding-left: 55px;
     padding-bottom: 20px;
  }
 
@@ -108,8 +108,10 @@
     font-size: 22px;
     display: flex;
     position: absolute; 
-    right: 21%; 
+    right: 11%; 
     top: 30%;
+    /* right: -140%; 
+    top: 44%; */
 }
 
 .mopImage{
@@ -122,6 +124,6 @@
     font-size: 22px;
     display: flex;
     position: absolute; 
-    right: 15%; 
+    right: 8%; 
     top: 30%;
 }

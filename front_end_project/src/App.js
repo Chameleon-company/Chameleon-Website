@@ -1,5 +1,5 @@
 import Header from "./layouts/header/header";
-// import Footer from "./layouts/footer/footer";
+import Footer from "./layouts/footer/footer";
 import Home from "./pages/home/home";
 import Helloo from "./pages/hello/hello";
 import About from "./pages/about/about";
@@ -37,7 +37,7 @@ function App() {
 
             </Switch>
           </main>
-          {/* <Footer  /> */}
+          <Footer/>
         </Router>
     </>
   );

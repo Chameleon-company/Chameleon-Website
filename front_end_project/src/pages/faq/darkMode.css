@@ -1,22 +1,11 @@
 
-/* .dark
+.bg
 {
     background-color: #242748;
-    cursor: pointer;
-} */
+}  
 
-/* .dark button
-{
-    background-color: #242748;
-    display: flex;
-    position:absolute; left: 85%; top: 7%;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 15px;
-    cursor: pointer;
-} */
-
-.faqheading{
-    color: black;
+.faqheadingmode{
+    color: white;
     font-size: 50px;
     display: flex;
     justify-content: center;
@@ -28,7 +17,8 @@
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.wrapper{
+
+.wrappermode{
     display:flex;
     position: relative;
     justify-content: center;
@@ -39,21 +29,21 @@
     margin: 2px;
 }
 
-.queries{
+.queriesmode{
     width: 900px;
     position: relative;
     justify-content: center;
 }
 
-.point{
-    background-color: #E4F0FF;
+.pointmode{
+    background-color: #54BBC9;
     border: 4px;
     padding: 10px 30px;
     margin-bottom: 3%;
     border: 1.3px solid #000000;
 }
 
-.title{
+.titlemode{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,6 +51,7 @@
     position: relative;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight:bold;
+    color: white;
 }
 
 .faq{
@@ -75,13 +66,14 @@
     font-size: 14px;
 }
 
-.email
+.emailmode
 {
     font-size: 18px;
     position: relative;
+    color: white;
 }
 
-.box input
+.boxmode input
 {
     font-size: 18px;
     position:absolute;
@@ -91,9 +83,9 @@
     border: 1px solid black
 }
 
-.send button
+.sendmode button
 {
-    background-color: #0E6700;
+    background-color: #FF8717;
     font-size: 18px;
     color: white;
     position:absolute; bottom: -42%;

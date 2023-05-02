@@ -24,7 +24,7 @@
     position: absolute;
 }
 
-.text{
+.text4{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     position: absolute;
     font-size: 14px;
@@ -92,3 +92,7 @@
     padding-left: 70%;
     padding-right: 10%;
 }
+
+@media only screen and (orientation: portrait) {
+    /* styles for portrait orientation */
+    }

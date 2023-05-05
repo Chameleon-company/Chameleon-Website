@@ -8,8 +8,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "devall": "eslint . && npm run dev",
     "server_npmi": "cd back_end_project & npm install",
-    "client_npmi": "cd front_end_project & npm install",
-    "install": "concurrently \"npm run server_npmi\" \"npm run client_npmi\""
+    "client_npmi": "cd front_end_project & npm install"
   },
   "dependencies": {
     "react-rectangle": "^1.3.3",

@@ -11,7 +11,7 @@ import Resources from "./pages/resources/resources";
 import Calendar from "./pages/calendar/calendar";
 import Main from "./pages/faq/main";
 import Report from "./pages/report/report";
-
+import forgot from "./pages/forgot_password/forgot";
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -34,7 +34,7 @@ function App() {
               <Route path="/resources" component={Resources} />
               <Route path="/calendar" component={Calendar} />
               <Route path="/faq" component={Main} />  
-
+              <Route path="/forgot" component={forgot} />
             </Switch>
           </main>
           <Footer/>

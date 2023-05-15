@@ -1,5 +1,7 @@
+{/*
 import React from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import './header.css';
 
 function Header() {
   return (
@@ -14,20 +16,25 @@ function Header() {
           <Nav.Link href="/newsletter">Newsletters</Nav.Link>
           <Nav.Link href="/contact">Contact</Nav.Link>
           <Nav.Link href="/about">About us</Nav.Link>
-          <NavDropdown title="Services" id="services-dropdown">
-            <NavDropdown.Item href="#">Service 1</NavDropdown.Item>
-            <NavDropdown.Item href="#">Service 2</NavDropdown.Item>
+          <Nav.Link href="/report">Report</Nav.Link>
 
-            <NavDropdown.Item href="#">All Services</NavDropdown.Item>
+          <NavDropdown title="Resources" id="resources-dropdown" class="nav-bar-dropdowns">
+            <Nav.Item className='nav-bar-dropdown-items'>
+              <Nav.Link href="/calendar" className='nav-bar-dropdown-items-a'>Events Calendar</Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item className='nav-bar-dropdown-items'>
+              <Nav.Link href="/faq">Emerging Tech</Nav.Link>
+            </Nav.Item> 
+
+            <Nav.Item className="nav-bar-dropdown-items">
+              <Nav.Link href="/resources">Emerging Tech</Nav.Link>
+            </Nav.Item> 
+
           </NavDropdown>
 
-          <NavDropdown title="Resources" id="resources-dropdown">
-            <NavDropdown.Item href="#">Event Calendar</NavDropdown.Item>
-            <NavDropdown.Item href="#">FAQ's</NavDropdown.Item>
-            <NavDropdown.Item href="#">Emerging tech</NavDropdown.Item>
-          </NavDropdown>
         </Nav>
-
+        
         <Nav>
           <Nav.Link href="#">Login</Nav.Link>
         </Nav>
@@ -40,3 +47,58 @@ function Header() {
 }
 
 export default Header;
+*/}
+
+import React from "react";
+import {NavLink} from 'react-router-dom';
+import './header.css';
+import { useState } from "react";
+import logo from './images/logo.jpg';
+
+import { Nav, NavDropdown } from 'react-bootstrap';
+
+function Header() {
+  
+  const [drop, setDrop] = useState(false);
+
+  const toggleDropdown = () => {
+    setDrop(!drop);
+  };
+
+  return (
+    
+    <nav className = "navbar">
+      <div className="brandLogo">
+        <img src={logo} alt='Brand Logo'/>
+      </div>
+      <div className={`navLinks ${drop && "drop"}`}> 
+        <NavLink className="link" to="/">HOME<div className="space"></div></NavLink>
+        <NavLink className="link_portfolio" to="/portfolio">PORTFOLIO<div className="space"></div></NavLink>
+        <NavLink className="link" to="/blog">BLOG<div className="space"></div></NavLink>
+        <NavLink className="link" to="/newsletters">NEWSLETTERS<div className="space"></div></NavLink>
+        <NavLink className="link" to="/contact">CONTACT<div className="space"></div></NavLink>
+        <NavLink className="link" to="/about_us">ABOUT US<div className="space"></div></NavLink>
+
+        {/*<NavLink className="link" to="/resource">RESOURCE<div className="space"></div></NavLink>*/}
+        
+        <div className="dropdown" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
+          <NavLink className="link" to="/resource">RESOURCE</NavLink>
+          <div className={`dropdown-content ${drop && "show"}`}>
+            <NavLink to="/events">Events Calendar</NavLink>
+            <NavLink to="/faq">FAQ</NavLink>
+            <NavLink to="/emerging-tech">Emerging Tech</NavLink>
+          </div>
+        </div>
+
+        <NavLink className="link_login" to="/login">
+          <button className="loginButton">LOGIN</button>
+        </NavLink>
+        
+      </div>
+
+    </nav>
+
+  );
+}
+
+export default Header

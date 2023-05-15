@@ -1,3 +1,4 @@
+
 .loginBox{
     height: 90vh;
     display:flex;
@@ -42,7 +43,7 @@
   font-family: 'Roboto', sans-serif;
   color: #f5f5f5;
   font-size: 0.8rem;
-  margin: 0 auto;
+	margin: 0 auto;
   padding: 1.5rem 2rem;
   border-radius: 30px;
   background: navy;
@@ -77,6 +78,7 @@
 
 
 
+
 .button:hover {
   background-color: #1366d6;
   box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
@@ -99,7 +101,9 @@
   opacity: 1;
 }
 
+
 .linkAlign{
+
 
   margin-top: 20px;
   border-radius: 20px;
@@ -147,6 +151,7 @@
   height:40px;
 }
 
+
 @media (max-width: 768px) {
   .rounded-button-01 {
     padding: 14px 22px;
@@ -165,3 +170,5 @@
   }
 
 }
+
+

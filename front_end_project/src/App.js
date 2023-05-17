@@ -1,6 +1,6 @@
 import Header from "./layouts/header/header";
 import Footer from "./layouts/footer/footer";
-import Home from "./pages/home/home";
+// import Home from "./pages/home/home";
 import Helloo from "./pages/hello/hello";
 import About from "./pages/about/about";
 import Blog from "./pages/blog/blog";
@@ -15,6 +15,7 @@ import Main from "./pages/faq/main";
 import Report from "./pages/report/report";
 import Login from "./pages/login/login";
 import Signup from "./pages/signup/signup";
+import Homepage from "./pages/homepage/index";
 
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -26,8 +27,8 @@ function App() {
           <Header />
           <main>
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/home" component={Home} />
+              <Route exact path="/" component={Homepage} />
+              <Route exact path="/home" component={Homepage} />
               <Route path="/hello" component={Helloo} />
               <Route path="/about_us" component={About} />
               <Route path="/blog" component={Blog} />

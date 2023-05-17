@@ -8,7 +8,9 @@ import Portfolio from "./pages/portfolio/portfolio";
 import Newsletter from "./pages/newsletter/newsletter";
 import Contact from "./pages/contact/contact";
 import Resources from "./pages/resources/resources";
-import Calendar from "./pages/calendar/calendar";
+// import Calendar from "./pages/calendar/calendar";
+import Calendar from "./components/calendar/calenderView";
+import Events from "./components/calendar/eventViewCard";
 import Main from "./pages/faq/main";
 import Report from "./pages/report/report";
 import Login from "./pages/login/login";
@@ -34,7 +36,8 @@ function App() {
               <Route path="/report" component={Report} />  
               <Route path="/contact" component={Contact} />
               <Route path="/emerging-tech" component={Resources} />
-              <Route path="/calendar" component={Calendar} />
+              <Route path="/events" component={Calendar} />
+              <Route path="/events" component={Events} />
               <Route path="/faq" component={Main} />  
               <Route path="/login" component={Login} />  
               <Route path="/signup" component={Signup} />  

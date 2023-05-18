@@ -13,7 +13,7 @@ class Resources extends Component {
           <div className="top">
             Emerging Tech
           </div>
-          <Col xs={12}>
+          {/* <Col xs={12}> */}
             <div className="rectangle">
               <Rectangle className="first">
                 <div style={{ background: '#E4F0FF' }} />
@@ -39,7 +39,7 @@ class Resources extends Component {
                   </p>
                 </div>
 
-                <div className="text2">
+                <div className="textsmart">
                   <p>
                     A smart city collects and analyse data from
                     sensors and cameras and send to the city
@@ -48,13 +48,14 @@ class Resources extends Component {
                     alert the city service for a collection.
                   </p>
                 </div>
+
               </Rectangle>
             </div>
-
+       
             <br></br>
 
-            <div className="rectangle2">
-              <Rectangle className="second">
+            <div className="rectangle25">
+              <Rectangle className="secondrec">
                 <div style={{ background: '#E4F0FF' }} />
 
                 {/* image */}
@@ -89,7 +90,7 @@ class Resources extends Component {
             </div>
             <div>
             </div>
-          </Col>
+          {/* </Col> */}
         </Row>
 
 

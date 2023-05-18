@@ -25,6 +25,11 @@ class Login extends Component {
                 <Nav.Link href="/signup">
                   <button className='rounded-button-02'>Sign Up</button>
                 </Nav.Link>
+
+                <Nav.Link href="/forgot">
+                  <button className='rounded-button-02'>Forgot password</button>
+                </Nav.Link>
+
                 <div>
                 <button className='mediaButton'>
                 

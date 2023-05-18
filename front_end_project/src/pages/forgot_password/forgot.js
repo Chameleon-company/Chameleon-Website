@@ -27,13 +27,13 @@ class forgot extends Component {
 
                                     <Button variant="primary" className="w-100 orange round" >RESET PASSWORD </Button>
                                     <br/> <br/>
-                                    <a class='green' href="www.google.com"><Form.Label class='ctr green'>Sign in</Form.Label></a>
+                                    <a class='green' href="login"><Form.Label class='ctr green'>Login</Form.Label></a>
                                 </Form>
 
                             </div>
                         </Col>
                     </Row>
-                {/* </div> */}
+
             </div>
         );
     }

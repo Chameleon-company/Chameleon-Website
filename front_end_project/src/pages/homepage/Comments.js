@@ -7,7 +7,7 @@ function Comments() {
     return(
     <div>
         <div className='Comment_rectangle'>
-            <p className='text'>Testimony</p>
+            <p className='text_Comment'>Testimony</p>
             <div className='Temp'>
                 <img src={Avatar1} className='Photo_size' alt='avatar1'></img>
                 <p>I like it.</p>

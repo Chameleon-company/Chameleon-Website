@@ -24,8 +24,11 @@ function Welcome() {
                         triggered at the right time and to the right audience. 
                         Add self-serve help and user onboarding launchers to guide users without interrupting their workflow.
                     </p>
+
                 </div>
             </div>
+        
+
 
 
         <img src={tree2} className='img_tree2' alt='tree2'></img>
@@ -34,7 +37,7 @@ function Welcome() {
         <div>
             <p className='text2'>
                 Discover exciting information about how to save our planet
-            </p>  
+            </p> 
             <input className='input_for' type='text' id='email' placeholder='Email:_______________'></input>
             <button className='button' type='submit'>I'm in</button>       
         </div>

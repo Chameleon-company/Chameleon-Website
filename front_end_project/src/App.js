@@ -13,10 +13,10 @@ import Calendar from "./components/calendar/calenderView";
 import Events from "./components/calendar/eventViewCard";
 import Main from "./pages/faq/main";
 import Report from "./pages/report/report";
+import forgot from "./pages/forgot_password/forgot";
 import Login from "./pages/login/login";
 import Signup from "./pages/signup/signup";
 import Homepage from "./pages/homepage/index";
-
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -40,9 +40,9 @@ function App() {
               <Route path="/events" component={Calendar} />
               <Route path="/events" component={Events} />
               <Route path="/faq" component={Main} />  
+              <Route path="/forgot" component={forgot} />
               <Route path="/login" component={Login} />  
               <Route path="/signup" component={Signup} />  
-
             </Switch>
           </main>
           <Footer/>

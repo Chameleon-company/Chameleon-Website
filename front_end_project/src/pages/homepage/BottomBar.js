@@ -15,7 +15,7 @@ function Bottom() {
           <div>
             <div className='Logo'>
               <img src={Bottom_Logo} alt='Logo'></img>
-              <h3 className='Text_under_Logo'>Striving to Create a Smarter World</h3>
+              <h5 className='Text_under_Logo'>Striving to Create a Smarter World</h5>
             </div>
 
             <div>
@@ -34,12 +34,12 @@ function Bottom() {
             </div>
 
             <div className='position1'>
-                <h1>Contact Us</h1>
-                <h3>Tel: 03 5975 6586</h3>
-                <h3>Email: customer.service@chameleon.com.au</h3>
+                <h1 className='temp_position'>Contact Us</h1>
+                <h3 className='temp_position'>Tel: 03 5975 6586</h3>
+                <h3 className='temp_position'>Email: customer.service@chameleon.com.au</h3>
 
                   <div className='text'>
-                    <h3 className='text_space'>Privacy Notice</h3> <h3 className='text_space'>About Us</h3>
+                    <h3 className='text_space1'>Privacy Notice</h3> <h3 className='text_space2'>About Us</h3>
                   </div>  
                 <h3 className='position3'>©2013 Copyright reserved by Chameleon</h3> 
               </div>

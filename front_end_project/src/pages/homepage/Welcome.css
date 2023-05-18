@@ -55,7 +55,7 @@
 }
 
 .intro_right{
-    margin-top:-16.5%;
+    margin-top:-1.5%;
 }
 
 .img_tree3{
@@ -96,22 +96,25 @@
 }
 
 .text2{
+    z-index: 3;
     font-weight: bold;
     font-size: 120%;
-    margin-top:14%;
-    margin-left: 6.3%;
+    margin-left:-63.5%;
+    margin-top: 5.3%;
 }
 
 .input_for{
+    margin-top:15%;
     margin-left: 6.5%;
     width: 6%;
-    height: 50px;
+    height: 55px;
     position: absolute;
     z-index: 3;
 }
 
 .button{
-    margin-left: 13.5%;
+    margin-top:15%;
+    margin-left:13%;
     background-color: rgb(25, 205, 25);
     color: white;
     font-size:larger;

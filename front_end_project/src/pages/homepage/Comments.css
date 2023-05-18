@@ -11,6 +11,7 @@
 .Temp{
     display: inline-block;
     margin-left: 4%;
+    margin-top:3%;
 }
 
 .Photo_size{
@@ -23,7 +24,10 @@
     width:20%;
 }
 
-.text{
+.text_Comment{
+    font-weight: bold;
+    font-size: 145%;
+    margin-top:1.5%;
     font-size: larger;
     display: flex;
     justify-content: center;

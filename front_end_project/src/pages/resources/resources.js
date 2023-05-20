@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import React, { Component } from "react";
-import Rectangle from 'react-rectangle';
+import ReactRectangle from 'react-rectangle'; 
 import './resources.css';
 import smartCity from './images/city.png'
 import tech from './images/tech.png'
@@ -15,7 +15,7 @@ class Resources extends Component {
           </div>
           {/* <Col xs={12}> */}
             <div className="rectangle">
-              <Rectangle className="first">
+              <ReactRectangle className="first">
                 <div style={{ background: '#E4F0FF' }} />
 
                 {/* image */}
@@ -47,15 +47,13 @@ class Resources extends Component {
                     automatically. For example, a public bin can
                     alert the city service for a collection.
                   </p>
-                </div>
-
-              </Rectangle>
+                </div></ReactRectangle>    
             </div>
        
             <br></br>
 
             <div className="rectangle25">
-              <Rectangle className="secondrec">
+              <ReactRectangle className="secondrec">
                 <div style={{ background: '#E4F0FF' }} />
 
                 {/* image */}
@@ -86,7 +84,7 @@ class Resources extends Component {
                   <p> 2. Self-supervised learning</p>
                   <p>3. Human-centred AI</p>
                 </div>
-              </Rectangle>
+              </ReactRectangle>
             </div>
             <div>
             </div>

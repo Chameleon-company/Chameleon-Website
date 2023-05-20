@@ -2,7 +2,7 @@ import Header from "./layouts/header/header";
 import Footer from "./layouts/footer/footer";
 // import Home from "./pages/home/home";
 import Helloo from "./pages/hello/hello";
-import About from "./pages/about/about";
+
 import Blog from "./pages/blog/blog";
 import Portfolio from "./pages/portfolio/portfolio";
 import Newsletter from "./pages/newsletter/newsletter";
@@ -19,6 +19,10 @@ import Signup from "./pages/signup/signup";
 import Homepage from "./pages/homepage/index";
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+//about us page imports
+import About from "./pages/about/about";
+
 
 function App() {
   return (

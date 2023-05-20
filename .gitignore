@@ -34,3 +34,4 @@ back_end_project/node_modules
 #------------------Back end Ignores End---------------------------
 node_modules
 .DS_Store
+page.js

@@ -1,19 +1,16 @@
-import { Container, Row, Col } from "react-bootstrap";
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import ArticleView from '../../components/blog/articleView';
+import './blog.css';
 
 class Blog extends Component {
   render() {
     return (
-      <Container>
-        <Row>
-          <h1>Blog</h1>
-          <Col xs={12}>
-            <div>
-             
-            </div>
-          </Col>
-        </Row>
-      </Container>
+      <div className="blog-container">
+        <h1>Latest Blog</h1>
+        <div>
+          <ArticleView />
+        </div>
+      </div>
     );
   }
 }

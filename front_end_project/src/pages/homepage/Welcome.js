@@ -6,51 +6,52 @@ import Chameleon from './images/Chameleon_Figma.png'
 
 function Welcome() {
     return(
-    <div className='background'>
-        <p className='wel'>Welcome to Chameleon</p>
-            <div className='introduction'>  
-                <div className='article'>
-                    <h3 className='title'>Who is Chameleon?</h3>
-                    <p>
-                        Chameleon is a sophisticated no-code platform for product success, 
-                        empowering SaaS teams to build self-service user onboarding, feature adoption, 
-                        and feedback collection.
-                    </p>     
-                    <p>
-                            Using Chameleon you can show new users key functionalities, 
-                        highlight product changes, improve feature discoverability, 
-                        and reduce confusion and support requests. 
-                        Deploy NPS, CSAT, CES and custom surveys to users, 
-                        triggered at the right time and to the right audience. 
-                        Add self-serve help and user onboarding launchers to guide users without interrupting their workflow.
-                    </p>
-
-                </div>
-            </div>
-        
-
-
-
-        <img src={tree2} className='img_tree2' alt='tree2'></img>
-        <img src={tree2} className='img_tree2_inverse' alt='tree2'></img>
-
-        <div>
-            <p className='text2'>
-                Discover exciting information about how to save our planet
-            </p> 
-            <input className='input_for' type='text' id='email' placeholder='Email:_______________'></input>
-            <button className='button' type='submit'>I'm in</button>       
-        </div>
-
-        <div className='intro_right'>
-            <img src={tree3} className='img_tree3'></img>
-            <img src={Chameleon} className='Chameleon' alt='tree1'></img>
-            <p className='right_text'>Striving to Create a Smarter World</p>
-            <img src={tree1} className='img_tree1' alt='tree1'></img>
+        <div id="grad1">
+        <h1>Welcome to Chameleon</h1>
+        <div className="f">
+        <div className="ajy1">
+          <div className="abso">
+            <h5>Who is Chameleon?</h5>
+            <p className="pa">lorem ipsum dolor sit amet consectetssumenda doloremque </p>
+            
+            <ol>
+              
+              <li>lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua obcaecati ipsa assumenda doloremque </li>
+              <li>lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua obcaecati ipsa assumenda doloremque </li>
+              <li>lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua obcaecati ipsa assumenda doloremque </li>
+            
+            </ol>
+          </div>
+          <div className="abso1">
+            <p className="bo">
+              Discover existing information about how to save our planet.</p>
+            <di className='fla'>
+              <div className="email">email ____________</div>
+              <div className="im">I m in</div>
+          </di>
+          </div>
+            <img className="ajy2" src={tree1} alt="logo" />
+            <img className="ajy3" src={tree1} alt="logo" />
             
         </div>
-
-    </div>
+        <div className="le">
+            <div >
+            <img className="ajy11" src={Chameleon} alt="logo" />
+          
+          <div >
+              <di className='fla'>
+                <img className="tree2" src={tree3} alt="logo" /> 
+              <h3>Striving to Creat a Smarter World</h3>
+              <img className="tree3" src={tree2} alt="logo" />
+          </di>
+          </div>
+           
+            
+        </div>
+          
+        </div>
+        </div>
+      </div>
     );
 }
 

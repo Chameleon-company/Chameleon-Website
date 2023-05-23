@@ -1,60 +1,102 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import '../src/index.css';
+import logo1 from "../../assets/icsLogoNewMark2.png";
+import tit from "../../assets/jigsaw-sideimage.jpg";
+import { BsBuilding } from "react-icons/bs";
+import { FaGlobeAmericas } from "react-icons/fa";
+import { BsFillBoxSeamFill } from "react-icons/bs";
+import { BsFillPeopleFill } from "react-icons/bs";
+
+import { GrPlayFill } from "react-icons/gr";
+import '../../App.css';
 
 class About extends Component {
   render() {
     return (
-      <Container>
-        <Row>
-          <h1>About Us Page</h1>
-          <Col xs={12} >
-            <p>
-              Lorem ipsum dolor sit amet. A accusantium minimaVel quia et unde
-              dicta et laudantium mollitia. Qui culpa iste eum laborum impedit
-              <a href="/about" >
-                Vel ullam At laudantium laborum qui ullam laudantium
-              </a>
-              . Ad cumque officia qui voluptatibus delenitiin facilis et aperiam
-              consequatur. A soluta dolorId praesentium a impedit voluptas et
-              perferendis dolorum aut beatae vero.{" "}
-            </p>
-            <p>
-              Non quia officiis in internos explicaboeum labore hic officiis
-              doloremque. Et dolorem quas{" "}
-              <a href="/about">
-                Ut nesciunt
-              </a>{" "}
-              sit delectus fugiat.{" "}
-            </p>
-            <p>
-              Ea voluptas optio qui unde asperiores{" "}
-              <strong>Rem nihil ut sint quasi</strong> eum unde dolorem aut
-              aliquam architecto ut alias rerum. Est modi consequatur{" "}
-              <em>Eos sapiente</em> est recusandae consequatur sed voluptas
-              culpa.{" "}
-            </p>
-            <ol>
-              <li>
-                Sit consequatur minus ea soluta nobis vel quia quibusdam.{" "}
-              </li>
-              <li>
-                Quo blanditiis consequatur aut corporis quas aut impedit earum
-                33 soluta excepturi.{" "}
-              </li>
-              <li>
-                Aut perferendis excepturi aut ipsam temporibus id voluptates
-                quia et deserunt placeat.{" "}
-              </li>
-              <li>Et magni tenetur eos labore facere ut placeat autem! </li>
-              <li>
-                Aut corporis quos ut voluptatem voluptatem et amet magni id
-                doloribus voluptates.{" "}
-              </li>
-              <li>Et amet veritatis et tenetur sapiente. </li>
-            </ol>
-          </Col>
-        </Row>
-      </Container>
+      <>
+        <div id="grad1">
+        
+        <center>
+          <div className="ou1">
+          <h1>About Us</h1>
+          </div>
+          <div className="ou">
+        <p>Chameleon aims to utilise the Internet of Things (IoT), which is an ecosystem consisting of web-enabled smart devices such as phones, suburban traffic systems and domestic appliances, that all use embedded systems, such as processors, sensors, and communication hardware, to colect, send and act on data they acquire from their environments.</p>
+        
+          </div>
+          <button className="but">JOIN</button></center>
+          
+      </div>
+   
+      
+
+
+
+
+
+
+
+
+       
+
+      <div className="wrapper12">
+        <div className=" columns">
+          <div class="container horizontal flat column21 ">
+            <img className="img111" src={tit} alt="logo" />
+          </div>
+
+          <div className="ou2">
+          <div class="column21 flat ">
+            <div className="ou3"> Our Mission</div>
+            <div className="ou4">
+        <p>Chameleon aims to utilise the Internet of Things (IoT), which is an ecosystem consisting of web-enabled smart devices such as phones, suburban traffic systems and domestic appliances, that all use embedded systems, such as processors, sensors, and communication hardware, to colect, send and act on data they acquire from their environments.</p>
+        
+          </div>
+           
+            
+          </div>
+</div>
+          {/* <div className="c2">
+aaa
+</div> */}
+          
+        </div>
+      </div>
+
+     
+      <center>
+      <section class="main-section">
+          <div class="cardn1"><div className="divsno">
+          
+                <BsBuilding size={47} color="black" />
+              
+
+  </div><div class="cardn"></div></div>
+          <div class="cardn1"><div className="divsno">
+          <FaGlobeAmericas size={47} color="black" />
+  </div><div class="cardn"></div></div>
+          <div class="cardn1"><div className="divsno">
+          <BsFillBoxSeamFill size={47} color="black" />
+  </div><div class="cardn"></div></div>
+          <div class="cardn1"><div className="divsno">
+          <BsFillPeopleFill size={47} color="black" />
+  </div><div class="cardn"></div></div>
+  
+  
+</section> 
+</center>
+
+      
+<div class="card14 toggleable">
+	
+        <center><div className="divss">
+          
+          <GrPlayFill size={37} color="white"/>
+      </div></center>
+		
+</div>
+
+      </>
     );
   }
 }

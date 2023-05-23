@@ -1,55 +1,55 @@
 import './BottomBar.css';
 import Bottom_Logo from './images/Bottom_Logo.png'
-import GooglePlay from './images/GooglePlay.png'
-import AppStore from './images/AppStore.png'
+import GooglePlay from './images/GET_IT_ON.png'
+
 import Facebook from './images/Facebook.jpg'
 import Twitter from './images/Twitter.jpg'
 import IG from './images/INS.jpg'
 
 function Bottom() {
   return (
-    <div>
-      <div className='bottom'>
-        <div>
+    
 
-          <div>
-            <div className='Logo'>
-              <img src={Bottom_Logo} alt='Logo'></img>
-              <h5 className='Text_under_Logo'>Striving to Create a Smarter World</h5>
-            </div>
-
-            <div>
-              <h3 className='Bottom_icon'>Download our app here</h3>
-                <img src={GooglePlay} className='icon_design1' alt='GooglePlay Download icon'></img>             
-            </div>
-
-            <div>
-              <img src={AppStore} className='icon_design2' alt='GooglePlay Download icon'></img>
-              <h3 className='position2'>Find us on</h3>
-              <div className='rectangle'>
-                <img src={Facebook} className='Three_icon' alt='Facebook icon'></img>
-                <img src={Twitter} className='Three_icon' alt='Twitter icon'></img>
-                <img src={IG} className='Three_icon' alt='INS icon'></img>
-              </div>
-            </div>
-
-            <div className='position1'>
-                <h1 className='temp_position'>Contact Us</h1>
-                <h3 className='temp_position'>Tel: 03 5975 6586</h3>
-                <h3 className='temp_position'>Email: customer.service@chameleon.com.au</h3>
-
-                  <div className='text'>
-                    <h3 className='text_space1'>Privacy Notice</h3> <h3 className='text_space2'>About Us</h3>
-                  </div>  
-                <h3 className='position3'>©2013 Copyright reserved by Chameleon</h3> 
-              </div>
-          </div>
-
-
-        </div>
-                         
+    <div className="wrapper1">
+    <div className="m columns">
+      <div class="container horizontal flat column2">
+        <img className="img123" src={Bottom_Logo} alt="logo" />
       </div>
+
+      <div class="container1 horizontal flat column2">
+        <center>
+          <h4 className="w">Contact us</h4>
+          <p></p>
+          <div className="w">
+            <BsFillTelephoneFill /> 03 5975 6586
+          </div>
+          <br />
+          <div className="w">
+            <FaRegEnvelope size={27} /> customer.service@chameieon.com.au
+          </div>
+          <div className="flx w">
+            <p>Privacy Notice</p>
+            <p className="sp">About Us</p>
+          </div>
+          <div className="o w">2023 Copyrighty reserved by Chameleon</div>
+        </center>
+      </div>
+      <div class="container1 horizontal flat column2">
+        <div className="w j"> download our app here</div>
+        <img className="img1234" src={GooglePlay} alt="logo" />
+        <br />
+        <div className="w j"> find us on</div>
+        <div className="flx1">
+          <img className="img12345" src={Facebook} alt="logo" />
+          <img className="img12345" src={Twitter} alt="logo" />
+          <img className="img12345" src={IG} alt="logo" />
+        </div>
+      </div>
+
+      
+      
     </div>
+  </div>
   );
 }
 

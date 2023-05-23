@@ -9,13 +9,34 @@ function App() {
         <img src={Temp_Logo} className='img_to_circle'></img>
 
             <div class="font">
-              <a href="/Home">Home</a>
-              <a href="/Resources">Resources</a>
-              <a href="/Blog">Blog</a>
-              <a href="/Our_Services">Our Services</a>
-              <a href="/Portfolio">Portfolio</a>
-              <a href="/About Us">About Us</a>
-              <a href="/Login">Login</a>
+            <ul>
+        <li>
+          <img className="img" src={logo1} alt="logo" />
+        </li>
+        <li className="a">
+          <a href="#contact">Login</a>
+        </li>
+        <li className="a">
+          <a class="active" href="#about">
+            About Us
+          </a>
+        </li>
+        <li className="a">
+          <a href="#contact">Portfolio</a>
+        </li>
+        <li className="a">
+          <a href="#home">Oue Services</a>
+        </li>
+        <li className="a">
+          <a href="#news">Blog</a>
+        </li>
+        <li className="a">
+          <a href="#news">Resources</a>
+        </li>
+        <li className="a">
+          <a href="#news">Home</a>
+        </li>
+      </ul>
             </div>
       </div>
 

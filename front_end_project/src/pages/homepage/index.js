@@ -13,39 +13,8 @@ import { BrowserRouter } from 'react-router-dom';
 
 
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <div>
-//     <Header /> 
-
-//     <Welcome />
-    
-//     <Video />
-
-//     <Comment />
-
-//     <BottomBar />
-
-//   </div>
-// );
 
 
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <div>
-//     <Header /> 
-
-//     <Welcome />
-    
-//     <Video />
-
-//     <Comment />
-
-//     <BottomBar />
-
-//   </div>
-// );
 
 function Index() {
 

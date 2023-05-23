@@ -5,27 +5,27 @@ import Avatar3 from './images/avatar3.png'
 
 function Comments() {
     return(
-    <div>
-        <div className='Comment_rectangle'>
-            <p className='text_Comment'>Testimony</p>
-            <div className='Temp'>
-                <img src={Avatar1} className='Photo_size' alt='avatar1'></img>
-                <p>I like it.</p>
+        <div class="wrapper22">
+        <div class="carddd">
+          <h5>Testimoniols</h5>
+          <div className="ff">
+            <div className="ce">
+            <img className="user" src={Avatar1} alt="logo" />
+              <p className="c">Introduction to Chameleon lorem <br />lorem ipsum dolor sit amet </p>
+              
             </div>
-
-            <div className='Temp'>
-                <img src={Avatar2} className='Photo_size' alt='avatar2'></img>
-                <p>It is very good.</p>
+            <div className="ce">
+            <img className="user" src={Avatar2} alt="logo" />
+          <p className="c">Introduction to Chameleon lorem <br />lorem ipsum dolor sit amet </p>
             </div>
-
-            <div className='Temp'>
-                <img src={Avatar3} className='Photo_size' alt='avatar3'></img>
-                <p>This is useful.</p>
-            </div>
-            
-        </div>
-
+            <div className="ce">
+            <img className="user" src={Avatar3} alt="logo" />
+          <p className="c">Introduction to Chameleon lorem <br />lorem ipsum dolor sit amet </p>
     </div>
+          </div>
+		
+          
+          </div></div>
     );
 }
 

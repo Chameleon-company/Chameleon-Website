@@ -1,101 +1,102 @@
-
-
-.top{
-    color: black;
-    font-size: 60px;
-    position: relative;
-    padding-left: 35%;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+.pageHeading {
+  color: black;
+  font-size: 60px;
+  position: relative;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
 }
 
-.first{
-    background-color: #E4F0FF;
-    width: 1100px;
-    height: 300px;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-bottom: 5%;
-    border: 1px solid black;
-    margin-left: 2%;
+.pageSubHeading {
+  color: black;
+  font-size: 30px;
+  position: relative;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
 }
 
-.smart
-{
-    padding: 2%;
-    position: absolute;
+.iotRec {
+  background-color: #e4f0ff;
+  width: 800px;
+  height: 300px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+  border: 1px solid black;
+  margin-left: 200%;
 }
 
-.heading{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    position: absolute;
-    font-size: 12px;
-    padding-top: 2%;
-    padding-left: 50%;
-}
-.text4{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    position: absolute;
-    font-size: 14px;
-    padding-top: 8%;
-    padding-left: 38%;
-    padding-right: 38%;
+.iotImage {
+  padding: 3%;
+  position: absolute;
 }
 
-.textsmart{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    position: absolute;
-    font-size: 14px;
-    padding-top: 8%;
-    padding-left: 70%;
-    padding-right: 10%;
+.iotHeading {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  position: absolute;
+  padding-top: 5%;
+  padding-left: 48%;
 }
 
-
-.secondrec{
-    background-color: #E4F0FF;
-    width: 1100px;
-    height: 230px;
-    padding-top: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-bottom: 5%;
-    border: 1px solid black;
-    position: absolute;
-    margin-top: 30%;
+.iotPara {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  position: absolute;
+  font-size: 14px;
+  padding-top: 11%;
+  padding-left: 52%;
+  padding-right: 10%;
 }
 
-.tech
-{
-    padding: 2%;
-    position: absolute;
+.iotLearnMore {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  position: absolute;
+  font-size: 15px;
+  padding-top: 28%;
+  padding-left: 57%;
 }
 
-.heading2{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    position: absolute;
-    font-size: 12px;
-    padding-top: 2%;
-    padding-left: 50%;
+.statsRec {
+  background-color: #e4f0ff;
+  width: 800px;
+  height: 300px;
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+  border: 1px solid black;
+  position: absolute;
+  margin-top: 25%;
+  margin-left: 19%;
 }
 
-.techText{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    position: absolute;
-    font-size: 14px;
-    padding-top: 8%;
-    padding-left: 38%;
-    padding-right: 38%;
+.statsImage {
+  padding: 3%;
+  position: absolute;
 }
 
-.techText2{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    position: absolute;
-    font-size: 14px;
-    padding-top: 8%;
-    padding-left: 70%;
-    padding-right: 10%;
+.statsHeading {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  position: absolute;
+  padding-top: 5%;
+  padding-left: 52%;
+}
+
+.statsPara {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  position: absolute;
+  font-size: 14px;
+  padding-top: 11%;
+  padding-left: 52%;
+  padding-right: 10%;
+}
+
+.statsLearnMore {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  position: absolute;
+  font-size: 15px;
+  padding-top: 28%;
+  padding-left: 52%;
 }
 
 @media only screen and (orientation: portrait) {
-    /* styles for portrait orientation */
-    }
+  /* styles for portrait orientation */
+}

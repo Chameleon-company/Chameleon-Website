@@ -73,23 +73,11 @@ function Header() {
       </div>
       <div className={`navLinks ${drop && "drop"}`}> 
         <Nav.Link className="link" href="/">HOME<div className="space"></div></Nav.Link>
-        <Nav.Link className="link_portfolio" href="/portfolio">PORTFOLIO<div className="space"></div></Nav.Link>
-        <Nav.Link className="link" href="/blog">BLOG<div className="space"></div></Nav.Link>
-        <Nav.Link className="link" href="/newsletter">NEWSLETTERS<div className="space"></div></Nav.Link>
+        <Nav.Link className="link" href="/projects">PROJECTS<div className="space"></div></Nav.Link>
+        <Nav.Link className="link" href="/news">NEWS<div className="space"></div></Nav.Link>
+        <Nav.Link className="link" href="/about">ABOUT<div className="space"></div></Nav.Link>
         <Nav.Link className="link" href="/contact">CONTACT<div className="space"></div></Nav.Link>
-        <Nav.Link className="link" href="/about_us">ABOUT US<div className="space"></div></Nav.Link>
-        <Nav.Link className="link" href="/report">REPORT<div className="space"></div></Nav.Link>
-
-        {/*<NavLink className="link" to="/resource">RESOURCE<div className="space"></div></NavLink>*/}
-        
-        <div className="dropdown" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
-          <NavLink className="link" to="/resource">RESOURCE</NavLink>
-          <div className={`dropdown-content ${drop && "show"}`}>
-            <Nav.Link href="/events">Events Calendar</Nav.Link>
-            <Nav.Link href="/faq">FAQ</Nav.Link>
-            <Nav.Link href="/emerging-tech">Emerging Tech</Nav.Link>
-          </div>
-        </div>
+        <Nav.Link className="link" href="/support">SUPPORT<div className="space"></div></Nav.Link>
 
         <Nav.Link className="link_login" href="/login">
           <button className="loginButton">LOGIN</button>

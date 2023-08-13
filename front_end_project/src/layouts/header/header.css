@@ -3,13 +3,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #F5F5F5;;
-}
-
+    background-color: #000000;
 .brandLogo{
     width:6rem;
     height:6rem;
-    margin-left: 10rem; 
+    margin-left: 2rem; 
 }
 
 
@@ -27,8 +25,6 @@
 }
 */
 .navLinks {
-    margin-right: 0;
-    margin-right: 200px;
     display: flex;
     flex-direction: row;
     padding-left: 10px; /* 添加左侧内边距，调整文本与图片之间的间距 */
@@ -39,8 +35,8 @@
     padding: 0;
     margin: 1rem;
     text-decoration: none;
-    font-size: 1.1vw;
-    color: black;
+    font-size: 1.3vw;
+    color: rgb(255, 255, 255);
   }
 
   .link_portfolio{
@@ -262,4 +258,5 @@
         
     }
 
+}
 }

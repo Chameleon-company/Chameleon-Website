@@ -1,0 +1,21 @@
+.search-input-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    background-color: aliceblue;
+    border-radius: 4px;
+    padding: 6px;
+  }
+  
+  .search-icon {
+    padding: 4px;
+    color: #888;
+  }
+  
+  .search-input {
+    background-color: aliceblue;
+    border: none;
+    outline: none;
+    padding: 6px;
+    flex: 1;
+  }

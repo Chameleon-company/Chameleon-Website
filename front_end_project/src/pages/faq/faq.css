@@ -1,103 +1,145 @@
-
-/* .dark
-{
-    background-color: #242748;
-    cursor: pointer;
-} */
-
-/* .dark button
-{
-    background-color: #242748;
+.faq-container {
     display: flex;
-    position:absolute; left: 85%; top: 7%;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 15px;
-    cursor: pointer;
-} */
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
 
-.faqheading{
-    color: black;
-    font-size: 50px;
+.faq-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.faq-wrapper {
+    width: 75%;
+    display: flex;
+    flex-direction: row; /* Horizontal arrangement */
+    justify-content: space-around; /* Equally spaced arrangement */
+    flex-wrap: wrap; /* Automatic wrapping */
+}
+
+.faq-box {
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight:400;
-    position: relative;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.wrapper{
-    display:flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight:bold;
-    font-size: 12px;
-    margin: 2px;
-}
-
-.queries{
-    width: 900px;
-    position: relative;
-    justify-content: center;
-}
-
-.point{
-    background-color: #E4F0FF;
-    border: 4px;
-    padding: 10px 30px;
-    margin-bottom: 3%;
-    border: 1.3px solid #000000;
-}
-
-.title{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: calc(25% - 20px); /* One-fourth width for each box, considering margin */
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
     cursor: pointer;
-    position: relative;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight:bold;
+    transition: height 0.3s ease-in-out;
 }
 
-.faq{
-    max-height: 0;
+.faq-box.selected {
+    background-color: #E0E0E0; /* More prominent background color */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Add a slight shadow */
+    border: 2px solid #626262; /* Add a thin border */
+    color: #007bff;
+}
+
+.faq-row-divider {
+    flex-basis: 100%;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.question {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.answer-box {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 10px;
     overflow: hidden;
-    font-size: 13px;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
 }
 
-.faq.show{
-    height: auto;
-    max-height: 9999px;
-    font-size: 14px;
+.answer-typing {
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 1s steps(40, end);
 }
 
-.email
-{
-    font-size: 18px;
-    position: relative;
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
-.box input
-{
-    font-size: 18px;
-    position:absolute;
-    display: inline-block;
-    width: 40%;
-    height: 30%;
-    border: 1px solid black
+.visible {
+    max-height: 1000px; /* Maximum height when expanded to show content */
 }
 
-.send button
-{
-    background-color: #0E6700;
-    font-size: 18px;
+.answer-box {
+    display: flex;
+    justify-content: center;
+    width: 74%;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 10px;
+    overflow-y: auto;
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Opacity set to 0 */
+    transition: opacity 0.3s ease-in-out, visibility 0s linear; /* Remove delayed hiding */
+}
+
+.answer-box.visible {
+    visibility: visible; /* Show the answer box */
+    opacity: 1; /* Fully visible */
+    
+}
+
+.answer-content {
+    font-size: 16px;
+    padding: 20px;
+}
+
+/* Form styles */
+.send-question {
+    width: 74%;
+    height: 150px;
+    margin-top: 20px;
+}
+
+.send-question form {
+    display: flex;
+    flex-direction: column;
+}
+
+.send-question textarea {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.send-question button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #8EDB8F; /* Light green color */
     color: white;
-    position:absolute; bottom: -42%;
-    width: 20%;
-    height: 10%;
-    border-radius: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.send-question button:hover {
+    background-color: #5CAE5C; /* Dark green color on hover */
 }

@@ -11,7 +11,7 @@ import Resources from "./pages/resources/resources";
 // import Calendar from "./pages/calendar/calendar";
 import Calendar from "./components/calendar/calenderView";
 import Events from "./components/calendar/eventViewCard";
-import Main from "./pages/faq/main";
+import Main from "./pages/faq/faq";
 import Report from "./pages/report/report";
 import forgot from "./pages/forgot_password/forgot";
 import Login from "./pages/login/login";

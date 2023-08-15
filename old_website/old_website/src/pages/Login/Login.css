@@ -1,0 +1,103 @@
+.loginBox{
+    height: 90vh;
+    display:flex;
+    
+}
+
+.loginContainer{
+    width: 70vh;
+    height: 90vh;
+    background-color: #d6d6d6;
+    margin:auto auto;
+    text-align:center;
+    border-radius: 30px;
+    
+}
+
+.loginImg{
+    margin-top: 30px;
+    width: 100px;
+    height: 100px;
+}
+
+.loginDetails{
+    color:
+    #76ac4d;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.cred{
+    font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 0.8rem;
+	margin: 0 auto;
+  padding: 1.5rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 20vh;
+  height:1px;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+}
+
+.logBtn{
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #faad4a;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  height: 50px;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 14px 30px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  vertical-align: top;
+  white-space: nowrap;
+  margin-top:20px;
+}
+
+.logBtn:hover {
+  background-color: #1366d6;
+  box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.logBtn:hover:after {
+  opacity: .5;
+}
+
+.logBtn:active {
+  box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.logBtn:active:after {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .logBtn {
+    padding: 14px 22px;
+    width: 176px;
+  }
+}

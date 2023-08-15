@@ -1,0 +1,186 @@
+.center{
+    width: 50vw;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.top{
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0;
+    
+}
+.middle{
+    text-align:center;
+    font-size: 72px;
+    margin: 0;
+}
+
+
+.bottom{
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0;
+    text-align: right;
+}
+
+.blogCard{
+    width:80%;
+    height: fit-content;
+    display: flex;
+    justify-content:space-between;
+    flex:0 50% ;
+    margin-left: 5%;
+    flex-wrap: wrap; 
+    row-gap: 50px;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-right: 5%;
+    border-radius: 30px;
+  
+}
+.bgground {
+    background: #3a3838;
+}
+
+.blog {
+    background: #d0f294;
+    margin-left: 2%;
+    margin-right: 2%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    border-radius: 30px;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-right: 5%;
+    
+    /*background: #9acb48;*/
+  }
+
+
+
+.SeeMoreBtn{
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #a3a5a4;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  height: 50px;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 14px 30px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  vertical-align: top;
+  white-space: nowrap;
+  margin:1% 45% 1% ;
+  
+}
+.SeeMoreBtn:hover {
+  background-color: #7e65be;
+  box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.SeeMoreBtn:hover:after {
+  opacity: .5;
+}
+
+.SeeMoreBtn:active {
+  box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.SeeMoreBtn:active:after {
+  opacity: 1;
+}
+
+
+form {
+  color: rgb(0, 0, 0);
+  display: inline-block;
+  
+  padding: 2px;
+  border: 2px solid currentColor;
+  border-radius: 5px;
+  margin-top: 1%;
+}
+
+
+input[type="search"] {
+  border: none;
+  background: transparent;
+  margin: 0;
+  padding: 7px 8px;
+  font-size: 14px;
+  color: inherit;
+  border: 1px solid transparent;
+  border-radius: inherit;
+}
+
+input[type="search"]::placeholder {
+  color: rgb(0, 0, 0);
+}
+
+button[type="submit"] {
+  text-indent: -999px;
+  overflow: hidden;
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+button[type="submit"]:hover {
+  opacity: 1;
+}
+
+
+button[type="submit"]:focus,input[type="search"]:focus {
+  box-shadow: 0 0 3px 0 #1183d6;
+  border-color: #1183d6;
+  outline: none;
+  }
+
+
+.searchalign{
+    display: block;
+    text-align: center;
+
+}
+
+
+
+@media (max-width: 501px) 
+{
+
+    .blogCard{
+      flex-direction: column;
+      
+    
+  }
+}

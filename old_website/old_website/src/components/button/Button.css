@@ -1,0 +1,13 @@
+.globalBtn{
+    background-color:#faad4a;
+    color: azure;
+    width:fit-content;
+    height:2.3rem;
+    border-radius: 5rem;
+    font-size:1vw;
+    border: none;
+}
+
+.globalBtn:hover{
+    background-color:#76ac4d;
+}

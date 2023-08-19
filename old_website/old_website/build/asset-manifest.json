@@ -1,0 +1,56 @@
+{
+  "files": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+    "main.css": "/static/css/main.d9230b8a.css",
+    "main.js": "/static/js/main.ac81cc7b.js",
+=======
+    "main.css": "/static/css/main.c781a8e5.css",
+    "main.js": "/static/js/main.bfdaa2f9.js",
+>>>>>>> master
+=======
+    "main.css": "/static/css/main.c781a8e5.css",
+    "main.js": "/static/js/main.bfdaa2f9.js",
+>>>>>>> master
+    "static/media/ev-charger.jpg": "/static/media/ev-charger.9ab96de858c45773b785.jpg",
+    "static/media/chameleon-web.jpg": "/static/media/chameleon-web.c02d1c758caa4989c54c.jpg",
+    "static/media/smart-data.jpg": "/static/media/smart-data.96dab1dc09acd38b438c.jpg",
+    "static/media/smart-city.jpg": "/static/media/smart-city.959adc4c9c2b36e95ced.jpg",
+    "static/media/suburb.jpg": "/static/media/suburb.038a523a344bdc2c8c7c.jpg",
+    "static/media/ev.jpg": "/static/media/ev.7f156b6434919f81533b.jpg",
+    "static/media/melbourne.jpg": "/static/media/melbourne.87d32c7f0f40055d0497.jpg",
+    "static/media/services1.png": "/static/media/services1.2cf9f6ed09eebe0a5daa.png",
+    "static/media/services2.png": "/static/media/services2.a76a0eaa5b7e0c546070.png",
+    "static/media/services4.png": "/static/media/services4.4779a9369b75dc7b7f50.png",
+    "static/media/services3.png": "/static/media/services3.65dfa78ff6c6d384a3e6.png",
+    "static/media/heroImg.jpg": "/static/media/heroImg.10bf6ac0c6b8950a468d.jpg",
+    "static/media/brandLogo.png": "/static/media/brandLogo.5b6c31f47ee64c5d6ecb.png",
+    "static/media/globe.png": "/static/media/globe.deebb46b3abb932f341a.png",
+    "static/media/logo_homefooter.png": "/static/media/logo_homefooter.63743da2c8bf86136f9b.png",
+    "index.html": "/index.html",
+<<<<<<< HEAD
+<<<<<<< HEAD
+    "main.d9230b8a.css.map": "/static/css/main.d9230b8a.css.map",
+    "main.ac81cc7b.js.map": "/static/js/main.ac81cc7b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d9230b8a.css",
+    "static/js/main.ac81cc7b.js"
+=======
+    "main.c781a8e5.css.map": "/static/css/main.c781a8e5.css.map",
+    "main.bfdaa2f9.js.map": "/static/js/main.bfdaa2f9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c781a8e5.css",
+    "static/js/main.bfdaa2f9.js"
+>>>>>>> master
+=======
+    "main.c781a8e5.css.map": "/static/css/main.c781a8e5.css.map",
+    "main.bfdaa2f9.js.map": "/static/js/main.bfdaa2f9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c781a8e5.css",
+    "static/js/main.bfdaa2f9.js"
+>>>>>>> master
+  ]
+}

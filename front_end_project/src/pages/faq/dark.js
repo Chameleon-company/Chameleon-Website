@@ -1,41 +1,45 @@
-import { Row, Col } from "react-bootstrap";
-import React, { useState, toggle, button, useEffect, useLayoutEffect } from "react";
-import './darkMode.css'
+import { Row, Col } from 'react-bootstrap';
+import React, {
+  useState,
+  toggle,
+  button,
+  useEffect,
+  useLayoutEffect,
+} from 'react';
+import './darkMode.css';
 
 function DarkMode() {
-
   /* toggle function to set function for choosing 
   or not choosing the + button to expand query */
-  const [choose, setChoose] = useState(null)
+  const [choose, setChoose] = useState(null);
 
   // toggle function for + or - for query minimise or expand
   const toggle = (i) => {
     // if + is chosen, + = i
     if (choose == i) {
-      return setChoose(null)
+      return setChoose(null);
     }
-    setChoose(i)
-  }
+    setChoose(i);
+  };
 
   return (
     <div className="bg">
       <Row>
-        <div className="faqheadingmode">
-          Frequently Asked Questions
-        </div>
+        <div className="faqheadingmode">Frequently Asked Questions</div>
         <Col xs={12}>
           <div className="wrappermode">
-
             <div className="queriesmode">
               {/* mapping data to the FAQ questions */}
               {data.map((point, i) => (
-                <div className="pointmode">
+                <div className="pointmode" key={i}>
                   {/* toggle function for choosing either + or - */}
-                  <div className="titlemode" onClick={() => toggle(i)} >
+                  <div className="titlemode" onClick={() => toggle(i)}>
                     <h2>{point.question}</h2>
                     <span>{choose === i ? '-' : '+'}</span>
                   </div>
-                  <div className={choose === i ? 'faq show' : 'faq'}>{point.answer}</div>
+                  <div className={choose === i ? 'faq show' : 'faq'}>
+                    {point.answer}
+                  </div>
                 </div>
               ))}
               <div className="emailmode">
@@ -56,9 +60,9 @@ function DarkMode() {
             </div>
           </div>
         </Col>
-      </Row >
+      </Row>
     </div>
-  )
+  );
 }
 
 // questions to put in FAQ page
@@ -66,23 +70,23 @@ const data = [
   {
     question: 'What is Chameleon?',
     answer:
-      '"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto iusto veniam eveniet labore impedit nam"'
+      '"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto iusto veniam eveniet labore impedit nam"',
   },
   {
     question: 'What projects does Chameleon have?',
     answer:
-      '"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto iusto veniam eveniet labore impedit nam"'
+      '"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto iusto veniam eveniet labore impedit nam"',
   },
   {
     question: 'Membership',
     answer:
-      '"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto iusto veniam eveniet labore impedit nam"'
+      '"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto iusto veniam eveniet labore impedit nam"',
   },
   {
     question: 'How do I contact Chameleon?',
     answer:
-      '"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto iusto veniam eveniet labore impedit nam"'
-  }
-]
+      '"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto iusto veniam eveniet labore impedit nam"',
+  },
+];
 
 export default DarkMode;

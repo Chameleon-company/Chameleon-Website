@@ -8,6 +8,9 @@ import Portfolio from "./pages/portfolio/portfolio";
 import Newsletter from "./pages/newsletter/newsletter";
 import Contact from "./pages/contact/contact";
 import Resources from "./pages/resources/resources";
+import IotTechnologies from "./pages/resources/iotTechnologies";
+import IotStatistics from "./pages/resources/iotStatistics";
+import IotUpdates from "./pages/resources/iotUpdates";
 // import Calendar from "./pages/calendar/calendar";
 import Calendar from "./components/calendar/calenderView";
 import Events from "./components/calendar/eventViewCard";
@@ -36,7 +39,10 @@ function App() {
               <Route path="/portfolio" component={Portfolio} />
               <Route path="/report" component={Report} />  
               <Route path="/contact" component={Contact} />
-              <Route path="/emerging-tech" component={Resources} />
+              <Route path="/what-is-iot" component={Resources} />
+              <Route path="/iotTechnologies" component={IotTechnologies} />
+              <Route path="/iotStatistics" component={IotStatistics} />
+              <Route path="/iotUpdates" component={IotUpdates} />
               <Route path="/events" component={Calendar} />
               <Route path="/events" component={Events} />
               <Route path="/faq" component={Main} />  

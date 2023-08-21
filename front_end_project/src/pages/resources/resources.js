@@ -13,9 +13,7 @@ class Resources extends Component {
           <div className="pageHeading">What Is IoT Technology?</div>
 
           <div className="pageSubHeading">
-            <p>
-              <p>An Introduction To Internet Of Things</p>
-            </p>
+            <p>An Introduction To Internet Of Things</p>
           </div>
 
           {/* <Col xs={12}> */}
@@ -39,7 +37,9 @@ class Resources extends Component {
               </div>
 
               <div className="iotLearnMore">
-                <a href="">Click here to learn more about IoT</a>
+                <a href="/iotTechnologies">
+                  Click here to learn more about IoT
+                </a>
               </div>
 
               <div className="iotPara">
@@ -74,7 +74,7 @@ class Resources extends Component {
               </div>
 
               <div className="statsLearnMore">
-                <a href="">
+                <a href="/iotStatistics">
                   Click here to learn more about IoT Stats in Australia
                 </a>
               </div>
@@ -90,7 +90,7 @@ class Resources extends Component {
               </div>
             </Rectangle>
           </div>
-          <div></div>
+
           {/* </Col> */}
         </Row>
       </Container>

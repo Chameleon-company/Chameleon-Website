@@ -85,7 +85,8 @@ function Header() {
         <div className="dropdown" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
           <NavLink className="link" to="/resource">RESOURCES</NavLink>
           <div className={`dropdown-content ${drop && "show"}`}>
-            <Nav.Link href="/emerging-tech">What Is IoT?</Nav.Link>
+            <Nav.Link href="/what-is-iot">What Is IoT?</Nav.Link>
+            <Nav.Link href="/iotUpdates">Latest IoT Updates</Nav.Link>
             <Nav.Link href="/events">Events Calendar</Nav.Link>
             <Nav.Link href="/faq">FAQ</Nav.Link>
           </div>

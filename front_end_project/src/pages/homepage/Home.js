@@ -3,14 +3,9 @@ import ChameleonLogo from "./images/Chameleon_Figma.png"
 import './Home.css'
 import ProjectLogo1 from '../../assets/middle_card_img.jpeg'
 import ProjectItem from './ProjectItem';
-import ChatWidget from './ChatWidget';
 import 'react-chat-widget/lib/styles.css';
 
 export default function Home() {
-  const handleNewUserMessage = (newMessage) => {
-    console.log(`New message incoming! ${newMessage}`);
-    // Now send the message throught the backend API
-  };
   return (
     <div className='home-container'>
       <div className='row-container'>
@@ -36,7 +31,6 @@ export default function Home() {
           <ProjectItem projectDescription={"Website Uplift"} projectImage={ProjectLogo1} />
         </div>
       </div>
-      <ChatWidget/>
     </div>
   );
 }

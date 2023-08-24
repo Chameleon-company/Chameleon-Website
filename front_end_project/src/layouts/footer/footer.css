@@ -1,23 +1,31 @@
 .footer {
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 6px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: #000000;
 }
 
 .footer .footer-row-container {
   display: flex;
+  flex: 1 0;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .footer p {
   color: white;
+  text-align: center;
 }
 
 .footer .brand-logo-container {
-  max-width: 120px;
-  max-height: 120px;
+  height: 140px;
+}
+
+.footer .sponsor-logo-container {
+  display: flex;
+  flex: 1 0;
+  justify-content: flex-end;
 }
 
 .footer .center-text {
@@ -25,77 +33,42 @@
   color: white;
 }
 
+.center-text-title {
+  text-align: center;
+  padding-bottom: 10px;
+  color: white;
+}
+
 .footer .column-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .footer .column-container-center {
+  flex: 1 0;
   flex-direction: column;
   justify-content: center;
-  flex: 0;
   display: flex;
+}
+
+.footer .icon-container {
+  padding: 0.6vw;
+  max-width: 4.7vw;
+  max-height: 4.7vw;
 }
 
 .footer .icons-container {
-  padding: 10px;
-  max-width: 70px;
-  max-height: 70px;
-}
-
-/* .footer {
-  background-color: #333333;
-  color: #ffffff;
-  padding: 200px;
-  margin-top: 20px;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  box-sizing: border-box;
+  padding-bottom: 16px;
 }
 
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+@media (max-width: 700px) {
+  .footer {
+    flex-direction: column;
+  }
 
-.footer h5 {
-  margin-bottom: 5px;
+  .footer .sponsor-logo-container {
+    justify-content:center;
+  }
 }
-
-.footer form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.footer input {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 5px;
-  width: 200px;
-  margin-right: 10px;
-}
-
-.footer button {
-  background-color: #FF8D24;
-  color: white;
-  border: black;
-  padding: 5px 10px;
-  border-radius: 4px;
-}
-
-.footer button:hover {
-  cursor: pointer;
-}
-
-.footer .input-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.image-col img {
-  width: 20px;
-  height: auto;
-} */

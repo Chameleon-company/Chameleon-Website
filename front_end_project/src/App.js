@@ -2,7 +2,7 @@ import Header from "./layouts/header/header";
 import Footer from "./layouts/footer/footer";
 // import Home from "./pages/home/home";
 import Helloo from "./pages/hello/hello";
-import About from "./pages/about/about";
+import aboutUs from "./pages/about";
 import Blog from "./pages/blog/blog";
 import Portfolio from "./pages/portfolio/portfolio";
 import Newsletter from "./pages/newsletter/newsletter";
@@ -33,7 +33,7 @@ function App() {
               <Route exact path="/" component={Homepage} />
               <Route exact path="/home" component={Homepage} />
               <Route path="/hello" component={Helloo} />
-              <Route path="/about_us" component={About} />
+              <Route path="/about_us" component={aboutUs} />
               <Route path="/blog" component={Blog} />
               <Route path="/newsletter" component={Newsletter} />
               <Route path="/portfolio" component={Portfolio} />

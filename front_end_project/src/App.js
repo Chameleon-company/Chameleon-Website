@@ -2,7 +2,7 @@ import Header from "./layouts/header/header";
 import Footer from "./layouts/footer/footer";
 // import Home from "./pages/home/home";
 import Helloo from "./pages/hello/hello";
-import aboutUs from "./pages/about";
+import aboutUs from "./pages/about/aboutUs";
 import Blog from "./pages/blog/blog";
 import Portfolio from "./pages/portfolio/portfolio";
 import Newsletter from "./pages/newsletter/newsletter";
@@ -11,9 +11,6 @@ import Resources from "./pages/resources/resources";
 import IotTechnologies from "./pages/resources/iotTechnologies";
 import IotStatistics from "./pages/resources/iotStatistics";
 import IotUpdates from "./pages/resources/iotUpdates";
-// import Calendar from "./pages/calendar/calendar";
-import Calendar from "./components/calendar/calenderView";
-import Events from "./components/calendar/eventViewCard";
 import Main from "./pages/faq/main";
 import Report from "./pages/report/report";
 import forgot from "./pages/forgot_password/forgot";
@@ -43,8 +40,6 @@ function App() {
               <Route path="/iotTechnologies" component={IotTechnologies} />
               <Route path="/iotStatistics" component={IotStatistics} />
               <Route path="/iotUpdates" component={IotUpdates} />
-              <Route path="/events" component={Calendar} />
-              <Route path="/events" component={Events} />
               <Route path="/faq" component={Main} />  
               <Route path="/forgot" component={forgot} />
               <Route path="/login" component={Login} />  

@@ -87,8 +87,6 @@ function Header() {
           <div className={`dropdown-content ${drop && "show"}`}>
             <Nav.Link href="/what-is-iot">What Is IoT?</Nav.Link>
             <Nav.Link href="/iotUpdates">Latest IoT Updates</Nav.Link>
-            <Nav.Link href="/events">Events Calendar</Nav.Link>
-            <Nav.Link href="/faq">FAQ</Nav.Link>
           </div>
         </div>
 

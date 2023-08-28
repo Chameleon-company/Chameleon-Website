@@ -1,51 +1,40 @@
-import { Container, Row, Col } from 'react-bootstrap';
-import React, { Component } from 'react';
-import Rectangle from 'react-rectangle';
-import './resources.css';
-import tech from './images/tech.png';
+import { Container, Row, Col } from "react-bootstrap";
+import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class IotStatistics extends Component {
   render() {
     return (
-      <Container>
-        <Row>
-          <div className="pageHeading">
-            Internet of Things Statistics in Australia
-          </div>
+      <>
+        <Container>
+          <h1 class="text-center pb-3">STATISTICS</h1>
+        </Container>
 
-          <div className="pageSubHeading">
-            <p>What are the trends for Internet of Things use in Australia?</p>
-          </div>
-
-          {/* <Col xs={12}> */}
-          <div className="rectangle">
-            <Rectangle className="iotRec">
-              <div style={{ background: '#E4F0FF' }} />
-
-              {/* image */}
-              <div className="iotImage">
-                <img src={tech} width="300" height="250" alt="City view"></img>
-              </div>
-              {/* text */}
-
-              <div className="iotHeading">
-                <h3>Internet of Things Statistics</h3>
-              </div>
-
-              <div className="iotPara">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Pellentesque odio diam, molestie eu purus vel, consectetur
-                  dapibus turpis. Fusce non sapien at ipsum scelerisque
-                  consequat. Ut vitae quam ultricies, mattis massa tempus,
-                  malesuada ligula. Pellentesque laoreet.
-                </p>
-              </div>
-            </Rectangle>
-          </div>
-          {/* </Col> */}
-        </Row>
-      </Container>
+        <Container style={{ backgroundColor: "#D1E2C4", maxWidth: 1000 }}>
+          <h2 class="text-center text-black fw-bold pt-3">
+            IoT Statistics in Australia
+          </h2>
+          <Row>
+            <Col>
+              <p class="text-black text-start pb-3 pt-3 fw-normal fs-4">
+                By 2028, the Australian IoT market is projected to have
+                increased from US$15.46 billion to US$27.13 billion. The largest
+                IoT market in Australia is the automotive industry, followed by
+                the industrial and retail sectors. In Australia, there will be
+                16.7 million linked IoT devices by 2022. By 2028, Australia is
+                projected to have 28.9 million linked IoT devices. IoT devices
+                are connected to 10 ordinary Australian homes. Smart speakers,
+                smart thermostats, and smart security cameras are the most
+                widely used IoT devices in Australia. The adoption of Industry
+                4.0 technologies, the rise of the Internet of Vehicles (IAV),
+                and the desire for smart city solutions are what are driving the
+                IoT market in Australia.
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </>
     );
   }
 }

@@ -2,14 +2,11 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
 import logo from "./assets/ChameleonLogo.png";
 import connected from "./assets/connected.png";
 import environment from "./assets/environment.png";
 import partner from "./assets/partner.png";
 import support from "./assets/support.png";
-import Nav from "react-bootstrap/Nav";
-import profileImage from "./assets/account.jpg";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
@@ -22,56 +19,6 @@ class aboutUs extends Component {
   render() {
     return (
       <>
-        <Navbar className="bg-dark">
-          <Container>
-            <Navbar.Brand href="#home">
-              <img
-                src={logo}
-                width="65"
-                height="55"
-                className="d-inline-block align-top"
-                alt="Chameleon logo"
-              />
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="ms-auto">
-                <Nav.Link href="#features" className="text-white">
-                  HOME
-                </Nav.Link>
-                <Nav.Link href="#pricing" className="text-white">
-                  PROJECTS
-                </Nav.Link>
-                <Nav.Link href="#features" className="text-white">
-                  NEWS
-                </Nav.Link>
-                <Nav.Link href="#pricing" className="text-white">
-                  ABOUT
-                </Nav.Link>
-                <Nav.Link href="#features" className="text-white">
-                  CONTACT
-                </Nav.Link>
-                <Nav.Link href="#pricing" className="text-white">
-                  SUPPORT
-                </Nav.Link>
-                <InputGroup className="my-0 mx-2">
-                  <Form.Control
-                    aria-label="Search Here"
-                    aria-describedby="search bar"
-                  />
-                </InputGroup>
-                <img
-                  src={profileImage}
-                  className="rounded-circle my-0 mx-2"
-                  alt="Profile Pic"
-                  height="50"
-                  width="40"
-                />
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
-
         <br></br>
 
         {/*BREADCRUMB SECTION */}

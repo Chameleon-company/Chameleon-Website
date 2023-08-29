@@ -1,10 +1,10 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import React, { Component } from 'react';
 import PortfolioCard from '../../components/portfolio_card/porfolio_card';
-import './portfolio.css';
+import './projects.css';
 
 
-class Portfolio extends Component {
+class Projects extends Component {
   render() {
     const handleButtonClick = () => {
       console.log('Button clicked!');
@@ -117,4 +117,4 @@ class Portfolio extends Component {
   }
 }
 
-export default Portfolio;
+export default Projects;

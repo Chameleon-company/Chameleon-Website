@@ -3,7 +3,7 @@ import './Navbar.css';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineClose } from 'react-icons/md';
 import { Nav } from 'react-bootstrap';
-import Logo from './images/logo.png';
+import Logo from '../../pages/homepage/images/logo.png';
 import { SearchBar } from "./search_bar/SearchBar";
 
 function Navbar() {
@@ -12,7 +12,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className='navbar'>
+      <nav className='main-navbar'>
         <div className="brand-logo">
           <img src={Logo} alt='Brand Logo' />
         </div>
@@ -23,12 +23,12 @@ function Navbar() {
           <div className="search-bar-mobile">
             <SearchBar />
           </div>
-          <Nav.Link className="nav-item nav-links" href="/">HOME</Nav.Link>
-          <Nav.Link className="nav-item nav-links" href="/projects">PROJECTS</Nav.Link>
-          <Nav.Link className="nav-item nav-links" href="/news">NEWS</Nav.Link>
-          <Nav.Link className="nav-item nav-links" href="/about">ABOUT</Nav.Link>
-          <Nav.Link className="nav-item nav-links" href="/contact">CONTACT</Nav.Link>
-          <Nav.Link className="nav-item nav-links" href="/support">SUPPORT</Nav.Link>
+          <div className="nav-item nav-links"><Nav.Link href="/">HOME</Nav.Link></div>
+          <div className="nav-item nav-links"><Nav.Link href="/projects">PROJECTS</Nav.Link></div>
+          <div className="nav-item nav-links"><Nav.Link href="/news">NEWS</Nav.Link></div>
+          <div className="nav-item nav-links"><Nav.Link href="/about">ABOUT</Nav.Link></div>
+          <div className="nav-item nav-links"><Nav.Link href="/contact">CONTACT</Nav.Link></div>
+          <div className="nav-item nav-links"><Nav.Link href="/support">SUPPORT</Nav.Link></div>
           <div className="search-bar">
             <SearchBar />
           </div>

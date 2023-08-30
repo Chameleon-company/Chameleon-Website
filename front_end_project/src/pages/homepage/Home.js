@@ -3,7 +3,7 @@ import ChameleonLogo from "./images/Chameleon_Figma.png"
 import './Home.css'
 import ProjectLogo1 from '../../assets/middle_card_img.jpeg'
 import ProjectItem from './ProjectItem';
-import 'react-chat-widget/lib/styles.css';
+// import 'react-chat-widget/lib/styles.css';
 
 export default function Home() {
   return (

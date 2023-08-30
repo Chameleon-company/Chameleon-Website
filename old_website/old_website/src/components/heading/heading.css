@@ -1,0 +1,34 @@
+
+
+.globalHeading{
+    font-family:sans-serif;
+    padding:0;
+    text-align: center;
+    font-size:30px;
+    max-width:600px;
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.globalHeading:before {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 2px;
+    background: green;
+    left: 0;
+    top: 50%;
+    position: absolute;
+  }
+
+  .globalHeading:after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 2px;
+    background: green;
+    right: 0;
+    top: 50%;
+    position: absolute;
+  }

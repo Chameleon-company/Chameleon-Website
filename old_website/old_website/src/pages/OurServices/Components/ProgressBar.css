@@ -1,0 +1,48 @@
+.progressBar_pageAlignment {
+    display: flex;
+    justify-content: center;
+    height:100vh;  
+}
+
+/* used to group progress bar, title and percentage into one div */
+.progressBar_group {
+display: flex;
+flex-direction: column;
+text-align: center;
+padding: 50px;
+width: 160px;
+height: 150px;
+}
+
+/* creates light greeb circle/background underneath the progressBar */
+.progressBar_circleBar {
+display: inline-flex;
+flex-direction:column;
+
+width: 150px;
+height: 150px;
+padding: 0px;
+border-radius: 50%;
+background-color: #8dbb80;
+
+}
+
+/* replacement for projectBars inbuilt percentage figure due to difficulties in formatting it */
+.progressBar_percentage {
+display: inline-flexbox;
+width: 150px;
+height: 150px;
+
+text-align: center;
+margin-top: -71%;
+
+font-size: 2.5em;
+font-weight: bold;
+}
+
+.servicesCard{
+    width:90%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}

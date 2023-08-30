@@ -21,7 +21,6 @@ function Faq() {
 
   return (
     <Row>
-
       <div className="faqheading">
         Frequently Asked Questions
       </div>

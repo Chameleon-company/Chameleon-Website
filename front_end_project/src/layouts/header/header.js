@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./images/Logo Hi-Res.png";
+import logo from "./images/Logo_No_Background.png";
 import profile from "./images/profile.jpg";
 import { Nav, Navbar, Container, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";

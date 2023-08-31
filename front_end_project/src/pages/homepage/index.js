@@ -1,73 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Container, Row, Col } from 'react-bootstrap';
+import './index.css';
 
-import Header from './Header';
-import Header_White from './header_white';
+import Header from './layouts/header/header.js';
+import Footer from './layouts/footer/footer.js';
+import Homepage from './Homepage.js';
 
-import Welcome from './Welcome'
-import Video from './Video'
-import Comment from './Comments'
-import BottomBar from './BottomBar';
-import { BrowserRouter } from 'react-router-dom';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <Header/>
 
-
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <div>
-//     <Header /> 
-
-//     <Welcome />
+    <Homepage />
     
-//     <Video />
-
-//     <Comment />
-
-//     <BottomBar />
-
-//   </div>
-// );
-
-
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <div>
-//     <Header /> 
-
-//     <Welcome />
-    
-//     <Video />
-
-//     <Comment />
-
-//     <BottomBar />
-
-//   </div>
-// );
-
-function Index() {
-
-      const root = ReactDOM.createRoot(document.getElementById('root'));
-      root.render(
-        <div>
-
-          <BrowserRouter>
-            <Header_White /> 
-          </BrowserRouter>
-      
-          <Welcome />
-          
-          <Video />
-      
-          <Comment />
-      
-          <BottomBar />
-
-        </div>
-      );
-}
-
-
-export default Index;
+    <Footer/>
+  </React.StrictMode>
+);

@@ -16,6 +16,7 @@ import Report from "./pages/report/report";
 import forgot from "./pages/forgot_password/forgot";
 import Login from "./pages/login/login";
 import Signup from "./pages/signup/signup";
+import FooterComponent from "./components/shared/FooterComponent";
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -45,7 +46,7 @@ function App() {
               <Route path="/signup" component={Signup} />  
             </Switch>
           </main>
-          {/* <Footer/> */}
+          <FooterComponent/>
         </Router>
     </>
   );

@@ -1,0 +1,23 @@
+[
+  {
+    "img": "/Footer/insta.png",
+    "alt": "Chamelon Instagarm",
+    "link": "www.instagram.com"
+  },
+  {
+    "img": "/Footer/facebook.png",
+    "alt": "Chamelon Facebook",
+    "link": "www.facebook.com"
+  },
+
+  {
+    "img": "/Footer/twitter.png",
+    "alt": "Chamelon Twitter",
+    "link": "www.twitter.com"
+  },
+  {
+    "img": "/Footer/Mail.png",
+    "alt": "Chamelon Mail",
+    "link": "www.gmail.com"
+  }
+]

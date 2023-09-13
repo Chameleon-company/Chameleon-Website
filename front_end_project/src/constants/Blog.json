@@ -1,0 +1,42 @@
+{
+  "news": [
+    {
+      "title": "title",
+      "shortInfo": "Add opening sentence followed by ellipses...",
+      "date": "8 Auguest, 2023",
+      "img": "/Blogs/N1.jpeg"
+    },
+    {
+      "title": "title",
+      "shortInfo": "Add opening sentence followed by ellipses...",
+      "date": "8 Auguest, 2023",
+      "img": "/Blogs/nn2.webp"
+    },
+    {
+      "title": "title",
+      "shortInfo": "Add opening sentence followed by ellipses...",
+      "date": "8 Auguest, 2023",
+      "img": "/Blogs/n3.webp"
+    }
+  ],
+  "stories": [
+    {
+      "title": "title",
+      "shortInfo": "Add opening sentence followed by ellipses...",
+      "date": "8 Auguest, 2023",
+      "img": "/Blogs/S0.avif"
+    },
+    {
+      "title": "title",
+      "shortInfo": "Add opening sentence followed by ellipses...",
+      "date": "8 Auguest, 2023",
+      "img": "/Blogs/S1.jpg"
+    },
+    {
+      "title": "title",
+      "shortInfo": "Add opening sentence followed by ellipses...",
+      "date": "8 Auguest, 2023",
+      "img": "/Blogs/S2.jpeg"
+    }
+  ]
+}

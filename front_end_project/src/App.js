@@ -2,7 +2,7 @@ import Header from "./layouts/header/header";
 import Footer from "./layouts/footer/footer";
 // import Home from "./pages/home/home";
 import Helloo from "./pages/hello/hello";
-import aboutUs from "./pages/about";
+import aboutUs from "./pages/about/aboutUs";
 import Blog from "./pages/blog/blog";
 import Portfolio from "./pages/portfolio/portfolio";
 import Newsletter from "./pages/newsletter/newsletter";

@@ -1,4 +1,4 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Carousel, Button } from 'react-bootstrap';
 import React, { Component } from 'react';
 import PortfolioCard from '../../components/portfolio_card/porfolio_card';
 import './projects.css';
@@ -9,34 +9,65 @@ class Projects extends Component {
     const handleButtonClick = () => {
       console.log('Button clicked!');
     };
+
+    // Define the text and button information for each carousel slide.
+    const carouselItems = [
+      {
+        imageUrl: require('./image/EV.png'),
+        caption: 'EV Adoption Tools',
+        url: '#',
+      },
+      {
+        imageUrl: require('./image/Website.png'),
+        caption: 'Chameleon Websit',
+        url: '#',
+      },
+      {
+        imageUrl: require('./image/City.png'),
+        caption: 'City of Melbourne Open Data',
+        url: '#',
+      },
+    ];
+
     return (
-      <Container>
+      <Container fluid>
+        <Carousel style={{height: '600px'}}>
+          {carouselItems.map((item, index) => (
+            <Carousel.Item key={index}>
+              <img
+                className="d-block w-100"
+                src={item.imageUrl}
+                alt={`Slide ${index + 1}`}
+                style={{height: '600px'}}
+              />
+              <div className="carousel-caption ml-auto">
+                <p>{item.caption}</p>
+                <Button
+                  variant="primary"
+                  onClick={() => handleButtonClick(item.url)}
+                >
+                  LEARN MORE
+                </Button>
+              </div>
+            </Carousel.Item>
+          ))}
+        </Carousel>
         <Row>
-          <Col xs={6} className="image-col">
+          <Col xs={6} className="image-col" style={{padding:'0px'}}>
             <img
               alt="chutiya"
-              src={require('../../assets/imgg_29.jpeg')}
+              src={require('./image/EV.png')}
               className="img-fluid"
             />
           </Col>
-          <Col xs={6}>
+          <Col xs={6}  style={{padding:'0px'}}>
             <div className="card-col">
               <PortfolioCard
-                title="PROJECT 1"
+                title="EV Adoption Tools"
                 body={
                   <>
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book. It has survived not only five
-                      centuries, but also the leap into electronic typesetting,
-                      remaining essentially unchanged. It was popularised in the
-                      1960s with the release of Letraset sheets containing Lorem
-                      Ipsum passages, and more recently with desktop publishing
-                      software like Aldus PageMaker including versions of Lorem
-                      Ipsum.
+                    This text is a placeholder for a blurb on the EV Adoption Tools Project.
                     </p>
                   </>
                 }
@@ -46,24 +77,14 @@ class Projects extends Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={6}>
+          <Col xs={6}  style={{padding:'0px'}}>
             <div>
               <PortfolioCard
-                title="PROJECT 2"
+                title="Chameleon Website"
                 body={
                   <>
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book. It has survived not only five
-                      centuries, but also the leap into electronic typesetting,
-                      remaining essentially unchanged. It was popularised in the
-                      1960s with the release of Letraset sheets containing Lorem
-                      Ipsum passages, and more recently with desktop publishing
-                      software like Aldus PageMaker including versions of Lorem
-                      Ipsum.
+                      This text is a placeholder for a blurb on the Chameleon Website Project.
                     </p>
                   </>
                 }
@@ -72,38 +93,28 @@ class Projects extends Component {
               />
             </div>
           </Col>
-          <Col xs={6}>
+          <Col xs={6} className="image-col"  style={{padding:'0px'}}>
             <img
               alt="chutiya"
-              src={require('../../assets/last_card_img.jpeg')}
+              src={require('./image/Website.png')}
             />
           </Col>
         </Row>
         <Row>
-          <Col xs={6}>
+          <Col xs={6} className="image-col"  style={{padding:'0px'}}>
             <img
               alt="chutiya"
-              src={require('../../assets/middle_card_img.jpeg')}
+              src={require('./image/City.png')}
             />
           </Col>
-          <Col xs={6}>
+          <Col xs={6}  style={{padding:'0px'}}>
             <div>
               <PortfolioCard
-                title="PROJECT 3"
+                title="City of Melbourne Open Data"
                 body={
                   <>
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book. It has survived not only five
-                      centuries, but also the leap into electronic typesetting,
-                      remaining essentially unchanged. It was popularised in the
-                      1960s with the release of Letraset sheets containing Lorem
-                      Ipsum passages, and more recently with desktop publishing
-                      software like Aldus PageMaker including versions of Lorem
-                      Ipsum.
+                    This text is a placeholder for a blurb on the Mod Project.
                     </p>
                   </>
                 }

@@ -13,13 +13,15 @@ const PortfolioCard = ({ title, body, onButtonClick, isMiddleCard }) => {
         <div className="project-heading">
           <h1 className="project-title">{title}</h1>
         </div>
-        {body}
+        <div className='project-context'>
+          {body}
+        </div>
       </Card.Body>
-      <Card.Footer>
+      <Card.Footer className='card-footer'>
+        <div className="date-container">
+          Last Updated: 10/09/23
+        </div>
         <div className="button-container">
-          <Button onClick={onButtonClick} className="rounded-button">
-            GITHUB
-          </Button>
           <div className="button-spacing" />
           <Button variant="info" className="rounded-button">
             LEARN MORE

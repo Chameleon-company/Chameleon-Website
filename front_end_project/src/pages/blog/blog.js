@@ -3,8 +3,12 @@ import Wrapper from '../../components/shared/Wrapper';
 import InfoCard from './InfoCard';
 import BlogJSON from '../../constants/Blog.json';
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import Footer from '../../components/blog/Footer';
 =======
+>>>>>>> Stashed changes
+=======
+import Footer from '../../components/blog/Footer';
 >>>>>>> Stashed changes
 const Blog = () => {
   return (
@@ -35,9 +39,13 @@ const Blog = () => {
       <div className='w-full my-4 flex flex-col gap-4 md:gap-0 md:flex-row justify-between items-center bg-green-emerald px-16 py-3'>
         <h1 className='uppercase text-white'>get updates</h1>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         <div className='h-full flex items-center '>
 =======
         <div className='h-full flex items-center ' >
+>>>>>>> Stashed changes
+=======
+        <div className='h-full flex items-center '>
 >>>>>>> Stashed changes
           <input
             type='text'
@@ -45,11 +53,17 @@ const Blog = () => {
             className=' md:w-[20rem] h-full rounded-sm py-3 pl-2 text-black'
           />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           <button className='bg-[#054a83] px-4 rounded-sm text-white h-full py-3'>
             Subcribe
           </button>
 =======
           <button className='bg-[#054a83] px-4 rounded-sm text-white h-full py-3'>Subcribe</button>
+>>>>>>> Stashed changes
+=======
+          <button className='bg-[#054a83] px-4 rounded-sm text-white h-full py-3'>
+            Subcribe
+          </button>
 >>>>>>> Stashed changes
         </div>
       </div>
@@ -76,6 +90,7 @@ const Blog = () => {
         {/* Pagination(Sroll to ability here) */}
       </div>
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
       <Footer />
 =======
@@ -137,6 +152,9 @@ const Blog = () => {
           </div>
         </div>
       </div>
+>>>>>>> Stashed changes
+=======
+      <Footer />
 >>>>>>> Stashed changes
     </Wrapper>
   );

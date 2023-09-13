@@ -7,7 +7,40 @@
   width: 100%;
   max-width: 100%;
   height: auto;
+  max-height: 404px;
 }
 .card-col {
     margin-top: 0px; 
 }
+
+.carousel {
+  text-align: center;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-caption {
+  text-align: right;
+  margin-right: -150px;
+}
+
+.carousel-caption p {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.carousel-caption .btn {
+  float: right;
+  padding: 5px 25px 5px 25px;
+  border-radius: 50px;
+  background-color: white;
+  color: #5dbb50;
+}
+
+
+
+
+

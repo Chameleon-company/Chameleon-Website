@@ -1,0 +1,36 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+#--------------------Front End Ignores Start-------------------
+
+# Add all ignore files for the front end project file here
+# dependencies
+front_end_project/node_modules
+front_end_project/.pnp
+front_end_project/.pnp.js
+
+# testing
+front_end_project/coverage
+
+# production
+front_end_project/build
+
+# misc
+front_end_project/.DS_Store
+front_end_project/.env.local
+front_end_project/.env.development.local
+front_end_project/.env.test.local
+front_end_project/.env.production.local
+
+front_end_project/npm-debug.log*
+front_end_project/yarn-debug.log*
+front_end_project/yarn-error.log*
+
+#-------------------Front End Ignores End--------------------------
+
+#------------------Back End Ignores Start--------------------------
+back_end_project/node_modules
+
+
+#------------------Back end Ignores End---------------------------
+node_modules
+.DS_Store

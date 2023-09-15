@@ -58,7 +58,7 @@ class aboutUs extends Component {
         <br></br>
 
         {/* OUT MISSION SECTION*/}
-        <Container style={{ backgroundColor: "#67A170" }}>
+        <Container style={{ backgroundColor: "#67A170", maxWidth: '100%' }}>
           <h2 className="text-center text-white fw-bold mt-2 pt-3">
             OUR MISSION
           </h2>
@@ -72,12 +72,8 @@ class aboutUs extends Component {
               />
             </Col>
             <Col>
-              <p className=" pb-5 text-white fs-4 text-start fw-light mt-5 pe-3">
-                At Chameleon, our mission is to research, create, test, document
-                and deploy IoT-based solutions to enhance life through the
-                application of smart city technologies including: the building
-                of smarter cities, homes, transportation, and energy management
-                systems.
+              <p className=" pb-5 text-white fs-4 text-start fw-light mt-5 pe-3" style={{ width: '70%' }}>
+                At Chameleon, our mission is to research, create, test, document and deploy IoT-based solutions to enhance life through the application of smart city technologies including: the building of smarter cities, homes, transportation, and energy management systems.
               </p>
             </Col>
           </Row>
@@ -138,7 +134,7 @@ class aboutUs extends Component {
         <br></br>
 
         {/* FAQ SECTION*/}
-        <Container style={{ backgroundColor: "#67A170" }}>
+        <Container style={{ backgroundColor: "#67A170", maxWidth: '100%' }}>
           <h2 className="text-center text-white fw-bold mt-2 pt-3">
             FREQUENTLY ASKED QUESTIONS
           </h2>
@@ -148,9 +144,9 @@ class aboutUs extends Component {
               <Accordion.Header>
                 <h3>What does Chameleon do?</h3>
               </Accordion.Header>
-              <Accordion.Body>Chameleon is an organization dedicated to creating innovative IoT-based solutions to enhance urban life. They focus on various divisions, including City of Melbourne Open Data, Chameleon Website, and Electric Vehicle (EV) Adoption Tools. These divisions work together to address urban challenges, promote sustainability, provide user-friendly access to project information, and champion the adoption of electric vehicles for a greener future. 
-Chameleon's overarching mission is to make cities smarter, more livable, and environmentally friendly through their strategic approach and collaborative efforts.
-</Accordion.Body>
+              <Accordion.Body>Chameleon is an organization dedicated to creating innovative IoT-based solutions to enhance urban life. They focus on various divisions, including City of Melbourne Open Data, Chameleon Website, and Electric Vehicle (EV) Adoption Tools. These divisions work together to address urban challenges, promote sustainability, provide user-friendly access to project information, and champion the adoption of electric vehicles for a greener future.
+                Chameleon's overarching mission is to make cities smarter, more livable, and environmentally friendly through their strategic approach and collaborative efforts.
+              </Accordion.Body>
             </Accordion.Item>
             <br></br>
             <Accordion.Item eventKey="1">
@@ -159,14 +155,14 @@ Chameleon's overarching mission is to make cities smarter, more livable, and env
               </Accordion.Header>
               <Accordion.Body>You can easily sign up with us by following these steps:
                 <ul>
-                <li><strong>Visit Our Website:</strong> Start by visiting our website, where you'll find a user-friendly sign-up or registration page.</li>
-                <li><strong>Create Your Account:</strong>  Click on the "Sign Up" or "Register" button and provide the required information. This includes your name, email address, and a password.</li>
-                <li><strong>Verify Your Email:</strong>  After you've filled in the necessary details, you will receive a verification email. Click the link in the email to confirm your registration.</li>
-                <li><strong>Complete Your Profile:</strong>  Log in to your newly created account and complete your profile by adding any additional information or preferences.</li>
-                <li><strong>Start Exploring:</strong>  Once your profile is set up, you can start exploring our platform, accessing resources, and engaging with our projects.</li>
+                  <li><strong>Visit Our Website:</strong> Start by visiting our website, where you'll find a user-friendly sign-up or registration page.</li>
+                  <li><strong>Create Your Account:</strong>  Click on the "Sign Up" or "Register" button and provide the required information. This includes your name, email address, and a password.</li>
+                  <li><strong>Verify Your Email:</strong>  After you've filled in the necessary details, you will receive a verification email. Click the link in the email to confirm your registration.</li>
+                  <li><strong>Complete Your Profile:</strong>  Log in to your newly created account and complete your profile by adding any additional information or preferences.</li>
+                  <li><strong>Start Exploring:</strong>  Once your profile is set up, you can start exploring our platform, accessing resources, and engaging with our projects.</li>
                 </ul>
-If you need assistance, feel free to reach out to our support team, and they will be happy to guide you through the process. You can find them under the support page or you can contact them using the phone number or email address provided at the bottom of each page on our website. We're excited to have you on board!
-</Accordion.Body>
+                If you need assistance, feel free to reach out to our support team, and they will be happy to guide you through the process. You can find them under the support page or you can contact them using the phone number or email address provided at the bottom of each page on our website. We're excited to have you on board!
+              </Accordion.Body>
             </Accordion.Item>
             <br></br>
             <Accordion.Item eventKey="2">

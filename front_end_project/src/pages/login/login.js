@@ -1,176 +1,75 @@
-import { Container, Row, Col } from 'react-bootstrap';
-import {NavLink} from 'react-router-dom';
-import { Nav } from 'react-bootstrap';
 import React, { Component } from 'react';
-import './login.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Background from './image/Background.png';
+import Logo from './image/Chameleon_Logo.png';
+import Google from './image/google.png';
+import Linkedin from './image/linkedin.png';
+import Microsoft from './image/microsoft.png';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+
 
 class Login extends Component {
   render() {
     return (
-    
-        <Container>
-        <Row>
-          <h1>Login</h1>
-          <Col xs={12}>
-            <div className='loginBox' >
-              <div className='loginContainer'>
-              <div className ="login-part">
-              <img className ="loginImg" src = {require('../../pages/login/brandLogo.png')}/>
-              <h1 className="wel">Welcome back,</h1>
-              <h1 className="loginDetails">Email</h1>
-                <input className = "cred" type="email" placeHolder="Deakin Email"/>
-                <h1 className="loginDetails">Password</h1>
-                <input className = "cred" type="Password" placeHolder="Password"/>
-                <button className='rounded-button-01'>Login</button>
-                <Nav.Link href="/signup">
-                  <button className='rounded-button-02'>Sign Up</button>
-                </Nav.Link>
+      <div style={{
+        height: '100vh', 
+        backgroundImage: `linear-gradient(to right, transparent 43.43%, white 0%), url(${Background})`, 
+        backgroundSize: 'cover',
+        backgroundPosition: 'left center',
+        overflow: 'hidden' 
+        }}>
 
-                <Nav.Link href="/forgot">
-                  <button className='rounded-button-02'>Forgot password</button>
-                </Nav.Link>
+        <Container fluid style={{ maxWidth: '80%', marginTop: '3%', border: '3px solid gray'}}>
+          <Row> 
+            <Col md={5} style={{ backgroundColor: 'gray', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>                      
+              <img src={Logo} alt="Logo" style={{ width: '50%', height: 'auto', marginBottom: '2rem' }} />
+              <p style={{ fontSize: '1.7rem', fontWeight: 'bold', textAlign: 'center' }}>Enhancing life through IoT-Powered Smart City Solutions</p>
+              <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '1px', backgroundColor: 'black' }}></div>
+            </Col>
 
-                <div>
-                <button className='mediaButton'>
-                
-                <img src = {require('../../pages/login/linkedin.png')}/>
-                </button>
-                <button className='mediaButton'>
-                <img src = {require('../../pages/login/google.png')}/>
-                </button>
-                <button className='mediaButton'>
-                <img src = {require('../../pages/login/microsoft.png')}/>
-                </button>
-                </div> 
-              </div>
-              <div className='image-part'>
-              <picture className = 'imgMax'> 
-              <img className  src = {require('../../pages/login/forest.jpg')}/>
-            
-              </picture>
-              </div>
-              </div>
-             
-            </div>
-          </Col>
-        </Row>
-      </Container>
+            <Col md={7} style={{ padding: '8%' }}>
+              <h1 style={{ fontWeight: 'bold', marginBottom: '2rem', textAlign: 'center' }}>Login</h1>
+
+              <Form>
+                <Form.Group controlId="formEmail" style={{ marginBottom: '2rem' }}>
+                  <Form.Control type="Email" placeholder="EMAIL ADDRESS" style={{ backgroundColor: '#ccc', border: '1px solid black', height: '50px' }} />
+                </Form.Group>
+
+                <Form.Group controlId="formpassword" style={{ marginBottom: '2rem' }}>
+                    <Form.Control type="password" placeholder="PASSWORD" style={{ backgroundColor: '#ccc', border: '1px solid black', height: '50px' }} />
+                </Form.Group>
+
+                <p style={{ color: 'green', fontWeight: 'bold', textAlign: 'right' }}>
+                  <a href="/signup">Sign-up?</a><br />
+                  <a href="/forgot">Forgot password?</a>
+                </p>
+
+                <div className="d-flex justify-content-center mb-3">
+                  <Button variant="success" type="submit" style={{ padding: '10px 80px', fontSize: '1rem' }}>
+                    LOGIN
+                  </Button>
+                </div>
+
+                <div className="d-flex justify-content-between">
+                  <div style={{ backgroundColor: 'green', borderRadius: '50%', width: '40px', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <img src={Linkedin} alt="LinkedIn Icon"/>
+                  </div>
+
+                  <div style={{ backgroundColor: 'green', borderRadius: '50%', width: '40px', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <img src={Google} alt="Google Icon" style={{ width: '60%', height: '60%' }} />
+                  </div>
+
+                  <div style={{ backgroundColor: 'green', borderRadius: '50%', width: '40px', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <img src={Microsoft} alt="Microsoft Icon" style={{ width: '60%', height: '60%' }} />
+                  </div>
+                </div>
+              </Form>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     );
   }
 }
 
 export default Login;
-
-
-// --------------------------------------------
-// LOGIN CODE BRIEF START / EXAMPLE FOR BACKEND
-// ---------------------------------------------
-
-// import React, { Component } from "react";
-// import { Container, Row, Col } from "react-bootstrap";
-// import { Outlet, Link } from 'react-router-dom'
-// import { signInWithGooglePopup, createUserDocFromAuth, signinAuthUserWithEmailAndPassword } from './utils/firebase'
-// import { useNavigate } from 'react-router-dom';
-// import './login.css'
-
-// const Login = (props) => {
-
-//   const nanvigate = useNavigate();
-
-//   const logGoogleUser = async () => {
-//     const { user } = await signInWithGooglePopup();
-//     const userDocRef = await createUserDocFromAuth(user)
-//   }
-
-//   const [contact, setContact] = useState({
-//     email: '',
-//     password: '',
-//   })
-
-//   const { email, password } = contact
-
-//   const handleChange = (event) => {
-
-//     const { name, value } = event.target
-//     setContact((preValue) => {
-//       return {
-//         ...preValue,
-//         [name]: value
-//       }
-//     })
-//   }
-
-//   const handleSubmit = async (event) => {
-//     event.preventDefault();
-//     try {
-//       const { user } = await signinAuthUserWithEmailAndPassword(username, password);
-//       await createUserDocFromAuth(user, { email });
-//       // navigate("/logout")
-//     }
-//     catch (error) {
-//       console.log('error', error.message)
-//     }
-//   }
-
-
-// }
-
-// // class Login extends Component\
-// // function Login() {
-//   // render() {
-//   return (
-
-//     <Container>
-//       <Row>
-//         <h1>Login </h1>
-//         <Col xs={12}>
-//           <div className="loginBox">
-//             <div className="loginContainer">
-//               <form className="loginForm">
-
-
-//                 <img className="loginImg" src={require('./brandLogo.png')} />
-
-//                 <h1 className="loginDetails">
-//                   Email
-//                 </h1>
-
-//                 <input className="cred"
-//                   type="email"
-//                   placeHolder="Deakin Email"
-//                   onChange={handleChange}
-//                   value={contact.email} />
-
-//                 <h1 className="loginDetails">Password</h1>
-//                 <input className="cred"
-//                   type="Password"
-//                   placeHolder="Password"
-//                   id="pwd"
-//                   minlength="16"
-//                   onChange={handleChange}
-//                   value={contact.password}
-//                 />
-
-//                 <div className="logBtn">
-//                   <button onClick={handleSubmit}>
-//                     Login
-//                   </button>
-//                 </div>
-
-//                 <div className="linkAlign">
-//                   <a className="userPass" href="#"> Reset Username / Password?</a>
-//                   <button onClick={logGoogleUser}>Log in with Google</button>
-//                 </div>
-
-//               </form>
-
-//             </div>
-//           </div>
-//         </Col>
-//       </Row>
-//     </Container>
-//   );
-//   // }
-// // }
-
-// export default Login

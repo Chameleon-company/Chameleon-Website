@@ -45,6 +45,9 @@ function Header() {
             <Nav.Link className="text-white ml-3 mt-2" href="/iotResources">
               RESOURCES
             </Nav.Link>
+            <Nav.Link className="text-white ml-3 mt-2" href="/login">
+              LOGIN
+            </Nav.Link>
             <Form className="d-flex">
               <Form.Control
                 type="search"

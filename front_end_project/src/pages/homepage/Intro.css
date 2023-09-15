@@ -1,4 +1,58 @@
-.black-rectangle-background {
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    background-image: url('./Image_homepage/hero3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    /* Adjust the opacity here (0.5 for 50% opacity) */
+    z-index: -1;
+    /* Place it behind the content */
+}
+
+.hero-content {
+    opacity: 1;
+    /* Full opacity for text */
+    color: white;
+    /* Set text color to contrast with overlay */
+    z-index: 1;
+    /* Place it in front of the overlay */
+    margin-left: 80px;
+    font-family: 'Poppins';
+}
+
+.hero-content>h1 {
+    font-size: 72px;
+    margin-bottom: 40px;
+}
+
+.hero-content>h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.hero-content>p {
+    font-size: 27px;
+    width: 50%;
+
+}
+
+
+/* .black-rectangle-background {
     background-color: black;
     width: 100%;
     height: 200px;
@@ -8,7 +62,7 @@
     justify-content: space-between;
 }
 
-.Chameleon_Logo_Black{
+.Chameleon_Logo_Black {
     width: 300px;
     height: 200px;
     flex: 1;
@@ -16,7 +70,7 @@
     align-items: center;
 }
 
-.Add_conditions_temporarily_1{
+.Add_conditions_temporarily_1 {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -30,9 +84,9 @@
 
 .Add_conditions_temporarily_1 .nav-item.nav-link.active {
     text-decoration: underline;
-}
+} */
 
-.Research_Bar{
+/* .Research_Bar {
     background-color: #EBEBE8;
     width: 20%;
     height: 70px;
@@ -43,20 +97,20 @@
     align-items: center;
 }
 
-.Bigger{
+.Bigger {
     font-size: 4em;
     margin-left: 12px;
     margin-top: 1px;
     margin-bottom: 3px;
 }
 
-.Text1{
+.Text1 {
     font-size: 2em;
     margin-top: 15px;
     margin-left: 25px;
-}
+} */
 
-.Introduction{
+.Introduction {
     background-color: #D1E2C4;
     width: 100%;
     height: 500px;
@@ -66,23 +120,57 @@
     align-items: center;
 }
 
-.Text2{
-    margin-top:50px;
-    margin-right:70px;
+.Text2 {
+    margin-top: 0;
+    margin-right: 70px;
     margin-left: 150px;
     font-size: 180%;
-    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
-.Our_projects{
+.Our_projects {
     background-color: #559166;
     width: 100%;
     height: 800px;
+    margin-bottom: 25px;
 }
 
-.Small_rectangle{
-    background-color: #D1E2C4;
-    width: 100px;
-    height: 50px;
-    margin: 10px;
+.project-heading>h3 {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    margin-left: 70px;
+    padding: 20px;
+}
+
+.project-card {
+    background-color: #E1ECE2;
+    flex: 1;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+}
+
+.project-desc {
+    width: 500px;
+    border-radius: 25px 25px 0 0;
+    padding: 20px;
+}
+
+.project-card>p {
+    font-size: 27px;
+    font-weight: 500;
 }

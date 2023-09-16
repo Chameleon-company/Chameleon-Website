@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!--  This declaration specifies that the document is an HTML5 document. -->
+<html lang="en">
+<!-- This opening tag defines the document as an HTML document with the language set to English ("en"). -->
+<head>
+    <!-- This opening tag begins the head section of the HTML document, which typically contains metadata about the document. -->
+    <meta charset="UTF-8">
+    <!--  This meta tag specifies the character encoding for the document as UTF-8. -->
+    <meta name="view_port" content="width=device-width, initial-scale=1.0">
+    <!-- This meta tag sets the viewport properties for responsive web design. -->
+    <title>Login Page</title>
+    <!--  This title tag defines the title of the webpage, displayed in the browser's title bar or tab. -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!--  This link tag includes an external CSS file from a content delivery network (CDN) that provides Font Awesome icons. -->
+</head>
+<body>    
+    <!--  This opening tag begins the body section of the HTML document, containing the visible content. -->
+    <div class="content">
+        <!--  This div element with the class "content" creates a container for the webpage's content. -->
+        <div class="background_of_website"></div>
+        <!--  This div element with the class "background_of_website" is likely used for styling purposes. -->
+        <div class="seperator"></div>
+        <div class="background_of_website"></div>
+       
+        <div class="left_side">            
+            <!--  This div element with the class "left_side" represents a section on the left side of the container. -->
+            <div class="logo">
+                <!-- This div with the class "logo-t" likely contains the logo and some text. -->
+                <img src="Chameleon_Logo.png" alt="Logo">
+                <!-- This img element displays an image named "Chameleon_Logo.png" with alt text "Logo." -->
+                <p>Enhancing life through IoT-Powered Smart City Solutions</p>
+                <!-- This p element contains the text describing the purpose of the webpage. -->
+            </div>
+        </div>
+    
+        <div class="right_side">
+            <!--  This div element with the class "rightside" represents a section on the right side of the container. -->
+            <h2>Sign-Up</h2>
+            <!--  This h2 element displays the heading "Sign-Up." -->
+            <input type="n" placeholder="Name">
+            <!--  This input element allows users to enter their name and provides a placeholder "Name." -->
+            <input type="e" placeholder="Email Address">
+            <!--  This input element allows users to enter their email address and provides a placeholder "Email Address." -->
+            <input type="p" placeholder="Password">
+            <!--  This input element allows users to enter their password and provides a placeholder "Password." -->
+            <div class="links">
+                <!--  This div with the class "links" contains links and related content. -->
+                <a href="#">Already have an Account? Sign in</a>
+                <!-- This anchor (a) element provides a link with the text "Already have an Account? Sign in." -->
+            </div>
+            <button onclick="login_Success()">LOGIN</button>
+            <p id="login-message"></p>
+            
+            <div class="i_links">
+                <!--  This div with the class "icon-links" contains icon links and related content. -->
+                <div class="i">
+                    <!--  This div with the class "icon" represents an icon link. -->
+                    <a href="#" id="linkedin">
+                        <!--  This anchor (a) element with the ID "linkedin-icon" provides a link to LinkedIn. -->
+                        <i class="fab fa-linkedin"></i>
+                        <!--  This <i> element displays a Font Awesome LinkedIn icon. -->
+                    </a>
+                </div>
+                <div class="i">
+                    <!-- This div with the class "icon" represents an icon link. -->
+                    <a href="#" id="google">
+                        <!--  This anchor (a) element with the ID "google-icon" provides a link to Google. -->
+                        <i class="fab fa-google"></i>
+                        <!--  This <i> element displays a Font Awesome Google icon. -->
+                    </a>
+                </div>
+                <div class="i">
+                    <!--  This div with the class "icon" represents an icon link. -->
+                    <a href="#" id="microsoft">
+                        <!--  This anchor (a) element with the ID "microsoft-icon" provides a link to Microsoft. -->
+                        <i class="fab fa-microsoft"></i>
+                        <!-- This <i> element displays a Font Awesome Microsoft icon. -->
+                    </a>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <style>
+        /* Set the height of the entire document (body and HTML) to 100% and remove margin.
+   Use the Arial font or a fallback sans-serif font for text. */
+   body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.content {
+    display: flex;
+    height: 80vh; /* 80% of the viewport height */
+    width: 80vw; /* 80% of the viewport width */
+    margin: 10vh auto; /* Center the container vertically and horizontally */
+    border: 1px solid black; /* Add a black border around the container */
+    background: linear-gradient(to right, lightgrey 0%, lightgrey 40%, #ffffff 40%, #ffffff 100%);
+    /* Background gradient: left 40% light grey, right 60% white */
+}
+
+/* Style for a vertical line that appears on the webpage.
+   It's fixed to the left with a black background and spans most of the viewport height. */
+.seperator{
+    position: fixed;
+    top: 0;
+    left: 42%; /* Position it 42% from the left edge */
+    width: 1px; /* Set its width to create a vertical line effect */
+    height: 90vh; /* 90% of the viewport height */
+    background-color: black; /* Color of the vertical line */
+}
+
+/* Style for a background element on the left side of the container.
+   It's an absolute-positioned element with a background image and covers 42% of the viewport height. */
+.background_of_website{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 42%; /* Covers 42% of the viewport width */
+    height: 100vh; /* Covers 100% of the viewport height */
+    background-image: url('Background.jpg'); /* Background image URL */
+    background-size: cover; /* Scale the image to cover the element */
+    z-index: -2; /* Place it behind other elements */
+}
+
+.left_side {
+    background-color:   hsla(0, 0%, 100%, 0.621); /* Light grey background */
+    flex: 0.7;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+/* Style for an image inside the left section. */
+.left_side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Scale and crop the image to fit */
+}
+
+/* Style for the logo text inside the left section. It's centered and styled with a bold font. */
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text horizontally and vertically */
+    text-align: center;
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+/* Style for the right section of the container.
+   It's a flex container with padding, vertically aligns content, and follows a column layout. */
+  
+   .right_side {
+    background-color: hwb(0 98% 2%);
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right_side input {
+    background-color: rgba(197, 177, 177, 0.241);
+    margin: 10px;
+    padding: 10px;
+    width: 60%;
+    height: 30px;
+   
+    color: hsla(0, 78%, 4%, 0.847); /* Set the text color to match the background */
+}
+
+
+/* Style for links in the right section. They are aligned to the right and underlined. */
+.links {
+    display: flex;
+    justify-content: flex-end; /* Right-align the links */
+    width: 65%; /* Set the width of the links container */
+}
+
+/* Style for individual link elements in the right section. */
+.links a {
+    margin-left: 10px; /* Spacing between links */
+    color: green; /* Text color */
+    text-decoration: underline; /* Underline the links */
+    font-weight: bold; /* Make the links bold */
+}
+
+/* Style for a button in the right section. It has a green background and white text. */
+button {
+    background-color: green; /* Button background color */
+    color: white; /* Text color */
+    padding: 10px 70px; /* Padding inside the button */
+    border: none; /* Remove button border */
+    margin-top: 10px; /* Margin above the button */
+    cursor: pointer; /* Change cursor to a pointer on hover */
+}
+
+/* Style for a container that holds icon links in the right section. */
+.i_links {
+    display: flex;
+    justify-content: space-between; /* Space evenly between icon links */
+    width: 20%; /* Set the width of the icon links container */
+    margin-top: 20px; /* Margin above the icon links */
+}
+
+/* Style for individual icon elements in the right section. They have circular borders and a green color. */
+.i {
+    width: 30px; /* Icon width */
+    height: 30px; /* Icon height */
+    background-color: transparent; /* Transparent background */
+    border: 5px solid green; /* Circular border with green color */
+    border-radius: 50%; /* Make the border circular */
+}
+
+.i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+    </style>
+    <!--  This closing tag marks the end of the body section. -->
+    <script>
+    function login_Success() {
+    document.getElementById('login-message').innerText = "Login was successful";
+}
+    // This code adds an event listener to the LinkedIn icon link.
+    document.getElementById('linkedin').addEventListener('click', function() {
+        //  When the LinkedIn icon is clicked, it redirects the user to the LinkedIn login page.
+        window.location.href = "https://www.linkedin.com/login";
+    });
+    
+    //  This code adds an event listener to the Google icon link.
+    document.getElementById('google').addEventListener('click', function() {
+        //  When the Google icon is clicked, it redirects the user to the Google sign-in page.
+        window.location.href = "https://accounts.google.com/signin";
+    });
+    
+    //  This code adds an event listener to the Microsoft icon link.
+    document.getElementById('microsoft').addEventListener('click', function() {
+        //  When the Microsoft icon is clicked, it redirects the user to the Microsoft login page.
+        window.location.href = "https://login.microsoftonline.com/";
+    });
+    </script>
+    <!--  This script tag includes an external JavaScript file named "script.js" for adding interactive functionality to the webpage. -->
+</body>
+</html>
+   
+
+
+     

@@ -72,7 +72,7 @@ class IotTechnolgies extends Component {
 
         <br></br>
 
-        <Container style={{ backgroundColor: "#D1E2C4", maxWidth: 1000 }}>
+        <Container style={{ backgroundColor: "#D1E2C4", maxWidth: 1000, marginBottom: '80px' }}>
           <h2 class="text-center text-black fw-bold pt-3">
             How IoT Technology is Utilised
           </h2>

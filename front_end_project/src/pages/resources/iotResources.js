@@ -9,12 +9,29 @@ import device from "./images/device.jpg";
 class IotResources extends Component {
   render() {
     return (
-      <>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "space-between",
+          padding: "20px",
+          maxWidth: "1500px",
+          margin: "auto",
+          backgroundColor: "#67A170"
+        }}
+      >
         <Container>
           <h1 class="text-center pt-3 pb-3">RESOURCES</h1>
         </Container>
 
-        <Container style={{ backgroundColor: "#D1E2C4", maxWidth: 500 }}>
+        <Container
+          style={{
+            backgroundColor: "#D1E2C4",
+            maxWidth: 400,
+            marginBottom: "50px",
+          }}
+        >
           <Col>
             <Row>
               <img
@@ -33,7 +50,13 @@ class IotResources extends Component {
 
         <br></br>
 
-        <Container style={{ backgroundColor: "#D1E2C4", maxWidth: 500 }}>
+        <Container
+          style={{
+            backgroundColor: "#D1E2C4",
+            maxWidth: 400,
+            marginBottom: "50px",
+          }}
+        >
           <Col>
             <Row>
               <img
@@ -52,7 +75,13 @@ class IotResources extends Component {
 
         <br></br>
 
-        <Container style={{ backgroundColor: "#D1E2C4", maxWidth: 500 }}>
+        <Container
+          style={{
+            backgroundColor: "#D1E2C4",
+            maxWidth: 400,
+            marginBottom: "50px",
+          }}
+        >
           <Col>
             <Row>
               <img
@@ -70,7 +99,7 @@ class IotResources extends Component {
         </Container>
 
         <br></br>
-      </>
+      </div>
     );
   }
 }

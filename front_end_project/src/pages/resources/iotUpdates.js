@@ -70,7 +70,7 @@ class IotUpdates extends Component {
 
         <br></br>
 
-        <Container style={{ backgroundColor: "#D1E2C4", maxWidth: 1000 }}>
+        <Container style={{ backgroundColor: "#D1E2C4", maxWidth: 1000, marginBottom: '80px' }}>
           <h2 class="text-center text-black fw-bold pt-3">New IoT Standards</h2>
           <Row>
             <Col>

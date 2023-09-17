@@ -11,7 +11,7 @@ class IotStatistics extends Component {
           <h1 class="text-center pb-3">STATISTICS</h1>
         </Container>
 
-        <Container style={{ backgroundColor: "#D1E2C4", maxWidth: 1000 }}>
+        <Container style={{ backgroundColor: "#D1E2C4", maxWidth: 1000, marginBottom: '80px' }}>
           <h2 class="text-center text-black fw-bold pt-3">
             IoT Statistics in Australia
           </h2>
@@ -35,6 +35,7 @@ class IotStatistics extends Component {
           </Row>
         </Container>
       </>
+      
     );
   }
 }

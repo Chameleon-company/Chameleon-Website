@@ -1,4 +1,5 @@
 import Header from "./layouts/header/header";
+import Footer from "./layouts/footer/footer";
 import HomePage from "./pages/homepage/Homepage";
 import Helloo from "./pages/hello/hello";
 import aboutUs from "./pages/about/aboutUs";
@@ -15,7 +16,6 @@ import Report from "./pages/report/report";
 import forgot from "./pages/forgot_password/forgot";
 import Login from "./pages/login/login";
 import Signup from "./pages/signup/signup";
-import Footer from "./layouts/footer/footer";
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 

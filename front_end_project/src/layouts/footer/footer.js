@@ -1,45 +1,40 @@
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import React from 'react';
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./footer.css";
 
 function Footer() {
   return (
-    <footer className="mt-5">
-      <Container className="text-center">
-        <Row>
-          <Col xs={6}>
-            <img
-              alt="Company Logo"
-              src={require('../../assets/logo.png')}
-              className="img-fluid"
-            />
-            <h1>CHAMELEON</h1>
-            <p>Striving to create a smarter world</p>
-          </Col>
-          <Col xs={3}>
-            <h5>Contact Us</h5>
-            <p> Phone Number: +611111111</p>
-            <p>Email: chameleon@gmail.com</p>
-          </Col>
-          <Col xs={3}>
-            <h5>JOIN OUR NEWSLETTER</h5>
-            <Form.Group>
-              <div className="input-container">
-                <Form.Control type="email" placeholder="Enter your email" />
-                <p></p>
-                <Button
-                  variant="orange"
-                  type="submit"
-                  style={{ backgroundColor: 'orange', color: 'white' }}
-                >
-                  Submit
-                </Button>
-              </div>
-            </Form.Group>
-          </Col>
-        </Row>
-        <p>&copy; CHAMELEON 2023</p>
+    <Container className="footer-content">
+      <a href="#"><img
+        alt="Company Logo"
+        src={require('../../assets/ChameleonLogo.png')}
+        className="img-fluid"
+        href="#"
+        style={{ width: '300px' }}
+      /></a>
+      <Container className="socials">
+        <Container className="social-icons">
+          <a href="#"><img src={require('../../layouts/footer/assets/MicrosoftTeams-image (3).png')} alt="Link to Instagram"
+            style={{ width: "40px", marginRight: '10px', height: '40px' }} /></a>
+          <a href="#"><img src={require('../../layouts/footer/assets/MicrosoftTeams-image (4).png')} alt="Link to Instagram"
+            style={{ width: "40px", marginRight: '10px', height: '40px' }} /></a>
+          <a href="#"><img src={require('../../layouts/footer/assets/MicrosoftTeams-image (5).png')} alt="Link to Instagram"
+            style={{ width: "40px", marginRight: '10px', height: '40px' }} /></a>
+          <a href="#"><img src={require('../../layouts/footer/assets/MicrosoftTeams-image (6).png')} alt="Link to Instagram"
+            style={{ width: "40px", marginRight: '10px', height: '40px' }} /></a>
+        </Container>
+        <p>&copy; 2023 Copyright reserved by Chameleon</p>
       </Container>
-    </footer>
+      <Container className="contact-menu">
+        <h2><strong>Contact Us</strong></h2>
+        <p>PH: 03 5975 6586</p>
+        <p>E: info@chameleon.com.au</p>
+      </Container>
+      <img src={require('../../layouts/footer/assets/deakin.png')} alt="Deakin University Logo"
+        style={{ width: '150px', height: '150px' }} />
+    </Container>
   );
 }
 

@@ -22,6 +22,10 @@ class Chatbot extends Component {
         const option2Button = document.getElementById('option2');
         const option3Button = document.getElementById('option3');
 
+        const closeBtn = document.querySelector(".close-btn");
+        const chatbotToggler = document.querySelector(".chatbot-toggler");
+
+
         const simulateTyping = (message) => {
             chatInput.value = message;
             const inputEvent = new Event('input', {
@@ -86,6 +90,8 @@ class Chatbot extends Component {
         const generateResponse = (chatElement) => {
             const API_URL = "https://api.openai.com/v1/chat/completions";
             const messageElement = chatElement.querySelector("p");
+            const API_KEY = "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"; // API key
+
             const requestOptions = {
                 method: "POST",
                 headers: {

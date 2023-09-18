@@ -6,7 +6,7 @@ module.exports = {
       'poppins': ['Poppins', 'sans-serif'],
     },
     colors: {
-      green: { emerald: '#559166', sage: 'D1E2C4' },
+      green: { emerald: '#559166', sage: '#D1E2C4' },
       grey: '#EBEBE8',
       yellow: '#ffa800',
       blue: '#050617',

@@ -86,3 +86,37 @@
     height: 50px;
     margin: 10px;
 }
+.hoverable-div {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add a smooth transition */
+  }
+  
+  .hoverable-div:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+  }
+  
+  .popup {
+    position: absolute;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+    /* Customize the pop-up appearance */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .popup-content {
+    /* Style your pop-up content here */
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Show the pop-up when hovering over the .hoverable-div */
+  .hoverable-div:hover + .popup {
+    display: block;
+  }
+  

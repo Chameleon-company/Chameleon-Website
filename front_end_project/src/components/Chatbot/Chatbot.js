@@ -1,5 +1,5 @@
 import React from 'react';
-import './Chatbot.css'; // Include your CSS here
+import './Chatbot.css';
 import Chatbox from './Chatbox';
 import Options from './options';
 import ChatInput from './ChatInput';

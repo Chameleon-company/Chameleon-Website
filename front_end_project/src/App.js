@@ -33,7 +33,7 @@ function App() {
             <Route path="/hello" component={Helloo} />
             <Route path="/about_us" component={aboutUs} />
             <Route path="/blog" component={Blog} />
-            <Route path="/" component={Chatbot} />
+            <Route path="/chatbot" component={Chatbot} />
             <Route path="/news" component={News} />
             <Route path="/projects" component={Projects} />
             <Route path="/report" component={Report} />

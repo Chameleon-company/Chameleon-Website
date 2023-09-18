@@ -1,0 +1,27 @@
+{
+  "name": "chameleon_proxy-api",
+  "version": "0.1beta : DEVBUILD",
+  "description": "Chameleon proxy API used to secure external API keys",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "setup-env": "npm install && node ./utils/setup-env.js",
+    "test-example": "mocha ./routes/example/example.test.js",
+    "test-mailgun": "mocha ./routes/mailgun/mailgun.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.0.0",
+    "mailgun.js": "^9.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.1.1"
+  }
+}

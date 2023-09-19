@@ -48,7 +48,7 @@ function App() {
             <Route path="/signup" component={Signup} />
           </Switch>
         </main>
-        {/* <Footer/> */}
+        <Footer />
       </Router>
     </>
   );

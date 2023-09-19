@@ -1,6 +1,7 @@
 import Header from "./layouts/header/header";
 import Footer from "./layouts/footer/footer";
 import HomePage from "./pages/homepage/Homepage";
+import Chatbot from './pages/Chatbot/Chatbot';
 import Helloo from "./pages/hello/hello";
 import aboutUs from "./pages/about/aboutUs";
 import Blog from "./pages/blog/blog";
@@ -19,6 +20,7 @@ import Signup from "./pages/signup/signup";
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+
 function App() {
   return (
     <>
@@ -31,6 +33,7 @@ function App() {
             <Route path="/hello" component={Helloo} />
             <Route path="/about_us" component={aboutUs} />
             <Route path="/blog" component={Blog} />
+            <Route path="/chatbot" component={Chatbot} />
             <Route path="/news" component={News} />
             <Route path="/projects" component={Projects} />
             <Route path="/report" component={Report} />

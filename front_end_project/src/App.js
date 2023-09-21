@@ -5,7 +5,7 @@ import Chatbot from './pages/Chatbot/Chatbot';
 import Helloo from "./pages/hello/hello";
 import aboutUs from "./pages/about/aboutUs";
 import Blog from "./pages/blog/blog";
-import Projects from "./pages/projects/projects";
+import Projects from "./pages/projects/Projects";
 import News from "./pages/news/news";
 import Contact from "./pages/contact/contact";
 import IotResources from "./pages/resources/iotResources";

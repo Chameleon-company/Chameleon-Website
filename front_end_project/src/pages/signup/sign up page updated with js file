@@ -1,0 +1,95 @@
+import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Background from './Background.png';
+import Logo from './Logo.png';
+import Google from './google .png';
+import linkedin from './linkedin.png';
+import Microsoft from './microsoft .png';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+
+
+class Login extends Component {
+  render() {
+    return (
+      // Main container with background styling
+      <div style={{
+        height: '100vh', //height
+        backgroundImage: `linear-gradient(to right, transparent 43.43%, white 0%), url(${Background})`, 
+        backgroundSize: 'cover',
+        backgroundPosition: 'left center',
+        overflow: 'hidden' 
+      }}>
+
+        {/* Bootstrap container for form content */}
+        <Container fluid style={{ maxWidth: '80%', marginTop: '3%', border: '3px solid gray'}}>
+          <Row> 
+            {/* Left column with a logo */}
+            <Col md={5} style={{ backgroundColor: 'lightgrey', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>                      
+              <img src={Logo} alt="Logo" style={{ width: '50%', height: 'auto', marginBottom: '2rem' }} />
+              <p style={{ fontSize: '1.7rem', fontWeight: 'bold', textAlign: 'center' }}>Enhancing life through IoT-Powered Smart City Solutions</p>
+              <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '1px', backgroundColor: 'black' }}></div>
+            </Col>
+
+            {/* Right column with the form */}
+            <Col md={7} style={{ padding: '8%' }}>
+              <h1 style={{ fontWeight: 'bold', marginBottom: '2rem', textAlign: 'center' }}>Sign Up</h1>
+
+              {/* Form element */}
+              <Form>
+                {/* Name input */}
+                <Form.Group controlId="name" style={{ marginBottom: '2rem' }}>
+                  <Form.Control type="N" placeholder="NAME" style={{ backgroundColor: '#ccc', border: '1px solid black', height: '40px' }} />
+                </Form.Group>
+
+                {/* Email input */}
+                <Form.Group controlId="Email" style={{ marginBottom: '2rem' }}>
+                  <Form.Control type="E" placeholder="EMAIL ADDRESS" style={{ backgroundColor: '#ccc', border: '1px solid black', height: '40px' }} />
+                </Form.Group>
+
+                {/* Password input */}
+                <Form.Group controlId="password" style={{ marginBottom: '2rem' }}>
+                  <Form.Control type="p" placeholder="PASSWORD" style={{ backgroundColor: '#ccc', border: '1px solid black', height: '40px' }} />
+                </Form.Group>
+
+                {/* Link to sign up */}
+                <p style={{ color: 'green', fontWeight: 'bold', textAlign: 'right' }}>
+                  <a href="/s"> Already have an Account? Sign-up?</a><br />
+                </p>
+
+                {/* Login button */}
+                <div className="d-flex justify-content-center align-items-center mb-3">
+  <Button variant="success" type="submit" style={{ padding: '10px 80px', fontSize: '1rem' }}>
+    LOGIN
+  </Button>
+</div>
+
+<div className="text-center">
+  <div className="d-flex justify-content-between">
+    <div style={{ backgroundColor: 'white', border: '2px solid green', borderRadius: '50%', width: '40px', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <img src={linkedin} alt="linkedin Icon" style={{ width: '60%', height: '60%' }} />
+    </div>
+
+    {/* Google icon */}
+    <div style={{ backgroundColor: 'white', border: '2px solid green', borderRadius: '50%', width: '40px', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <img src={Google} alt="Google Icon" style={{ width: '60%', height: '60%' }} />
+    </div>
+
+    {/* Microsoft icon */}
+    <div style={{ backgroundColor: 'white', border: '2px solid green', borderRadius: '50%', width: '40px', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <img src={Microsoft} alt="Microsoft Icon" style={{ width: '60%', height: '60%' }} />
+    </div>
+  </div>
+</div>
+
+
+
+              </Form>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    );
+  }
+}
+
+export default Login;

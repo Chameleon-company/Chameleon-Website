@@ -1,0 +1,96 @@
+/* Header.css */
+.menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  /* 调整菜单的垂直位置 */
+  background-color: white;
+  /* 设置背景颜色 */
+  border: 1px solid #ccc;
+  /* 可选：添加边框 */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  /* 可选：添加阴影效果 */
+  z-index: 1;
+  /* 确保菜单在其他内容之上 */
+}
+
+.menu.open {
+  display: block;
+}
+
+select {
+  display: none;
+}
+
+select.active {
+  display: block;
+}
+
+.user_profile_menu {
+  margin-top: 30px;
+  background-color: white;
+  height: 620px;
+  width: 400px;
+  border-radius: 10px;
+  position: absolute;
+  right: 0;
+}
+
+/* .button {
+  margin-top: 10px;
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+  height: 50px;
+  width: 200px;
+  margin-left: 100px;
+  border-radius: 30px;
+}
+
+.view_profile_button {
+  margin-left: 30px;
+  margin-top: -5px;
+  color: #4CAF50;
+  font-size: medium;
+  font-weight: bold;
+} */
+
+.button1 {
+  margin-top: 10px;
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+  height: 50px;
+  width: 200px;
+  margin-left: 100px;
+  border-radius: 30px;
+}
+
+.view_profile_button {
+  margin-left: 40px;
+  margin-top: 10px;
+  color: #4CAF50;
+  font-size: large;
+  font-weight: bold;
+}
+
+.temp1 {
+  margin-top: 12px;
+
+}
+
+.temp2 {
+  /* margin-left: 20px; */
+  margin-left: 20px;
+}
+
+.underline {
+  color: gray;
+  margin-left: 0px;
+  /* margin-right: 0px; */
+}
+
+.blod_font1 {
+  font-weight: bold;
+  margin-left: 0px;
+}

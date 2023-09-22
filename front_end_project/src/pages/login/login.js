@@ -9,6 +9,47 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 
 class Login extends Component {
+  constructor() {
+    super();
+    this.state = {
+      email: '',
+      password: '',
+    };
+  }
+
+  handleInputChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
+
+  handleSubmit = async (event) => {
+    event.preventDefault();
+    const { email, password } = this.state;
+
+    try {
+      const response = await fetch('http://localhost:3002/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+
+        const user = data.user;
+        console.log(user);
+        this.props.onLogin(user);
+
+        window.alert('User logged in:', user);
+      } else {
+        window.alert('Login failed:', response.status, response.statusText);
+      }
+    } catch (error) {
+      window.alert('Login failed:', error);
+    }
+  };
   render() {
     return (
       <div style={{
@@ -30,13 +71,21 @@ class Login extends Component {
             <Col md={7} style={{ padding: '8%' }}>
               <h1 style={{ fontWeight: 'bold', marginBottom: '2rem', textAlign: 'center' }}>Login</h1>
 
-              <Form>
+              <Form onSubmit={this.handleSubmit}>
                 <Form.Group controlId="formEmail" style={{ marginBottom: '2rem' }}>
-                  <Form.Control type="Email" placeholder="EMAIL ADDRESS" style={{ backgroundColor: '#ccc', border: '1px solid black', height: '50px' }} />
+                  <Form.Control type="Email" name="email"
+                    placeholder="Email"
+                    value={this.state.email}
+                    onChange={this.handleInputChange}
+                    style={{ backgroundColor: '#ccc', border: '1px solid black', height: '50px' }} />
                 </Form.Group>
 
                 <Form.Group controlId="formpassword" style={{ marginBottom: '2rem' }}>
-                    <Form.Control type="password" placeholder="PASSWORD" style={{ backgroundColor: '#ccc', border: '1px solid black', height: '50px' }} />
+                    <Form.Control type="password" name="password"
+                    placeholder="Password"
+                    value={this.state.password}
+                    onChange={this.handleInputChange}  
+                    style={{ backgroundColor: '#ccc', border: '1px solid black', height: '50px' }} />
                 </Form.Group>
 
                 <p style={{ color: 'green', fontWeight: 'bold', textAlign: 'right' }}>

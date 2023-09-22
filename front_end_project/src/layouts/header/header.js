@@ -5,7 +5,7 @@ import { Nav, Navbar, Container, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Header() {
+function Header({ user, onLogout }) {
   return (
     <Navbar className="navbar bg-dark">
       <Container>
@@ -45,9 +45,16 @@ function Header() {
             <Nav.Link className="text-white ml-3 mt-2" href="/iotResources">
               RESOURCES
             </Nav.Link>
+            {user ? (
+            <>
+              <p className="text-white ml-3 mt-2">Welcome, {user.name}</p>
+              <button className='logoutButton text-white ml-3 mt-2 bg-green'  onClick={onLogout}>Logout</button>
+            </>
+          ) : (
             <Nav.Link className="text-white ml-3 mt-2" href="/login">
               LOGIN
             </Nav.Link>
+            )}
             <Form className="d-flex">
               <Form.Control
                 type="search"

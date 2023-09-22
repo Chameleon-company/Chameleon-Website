@@ -19,13 +19,35 @@ import Login from "./pages/login/login";
 import Signup from "./pages/signup/signup";
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useState, useEffect  } from "react";
 
 
 function App() {
+  const [user, setUser] = useState(null); 
+
+  useEffect(() => {
+    const storedUserData = sessionStorage.getItem('userData');
+    if (storedUserData) {
+      setUser(JSON.parse(storedUserData)); // Set the user data from session storage
+    }
+  }, []);
+  
+  const handleLogin = (userData) => {
+    setUser(userData); 
+    sessionStorage.setItem('userData', JSON.stringify(userData)); 
+    console.log("The App user is : ");
+    console.log(userData);
+  };
+
+  const handleLogout = () => {
+    setUser(null); 
+    sessionStorage.removeItem('userData'); 
+  };
+
   return (
     <>
       <Router>
-        <Header />
+      <Header user={user} onLogout={handleLogout}/>
         <main>
           <Switch>
             <Route exact path="/" component={HomePage} />
@@ -44,7 +66,9 @@ function App() {
             <Route path="/iotUpdates" component={IotUpdates} />
             <Route path="/faq" component={Main} />
             <Route path="/forgot" component={forgot} />
-            <Route path="/login" component={Login} />
+            <Route path="/login">
+              <Login onLogin={handleLogin} />
+            </Route>
             <Route path="/signup" component={Signup} />
           </Switch>
         </main>

@@ -1,0 +1,157 @@
+.bottom-bar {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    /* 允许内容换行 */
+    align-items: flex-start;
+    /* 垂直对齐方式 */
+    padding: 15px;
+    /* 添加一定的内边距 */
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+}
+
+.logo_position {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.important-logo {
+    width: 150px;
+    height: 150px;
+}
+
+.important-logo-right {
+    margin-left: auto;
+}
+
+.important-logo-left {
+    margin-right: 20px;
+    /* 调整左边大 logo 的右外边距，以保持一定间距 */
+}
+
+/* .contact {
+    text-align: center; 
+    margin-top: auto; 
+    margin-bottom: auto;
+} */
+.contact {
+    text-align: center;
+    /* 居中文本 */
+    margin-top: auto;
+    /* 垂直居中 */
+    margin-bottom: auto;
+    margin-right: 140px;
+    flex: 1;
+    /* 增加弹性以占用剩余空间 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-line {
+    font-size: 16px;
+    /* 调整字体大小 */
+    margin: 5px;
+    /* 添加间距 */
+}
+
+.contact-us {
+    font-size: 30px;
+    /* 调整字体大小 */
+    font-weight: bold;
+    /* 设置粗体 */
+    margin: 5px;
+    /* 添加间距 */
+}
+
+.copy_position {
+    width: 100%;
+    /* 让版权声明占满一行的宽度 */
+    margin-top: -50px;
+    /* 在 social media logo 下方留出空隙 */
+    font-size: 12px;
+    /* 设置字体大小为12像素 */
+    margin-left: 180px;
+}
+
+.copyright {
+    margin-top: 10px;
+    /* 调整版权声明的上外边距 */
+    font-size: 14px;
+    /* 设置字体大小为12像素 */
+}
+
+
+/* 上面的部分 */
+.Our_projects {
+    background-color: #559166;
+    width: 100%;
+    height: 550px;
+}
+
+.project_picture{
+    width: 300px;
+    height: 200px;
+}
+
+/* .Small_rectangle {
+    background-color: #D1E2C4;
+    width: 230px;
+    height: 250px;
+    margin: 10px;
+} */
+
+.project_description {
+    margin-top: 20px; /* 添加一点上边距 */
+    color: black; /* 设置字体颜色为黑色 */
+    font-weight: bold; /* 加粗字体 */
+    font-size: 20px;
+}
+
+.Small_rectangle {
+    background-color: #D1E2C4;
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    width: 800px;
+    height: 300px;
+    margin: 80px;
+    text-align: center; /* 文字居中对齐 */
+}
+
+.popup {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+    display: none;
+}
+
+.Small_rectangle:hover .popup {
+    display: block;
+}
+
+.popup_img {
+    max-width: 100%;
+    width: 300px;
+        height: 200px;
+        padding: 10px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.popup_content {
+    width: 400px;
+    height: 200px;
+    padding: 10px;
+}

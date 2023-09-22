@@ -1,0 +1,191 @@
+.white-background {
+    background-color: white; /* 设置背景颜色为白色 */
+    width: 66%; /* 设置宽度为100% */
+    height: 400px; /* 设置高度，根据你的需求进行调整 */
+    border-radius: 5%;
+    margin-left: 70px;
+  }
+
+  .white-background-2 {
+    background-color: white; /* 设置背景颜色为白色 */
+    width: 66%; /* 设置宽度为100% */
+    height: 400px; /* 设置高度，根据你的需求进行调整 */
+    margin-top: 20px;
+    border-radius: 5%;
+    margin-left: 70px;
+  }
+
+  .background{
+    background-color: #EBEBE8;
+  }
+
+  /* .white-background-3 {
+    background-color: red; 
+    width: 20%; 
+    height: 800px; 
+    margin-top: -820px;
+    border-radius: 5%;
+    margin-left: 1080px;
+  } */
+  .white-background-3 {
+    background-color: white;
+    width: 24%;
+    height: 810px;
+    /* position: fixed;  */
+    /* position: relative;  */
+    position: absolute;
+    /* top: 106px;  */
+    top: 1110px; 
+    right: 65px; /* 右侧对齐 */
+    border-radius: 5%;
+    /* 如果需要，你可以调整其他样式，例如 padding 等 */
+  }
+  
+
+  .left-title {
+    margin-left: 80px;
+    /* margin-top: 20px; 添加上边距 */
+    font-size: 24px; /* 设置字体大小为24px，根据需要进行调整 */
+  }
+
+  .left-title-1 {
+    margin-left: 55px;
+    /* margin-top: 20px; 添加上边距 */
+    font-size: 24px; /* 设置字体大小为24px，根据需要进行调整 */
+  }
+
+  .link-title{
+    margin-left: 20px;
+    font-size: 24px; 
+  }
+
+  .link-line {
+    width: 90%; /* 设置线的宽度为100%，占据整个父元素的宽度 */
+    height: 1px; /* 设置线的高度，可以根据需要调整 */
+    background-color: #333; /* 设置线的颜色为淡黑色 */
+    margin: 10px 0; /* 设置上下边距，根据需要调整 */
+    margin-left: 20px;
+  }
+
+  .line {
+    width: 90%; /* 设置线的宽度为100%，占据整个父元素的宽度 */
+    height: 1px; /* 设置线的高度，可以根据需要调整 */
+    background-color: #333; /* 设置线的颜色为淡黑色 */
+    margin: 10px 0; /* 设置上下边距，根据需要调整 */
+    margin-left: 60px;
+  }
+
+  .line-1 {
+    width: 90%; /* 设置线的宽度为100%，占据整个父元素的宽度 */
+    height: 1px; /* 设置线的高度，可以根据需要调整 */
+    background-color: #333; /* 设置线的颜色为淡黑色 */
+    margin: 10px 0; /* 设置上下边距，根据需要调整 */
+    margin-left: 80px;
+  }
+
+/* 小框内容 */
+.button {
+    background-color: rgb(70, 185, 70); /* 绿色背景 */
+    color: white; /* 白色字体颜色 */
+    border: none; /* 移除边框 */
+    padding: 8px 19px; /* 按钮内边距 */
+    font-size: 16px; /* 字体大小 */
+    border-radius: 100px; /* 圆角 */
+    cursor: pointer; /* 鼠标样式为手形 */
+    /* margin-left: 20px; */
+    /* margin-top: 15px; */
+    width: 160px; /* 设置按钮的宽度 */
+    height: 50px; /* 设置按钮的高度 */
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+
+/* .rectangle {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40rem;
+    height: 15rem;
+    margin: 4rem;
+    text-align: center;
+    margin-top: 20px;
+} */
+.rectangle {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40rem;
+  height: 15rem;
+  margin: 4rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.picture-1 {
+    width: 170px;
+    height: 120px;
+    padding: 2px;
+    margin-left: 20px;
+    /* 添加的 */
+}
+
+.picture {
+  width: 170px;
+  height: 120px;
+  padding: 2px;
+  /* 添加的 */
+}
+
+.small-title {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.title {
+  margin-top: 10px;
+  font-size: 25px;
+  margin-right: 105px;
+  font-weight: bold;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    padding: 2px;
+    margin-top: 10px;
+    /* margin-right: 10px;  */
+    /* margin-left: 10px; */
+}
+/* 对齐 */
+.container {
+  display: flex;
+  align-items: center; /* 垂直居中对齐 */
+  justify-content: space-between; /* 横向对齐 */
+  /* margin-left: 70px; */
+}
+
+.star{
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+  margin-left: 30px; /* 添加右边距，根据需要调整距离 */
+}
+
+.link-picture{
+  width: 55px;
+  height: 50px;
+  padding: 2px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+

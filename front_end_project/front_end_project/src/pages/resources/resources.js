@@ -1,6 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import React, { Component } from 'react';
-import Rectangle from 'react-rectangle';
+// import Rectangle from 'react-rectangle';
 import './resources.css';
 import smartCity from './images/city.png';
 import tech from './images/tech.png';
@@ -19,8 +19,8 @@ class Resources extends Component {
           </div>
 
           {/* <Col xs={12}> */}
-          <div className="rectangle">
-            <Rectangle className="iotRec">
+          <div className="rectangle2">
+            <div className="iotRec">
               <div style={{ background: '#E4F0FF' }} />
 
               {/* image */}
@@ -51,11 +51,11 @@ class Resources extends Component {
                   malesuada ligula. Pellentesque laoreet.
                 </p>
               </div>
-            </Rectangle>
+            </div>
           </div>
 
           <div className="rectangle2">
-            <Rectangle className="statsRec">
+            <div className="statsRec">
               <div style={{ background: '#E4F0FF' }} />
 
               {/* image */}
@@ -88,7 +88,7 @@ class Resources extends Component {
                   malesuada ligula. Pellentesque laoreet.
                 </p>
               </div>
-            </Rectangle>
+            </div>
           </div>
           <div></div>
           {/* </Col> */}

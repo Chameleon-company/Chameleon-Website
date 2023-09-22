@@ -71,9 +71,19 @@
     font-size: 1.1vw;
     cursor: pointer; /* 设置鼠标样式为可点击 */
     margin-top: -10px;
+    display:inline-block;
   }
 
-
+.logoutButton{
+    background-color: #ff8717; /* 设置按钮的背景颜色为金色 */
+    color: white; /* 设置按钮文本的颜色为白色 */
+    border: none;
+    border-radius: 10px; /* 设置按钮的边框为0时为直角 */
+    padding: 5px 10px; /* 设置按钮的内边距，控制按钮大小 */
+    font-size: 1.1vw;
+    cursor: pointer; /* 设置鼠标样式为可点击 */
+    margin-top: -10px;
+}
 
 /*
 .link{

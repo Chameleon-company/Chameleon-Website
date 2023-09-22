@@ -34,7 +34,7 @@
 //           </NavDropdown>
 
 //         </Nav>
-        
+
 //         <Nav>
 //           <Nav.Link href="#">Login</Nav.Link>
 //         </Nav>
@@ -50,15 +50,14 @@
 // }
 
 import React from "react";
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './header.css';
 import { useState } from "react";
 import logo from './images/logo.png';
 
 import { Nav, NavDropdown, Navbar } from 'react-bootstrap';
 
-function Header() {
-  
+function Header({ user, onLogout }) {
   const [drop, setDrop] = useState(false);
 
   const toggleDropdown = () => {
@@ -66,12 +65,12 @@ function Header() {
   };
 
   return (
-    
-    <nav className = "navbar">
+
+    <nav className="navbar">
       <div className="brandLogo">
-        <img src={logo} alt='Brand Logo'/>
+        <img src={logo} alt='Brand Logo' />
       </div>
-      <div className={`navLinks ${drop && "drop"}`}> 
+      <div className={`navLinks ${drop && "drop"}`}>
         <Nav.Link className="link" href="/">HOME<div className="space"></div></Nav.Link>
         <Nav.Link className="link_portfolio" href="/portfolio">PORTFOLIO<div className="space"></div></Nav.Link>
         <Nav.Link className="link" href="/blog">BLOG<div className="space"></div></Nav.Link>
@@ -81,7 +80,7 @@ function Header() {
         <Nav.Link className="link" href="/report">REPORT<div className="space"></div></Nav.Link>
 
         {/*<NavLink className="link" to="/resource">RESOURCE<div className="space"></div></NavLink>*/}
-        
+
         <div className="dropdown" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
           <NavLink className="link" to="/resource">RESOURCES</NavLink>
           <div className={`dropdown-content ${drop && "show"}`}>
@@ -91,10 +90,20 @@ function Header() {
           </div>
         </div>
 
-        <Nav.Link className="link_login" href="/login">
-          <button className="loginButton">LOGIN</button>
-        </Nav.Link>
-        
+
+        <div className="user-info">
+          {user ? (
+            <>
+              <p>Welcome, {user.name}</p>
+              <button className='logoutButton' onClick={onLogout}>Logout</button>
+            </>
+          ) : (
+            <Nav.Link className="link_login" href="/login">
+              <button className="loginButton">LOGIN</button>
+            </Nav.Link>
+          )}
+        </div>
+
       </div>
 
     </nav>

@@ -5,13 +5,7 @@ import userEvent from "@testing-library/user-event";
 
 const firebaseConfig =
 {
-    apiKey: "AIzaSyAm1ebex7fJDBas2UJs-qh8uQ3Wr6d60cU",
-    authDomain: "login-page-c4e72.firebaseapp.com",
-    projectId: "login-page-c4e72",
-    storageBucket: "login-page-c4e72.appspot.com",
-    messagingSenderId: "111235036213",
-    appId: "1:111235036213:web:c337c5f6aa95a9585cad7c",
-    // measurementId: "G-8K8JWNKKL1"
+
 };
 
 // Initialize Firebase

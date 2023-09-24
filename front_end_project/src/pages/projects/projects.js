@@ -22,7 +22,7 @@ class Projects extends Component {
       },
       {
         imageUrl: require("./image/Website.png"),
-        caption: "Chameleon Websit",
+        caption: "Chameleon Website",
         url: "#",
       },
       {

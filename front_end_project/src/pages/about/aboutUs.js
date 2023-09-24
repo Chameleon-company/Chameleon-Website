@@ -41,7 +41,7 @@ class aboutUs extends Component {
           <Row>
             <Col>
               <iframe
-                src="https://www.youtube.com/watch?v=JirJCCIeuvg"
+                src="https://www.youtube.com/embed/JirJCCIeuvg"
                 autoPlay
                 width="550"
                 height="350"
@@ -49,7 +49,7 @@ class aboutUs extends Component {
                 className="pl-3"
               ></iframe>
             </Col>
-            <Col>
+          <Col>
               <h2>Chameleon is a Deakin Universty, student-led company dedicated to revolutionizing urban living through the strategic application of IoT-based solutions. Our organization is structured into three distinct divisions, each focused on key areas of strategic importance.</h2>
             </Col>
           </Row>

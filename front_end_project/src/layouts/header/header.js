@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./images/Logo_No_Background.png";
 import profile from "./images/profile.jpg";
 import { Nav, Navbar, Container, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./header.css"; // Create a CSS file for custom styles
 
 function Header() {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
   return (
     <Navbar className="navbar bg-dark">
       <Container>
@@ -18,8 +25,8 @@ function Header() {
             alt="Chameleon logo"
           />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={toggleNav} />
+        <Navbar.Collapse id="responsive-navbar-nav" className={isNavOpen ? "show" : ""}>
           <Nav className="ms-auto">
             <Nav.Link className="text-white ml-3 mt-2" href="/">
               HOME
@@ -44,9 +51,6 @@ function Header() {
             </Nav.Link>
             <Nav.Link className="text-white ml-3 mt-2" href="/iotResources">
               RESOURCES
-            </Nav.Link>
-            <Nav.Link className="text-white ml-3 mt-2" href="/login">
-              LOGIN
             </Nav.Link>
             <Form className="d-flex">
               <Form.Control

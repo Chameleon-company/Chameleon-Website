@@ -1,4 +1,4 @@
-.black-rectangle-background {
+black-rectangle-background {
     background-color: black;
     width: 100%;
     height: 200px;
@@ -59,7 +59,7 @@
 .Introduction{
     background-color: #D1E2C4;
     width: 100%;
-    height: 500px;
+    height: 600px;
 
     position: relative;
     display: flex;
@@ -67,7 +67,7 @@
 }
 
 .Text2{
-    margin-top:50px;
+    margin-top:0px;
     margin-right:70px;
     margin-left: 150px;
     font-size: 180%;
@@ -77,7 +77,7 @@
 .Our_projects{
     background-color: #559166;
     width: 100%;
-    height: 800px;
+    height: 400px;
 }
 
 .Small_rectangle{

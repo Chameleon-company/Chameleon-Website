@@ -90,13 +90,13 @@
 
 
 /* 上面的部分 */
-.Our_projects {
+/* .Our_projects {
     background-color: #559166;
     width: 100%;
     height: 550px;
-}
+} */
 
-.project_picture{
+.project_picture {
     width: 300px;
     height: 200px;
 }
@@ -109,49 +109,86 @@
 } */
 
 .project_description {
-    margin-top: 20px; /* 添加一点上边距 */
-    color: black; /* 设置字体颜色为黑色 */
-    font-weight: bold; /* 加粗字体 */
+    margin-top: 20px;
+    /* 添加一点上边距 */
+    color: black;
+    /* 设置字体颜色为黑色 */
+    font-weight: bold;
+    /* 加粗字体 */
     font-size: 20px;
 }
 
 .Small_rectangle {
     background-color: #D1E2C4;
     display: flex;
-    flex-direction: column; /* 垂直排列 */
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
+    flex-direction: column;
+    /* 垂直排列 */
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
     width: 800px;
     height: 300px;
     margin: 80px;
-    text-align: center; /* 文字居中对齐 */
+    text-align: center;
+    /* 文字居中对齐 */
 }
 
-.popup {
+/* ... Your existing styles ... */
+
+/* Carousel styles */
+div#carousel {
+    perspective: 1200px;
+    padding-top: 5%;
+    font-size: 0;
+    margin-bottom: 3rem;
+    overflow: hidden;
+}
+
+figure#spinner {
+    transform-style: preserve-3d;
+    height: 300px;
+    transform-origin: 50% 50% -500px;
+    transition: 1s;
+}
+
+figure#spinner img {
+    width: 40%;
+    max-width: 425px;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.8);
+    left: 30%;
+    transform-origin: 50% 50% -500px;
+    outline: 1px solid transparent;
+}
+
+figure#spinner img:nth-child(1) {
+    transform: rotateY(0deg);
+}
+
+figure#spinner img:nth-child(2) {
+    transform: rotateY(-120deg);
+}
+
+figure#spinner img:nth-child(3) {
+    transform: rotateY(-240deg);
+}
+
+/* ... Your other styles ... */
+
+div#carousel~span {
     color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 1;
-    display: none;
+    margin: 5%;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 2rem;
+    transition: 0.6s color;
+    position: relative;
+    margin-top: -6rem;
+    border-bottom: none;
+    line-height: 0;
 }
 
-.Small_rectangle:hover .popup {
-    display: block;
-}
-
-.popup_img {
-    max-width: 100%;
-    width: 300px;
-        height: 200px;
-        padding: 10px;
-    display: flex;
-    margin: 0 auto;
-}
-
-.popup_content {
-    width: 400px;
-    height: 200px;
-    padding: 10px;
+div#carousel~span:hover {
+    color: #888;
+    cursor: pointer;
 }

@@ -1,0 +1,77 @@
+/* Navbar background color and overall styles */
+.navbar.bg-dark {
+    background-color: #333;
+    /* Change to your desired background color */
+    padding: 10px 0;
+    /* Adjust the padding as needed */
+}
+
+/* Logo styles */
+.navbar .navbar-brand img {
+    transition: transform 0.3s ease-in-out;
+    /* Add a logo hover animation */
+}
+
+/* Navigation link styles */
+.navbar .nav-link {
+    color: white;
+    /* Default link color */
+    position: relative;
+    /* Create a positioning context for pseudo-elements */
+    text-decoration: none;
+    /* Remove default underline */
+}
+
+/* Create an animated underline */
+.navbar .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    /* Set the height of the underline */
+    background-color: #559166;
+    /* Color of the underline */
+    transition: width 0.3s ease-in-out;
+    /* Animation duration and easing */
+    transform-origin: left;
+}
+
+/* Expand the underline on hover */
+.navbar .nav-link:hover::before {
+    width: 100%;
+    /* Expand the underline to 100% width */
+    transform-origin: right;
+}
+
+
+/* Search button styles */
+.navbar .btn {
+    background-color: #333;
+    /* Default button background color */
+    color: white;
+    /* Default button text color */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    /* Add button hover animation */
+}
+
+/* Search button hover styles */
+.navbar .btn:hover {
+    background-color: #559166;
+    /* Change to your desired hover background color */
+    transform: scale(1.05);
+    /* Adjust the button hover scale effect */
+}
+
+/* User profile image styles */
+.navbar .rounded-circle {
+    transition: transform 0.3s ease-in-out;
+    /* Add a user profile image hover animation */
+}
+
+/* User profile image hover styles */
+.navbar .rounded-circle:hover {
+    transform: scale(1.1);
+    /* Adjust the user profile image hover scale effect */
+}

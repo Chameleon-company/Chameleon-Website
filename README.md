@@ -26,7 +26,7 @@ Both `back_end_project` and `front_end_project` are workspaces. Most actions, su
 
 e.g. To install a new package to the `front_end_project` package only `cd front_end_project` then `npm install package-name`
 
-Note: Running `npm add <package>` will install it to the root .
+Note: Running `npm add <package>` will install it to the root.
 
 
 ---

@@ -39,9 +39,9 @@ class Login extends Component {
                     <Form.Control type="password" placeholder="PASSWORD" style={{ backgroundColor: '#ccc', border: '1px solid black', height: '50px' }} />
                 </Form.Group>
 
-                <p style={{ color: 'green', fontWeight: 'bold', textAlign: 'right' }}>
+                <p style={{ fontWeight: 'bold', textAlign: 'right' }}>
                   <a href="/signup">Sign-up?</a><br />
-                  <a href="/forgot">Forgot password?</a>
+                  <a href="/reset">Forgot password?</a>
                 </p>
 
                 <div className="d-flex justify-content-center mb-3">

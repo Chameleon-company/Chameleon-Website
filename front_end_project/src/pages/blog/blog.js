@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ArticleView from '../../components/blog/articleView';
 import './blog.css';
+import './blog-media.css';
 
 class Blog extends Component {
   render() {

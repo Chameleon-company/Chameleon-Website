@@ -3,6 +3,7 @@ import React from 'react';
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./footer.css";
+import "./footer-media.css";
 
 function Footer() {
   return (
@@ -32,7 +33,7 @@ function Footer() {
         <p>PH: 03 5975 6586</p>
         <p>E: info@chameleon.com.au</p>
       </Container>
-      <img src={require('../../layouts/footer/assets/deakin.png')} alt="Deakin University Logo"
+      <img src={require('../../layouts/footer/assets/deakin.png')} className='deakin-logo' alt="Deakin University Logo"
         style={{ width: '150px', height: '150px' }} />
     </Container>
   );

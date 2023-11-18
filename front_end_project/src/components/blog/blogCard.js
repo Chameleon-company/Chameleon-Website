@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './blogCard.css';
+import './blogCard-media.css';
 
 const BlogCard = (props) => {
   return (

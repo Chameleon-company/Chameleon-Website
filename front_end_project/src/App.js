@@ -14,9 +14,9 @@ import IotStatistics from "./pages/resources/iotStatistics";
 import IotUpdates from "./pages/resources/iotUpdates";
 import Main from "./pages/faq/main";
 import Report from "./pages/report/report";
+import forgot from "./pages/forgot_password/forgot";
 import Login from "./pages/login/login";
 import Signup from "./pages/signup/signup";
-import ResetPassword from "./pages/reset_password/reset";
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -43,9 +43,9 @@ function App() {
             <Route path="/iotStatistics" component={IotStatistics} />
             <Route path="/iotUpdates" component={IotUpdates} />
             <Route path="/faq" component={Main} />
+            <Route path="/forgot" component={forgot} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route path ="/reset" component={ResetPassword}/>
           </Switch>
         </main>
         <Footer />

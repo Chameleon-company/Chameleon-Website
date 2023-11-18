@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './articleView.css';
+import './articleView-media.css'
 import BlogCard from './blogCard';
 import Article from './articles/articles';
 import ArticleList from './articles/articleList';

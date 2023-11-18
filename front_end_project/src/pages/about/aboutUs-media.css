@@ -1,0 +1,212 @@
+.about-page .col-lg-6 iframe {
+               width: 100%;
+             }
+             
+             /* Max-Width : 1024px */
+             
+             @media only screen and (max-width: 1024px) {
+               .about-page {
+                 & .row {
+                   align-items: center;
+             
+                   & .col-lg-6 h2 {
+                     font-size: 26px;
+                   }
+                 }
+               }
+               .about-mission-section {
+                 & .row {
+                   align-items: center;
+             
+                   & .col-lg-6 img {
+                     width: 200px !important;
+                   }
+                   & .col-lg-6 p {
+                     width: 100% !important;
+                     font-size: 20px !important;
+                   }
+                 }
+               }
+             
+               .about-goals-section {
+                 & .row {
+                   & .col-md-3 {
+                     & img {
+                       width: 150px !important;
+                     }
+                     & h4 {
+                       font-size: 20px;
+                     }
+                   }
+                 }
+               }
+             
+               .about-faq-section {
+                 & h3 {
+                   font-size: 22px;
+                   margin: 0 !important;
+                 }
+             
+                 & .d-flex {
+                   align-items: center;
+             
+                   & .mb-3 {
+                     margin: 0 !important;
+                   }
+                   & a.btn {
+                     height: fit-content;
+                   }
+                 }
+               }
+               .lastBR {
+                 display: none;
+               }
+             }
+             
+             /* Max-Width : 991px */
+             
+             @media only screen and (max-width: 991px) {
+               .about-page {
+                 & .col-lg-6 iframe {
+                   padding: 0;
+                 }
+             
+                 & .row .col-lg-6 h2 {
+                   margin-top: 20px;
+                   font-size: 22px;
+                 }
+               }
+               .about-mission-section {
+                 & .row {
+                   align-items: center;
+             
+                   & .col-lg-6 img {
+                     width: 150px !important;
+                     margin: 20px auto !important;
+                     padding: 0 !important;
+                   }
+                   & .col-lg-6 p {
+                     width: 60% !important;
+                     font-size: 18px !important;
+                     margin: 20px auto !important;
+                     text-align: center !important;
+                     padding: 0 !important;
+                     padding-bottom: 10px !important;
+                   }
+                 }
+               }
+               .about-faq-section {
+                 & h3 {
+                   font-size: 20px;
+                 }
+               }
+             }
+             
+             /* Max-Width : 767px */
+             
+             @media only screen and (max-width: 767px) {
+               .about-mission-section {
+                 & .row {
+                   & .col-lg-6 img {
+                     width: 150px !important;
+                     margin: 10px auto !important;
+                   }
+                   & .col-lg-6 p {
+                     width: 80% !important;
+                     font-size: 18px !important;
+                     margin: 10px auto !important;
+                   }
+                 }
+               }
+               .about-goals-section {
+                 & .row {
+                   justify-content: center;
+                   & .col-md-3 {
+                     & img {
+                       width: 120px !important;
+                     }
+                     & h4 {
+                       font-size: 18px;
+                     }
+                   }
+                 }
+               }
+               .about-faq-section {
+                 & h3 {
+                   font-size: 18px;
+                 }
+             
+                 & .d-flex {
+                   flex-direction: column !important;
+                   gap: 10px;
+             
+                   & .mb-3 {
+                     width: 100% !important;
+                   }
+                   & a.btn {
+                     margin-left: 0px !important;
+                   }
+                 }
+               }
+             }
+             
+             /* Max-Width : 575px */
+             
+             @media only screen and (max-width: 575px) {
+               .about-page .row .col-lg-6 h2 {
+                 font-size: 20px;
+               }
+             
+               .about-mission-section {
+                 & .row {
+                   & .col-lg-6 img {
+                     width: 120px !important;
+                     margin: 10px auto !important;
+                   }
+                   & .col-lg-6 p {
+                     width: 100% !important;
+                     font-size: 17px !important;
+                     margin: 10px auto !important;
+                   }
+                 }
+               }
+             
+               .about-goals-section {
+                 & .row {
+                   justify-content: center;
+                   & .col-md-3 {
+                     & img {
+                       width: 100px !important;
+                       margin: 30px auto 0px !important;
+                     }
+                     & h4 {
+                       font-size: 17px;
+                     }
+                   }
+                 }
+               }
+             
+               .about-faq-section {
+                 & .accordion-header button {
+                   padding: 10px 20px;
+                 }
+                 & h3 {
+                   font-size: 17px;
+                 }
+                 & h4 {
+                   font-size: 20px;
+                 }
+               }
+             }
+             
+             /* Max-Width : 430px */
+             
+             @media only screen and (max-width: 430px) {
+               .about-page .row .col-lg-6 h2 {
+                 font-size: 18px;
+               }
+             
+               .about-faq-section h4 {
+                 font-size: 18px;
+               }
+             }             

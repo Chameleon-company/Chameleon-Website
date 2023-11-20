@@ -1,0 +1,14 @@
+/* Max-Width : 767px */
+
+@media only screen and (max-width: 767px) {
+               .card-footer {
+                 display: block;
+                 flex-wrap: wrap;
+                 justify-content: center;
+             
+                 & div {
+                   text-align: center;
+                 }
+               }
+             }
+             

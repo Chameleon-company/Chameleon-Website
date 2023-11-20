@@ -1,0 +1,80 @@
+/* Max-Width : 1024px */
+
+@media only screen and (max-width: 1024px) {
+               .footer-content {
+                 margin: 0;
+                 gap: 30px;
+                 align-items: center;
+               }
+               .footer-content img.img-fluid {
+                 width: 150px !important;
+               }
+               .socials {
+                 margin: 0;
+                 width: fit-content;
+             
+                 & p {
+                   width: fit-content;
+                   margin: 10px 0px 0px;
+                 }
+               }
+             
+               .social-icons {
+                 justify-content: center;
+               }
+             
+               .deakin-logo {
+                 width: 100px !important;
+                 height: 100px !important;
+               }
+             
+               .contact-menu {
+                 padding: 0;
+                 max-width: fit-content;
+             
+                 & h2 {
+                   margin: 5px 0px 0px;
+                   font-size: 26px;
+                 }
+             
+                 & p {
+                   margin: 5px 0px 0px;
+                   font-size: 16px;
+                 }
+               }
+             }
+             
+             /* Max-Width : 991px */
+             
+             @media only screen and (max-width: 991px) {
+               .social-icons img {
+                 width: 35px !important;
+                 height: 35px !important ;
+               }
+             }
+             
+             /* Max-Width : 767px */
+             
+             @media only screen and (max-width: 767px) {
+               .footer-content {
+                 flex-direction: column;
+               }
+               .social-icons img {
+                 width: 30px !important;
+                 height: 30px !important;
+               }
+             }
+             
+             /* Max-Width : 430px */
+             
+             @media only screen and (max-width: 430px) {
+               .social-icons img {
+                 width: 25px !important;
+                 height: 25px !important;
+               }
+             
+               .contact-menu h2 {
+                 font-size: 22px;
+               }
+             }
+             

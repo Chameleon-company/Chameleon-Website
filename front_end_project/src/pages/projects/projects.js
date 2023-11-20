@@ -2,6 +2,7 @@ import { Container, Row, Col, Carousel, Button } from "react-bootstrap";
 import React, { Component } from "react";
 import PortfolioCard from "../../components/portfolio_card/porfolio_card";
 import "./projects.css";
+import "./projects-media.css";
 import Wrapper from "../../components/shared/Wrapper";
 import Slider from "../../components/projects/Slider";
 import ProjectCard from "../../components/projects/ProjectCard";
@@ -33,7 +34,8 @@ class Projects extends Component {
     ];
 
     return (
-      <Container fluid>
+      // Added a custom class for styling
+      <Container fluid className="projects-page">
         <Carousel style={{ height: "600px" }}>
           {carouselItems.map((item, index) => (
             <Carousel.Item key={index}>
@@ -56,14 +58,16 @@ class Projects extends Component {
           ))}
         </Carousel>
         <Row>
-          <Col xs={6} className="image-col" style={{ padding: "0px" }}>
+          {/* Changed to specify lg size */} 
+          <Col lg={6} className="image-col" style={{ padding: "0px" }}>
             <img
               alt="chutiya"
               src={require("./image/EV.png")}
               className="img-fluid"
             />
           </Col>
-          <Col xs={6} style={{ padding: "0px" }}>
+          {/* Changed to specify lg size */} 
+          <Col lg={6} style={{ padding: "0px" }}>
             <div className="card-col">
               <PortfolioCard
                 title="EV Adoption Tools"
@@ -80,9 +84,11 @@ class Projects extends Component {
             </div>
           </Col>
         </Row>
-        <Row>
-          <Col xs={6} style={{ padding: "0px" }}>
-            <div>
+      {/* Added a custom class for styling */}
+        <Row className="center-div">
+          <Col lg={6} style={{ padding: "0px" }}>
+      {/* Added a custom class for styling */}
+            <div className="card-col">
               <PortfolioCard
                 title="Chameleon Website"
                 body={
@@ -98,16 +104,18 @@ class Projects extends Component {
               />
             </div>
           </Col>
-          <Col xs={6} className="image-col" style={{ padding: "0px" }}>
+          {/* Changed to specify lg size */} 
+          <Col lg={6} className="image-col" style={{ padding: "0px" }}>
             <img alt="chutiya" src={require("./image/Website.png")} />
           </Col>
         </Row>
         <Row>
-          <Col xs={6} className="image-col" style={{ padding: "0px" }}>
+      {/* Added a custom class for styling */}
+          <Col lg={6} className="image-col" style={{ padding: "0px" }}>
             <img alt="chutiya" src={require("./image/City.png")} />
           </Col>
-          <Col xs={6} style={{ padding: "0px" }}>
-            <div>
+          <Col lg={6} style={{ padding: "0px" }}>
+            <div className="card-col">
               <PortfolioCard
                 title="City of Melbourne Open Data"
                 body={

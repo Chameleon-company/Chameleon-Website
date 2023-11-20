@@ -1,0 +1,137 @@
+/* Max-Width : 1024px */
+
+@media only screen and (max-width: 1024px) {
+   .projects-page {
+     padding: 20px 10px;
+ 
+     & .row {
+       margin: 20px 0px;
+       align-items: center;
+ 
+       & div.col-lg-6 {
+         padding: 0px 10px !important;
+       }
+     }
+ 
+     & .custom-card {
+       height: fit-content;
+ 
+       & .card-body {
+         padding: 0;
+ 
+         & .project-context {
+           height: fit-content;
+         }
+       }
+     }
+   }
+   .carousel-caption {
+     margin-right: -100px;
+ 
+     & p {
+       font-size: 40px;
+     }
+   }
+ }
+ 
+ /* Max-Width : 991px */
+ 
+ @media only screen and (max-width: 991px) {
+   .projects-page {
+     & div.col-lg-6 {
+       display: flex;
+       justify-content: center;
+     }
+ 
+     & .center-div {
+       flex-direction: column-reverse;
+     }
+   }
+   .card-col {
+     width: 60%;
+   }
+ 
+   .image-col {
+     justify-content: center;
+ 
+     & img {
+       width: 60%;
+       text-align: center;
+     }
+   }
+ }
+ 
+ /* Max-Width : 767px */
+ 
+ @media only screen and (max-width: 767px) {
+   .project-title {
+     font-size: 26px;
+   }
+ 
+   .project-context p {
+     font-size: 18px;
+   }
+   .carousel-caption {
+     margin-right: -50px;
+ 
+     & p {
+       font-size: 30px;
+     }
+   }
+ 
+   .image-col img,
+   .card-col {
+     width: 70%;
+   }
+ }
+ 
+ /* Max-Width : 575px */
+ 
+ @media only screen and (max-width: 575px) {
+   .carousel-caption {
+     margin-right: -50px;
+     width: 100%;
+ 
+     & p {
+       font-size: 26px;
+     }
+   }
+   .carousel-item img {
+     object-fit: cover;
+     filter: brightness(0.5);
+   }
+ 
+   .image-col img,
+   .card-col {
+     width: 80%;
+   }
+ }
+ 
+ /* Max-Width : 480px */
+ 
+ @media only screen and (max-width: 480px) {
+   .image-col img,
+   .card-col {
+     width: 90%;
+   }
+ }
+ 
+ /* Max-Width : 430px */
+ 
+ @media only screen and (max-width: 430px) {
+   .project-title {
+     font-size: 22px;
+   }
+ 
+   .project-context p {
+     font-size: 17px;
+   }
+   .carousel-caption p {
+     font-size: 24px;
+   }
+   .image-col img,
+   .card-col {
+     width: 100%;
+   }
+ }
+ 

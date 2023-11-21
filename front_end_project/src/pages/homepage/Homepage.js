@@ -7,6 +7,8 @@ import White_Logo from "./Image_homepage/White_Logo.png";
 import City from "./Image_homepage/City.png";
 import EV from "./Image_homepage/EV.jpeg";
 import Website from "./Image_homepage/Website.png";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Homepage() {
 
@@ -14,8 +16,23 @@ function Homepage() {
   const [showCityPopup, setShowCityPopup] = useState(false);
   const [showWebsitePopup, setShowWebsitePopup] = useState(false);
 
+  const toastShown = React.useRef(false);
+
+  React.useEffect(() => {
+    // Display toast notification only if it hasn't been shown before
+    if (!toastShown.current) {
+      toast.success("Welcome to CHAMELEON!", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 3000,
+        style: { marginTop: '100px' },
+      });
+      toastShown.current = true;
+    }
+  }, []);
+
   return (
     <div>
+      <ToastContainer />
       <div>
         <div className="Introduction">
           <img

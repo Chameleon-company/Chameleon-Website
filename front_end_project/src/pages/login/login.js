@@ -43,6 +43,7 @@ class Login extends Component {
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
+        style: { marginTop: '60px' },
       });
     } else {
       toast.error('Login failed. Please check your credentials.', {

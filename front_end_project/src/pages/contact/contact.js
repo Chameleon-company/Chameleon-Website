@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './contact.css';
+// import contact-media.css to style it.
+import './contact-media.css';
 import Phone from './image/phone.png';
 import Chat from './image/chat.png';
 import Email from './image/email.png';

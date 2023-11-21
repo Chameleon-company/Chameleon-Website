@@ -1,0 +1,117 @@
+/* Max-Width : 1099px */
+
+@media only screen and (max-width: 1099px) {
+               .contact_body {
+                 height: auto;
+                 justify-content: space-between;
+               }
+               .contact_item_context {
+                 width: auto;
+               }
+             }
+             
+             /* Max-Width : 1024px */
+             
+             @media only screen and (max-width: 1024px) {
+               .contact_container {
+                 height: auto;
+                 padding: 30px 10px;
+               }
+               .contact_title {
+                 font-size: 40px;
+                 margin: 0px 0px 20px;
+               }
+               .contact_body {
+                 margin-top: 30px;
+                 align-items: start;
+               }
+               .contact_item {
+                 width: 33%;
+               }
+             
+               .contact_item_img {
+                 width: 80px;
+                 height: 80px;
+               }
+             
+               .contact_item_title {
+                 margin-top: 20px;
+                 font-size: 26px;
+               }
+             
+               .contact_item_context {
+                 font-size: 18px;
+               }
+             
+               .contact_item_btn {
+                 width: auto;
+                 height: auto;
+                 padding: 5px 30px;
+                 font-size: 18px;
+               }
+             }
+             
+             /* Max-Width : 767px */
+             
+             @media only screen and (max-width: 767px) {
+               .contact_title {
+                 font-size: 34px;
+               }
+             
+               .contact_body {
+                 flex-direction: column;
+                 gap: 30px;
+               }
+             
+               .contact_item {
+                 width: 100%;
+               }
+             
+               .contact_item_img {
+                 width: 70px;
+                 height: 70px;
+               }
+             
+               .contact_item_title {
+                 margin-top: 10px;
+                 font-size: 22px;
+               }
+             
+               .contact_item_context {
+                 font-size: 17px;
+               }
+             
+               .contact_item_btn {
+                 font-size: 17px;
+                 margin-top: 10px;
+               }
+             }
+             
+             /* Max-Width : 430px */
+             
+             @media only screen and (max-width: 430px) {
+               .contact_container {
+                 height: auto;
+                 padding: 20px;
+               }
+               .contact_title {
+                 font-size: 30px;
+                 margin: 0;
+               }
+               .contact_body {
+                 gap: 20px;
+               }
+             
+               .contact_item_img {
+                 width: 60px;
+                 height: 60px;
+               }
+             
+               .contact_item_title {
+                 font-size: 20px;
+               }
+             
+               .contact_item_context {
+                 font-size: 16px;
+               }
+             }             

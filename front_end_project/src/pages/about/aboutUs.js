@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import './aboutUs-media.css';
 import Container from "react-bootstrap/Container";
 import logo from "./assets/ChameleonLogo.png";
 import connected from "./assets/connected.png";
@@ -34,12 +35,16 @@ class aboutUs extends Component {
         <br></br>
 
         {/* ABOUT US SECTION */}
-        <Container>
+
+{/* Added a custom class for styling */} 
+<Container className="about-page">
           <h1 style={{ fontWeight: "900" }} className="text-sm-left pb-3">
             ABOUT US
           </h1>
           <Row>
-            <Col>
+            
+{/* Changed to specify lg size */} 
+<Col lg={6}>
               <iframe
                 src="https://www.youtube.com/embed/JirJCCIeuvg"
                 autoPlay
@@ -49,7 +54,9 @@ class aboutUs extends Component {
                 className="pl-3"
               ></iframe>
             </Col>
-          <Col>
+            
+{/* Changed to specify lg size */} 
+<Col lg={6}>
               <h2>Chameleon is a Deakin Universty, student-led company dedicated to revolutionizing urban living through the strategic application of IoT-based solutions. Our organization is structured into three distinct divisions, each focused on key areas of strategic importance.</h2>
             </Col>
           </Row>
@@ -58,12 +65,15 @@ class aboutUs extends Component {
         <br></br>
 
         {/* OUT MISSION SECTION*/}
-        <Container style={{ backgroundColor: "#67A170", maxWidth: '100%' }}>
+        {/* Added a custom class for styling */} 
+        <Container style={{ backgroundColor: "#67A170", maxWidth: '100%' }} className="about-mission-section">
           <h2 className="text-center text-white fw-bold mt-2 pt-3">
             OUR MISSION
           </h2>
           <Row>
-            <Col>
+            
+{/* Changed to specify lg size */} 
+<Col lg={6}>
               <img
                 src={logo}
                 className="img-fluid mx-auto d-block mt-5 pb-5"
@@ -71,7 +81,9 @@ class aboutUs extends Component {
                 style={{ width: "300px" }}
               />
             </Col>
-            <Col>
+            
+{/* Changed to specify lg size */} 
+<Col lg={6}>
               <p className=" pb-5 text-white fs-4 text-start fw-light mt-5 pe-3" style={{ width: '70%' }}>
                 At Chameleon, our mission is to research, create, test, document and deploy IoT-based solutions to enhance life through the application of smart city technologies including: the building of smarter cities, homes, transportation, and energy management systems.
               </p>
@@ -82,12 +94,15 @@ class aboutUs extends Component {
         <br></br>
 
         {/* OUR GOALS SECTION*/}
-        <Container>
+        {/* Added a custom class for styling */} 
+        <Container className="about-goals-section">
           <h2 className="text-center text-black fw-bold mt-2 pt-3">
             OUR GOALS
           </h2>
           <Row>
-            <Col>
+            
+{/* Changed to specify md and sm sizes */} 
+<Col md={3} sm={4}>
               <img
                 src={connected}
                 className="img-fluid mx-auto d-block mt-5"
@@ -96,7 +111,9 @@ class aboutUs extends Component {
               />
               <h4 className="text-center pt-3 fw-bold">Better Connected</h4>
             </Col>
-            <Col>
+            
+{/* Changed to specify md and sm sizes */} 
+<Col md={3} sm={4}>
               <img
                 src={environment}
                 className="img-fluid mx-auto d-block mt-5"
@@ -107,7 +124,9 @@ class aboutUs extends Component {
                 Environmentally Friendly
               </h4>
             </Col>
-            <Col>
+            
+{/* Changed to specify md and sm sizes */} 
+<Col md={3} sm={4}>
               <img
                 src={partner}
                 className="img-fluid mx-auto d-block mt-5"
@@ -116,7 +135,9 @@ class aboutUs extends Component {
               />
               <h4 className="text-center pt-3 fw-bold">Partnerships</h4>
             </Col>
-            <Col>
+            
+{/* Changed to specify md and sm sizes */} 
+<Col md={3} sm={4}>
               <img
                 src={support}
                 className="img-fluid mx-auto d-block mt-5"
@@ -134,7 +155,8 @@ class aboutUs extends Component {
         <br></br>
 
         {/* FAQ SECTION*/}
-        <Container style={{ backgroundColor: "#67A170", maxWidth: '100%' }}>
+        {/* Added a custom class for styling */} 
+        <Container style={{ backgroundColor: "#67A170", maxWidth: '100%' }} className="about-faq-section">
           <h2 className="text-center text-white fw-bold mt-2 pt-3">
             FREQUENTLY ASKED QUESTIONS
           </h2>
@@ -190,7 +212,8 @@ class aboutUs extends Component {
           </div>
           <br></br>
         </Container>
-        <br></br>
+        {/* Added a custom class for Display None it on Mobile Screens */} 
+        <br className="lastBR"></br>
       </>
     );
   }

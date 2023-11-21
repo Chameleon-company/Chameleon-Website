@@ -1,6 +1,8 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import './portfolio_card.css';
+// import portfolio_card-media.css to style it.
+import './portfolio_card-media.css';
 
 const PortfolioCard = ({ title, body, onButtonClick, isMiddleCard }) => {
   const cardClassName = isMiddleCard

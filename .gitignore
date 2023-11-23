@@ -1,0 +1,105 @@
+# Ignore node_modules
+node_modules/
+
+# Ignore build directory
+build/
+
+# Ignore log files
+*.log
+
+# Ignore any files ending with ~
+*~
+
+# Ignore .env files
+.env
+
+# Ignore any .config files
+*.config
+
+# Ignore .DS_Store files
+.DS_Store
+
+# Ignore Thumbs.db files
+Thumbs.db
+
+# Ignore npm debug.log files
+npm-debug.log
+
+# Ignore the dist folder
+dist/
+
+# Ignore all .zip files
+*.zip
+
+# Ignore .env.test file
+.env.test
+
+# Ignore the out directory
+out/
+
+# Ignore all files and folders inside .next directory
+.next/
+
+# Ignore .gitkeep files
+.gitkeep
+
+# Ignore any .map files
+*.map
+
+# Ignore the node_modules/jest folder
+node_modules/jest/
+
+# Ignore .eslintcache file
+.eslintcache
+
+# Ignore all files inside .vscode directory
+.vscode/
+
+# Ignore all files and folders inside coverage directory
+coverage/
+
+# Ignore the public directory
+public/
+
+# Ignore .nyc_output folder
+.nyc_output/
+
+# Ignore the config directory
+config/
+
+# Ignore all .css.d.ts files
+*.css.d.ts
+
+# Ignore the storybook-static directory
+storybook-static/
+
+# Ignore .env.development and .env.production files
+.env.development
+.env.production
+
+# Ignore all files inside src/test directory
+src/test/
+
+# Ignore .editorconfig file
+.editorconfig
+
+# Ignore all .json files
+*.json
+
+# Ignore all .d.ts files
+*.d.ts
+
+# Ignore the coverage.html file
+coverage.html
+
+# Ignore all files and folders inside lib directory
+lib/
+
+# Ignore all .md files
+*.md
+
+# Ignore .travis.yml file
+.travis.yml
+
+# Ignore the jest.config.js file
+jest.config

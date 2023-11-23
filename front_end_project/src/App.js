@@ -1,7 +1,7 @@
 import Header from "./layouts/header/header";
 import Footer from "./layouts/footer/footer";
 import HomePage from "./pages/homepage/Homepage";
-import Chatbot from './pages/Chatbot/Chatbot';
+import Chatbot from "./pages/Chatbot/Chatbot";
 import Helloo from "./pages/hello/hello";
 import aboutUs from "./pages/about/aboutUs";
 import Blog from "./pages/blog/blog";
@@ -22,7 +22,6 @@ import newsUnsubForm from "./pages/email_newsletter_forms/unsubscribe";
 import newsRemoveForm from "./pages/email_newsletter_forms/remove";
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 
 function App() {
   return (

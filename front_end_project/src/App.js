@@ -17,6 +17,9 @@ import Report from "./pages/report/report";
 import Login from "./pages/login/login";
 import Signup from "./pages/signup/signup";
 import ResetPassword from "./pages/reset_password/reset";
+import newsSignupForm from "./pages/email_newsletter_forms/subscribe";
+import newsUnsubForm from "./pages/email_newsletter_forms/unsubscribe";
+import newsRemoveForm from "./pages/email_newsletter_forms/remove";
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -45,7 +48,10 @@ function App() {
             <Route path="/faq" component={Main} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route path ="/reset" component={ResetPassword}/>
+            <Route path="/reset" component={ResetPassword} />
+            <Route path="/newsSignupForm" component={newsSignupForm} />
+            <Route path="/newsUnsubForm" component={newsUnsubForm} />
+            <Route path="/newsRemoveForm" component={newsRemoveForm} />
           </Switch>
         </main>
         <Footer />

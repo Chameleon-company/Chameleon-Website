@@ -65,7 +65,6 @@ class ResetPassword extends Component {
                                         margin: 10,
                                     }}
                                     onClick={this.sendResetPasswordLink}
-
                                 >
                                     Reset Password
                                 </Button>

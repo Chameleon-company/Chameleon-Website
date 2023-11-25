@@ -1,41 +1,70 @@
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import React from 'react';
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./footer.css";
+import chameleonLogo from "../../assets/ChameleonLogo.png";
+import deakinLogo from "./assets/Footer-Deakin.png";
+import facebookLogo from "./assets/Footer-Facebook.png";
+import twitterLogo from "./assets/Footer-Twitter.png";
+import instagramLogo from "./assets/Footer-Instagram.png";
+import emailLogo from "./assets/Footer-Email.png";
 
-function Footer() {
+const Footer = () => {
   return (
-    <Container className="footer-content">
-      <a href="#"><img
-        alt="Company Logo"
-        src={require('../../assets/ChameleonLogo.png')}
-        className="img-fluid"
-        href="#"
-        style={{ width: '300px' }}
-      /></a>
-      <Container className="socials">
-        <Container className="social-icons">
-          <a href="#"><img src={require('../../layouts/footer/assets/MicrosoftTeams-image (3).png')} alt="Link to Instagram"
-            style={{ width: "40px", marginRight: '10px', height: '40px' }} /></a>
-          <a href="#"><img src={require('../../layouts/footer/assets/MicrosoftTeams-image (4).png')} alt="Link to Instagram"
-            style={{ width: "40px", marginRight: '10px', height: '40px' }} /></a>
-          <a href="#"><img src={require('../../layouts/footer/assets/MicrosoftTeams-image (5).png')} alt="Link to Instagram"
-            style={{ width: "40px", marginRight: '10px', height: '40px' }} /></a>
-          <a href="#"><img src={require('../../layouts/footer/assets/MicrosoftTeams-image (6).png')} alt="Link to Instagram"
-            style={{ width: "40px", marginRight: '10px', height: '40px' }} /></a>
-        </Container>
-        <p>&copy; 2023 Copyright reserved by Chameleon</p>
-      </Container>
-      <Container className="contact-menu">
-        <h2><strong>Contact Us</strong></h2>
-        <p>PH: 03 5975 6586</p>
-        <p>E: info@chameleon.com.au</p>
-      </Container>
-      <img src={require('../../layouts/footer/assets/deakin.png')} alt="Deakin University Logo"
-        style={{ width: '150px', height: '150px' }} />
-    </Container>
+    <footer className="bg-[#050617] p-3">
+      <div className="flex flex-col-reverse md:flex-row md:justify-between">
+        <div className="flex items-center mb-4 md:mb-0 md:mr-4 justify-center">
+          <a href="/" className="mr-4">
+            <img
+              src={chameleonLogo}
+              alt="Chameleon Logo"
+              className="w-20 h-20"
+            />
+          </a>
+          <div>
+            <span className="text-white">Chameleon Company</span>
+            <div className="flex">
+              {/* Social media */}
+              <a href="/" className="mx-1">
+                <img
+                  src={instagramLogo}
+                  alt="Instagram Logo"
+                  className="w-10 h-10 md:w-8 md:h-8"
+                />
+              </a>
+              <a href="/" className="mx-1">
+                <img
+                  src={facebookLogo}
+                  alt="Facebook Logo"
+                  className="w-10 h-10 md:w-8 md:h-8"
+                />
+              </a>
+              <a href="/" className="mx-1">
+                <img
+                  src={twitterLogo}
+                  alt="Twitter Logo"
+                  className="w-10 h-10 md:w-8 md:h-8"
+                />
+              </a>
+              <a href="/" className="mx-1">
+                <img
+                  src={emailLogo}
+                  alt="Email Logo"
+                  className="w-10 h-10 md:w-8 md:h-8"
+                />
+              </a>
+            </div>
+            <span className="text-white text-xs">
+              © 2023 Copyright reserved by Chameleon
+            </span>
+          </div>
+        </div>
+        <div className="text-center text-white font-bold text-2xl mb-3">
+          <div>Contact us</div>
+          <div>E: chameleon@deakin.edu.au</div>
+        </div>
+        <div className="flex justify-center mb-2">
+          <img src={deakinLogo} alt="Deakin Logo" className="w-20 h-20" />
+        </div>
+      </div>
+    </footer>
   );
-}
+};
 
 export default Footer;

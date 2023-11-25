@@ -44,13 +44,13 @@ class Login extends Component {
                   <a href="/reset">Forgot password?</a>
                 </p>
 
-                <div className="d-flex justify-content-center mb-3">
+                <div className="flex justify-center mb-4">
                   <Button variant="success" type="submit" style={{ padding: '10px 80px', fontSize: '1rem' }}>
                     LOGIN
                   </Button>
                 </div>
 
-                <div className="d-flex justify-content-between">
+                <div className="flex justify-between">
                   <div style={{ backgroundColor: 'green', borderRadius: '50%', width: '40px', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <img src={Linkedin} alt="LinkedIn Icon"/>
                   </div>

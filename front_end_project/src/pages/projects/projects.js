@@ -40,7 +40,7 @@ class Projects extends Component {
           {carouselItems.map((item, index) => (
             <Carousel.Item key={index}>
               <img
-                className="d-block w-100"
+                className="block w-full"
                 src={item.imageUrl}
                 alt={`Slide ${index + 1}`}
                 style={{ height: "600px" }}
@@ -58,15 +58,15 @@ class Projects extends Component {
           ))}
         </Carousel>
         <Row>
-          {/* Changed to specify lg size */} 
+          {/* Changed to specify lg size */}
           <Col lg={6} className="image-col" style={{ padding: "0px" }}>
             <img
               alt="chutiya"
               src={require("./image/EV.png")}
-              className="img-fluid"
+              className="img"
             />
           </Col>
-          {/* Changed to specify lg size */} 
+          {/* Changed to specify lg size */}
           <Col lg={6} style={{ padding: "0px" }}>
             <div className="card-col">
               <PortfolioCard
@@ -84,10 +84,10 @@ class Projects extends Component {
             </div>
           </Col>
         </Row>
-      {/* Added a custom class for styling */}
+        {/* Added a custom class for styling */}
         <Row className="center-div">
           <Col lg={6} style={{ padding: "0px" }}>
-      {/* Added a custom class for styling */}
+            {/* Added a custom class for styling */}
             <div className="card-col">
               <PortfolioCard
                 title="Chameleon Website"
@@ -104,13 +104,13 @@ class Projects extends Component {
               />
             </div>
           </Col>
-          {/* Changed to specify lg size */} 
+          {/* Changed to specify lg size */}
           <Col lg={6} className="image-col" style={{ padding: "0px" }}>
             <img alt="chutiya" src={require("./image/Website.png")} />
           </Col>
         </Row>
         <Row>
-      {/* Added a custom class for styling */}
+          {/* Added a custom class for styling */}
           <Col lg={6} className="image-col" style={{ padding: "0px" }}>
             <img alt="chutiya" src={require("./image/City.png")} />
           </Col>

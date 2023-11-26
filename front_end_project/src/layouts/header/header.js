@@ -1,74 +1,118 @@
-import React from "react";
-import logo from "./images/Logo_No_Background.png";
-import profile from "./images/profile.jpg";
-import { Nav, Navbar, Container, Form, Button } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import chameleonHeader from "./images/Header-Chameleon.png";
+import { FaBars } from "react-icons/fa"; // Hamburger icon
+import { useState } from "react";
 
-function Header() {
+const Header = () => {
+  //State hook to capture Navbar's state
+  const [navbarOpen, setNavbarOpen] = useState(false);
+
   return (
-    <Navbar className="navbar bg-dark">
-      <Container>
-        <Navbar.Brand href="/">
-          <img
-            src={logo}
-            width="80"
-            height="80"
-            className="d-inline-block align-top"
-            alt="Chameleon logo"
-          />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link className="text-white ml-3 mt-2" href="/">
-              HOME
-            </Nav.Link>
-            <Nav.Link className="text-white ml-3 mt-2" href="/projects">
-              PROJECTS
-            </Nav.Link>
-            <Nav.Link className="text-white ml-3 mt-2" href="/news">
-              NEWS
-            </Nav.Link>
-            <Nav.Link className="text-white ml-3 mt-2" href="/blog">
-              BLOG
-            </Nav.Link>
-            <Nav.Link className="text-white ml-3 mt-2" href="/about_us">
-              ABOUT
-            </Nav.Link>
-            <Nav.Link className="text-white ml-3 mt-2" href="/contact">
-              CONTACT
-            </Nav.Link>
-            <Nav.Link className="text-white ml-3 mt-2" href="">
-              SUPPORT
-            </Nav.Link>
-            <Nav.Link className="text-white ml-3 mt-2" href="/iotResources">
-              RESOURCES
-            </Nav.Link>
-            <Nav.Link className="text-white ml-3 mt-2" href="/login">
-              LOGIN
-            </Nav.Link>
-            <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="mt-2 mb-2 ml-3 me-1"
-                aria-label="Search"
-              />
-              <Button className="mt-2 mb-2 ml-3 me-1">Search</Button>
-            </Form>
+    <nav className="relative flex flex-wrap items-center justify-between bg-[#050617] px-2 py-3">
+      <div className="container px-4  flex flex-wrap justify-between">
+        <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+          <a
+            className="font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
+            href="/"
+          >
             <img
-              src={profile}
-              className="rounded-circle ml-3"
-              alt="User Profile Avatar"
-              height="40"
-              width="50"
+              src={chameleonHeader}
+              alt=""
+              style={{ height: "70px", width: "70px" }}
             />
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+          </a>
+          <button
+            className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+            type="button"
+            onClick={() => setNavbarOpen(!navbarOpen)}
+          >
+            <FaBars />
+          </button>
+        </div>
+        <div
+          className={
+            "lg:flex flex-grow items-center transition duration-500 ease-in-out" +
+            (navbarOpen ? " flex" : " hidden")
+          }
+          id="example-navbar-danger"
+        >
+          <ul className="flex flex-col mx-auto lg:flex-row list-none lg:ml-auto ">
+            <li className="nav-item">
+              <a
+                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
+                href="/"
+              >
+                Home
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
+                href="/projects"
+              >
+                Projects
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
+                href="/news"
+              >
+                News
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
+                href="/blog"
+              >
+                Blog
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
+                href="/about_us"
+              >
+                About
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
+                href="/contact"
+              >
+                Contact
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
+                href="/"
+              >
+                Support
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
+                href="/iotResources"
+              >
+                Resources
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
+                href="/login"
+              >
+                Login
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
-}
+};
 
 export default Header;

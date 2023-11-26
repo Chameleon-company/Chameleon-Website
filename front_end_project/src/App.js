@@ -20,7 +20,6 @@ import ResetPassword from "./pages/reset_password/reset";
 import newsSignupForm from "./pages/email_newsletter_forms/subscribe";
 import newsUnsubForm from "./pages/email_newsletter_forms/unsubscribe";
 import newsRemoveForm from "./pages/email_newsletter_forms/remove";
-import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {

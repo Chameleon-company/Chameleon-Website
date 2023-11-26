@@ -1,4 +1,4 @@
-import { Container, Row, Col, Carousel, Button } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 import React, { Component } from "react";
 import PortfolioCard from "../../components/portfolio_card/porfolio_card";
 import "./projects.css";
@@ -35,39 +35,40 @@ class Projects extends Component {
 
     return (
       // Added a custom class for styling
-      <Container fluid className="projects-page">
+      <div className="container-fluid mx-auto projects-page">
         <Carousel style={{ height: "600px" }}>
           {carouselItems.map((item, index) => (
             <Carousel.Item key={index}>
               <img
-                className="block w-full"
+                className="d-block w-100"
                 src={item.imageUrl}
                 alt={`Slide ${index + 1}`}
                 style={{ height: "600px" }}
               />
               <div className="carousel-caption ml-auto">
                 <p>{item.caption}</p>
-                <Button
-                  variant="primary"
+                <button
+                  className="rounded-full bg-white p-2 text-green-emerald"
                   onClick={() => handleButtonClick(item.url)}
                 >
                   LEARN MORE
-                </Button>
+                </button>
               </div>
             </Carousel.Item>
           ))}
         </Carousel>
-        <Row>
+        <p class="text-blue">The quick brown fox...</p>
+        <div className="grid grid-cols-12 gap-1">
           {/* Changed to specify lg size */}
-          <Col lg={6} className="image-col" style={{ padding: "0px" }}>
+          <div className="lg:col-span-6 image-col" style={{ padding: "0px" }}>
             <img
               alt="chutiya"
               src={require("./image/EV.png")}
-              className="img"
+              className="img-fluid"
             />
-          </Col>
+          </div>
           {/* Changed to specify lg size */}
-          <Col lg={6} style={{ padding: "0px" }}>
+          <div className="lg:col-span-6" style={{ padding: "0px" }}>
             <div className="card-col">
               <PortfolioCard
                 title="EV Adoption Tools"
@@ -82,11 +83,11 @@ class Projects extends Component {
                 onButtonClick={handleButtonClick}
               />
             </div>
-          </Col>
-        </Row>
+          </div>
+        </div>
         {/* Added a custom class for styling */}
-        <Row className="center-div">
-          <Col lg={6} style={{ padding: "0px" }}>
+        <div className="grid grid-cols-12 gap-1">
+          <div className="lg:col-span-6" style={{ padding: "0px" }}>
             {/* Added a custom class for styling */}
             <div className="card-col">
               <PortfolioCard
@@ -103,18 +104,18 @@ class Projects extends Component {
                 isMiddleCard={true}
               />
             </div>
-          </Col>
+          </div>
           {/* Changed to specify lg size */}
-          <Col lg={6} className="image-col" style={{ padding: "0px" }}>
+          <div className="lg:col-span-6 image-col" style={{ padding: "0px" }}>
             <img alt="chutiya" src={require("./image/Website.png")} />
-          </Col>
-        </Row>
-        <Row>
+          </div>
+        </div>
+        <div className="grid grid-cols-12 gap-1">
           {/* Added a custom class for styling */}
-          <Col lg={6} className="image-col" style={{ padding: "0px" }}>
+          <div className="lg:col-span-6 image-col" style={{ padding: "0px" }}>
             <img alt="chutiya" src={require("./image/City.png")} />
-          </Col>
-          <Col lg={6} style={{ padding: "0px" }}>
+          </div>
+          <div className="lg:col-span-6" style={{ padding: "0px" }}>
             <div className="card-col">
               <PortfolioCard
                 title="City of Melbourne Open Data"
@@ -128,9 +129,9 @@ class Projects extends Component {
                 onButtonClick={handleButtonClick}
               />
             </div>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     );
   }
 }

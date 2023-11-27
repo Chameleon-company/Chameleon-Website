@@ -28,10 +28,6 @@ class Login extends Component {
     // Disable the login button
     this.setState({ isButtonDisabled: true });
 
-    // Perform your login logic here
-    // For demonstration purposes, let's assume the login fails
-    // You should replace the following with your actual login logic
-
     // Simulate a failed login
     const loginSuccess = false;
 

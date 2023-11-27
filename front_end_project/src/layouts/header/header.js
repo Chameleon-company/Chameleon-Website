@@ -52,20 +52,13 @@ const Header = () => {
                 Projects
               </a>
             </li>
+
             <li className="nav-item">
               <a
                 className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
                 href="/news"
               >
-                News
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
-                href="/blog"
-              >
-                Blog
+                News and Insight
               </a>
             </li>
             <li className="nav-item">

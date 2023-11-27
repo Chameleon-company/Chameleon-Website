@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import BlogCard from '../../components/blog/blogCard';
-import FilterBar from '../../components/blog/filterBar';
+import ArticleCard from '../../components/news/articleCard';
+import FilterBar from '../../components/news/filterBar';
 import articleList from './articles'
 
 
@@ -9,7 +9,7 @@ import articleList from './articles'
 
 
 
-class Blog extends Component {
+class News extends Component {
   render() {
     return (
       <main className='max-w-screen-xl mx-auto'>
@@ -23,7 +23,7 @@ class Blog extends Component {
           </div>
 
           <div className='flex flex-row flex-wrap justify-around items-center h-auto mb-8'>
-            {articleList.map((article) => <BlogCard {...article}/>)}
+            {articleList.map((article) => <ArticleCard {...article}/>)}
           </div>
         </section>
         
@@ -34,4 +34,4 @@ class Blog extends Component {
   }
 }
 
-export default Blog;
+export default News;

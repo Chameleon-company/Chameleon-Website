@@ -1,6 +1,6 @@
 import React from 'react';
 
-function BlogCard({image, title, preview, author = "Unknown", category = "Article", date = "Month DD, YYYY"}) {
+function ArticleCard({image, title, preview, author = "Unknown", category = "Article", date = "Month DD, YYYY"}) {
   return (
     <div className="sm:max-w-xl md:max-w-lg lg:max-w-md transition-all h-auto bg-gray-100 rounded-lg overflow-hidden mx-3 my-6 hover:shadow-lg hover:scale-105 hover:transition-all">
       <img src={image} alt="" />
@@ -21,4 +21,4 @@ function BlogCard({image, title, preview, author = "Unknown", category = "Articl
   );
 };
 
-export default BlogCard;
+export default ArticleCard;

@@ -3,8 +3,6 @@ import SwiperCore from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import PortfolioCard from "../../components/portfolio_card/porfolio_card";
-import "./projects.css";
-import "./projects-media.css";
 import Wrapper from "../../components/shared/Wrapper";
 import Slider from "../../components/projects/Slider";
 import ProjectCard from "../../components/projects/ProjectCard";

@@ -6,31 +6,13 @@ import Wrapper from "../../components/shared/Wrapper";
 import Slider from "../../components/projects/Slider";
 import ProjectCard from "../../components/projects/ProjectCard";
 import { SliderData, ProjectCardData } from "../../constants/Project";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { notifyWelcome } from '../../components/notificationComp/NotificationComponent';
 
 class Projects extends Component {
-
-  // Class property to track whether the toast has been shown
-  toastShown = false;
-
+  
   componentDidMount() {
-    // Show toast notification only if it hasn't been shown before
-    if (!this.toastShown) {
-      toast.info('Learn more about the projects that we have done!', {
-        position: 'top-right',
-        autoClose: 5000, // Close the toast after 5 seconds
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        style: { marginTop: '100px' },
-      });
-
-      // Update the class property to indicate that the toast has been shown
-      this.toastShown = true;
-    }
+    // Display a welcome message when the component mounts
+    notifyWelcome("Learn more about the products that we have done!");
   }
 
   render() {
@@ -59,7 +41,6 @@ class Projects extends Component {
 
     return (
       <Container fluid>
-        <ToastContainer />
         <Carousel style={{ height: "600px" }}>
           {carouselItems.map((item, index) => (
             <Carousel.Item key={index}>

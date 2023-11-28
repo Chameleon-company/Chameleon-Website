@@ -14,37 +14,18 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { notifyWelcome } from '../../components/notificationComp/NotificationComponent';
 
 class aboutUs extends Component {
 
-  // Class property to track whether the toast has been shown
-  toastShown = false;
-
   componentDidMount() {
-    // Show toast notification only if it hasn't been shown before
-    if (!this.toastShown) {
-      toast.info('Learn more about us here and feel free to contact us!', {
-        position: 'top-right',
-        autoClose: 5000, // Close the toast after 5 seconds
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        style: { marginTop: '100px' },
-      });
-
-      // Update the class property to indicate that the toast has been shown
-      this.toastShown = true;
-    }
+    // Display a welcome message when the component mounts
+    notifyWelcome("Learn more about us here!");
   }
 
   render() {
     return (
       <>
-      <ToastContainer />
         <br></br>
 
         {/*BREADCRUMB SECTION */}

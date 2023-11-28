@@ -3,38 +3,17 @@ import './contact.css';
 import Phone from './image/phone.png';
 import Chat from './image/chat.png';
 import Email from './image/email.png';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { notifyWelcome } from '../../components/notificationComp/NotificationComponent';
 
 class Contact extends Component {
-
-   // Class property to track whether the toast has been shown
-  toastShown = false;
-
   componentDidMount() {
-    // Show toast notification only if it hasn't been shown before
-    if (!this.toastShown) {
-      toast.warning('Make sure to contact us only on week days during work hours!', {
-        position: 'top-right',
-        autoClose: 5000, // Close the toast after 5 seconds
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        style: { marginTop: '100px' },
-      });
-
-      // Update the class property to indicate that the toast has been shown
-      this.toastShown = true;
-    }
+    // Display a welcome message when the component mounts
+    notifyWelcome("Make sure to contact us only on working days 9:00 AM onwards!");
   }
-
 
   render() {
     return (
             <div class='contact_container'>
-              <ToastContainer />
               <div class='contact_title'>Contact Us</div>
               <div class='contact_body'>
                 <div class='contact_item'>

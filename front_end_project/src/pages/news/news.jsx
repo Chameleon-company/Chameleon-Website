@@ -22,7 +22,7 @@ class News extends Component {
             <FilterBar />
           </div>
 
-          <div className='flex flex-row flex-wrap justify-around items-center h-auto mb-8'>
+          <div className='flex flex-row flex-wrap justify-around items-baseline h-auto mb-24'>
             {articleList.map((article) => <ArticleCard {...article}/>)}
           </div>
         </section>

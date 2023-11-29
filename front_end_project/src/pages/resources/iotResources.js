@@ -1,7 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
 import React, { Component } from "react";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import tech from "./images/tech.png";
 import IoTMelbourne from "./images/IoTMelbourne.jpg";
 import device from "./images/device.jpg";
@@ -9,94 +6,64 @@ import device from "./images/device.jpg";
 class IotResources extends Component {
   render() {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-          padding: "20px",
-          maxWidth: "1500px",
-          margin: "auto",
-          backgroundColor: "#67A170"
-        }}
-      >
-        <Container>
-          <h1 class="text-center pt-3 pb-3">RESOURCES</h1>
-        </Container>
+      <div className="m-auto flex max-w-[1500px] flex-row flex-wrap justify-between bg-[#67A170] p-5">
+        <div className="2xl:max-w-[1320px] ml-auto mr-auto w-full sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]">
+          <h1 className="pb-3 pt-3 text-center">RESOURCES</h1>
+        </div>
 
-        <Container
-          style={{
-            backgroundColor: "#D1E2C4",
-            maxWidth: 400,
-            marginBottom: "50px",
-          }}
-        >
-          <Col>
-            <Row>
+        <div className="mb-[50px] ml-auto mr-auto w-full max-w-[400px] bg-[#D1E2C4]">
+          <div className="shrink-0 grow">
+            <div className="ml-3 mr-3 mt-0 flex flex-wrap">
               <img
                 src={device}
-                className="img-fluid mx-auto pt-7 pb-4 padding-10"
+                className="padding-10 mx-auto h-[300px] w-[400px] max-w-full pb-4 pt-7"
                 alt="Technology Graphic"
-                style={{ width: "400px", height: "300px" }}
               />
-            </Row>
-          </Col>
+            </div>
+          </div>
 
           <a href="/iotTechnologies" class="text-decoration-none">
-            <h2 class="text-center text-black fw-bold pb-4">Technologies</h2>
+            <h2 className="fw-bold pb-4 text-center text-black">
+              Technologies
+            </h2>
           </a>
-        </Container>
+        </div>
 
         <br></br>
 
-        <Container
-          style={{
-            backgroundColor: "#D1E2C4",
-            maxWidth: 400,
-            marginBottom: "50px",
-          }}
-        >
-          <Col>
-            <Row>
+        <div className="mb-[50px] ml-auto mr-auto w-full max-w-[400px] bg-[#D1E2C4]">
+          <div className="shrink-0 grow">
+            <div className="ml-3 mr-3 mt-0 flex flex-wrap">
               <img
                 src={IoTMelbourne}
-                className="img-fluid mx-auto pt-7 pb-4 padding-10"
+                className="padding-10 mx-auto h-[300px] w-[400px] max-w-full pb-4 pt-7"
                 alt="Melbourne Street View"
-                style={{ width: "400px", height: "300px" }}
               />
-            </Row>
-          </Col>
+            </div>
+          </div>
 
           <a href="/iotStatistics" class="text-decoration-none">
-            <h2 class="text-center text-black fw-bold pb-4">Statistics</h2>
+            <h2 className="fw-bold pb-4 text-center text-black">Statistics</h2>
           </a>
-        </Container>
+        </div>
 
         <br></br>
 
-        <Container
-          style={{
-            backgroundColor: "#D1E2C4",
-            maxWidth: 400,
-            marginBottom: "50px",
-          }}
-        >
-          <Col>
-            <Row>
+        <div className="mb-[50px] ml-auto mr-auto w-full max-w-[400px] bg-[#D1E2C4]">
+          <div className="shrink-0 grow">
+            <div className="ml-3 mr-3 mt-0 flex flex-wrap">
               <img
                 src={tech}
-                className="img-fluid mx-auto pt-7 pb-4 padding-10"
+                className="padding-10 mx-auto h-[300px] w-[400px] max-w-full pb-4 pt-7"
                 alt="Technology Graphic"
-                style={{ width: "400px", height: "300px" }}
               />
-            </Row>
-          </Col>
+            </div>
+          </div>
 
           <a href="/iotUpdates" class="text-decoration-none">
-            <h2 class="text-center text-black fw-bold pb-4">Innovations</h2>
+            <h2 className="fw-bold pb-4 text-center text-black">Innovations</h2>
           </a>
-        </Container>
+        </div>
 
         <br></br>
       </div>

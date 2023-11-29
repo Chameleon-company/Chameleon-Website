@@ -1,23 +1,20 @@
-import { Container, Row, Col } from "react-bootstrap";
 import React, { Component } from "react";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 class IotTechnolgies extends Component {
   render() {
     return (
       <>
-        <Container>
-          <h1 class="text-center pt-3 pb-3">WHAT IS INTERNET OF THINGS?</h1>
-        </Container>
+        <div className="2xl:max-w-[1320px] ml-auto mr-auto w-full sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]">
+          <h1 className="pb-3 pt-3 text-center">WHAT IS INTERNET OF THINGS?</h1>
+        </div>
 
-        <Container style={{ backgroundColor: "#D1E2C4", maxWidth: 1000 }}>
-          <h2 class="text-center text-black fw-bold pt-3">
+        <div className="ml-auto mr-auto w-full max-w-[1000px] bg-[#D1E2C4]">
+          <h2 className="fw-bold pt-3 text-center text-black">
             Internet of Things Technologies
           </h2>
-          <Row>
-            <Col>
-              <p class="text-black text-start pb-3 pt-3 fw-normal fs-4">
+          <div className="ml-3 mr-3 mt-0 flex flex-wrap">
+            <div className="flex-[1_0]">
+              <p class="fw-normal fs-4 pb-3 pt-3 text-start text-black">
                 The Internet of Things (IoT) is a network of connected computing
                 devices, mechanical and digital machinery, items, animals, or
                 people that can exchange data across a network without the need
@@ -28,19 +25,19 @@ class IotTechnolgies extends Component {
                 information, procedures can be automated and judgements can be
                 improved.
               </p>
-            </Col>
-          </Row>
-        </Container>
+            </div>
+          </div>
+        </div>
 
         <br></br>
 
-        <Container style={{ backgroundColor: "#D1E2C4", maxWidth: 1000 }}>
-          <h2 class="text-center text-black fw-bold pt-3">
+        <div className="ml-auto mr-auto w-full max-w-[1000px] bg-[#D1E2C4]">
+          <h2 class="fw-bold pt-3 text-center text-black">
             The Advantages of IoT Technology
           </h2>
-          <Row>
-            <Col>
-              <p class="text-black text-start pb-3 pt-3 fw-normal fs-4">
+          <div className="ml-3 mr-3 mt-0 flex flex-wrap">
+            <div className="flex-[1_0]">
+              <p class="fw-normal fs-4 pb-3 pt-3 text-start text-black">
                 Efficiency gain: By automating procedures and gathering data
                 that can be utilised to optimise operations, IoT can assist
                 firms in becoming more efficient. IoT-connected sensors, for
@@ -66,19 +63,19 @@ class IotTechnolgies extends Component {
                 individualised care are both possible with IoT-connected
                 equipment.
               </p>
-            </Col>
-          </Row>
-        </Container>
+            </div>
+          </div>
+        </div>
 
         <br></br>
 
-        <Container style={{ backgroundColor: "#D1E2C4", maxWidth: 1000, marginBottom: '80px' }}>
-          <h2 class="text-center text-black fw-bold pt-3">
+        <div className="mb-20 ml-auto mr-auto w-full max-w-[1000px] bg-[#D1E2C4]">
+          <h2 class="fw-bold pt-3 text-center text-black">
             How IoT Technology is Utilised
           </h2>
-          <Row>
-            <Col>
-              <p class="text-black text-start pb-3 pt-3 fw-normal fs-4">
+          <div className="ml-3 mr-3 mt-0 flex flex-wrap">
+            <div className="flex-[1_0]">
+              <p class="fw-normal fs-4 pb-3 pt-3 text-start text-black">
                 Smart homes: Home appliances, security systems, and lighting may
                 all be controlled and monitored via IoT devices. For instance,
                 you might use your smartphone to adjust the thermostat or turn
@@ -101,9 +98,9 @@ class IotTechnolgies extends Component {
                 energy usage of electronics and appliances or to instantly
                 manage the power grid
               </p>
-            </Col>
-          </Row>
-        </Container>
+            </div>
+          </div>
+        </div>
 
         <br></br>
       </>

@@ -48,14 +48,14 @@ router.post(subRouteDefinitions.subscribe, async (req, res) => {
   
       // Upon successful subscription, return the response
       res.status(200).json({
-        message: 'Successfully subscribed address to list',
+        message: 'Successfully subscribed address to Chameleon Mailing list',
       });
     } 
     
     catch (error) {
       // Return the error with status 400
       res.status(400).json({
-        message: error || 'Failed to subscribe address to list',
+        message: error || 'Failed to subscribe address to Chameleon Mailing list',
       });
     }
 
@@ -76,14 +76,14 @@ router.post(subRouteDefinitions.unsubscribe, async (req, res) => {
 
         // Upon successful update, return the response
         res.status(200).json({
-            message: 'Successfully unsubscribed address from list',
+            message: 'Successfully unsubscribed address from Chameleon Mailing list',
         });
     } 
     
     // If an error occurs, respond with it
     catch (error) {
         res.status(400).json({
-            message: error || 'Failed to unsubscribe address from list',
+            message: error || 'Failed to unsubscribe address from Chameleon Mailing list',
         });
     }
 
@@ -98,14 +98,14 @@ router.post(subRouteDefinitions.removeAddress, async (req, res) => {
         // Despite the call name, the member will not be physically harmed (according to the documentation)
         await mg.lists.members.destroyMember(mailing_list_domain, req.body.address);
         res.status(200).json({
-            message: 'Successfully deleted address from list',
+            message: 'Successfully deleted address Chameleon Mailing from list',
         });
     }
 
     // If an error occurs, respond with it
     catch (error) {
         res.status(400).json({
-            message: error || 'Failed to delete address from list',
+            message: error || 'Failed to delete address Chameleon Mailing from list',
         });
     }
 

@@ -20,6 +20,7 @@ import newsSignupForm from "./pages/email_newsletter_forms/subscribe";
 import newsUnsubForm from "./pages/email_newsletter_forms/unsubscribe";
 import newsRemoveForm from "./pages/email_newsletter_forms/remove";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ArticleView from './pages/news/ArticleView';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
             <Route path="/hello" component={Helloo} />
             <Route path="/about_us" component={aboutUs} />
             <Route path="/news" component={News} />
+
+            <Route path="/articles/:id" component={ArticleView} />
+
             <Route path="/chatbot" component={Chatbot} />
             <Route path="/projects" component={Projects} />
             <Route path="/report" component={Report} />

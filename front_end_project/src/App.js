@@ -25,32 +25,35 @@ function App() {
   return (
     <>
       <Router>
-        <Header />
-        <main>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/home" component={HomePage} />
-            <Route path="/hello" component={Helloo} />
-            <Route path="/about_us" component={aboutUs} />
-            <Route path="/news" component={News} />
-            <Route path="/chatbot" component={Chatbot} />
-            <Route path="/projects" component={Projects} />
-            <Route path="/report" component={Report} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/iotResources" component={IotResources} />
-            <Route path="/iotTechnologies" component={IotTechnologies} />
-            <Route path="/iotStatistics" component={IotStatistics} />
-            <Route path="/iotUpdates" component={IotUpdates} />
-            <Route path="/faq" component={Main} />
-            <Route path="/login" component={Login} />
-            <Route path="/signup" component={Signup} />
-            <Route path="/reset" component={ResetPassword} />
-            <Route path="/newsSignupForm" component={newsSignupForm} />
-            <Route path="/newsUnsubForm" component={newsUnsubForm} />
-            <Route path="/newsRemoveForm" component={newsRemoveForm} />
-          </Switch>
-        </main>
-        <Footer />
+        {/* This is to ensure footer is at the bottom of the screen */}
+        <div className="flex flex-col h-screen">
+          <Header />
+          <main>
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/home" component={HomePage} />
+              <Route path="/hello" component={Helloo} />
+              <Route path="/about_us" component={aboutUs} />
+              <Route path="/news" component={News} />
+              <Route path="/chatbot" component={Chatbot} />
+              <Route path="/projects" component={Projects} />
+              <Route path="/report" component={Report} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/iotResources" component={IotResources} />
+              <Route path="/iotTechnologies" component={IotTechnologies} />
+              <Route path="/iotStatistics" component={IotStatistics} />
+              <Route path="/iotUpdates" component={IotUpdates} />
+              <Route path="/faq" component={Main} />
+              <Route path="/login" component={Login} />
+              <Route path="/signup" component={Signup} />
+              <Route path="/reset" component={ResetPassword} />
+              <Route path="/newsSignupForm" component={newsSignupForm} />
+              <Route path="/newsUnsubForm" component={newsUnsubForm} />
+              <Route path="/newsRemoveForm" component={newsRemoveForm} />
+            </Switch>
+          </main>
+          <Footer />
+        </div>
       </Router>
     </>
   );

@@ -7,7 +7,7 @@ import emailLogo from "./assets/Footer-Email.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#050617] p-3">
+    <footer className="bg-[#050617] p-3 mt-auto">
       <div className="flex flex-col-reverse md:flex-row md:justify-between">
         <div className="flex items-center mb-4 md:mb-0 md:mr-4 justify-center">
           <a href="/" className="mr-4">

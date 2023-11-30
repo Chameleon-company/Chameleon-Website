@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import './contact.css';
-// import contact-media.css to style it.
-import './contact-media.css';
 import Phone from './image/phone.png';
 import Chat from './image/chat.png';
 import Email from './image/email.png';
+import { notifyWelcome } from '../../components/notificationComp/NotificationComponent';
 
 class Contact extends Component {
+  componentDidMount() {
+    // Display a welcome message when the component mounts
+    notifyWelcome("Make sure to contact us only on working days 9:00 AM onwards!");
+  }
+
   render() {
     return (
             <div class='contact_container'>

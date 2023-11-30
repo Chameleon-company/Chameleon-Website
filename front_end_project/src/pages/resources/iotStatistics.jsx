@@ -1,23 +1,20 @@
-import { Container, Row, Col } from "react-bootstrap";
-import React, { Component } from "react";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Component } from "react";
 
 class IotStatistics extends Component {
   render() {
     return (
       <>
-        <Container>
-          <h1 class="text-center pb-3">STATISTICS</h1>
-        </Container>
+        <div className="2xl:max-w-[1320px] ml-auto mr-auto w-full sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]">
+          <h1 className="pb-3 text-center">STATISTICS</h1>
+        </div>
 
-        <Container style={{ backgroundColor: "#D1E2C4", maxWidth: 1000, marginBottom: '80px' }}>
-          <h2 class="text-center text-black fw-bold pt-3">
+        <div className="mb-20 ml-auto mr-auto w-full max-w-[1000px] bg-[#D1E2C4]">
+          <h2 className="fw-bold pt-3 text-center text-black">
             IoT Statistics in Australia
           </h2>
-          <Row>
-            <Col>
-              <p class="text-black text-start pb-3 pt-3 fw-normal fs-4">
+          <div className="ml-3 mr-3 mt-0 flex flex-wrap">
+            <div className="flex-[1_0]">
+              <p className="fw-normal fs-4 pb-3 pt-3 text-start text-black">
                 By 2028, the Australian IoT market is projected to have
                 increased from US$15.46 billion to US$27.13 billion. The largest
                 IoT market in Australia is the automotive industry, followed by
@@ -31,11 +28,10 @@ class IotStatistics extends Component {
                 and the desire for smart city solutions are what are driving the
                 IoT market in Australia.
               </p>
-            </Col>
-          </Row>
-        </Container>
+            </div>
+          </div>
+        </div>
       </>
-      
     );
   }
 }

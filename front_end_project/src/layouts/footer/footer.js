@@ -24,7 +24,8 @@ const Footer = () => {
 
 
   return (
-    <footer className="footer-content">
+    <footer className="bg-[#050617] p-3 mt-auto">
+      <div className="footer-content">
       <div className="flex flex-col-reverse md:flex-row md:justify-between">
         <div className="flex items-center mb-4 md:mb-0 md:mr-4 justify-center">
           <a href="/" className="mr-4">
@@ -81,6 +82,7 @@ const Footer = () => {
         </div>
       </div>
       <button onClick={prefersDarkMode ? myFunctionL : myFunctionD} className="mt-2 mb-2 ml-3 me-1">Theme Switch</button>
+      </div>
     </footer>
   );
 };

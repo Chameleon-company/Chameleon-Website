@@ -7,11 +7,12 @@ const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <nav className="relative flex flex-wrap items-center justify-between bg-[#050617] px-2 py-3">
+    <header className="header-content">
+    <nav className="relative flex flex-wrap items-center justify-between px-2 py-3">
       <div className="container px-4  flex flex-wrap justify-between">
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
           <a
-            className="font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
+            className="font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase "
             href="/"
           >
             <img
@@ -21,7 +22,7 @@ const Header = () => {
             />
           </a>
           <button
-            className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+            className=" cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
             type="button"
             onClick={() => setNavbarOpen(!navbarOpen)}
           >
@@ -38,7 +39,7 @@ const Header = () => {
           <ul className="flex flex-col mx-auto lg:flex-row list-none lg:ml-auto ">
             <li className="nav-item">
               <a
-                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
+                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug  hover:opacity-75 no-underline"
                 href="/"
               >
                 Home
@@ -46,7 +47,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <a
-                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
+                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug hover:opacity-75 no-underline"
                 href="/projects"
               >
                 Projects
@@ -55,7 +56,7 @@ const Header = () => {
 
             <li className="nav-item">
               <a
-                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
+                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug hover:opacity-75 no-underline"
                 href="/news"
               >
                 News and Insight
@@ -63,7 +64,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <a
-                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
+                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug hover:opacity-75 no-underline"
                 href="/about_us"
               >
                 About
@@ -71,7 +72,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <a
-                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
+                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug hover:opacity-75 no-underline"
                 href="/contact"
               >
                 Contact
@@ -79,7 +80,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <a
-                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
+                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug hover:opacity-75 no-underline"
                 href="/"
               >
                 Support
@@ -87,7 +88,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <a
-                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
+                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug hover:opacity-75 no-underline"
                 href="/iotResources"
               >
                 Resources
@@ -95,7 +96,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <a
-                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug text-white hover:opacity-75 no-underline"
+                className="px-3 py-2 flex items-center  uppercase font-bold leading-snug hover:opacity-75 no-underline"
                 href="/login"
               >
                 Login
@@ -105,7 +106,9 @@ const Header = () => {
         </div>
       </div>
     </nav>
+    </header>
   );
 };
 
 export default Header;
+

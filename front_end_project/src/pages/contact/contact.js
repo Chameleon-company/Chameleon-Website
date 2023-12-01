@@ -3,6 +3,7 @@ import './contact.css';
 import Phone from './image/phone.png';
 import Chat from './image/chat.png';
 import Email from './image/email.png';
+import './contact-media.css';
 import { notifyWelcome } from '../../components/notificationComp/NotificationComponent';
 
 class Contact extends Component {

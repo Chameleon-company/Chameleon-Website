@@ -21,6 +21,7 @@ import newsUnsubForm from "./pages/email_newsletter_forms/unsubscribe";
 import newsRemoveForm from "./pages/email_newsletter_forms/remove";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NotificationComponent from "./components/notificationComp/NotificationComponent";
+import { SearchResults } from "./pages/SearchResults/SearchResults";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
               <Route path="/newsSignupForm" component={newsSignupForm} />
               <Route path="/newsUnsubForm" component={newsUnsubForm} />
               <Route path="/newsRemoveForm" component={newsRemoveForm} />
+              <Route path="/search-results" component={SearchResults} />
             </Switch>
           </main>
           <Footer />

@@ -2,7 +2,7 @@ import React from 'react';
 import Wrapper from '../shared/Wrapper';
 import Heading from '../shared/Heading';
 import Mission from './Mission';
-import FAQS from './FAQS';
+import FAQS from './Faqs';
 import { Nav } from 'react-bootstrap';
 
 import AboutJSON from '../../constants/About.json';

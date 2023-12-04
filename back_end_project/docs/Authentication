@@ -1,0 +1,87 @@
+Authentication
+Sign Up
+Endpoint: /auth/signup
+HTTP Method: POST
+Description: Allows users to create a new account.
+Request Parameters:
+email (string, required): User's email address.
+password (string, required): User's password. It should meet security requirements (minimum length, uppercase, lowercase, digit, special characters).
+Request Body Example:
+json
+Copy code
+{
+  "email": "user@example.com",
+  "password": "Password123!"
+}
+Response:
+Status Code: 201 (Created) on successful registration.
+Status Code: 400 (Bad Request) if password requirements are not met.
+Response Body Example (Successful):
+json
+Copy code
+{
+  "message": "User signed up successfully",
+  "user": {
+    // User object details
+  }
+}
+Sign In
+Endpoint: /auth/signin
+HTTP Method: POST
+Description: Allows users to sign in to their account.
+Request Parameters:
+email (string, required): User's email address.
+password (string, required): User's password.
+Request Body Example:
+json
+Copy code
+{
+  "email": "user@example.com",
+  "password": "Password123!"
+}
+Response:
+Status Code: 200 (OK) on successful login.
+Status Code: 401 (Unauthorized) if email is not verified or authentication fails.
+Response Body Example (Successful):
+json
+Copy code
+{
+  "message": "User signed in successfully",
+  "user": {
+    // User object details
+  }
+}
+Sign Out
+Endpoint: /auth/signout
+HTTP Method: POST
+Description: Allows users to sign out from their account.
+Response:
+Status Code: 200 (OK) on successful sign-out.
+Response Body Example (Successful):
+json
+Copy code
+{
+  "message": "User signed out successfully"
+}
+Password Reset
+Send Password Reset Email
+Endpoint: /auth/send-password-reset-email
+HTTP Method: POST
+Description: Sends a password reset email to the user's registered email address.
+Request Parameters:
+email (string, required): User's email address.
+Request Body Example:
+json
+Copy code
+{
+  "email": "user@example.com"
+}
+Response:
+Status Code: 200 (OK) on successful email sent.
+Status Code: 500 (Internal Server Error) if an error occurs.
+Response Body Example (Successful):
+json
+Copy code
+{
+  "message": "Password reset email sent"
+}

@@ -69,7 +69,7 @@ const Projects = () => {
       <div className="grid grid-cols-12 gap-1">
         <div className="lg:col-span-6 flex items-center p-0">
           <img
-            alt="chutiya"
+            alt=""
             src={require("./image/EV.png")}
             className="w-full max-w-full h-auto max-h-[404px] object-cover"
           />
@@ -112,7 +112,7 @@ const Projects = () => {
         </div>
         <div className="lg:col-span-6 flex items-center p-0">
           <img
-            alt="chutiya"
+            alt=""
             src={require("./image/Website.png")}
             className="w-full max-w-full h-auto max-h-[404px] object-cover"
           />
@@ -122,7 +122,7 @@ const Projects = () => {
       <div className="grid grid-cols-12 gap-1">
         <div className="lg:col-span-6 flex items-center p-0">
           <img
-            alt="chutiya"
+            alt=""
             src={require("./image/City.png")}
             className="w-full max-w-full h-auto max-h-[404px] object-cover"
           />

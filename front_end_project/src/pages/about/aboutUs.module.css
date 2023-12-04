@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&display=swap');
+
+.aboutP {
+               font-family: 'Josefin Sans', sans-serif;
+}
+
+.aboutSection {
+               @apply  md:py-6 py-4  md:px-2 px-6 max-w-6xl mx-auto text-black ;
+}
+
+.missionSection {
+               @apply  md:py-6 py-3  px-2  bg-[#559166] text-white;
+}
+
+.achievementsSection {
+               @apply  md:py-6 py-3  px-2 ;
+}

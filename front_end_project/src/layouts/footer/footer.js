@@ -8,7 +8,7 @@ import React, { useState, useEffect } from 'react';
 
 const Footer = () => {
   // Retrieve the theme from sessionStorage or default to the user's preference or 'dark'
-  const storedTheme = sessionStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const storedTheme = sessionStorage.getItem('theme') || (window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
   // Set the initial theme state
   const [theme, setTheme] = useState(storedTheme);
@@ -25,7 +25,7 @@ const Footer = () => {
 
 
   return (
-    <footer className="bg-[#050617] p-3 mt-auto">
+    <footer className="">
       <div className="footer-content">
       <div className="flex flex-col-reverse md:flex-row md:justify-between">
         <div className="flex items-center mb-4 md:mb-0 md:mr-4 justify-center">
@@ -82,8 +82,8 @@ const Footer = () => {
           <img src={deakinLogo} alt="Deakin Logo" className="w-20 h-20" />
         </div>
       </div>
-      
       <button onClick={toggleTheme} className="mt-2 mb-2 ml-3 me-1">Theme Switch</button>
+    
       </div>
       <style>
       {`

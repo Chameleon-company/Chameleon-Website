@@ -90,7 +90,7 @@ const Footer = () => {
           .footer-content {
 
             ${theme === 'dark' ? `
-              background-color: black;
+              background-color: #2D6039;
               color: white;
             ` : `
               background-color: white;
@@ -110,9 +110,9 @@ const Footer = () => {
 
           #root {
             ${theme === 'dark' ? `
-              background-color: rgb(30, 43, 43);
+              background-color: #151818;
             ` : `
-              background-color: aqua;
+              background-color:  #63A073;
             `}
           }
 

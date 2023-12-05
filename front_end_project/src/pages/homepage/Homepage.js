@@ -31,7 +31,7 @@ const Homepage = () => {
           <div className="flex flex-col items-center justify-center lg:flex-row text-center lg:justify-around gap-4 p-5 container">
             <div class="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
               <img
-                class="w-full h-40 object-cover"
+                class="w-full h-40 max-w-full object-cover"
                 src={evProject}
                 alt="Electric vehicle charging station"
               />
@@ -46,7 +46,7 @@ const Homepage = () => {
             </div>
             <div class="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
               <img
-                class="w-full h-40 object-cover"
+                class="w-full h-40 max-w-full object-cover"
                 src={cityOfMelProject}
                 alt="Melbourne street"
               />
@@ -63,7 +63,7 @@ const Homepage = () => {
             </div>
             <div class="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
               <img
-                class="w-full h-40 object-cover"
+                class="w-full h-40 max-w-full object-cover"
                 src={websiteProject}
                 alt="Chameleon"
               />

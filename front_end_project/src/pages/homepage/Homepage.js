@@ -27,13 +27,13 @@ const Homepage = () => {
       </header>
       <section className="bg-green-emrld">
         <div className="">
-          <h2 className="text-center pt-3 font-bold">Our Project</h2>
+          <h2 className="text-center pt-3 font-bold">Our Projects</h2>
           <div className="flex flex-col items-center justify-center lg:flex-row text-center lg:justify-around gap-4 p-5 container">
             <div class="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
               <img
-                class="w-full"
+                class="w-full h-40 object-cover"
                 src={evProject}
-                alt="Sunset in the mountains"
+                alt="Electric vehicle charging station"
               />
               <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">EV Adoption</div>
@@ -46,13 +46,13 @@ const Homepage = () => {
             </div>
             <div class="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
               <img
-                class="w-full"
+                class="w-full h-40 object-cover"
                 src={cityOfMelProject}
-                alt="Sunset in the mountains"
+                alt="Melbourne street"
               />
               <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">
-                  City of Melbourne Open Data
+                  Melbourne Open Data
                 </div>
                 <p class="text-gray-700 text-base">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -63,9 +63,9 @@ const Homepage = () => {
             </div>
             <div class="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
               <img
-                class="w-full"
+                class="w-full h-40 object-cover"
                 src={websiteProject}
-                alt="Sunset in the mountains"
+                alt="Chameleon"
               />
               <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">Website Uplift</div>

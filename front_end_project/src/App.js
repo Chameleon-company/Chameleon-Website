@@ -26,6 +26,7 @@ function App() {
   return (
     <>
       <Router>
+
         {/* This is to ensure footer is at the bottom of the screen */}
         <div className="flex flex-col h-screen">
           <NotificationComponent />
@@ -56,6 +57,7 @@ function App() {
           </main>
           <Footer />
         </div>
+        
       </Router>
     </>
   );

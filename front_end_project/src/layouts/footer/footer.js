@@ -112,7 +112,7 @@ const Footer = () => {
             ${theme === 'dark' ? `
               background-color: #151818;
             ` : `
-              background-color:  #63A073;
+              background-color:  white;
             `}
           }
 

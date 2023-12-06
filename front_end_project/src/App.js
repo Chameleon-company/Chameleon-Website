@@ -27,12 +27,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
+      <Router>
         {/* This is to ensure footer is at the bottom of the screen */}
         <div className="flex flex-col h-screen">
           <NotificationComponent />
-          <Header />
+          
+            <Header />
+          
           <main>
-          <Router>
+          
             <Routes>
               <Route index path="/" element={<HomePage />} />
               <Route path="/hello" element={<Helloo />} />
@@ -54,10 +57,11 @@ function App() {
               <Route path="/newsUnsubForm" element={<newsUnsubForm />} />
               <Route path="/newsRemoveForm" element={<newsRemoveForm />} />
             </Routes>
-          </Router>
+          
           </main>
           <Footer />
         </div>
+      </Router>
     </>
   );
 }

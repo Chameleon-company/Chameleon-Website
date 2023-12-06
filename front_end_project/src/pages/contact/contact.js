@@ -5,8 +5,14 @@ import './contact-media.css';
 import Phone from './image/phone.png';
 import Chat from './image/chat.png';
 import Email from './image/email.png';
+import { withRouter } from 'react-router-dom';
 
 class Contact extends Component {
+
+  handleChatButtonClick = () => {
+    this.props.history.push('/chatbot');
+  }
+
   render() {
     return (
             <div class='contact_container'>
@@ -49,7 +55,7 @@ class Contact extends Component {
                     <br/>
                     bot.
                   </div>
-                  <button class='contact_item_btn'>Email Us</button>
+                  <button class='contact_item_btn'onClick={this.handleChatButtonClick}>Chat with Chameleon!</button>
                 </div>
               </div>
             </div>
@@ -57,4 +63,4 @@ class Contact extends Component {
   }
 }
 
-export default Contact;
+export default withRouter(Contact);

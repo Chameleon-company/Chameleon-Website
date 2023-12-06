@@ -1,65 +1,14 @@
 import React, { Component } from "react";
 import SwiperNews from "./Swiper";
 import articleList from "./articles";
-
 import "./styles.css";
-import SearchButton from "./images/SearchButton.png"
+import SearchButton from "./images/SearchButton.png";
 class News extends Component {
   constructor(props) {
     super(props);
 
     // Initialize the state
   }
-
-  const debounce = (func, delay) => {
-  let timeoutId;
-  return (...args) => {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => func(...args), delay);
-  };
-};
-
-class News extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      articles: articleList,
-      loading: false,
-    };
-
-    // Debounce the handleScroll function to improve performance
-    this.debouncedHandleScroll = debounce(this.handleScroll, 200);
-    window.addEventListener("scroll", this.debouncedHandleScroll);
-  }
-
-  componentWillUnmount() {
-    // Remove the debounced event listener when the component is unmounted
-    window.removeEventListener("scroll", this.debouncedHandleScroll);
-  }
-
-  handleScroll = () => {
-    const { loading } = this.state;
-    const scrollThreshold = document.body.offsetHeight - 0.8 * window.innerHeight;
-
-    if (!loading && window.scrollY >= scrollThreshold) {
-      this.loadMoreArticles();
-    }
-  };
-
-  loadMoreArticles = () => {
-    // Simulate loading by setting loading to true
-    this.setState({ loading: true });
-
-    setTimeout(() => {
-      // Simulating loading 5 articles at a time
-      const repeatedArticles = Array.from({ length: 5 }, () => this.state.articles).flat();
-
-      this.setState((prevState) => ({
-        articles: [...prevState.articles, ...repeatedArticles],
-        loading: false,
-      }));
-    }, 20); // Simulating a delay
-  };
 
   render() {
     return (
@@ -74,10 +23,10 @@ class News extends Component {
           <div className="flex relative">
             {/* Flex container with relative positioning */}
             <img
-              src={SearchButton}
+              src={ SearchButton }
               className="h-[25px] mt-2 absolute ml-2 object-center"
               alt="searchBar"
-            />
+            />
             {/* Search icon with absolute positioning */}
             <input
               type="text"
@@ -90,7 +39,6 @@ class News extends Component {
             </button>
             {/* Search button with sky blue background, white text, and border */}
           </div>
-
           <select className="flex relative justify-center items-center gap-2 bg-white text-[18px]  px-4 py-2">
             {/* Dropdown selection with white background and styling */}
             <option value="" className="">
@@ -137,7 +85,6 @@ class News extends Component {
           <SwiperNews />
         </div>
         {/* Container for mobile view with a SwiperNews component */}
-
       </main>
     );
   }

@@ -7,6 +7,7 @@ import aboutUs from "./pages/about/aboutUs";
 import News from "./pages/news/news";
 import Projects from "./pages/projects/projects";
 import Contact from "./pages/contact/contact";
+import ProjectDetails from "./pages/projects/ProjectDetails";
 import IotResources from "./pages/resources/iotResources";
 import IotTechnologies from "./pages/resources/iotTechnologies";
 import IotStatistics from "./pages/resources/iotStatistics";
@@ -26,7 +27,6 @@ function App() {
   return (
     <>
       <Router>
-
         {/* This is to ensure footer is at the bottom of the screen */}
         <div className="flex flex-col h-screen">
           <NotificationComponent />
@@ -53,11 +53,11 @@ function App() {
               <Route path="/newsSignupForm" component={newsSignupForm} />
               <Route path="/newsUnsubForm" component={newsUnsubForm} />
               <Route path="/newsRemoveForm" component={newsRemoveForm} />
+              <Route path="/project/:projectId" component={ProjectDetails} />
             </Switch>
           </main>
           <Footer />
         </div>
-
       </Router>
     </>
   );

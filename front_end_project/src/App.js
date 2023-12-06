@@ -21,7 +21,7 @@ import newsUnsubForm from "./pages/email_newsletter_forms/unsubscribe";
 import newsRemoveForm from "./pages/email_newsletter_forms/remove";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NotificationComponent from "./components/notificationComp/NotificationComponent";
-import { SearchResults } from "./pages/SearchResults/SearchResults";
+import { SearchResults } from "./pages/search/SearchResults";
 
 function App() {
   return (

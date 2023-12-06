@@ -14,7 +14,7 @@ app.post('/api/chatbot', async (req, res) => {
 
   try {
     const API_URL = 'https://api.openai.com/v1/chat/completions';
-    const API_KEY = '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';
+    const API_KEY = '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';
 
     const data = JSON.stringify({
       model: 'gpt-3.5-turbo',

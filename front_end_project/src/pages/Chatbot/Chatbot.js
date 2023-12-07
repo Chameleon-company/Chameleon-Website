@@ -25,7 +25,7 @@ const Chatbot = () => {
     setUserMessage('');
 
     try {
-      const thinkingMessage = { content: 'Thinking...', role: 'incoming' };
+      const thinkingMessage = { content: 'Hi, my name is Chamebeon, I\'m here to assist you. Feel free to ask anything related to Chameleon Company...', role: 'incoming' };
       setChatMessages((prevMessages) => [...prevMessages, thinkingMessage]);
 
       const response = await fetch('http://localhost:3001/api/chatbot', {

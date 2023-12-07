@@ -1,5 +1,7 @@
+
+
 .chatbot {
-    margin: 20px;
+    margin-top: 20px;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -38,17 +40,17 @@ header img {
 .close-btn {
     cursor: pointer;
     font-size: 24px;
-    color: #fff;
+    color: #63A073;
     background: none;
     border: none;
 }
 
 .options-container {
-    display: none;
+    /*display: none;*/
     position: absolute;
     top: 50px;
     right: 0;
-    background-color: #fff;
+    background-color: #63A073;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;

@@ -8,6 +8,7 @@ import sendImg from './images/sendImg.png';
 const Chatbot = () => {
   const [userMessage, setUserMessage] = useState('');
   const [chatMessages, setChatMessages] = useState([]);
+  const [showOptions, setShowOptions] = useState(false);
   const chatboxRef = useRef(null);
 
   useEffect(() => {
@@ -16,6 +17,23 @@ const Chatbot = () => {
       chatboxRef.current.scrollTop = chatboxRef.current.scrollHeight;
     }
   }, [chatMessages]);
+
+  useEffect(() => {
+    const optionsContainer = document.querySelector('.options-container'); // Replace with the actual class or ID of your options container
+
+    document.addEventListener('click', function (event) {
+      // Check if the click is inside the options container or its children
+      if (!optionsContainer.contains(event.target)) {
+        // Toggle the display property
+        optionsContainer.style.display = 'none';
+      }
+    });
+  }, []); // Empty dependency array ensures the effect runs only once, similar to componentDidMount
+
+  const toggleOptions = () => {
+    console.log('Button clicked!');
+    setShowOptions(!showOptions); // Toggle the state
+  };
 
   const handleSendMessage = async () => {
     if (!userMessage.trim()) return;
@@ -86,10 +104,14 @@ const Chatbot = () => {
 
   return (
     <div className="chatbot">
-      <header>
+      <header className="header1">
         <img src={ChameleonLogo} alt="Chatbot Image" className="chatbot-image" />
-        <h2>CHAMELEON CHAT BOT</h2>
-        <div className="options-container">
+        <h2>CHAMEBEON</h2>
+        <button className="options-button material-symbols-outlined " onClick={toggleOptions}>
+
+          more_vert
+        </button>
+        <div className={`options-container ${showOptions ? 'show' : 'hide'}`}>
           <ul>
             <li>Website Project</li>
             <li>MOP project</li>

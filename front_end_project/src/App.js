@@ -5,6 +5,7 @@ import Chatbot from "./pages/Chatbot/Chatbot";
 import Helloo from "./pages/hello/hello";
 import aboutUs from "./pages/about/aboutUs";
 import News from "./pages/news/news";
+import ProjectDetails from "./pages/projects/ProjectDetails";
 import Projects from "./pages/projects/projects";
 import Contact from "./pages/contact/contact";
 import IotResources from "./pages/resources/iotResources";
@@ -33,6 +34,7 @@ function App() {
           <Header />
           <main>
             <Switch>
+              <Route path="/project/:projectId" component={ProjectDetails} />
               <Route exact path="/" component={HomePage} />
               <Route exact path="/home" component={HomePage} />
               <Route path="/hello" component={Helloo} />

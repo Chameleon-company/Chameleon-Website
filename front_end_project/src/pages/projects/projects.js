@@ -11,6 +11,12 @@ import "swiper/swiper-bundle.css";
 
 SwiperCore.use([Navigation, Pagination]);
 
+const content1 =
+  "This text is a placeholder for a blurb on the EV Adoption Tools Project.";
+const content2 =
+  "This text is a placeholder for a blurb on the Chameleon Website Project.";
+const content3 = "This text is a placeholder for a blurb on the Mod Project.";
+
 const Projects = () => {
   const handleButtonClick = () => {
     console.log("Button clicked!");
@@ -69,7 +75,7 @@ const Projects = () => {
       <div className="grid grid-cols-12 gap-1">
         <div className="lg:col-span-6 flex items-center p-0">
           <img
-            alt="chutiya"
+            alt=""
             src={require("./image/EV.png")}
             className="w-full max-w-full h-auto max-h-[404px] object-cover"
           />
@@ -80,10 +86,7 @@ const Projects = () => {
               title="EV Adoption Tools"
               body={
                 <>
-                  <p>
-                    This text is a placeholder for a blurb on the EV Adoption
-                    Tools Project.
-                  </p>
+                  <p>{content1}</p>
                 </>
               }
               onButtonClick={handleButtonClick}
@@ -99,10 +102,7 @@ const Projects = () => {
               title="Chameleon Website"
               body={
                 <>
-                  <p>
-                    This text is a placeholder for a blurb on the Chameleon
-                    Website Project.
-                  </p>
+                  <p>{content2}</p>
                 </>
               }
               onButtonClick={handleButtonClick}
@@ -112,7 +112,7 @@ const Projects = () => {
         </div>
         <div className="lg:col-span-6 flex items-center p-0">
           <img
-            alt="chutiya"
+            alt=""
             src={require("./image/Website.png")}
             className="w-full max-w-full h-auto max-h-[404px] object-cover"
           />
@@ -122,7 +122,7 @@ const Projects = () => {
       <div className="grid grid-cols-12 gap-1">
         <div className="lg:col-span-6 flex items-center p-0">
           <img
-            alt="chutiya"
+            alt=""
             src={require("./image/City.png")}
             className="w-full max-w-full h-auto max-h-[404px] object-cover"
           />
@@ -133,9 +133,7 @@ const Projects = () => {
               title="City of Melbourne Open Data"
               body={
                 <>
-                  <p>
-                    This text is a placeholder for a blurb on the Mod Project.
-                  </p>
+                  <p>{content3}</p>
                 </>
               }
               onButtonClick={handleButtonClick}
@@ -171,5 +169,7 @@ const Projects_id = () => {
     </Wrapper>
   );
 };
+
+export const projectsContents = [content1, content2, content3];
 
 export default Projects;

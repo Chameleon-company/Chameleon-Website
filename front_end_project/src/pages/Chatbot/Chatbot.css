@@ -1,7 +1,7 @@
 .chatbot {
     margin: 20px;
     position: fixed;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70%;
@@ -51,6 +51,7 @@ header img {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 .options-container ul {
@@ -68,7 +69,7 @@ header img {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    max-height: 300px;
+    max-height: 170px;
     overflow-y: auto;
 }
 

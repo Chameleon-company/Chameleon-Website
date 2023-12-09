@@ -1,5 +1,8 @@
 import { Component } from "react";
 
+const content1 =
+  "By 2028, the Australian IoT market is projected to have increased from US$15.46 billion to US$27.13 billion. The largest IoT market in Australia is the automotive industry, followed by the industrial and retail sectors. In Australia, there will be 16.7 million linked IoT devices by 2022. By 2028, Australia is projected to have 28.9 million linked IoT devices. IoT devices are connected to 10 ordinary Australian homes. Smart speakers, smart thermostats, and smart security cameras are the most widely used IoT devices in Australia. The adoption of Industry 4.0 technologies, the rise of the Internet of Vehicles (IAV), and the desire for smart city solutions are what are driving the IoT market in Australia.";
+
 class IotStatistics extends Component {
   render() {
     return (
@@ -15,18 +18,7 @@ class IotStatistics extends Component {
           <div className="ml-3 mr-3 mt-0 flex flex-wrap">
             <div className="flex-[1_0]">
               <p className="fw-normal fs-4 pb-3 pt-3 text-start text-black">
-                By 2028, the Australian IoT market is projected to have
-                increased from US$15.46 billion to US$27.13 billion. The largest
-                IoT market in Australia is the automotive industry, followed by
-                the industrial and retail sectors. In Australia, there will be
-                16.7 million linked IoT devices by 2022. By 2028, Australia is
-                projected to have 28.9 million linked IoT devices. IoT devices
-                are connected to 10 ordinary Australian homes. Smart speakers,
-                smart thermostats, and smart security cameras are the most
-                widely used IoT devices in Australia. The adoption of Industry
-                4.0 technologies, the rise of the Internet of Vehicles (IAV),
-                and the desire for smart city solutions are what are driving the
-                IoT market in Australia.
+                {content1}
               </p>
             </div>
           </div>
@@ -35,5 +27,7 @@ class IotStatistics extends Component {
     );
   }
 }
+
+export const iotStatisticsSearchableContents = [content1];
 
 export default IotStatistics;

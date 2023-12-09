@@ -1,42 +1,99 @@
 import queryString from "query-string";
 import { useLocation } from "react-router-dom";
-import * as JsSearch from "js-search";
-import { projectsContents } from "../projects/projects";
+import { projectsSearchableContents } from "../projects/projects";
+import { homeSearchableContents } from "../homepage/Homepage";
+import { newsSearchableContents } from "../news/news";
+import { contactSearchableContents } from "../contact/contact";
+import { iotTechnologiesSearchableContents } from "../resources/iotTechnologies";
+import { iotStatisticsSearchableContents } from "../resources/iotStatistics";
+import { iotUpdatesSearchableContents } from "../resources/iotUpdates";
 import Highlighter from "react-highlight-words";
 
-const initContentSearch = () => {
-    const pageContents = projectsContents.map((content, id) => {
+const convertToPageContents = ({ title, link, pageContents }) => {
+    return pageContents.map((content, id) => {
         return {
             id,
-            title: "projects",
-            link: `/projects/`,
-            content: content,
+            title,
+            link,
+            content,
         };
     });
-    const search = new JsSearch.Search("id");
-    search.addIndex("content");
-    search.addDocuments([...pageContents]);
-    return search;
 };
 
-export const SearchResults = () => {
+const searchContent = (searchText) => {
+    const searchTerms = searchText.split(" ");
+
+    console.log("sldjkf")
+
+    return [
+        ...convertToPageContents({
+            title: "Projects",
+            link: "/projects",
+            pageContents: projectsSearchableContents,
+        }),
+        ...convertToPageContents({
+            title: "Home",
+            link: "/home/",
+            pageContents: homeSearchableContents,
+        }),
+        ...convertToPageContents({
+            title: "News",
+            link: "/news/",
+            pageContents: newsSearchableContents,
+        }),
+        ...convertToPageContents({
+            title: "Contact",
+            link: "/contact/",
+            pageContents: contactSearchableContents,
+        }),
+        ...convertToPageContents({
+            title: "IotTechnologies",
+            link: "/iotTechnologies/",
+            pageContents: iotTechnologiesSearchableContents,
+        }),
+        ...convertToPageContents({
+            title: "IotStatistics",
+            link: "/iotStatistics/",
+            pageContents: iotStatisticsSearchableContents,
+        }),
+        ...convertToPageContents({
+            title: "IotUpdates",
+            link: "/iotUpdates/",
+            pageContents: iotUpdatesSearchableContents,
+        }),
+    ].filter(({ title, content }) => {
+        return searchTerms.some((term) => {
+            return (
+                title.toLowerCase().includes(term.toLowerCase()) ||
+                content.toLowerCase().includes(term.toLowerCase())
+            );
+        });
+    });
+};
+
+const SearchResults = () => {
     const { search } = useLocation();
     const { q } = queryString.parse(search);
 
-    const contentSearch = initContentSearch();
-    const matchedContents = contentSearch.search(q);
+    if (!q) {
+        return null
+    }
+
+
+    const matchedContents = searchContent(q);
     console.log(
         "🚀 ~ file: SearchResults.jsx:68 ~ SearchResults ~ matchedContents:",
         matchedContents,
     );
 
     return (
-        <div className="container mx-auto text-white">
-            <p>Users is trying to search: {q}</p>
+        <div className="container mx-auto mt-10 p-10 bg-emerald-200">
+            <p className="text-xl">Users is trying to search: <span className="font-bold">{q}</span></p>
+            <br></br>
             {matchedContents.map(({ title, link, content }, i) => {
                 return (
                     <div key={i}>
-                        <a href={link}>{title}</a>
+                        <a className="font-bold text-green-800" href={link}>{title}</a>
                         <p>
                             <Highlighter
                                 searchWords={q.split(" ")}
@@ -44,12 +101,11 @@ export const SearchResults = () => {
                                 textToHighlight={content}
                             />
                         </p>
-                        <div>
-                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                        </div>
                     </div>
                 );
             })}
         </div>
     );
 };
+
+export default SearchResults;

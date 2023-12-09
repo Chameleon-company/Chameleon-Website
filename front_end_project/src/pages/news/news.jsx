@@ -3,6 +3,14 @@ import ArticleCard from "../../components/news/articleCard";
 import FilterBar from "../../components/news/filterBar";
 import articleList from "./articles";
 
+const debounce = (func, delay) => {
+  let timeoutId;
+  return (...args) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func(...args), delay);
+  };
+};
+
 class News extends Component {
   constructor(props) {
     super(props);
@@ -11,45 +19,42 @@ class News extends Component {
       loading: false,
     };
 
-    // Attaching the event listener to scroll event
-    window.addEventListener("scroll", this.handleScroll);
+    // Debounce the handleScroll function to improve performance
+    this.debouncedHandleScroll = debounce(this.handleScroll, 200);
+    window.addEventListener("scroll", this.debouncedHandleScroll);
   }
 
   componentWillUnmount() {
-    // thsi will remove the event listener when the component is unmounted
-    window.removeEventListener("scroll", this.handleScroll);
+    // Remove the debounced event listener when the component is unmounted
+    window.removeEventListener("scroll", this.debouncedHandleScroll);
   }
 
-  //this function is to handle the scroll event
   handleScroll = () => {
-    if (
-      window.innerHeight + window.scrollY >= document.body.offsetHeight - 100 &&
-      !this.state.loading
-    ) {
-      // when user is near the bottom, load more articles
+    const { loading } = this.state;
+    const scrollThreshold =
+      document.body.offsetHeight - 0.8 * window.innerHeight;
+
+    if (!loading && window.scrollY >= scrollThreshold) {
       this.loadMoreArticles();
     }
   };
-
-  // Function to simulate loading more articles
 
   loadMoreArticles = () => {
     // Simulate loading by setting loading to true
     this.setState({ loading: true });
 
     setTimeout(() => {
-      const repeatedArticles = [
-        ...this.state.articles,
-        ...this.state.articles,
-        ...this.state.articles,
-        // Add more repetitions as required by us
-      ];
+      // Simulating loading 5 articles at a time
+      const repeatedArticles = Array.from(
+        { length: 5 },
+        () => this.state.articles,
+      ).flat();
 
-      this.setState({
-        articles: repeatedArticles,
+      this.setState((prevState) => ({
+        articles: [...prevState.articles, ...repeatedArticles],
         loading: false,
-      });
-    }, 100); // Simulating a delay
+      }));
+    }, 20); // Simulating a delay
   };
 
   render() {
@@ -72,11 +77,17 @@ class News extends Component {
             ))}
           </div>
 
-          {this.state.loading && <p>Loading more articles...</p>}
+          {this.state.loading && (
+            <div className="spinner">Loading more articles...</div>
+          )}
         </section>
       </main>
     );
   }
 }
+
+export const newsSearchableContents = articleList.reduce((acc, article) => {
+  return [...acc, article.title, article.preview, article.author];
+}, []);
 
 export default News;

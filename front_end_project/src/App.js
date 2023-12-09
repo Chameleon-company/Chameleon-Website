@@ -21,13 +21,12 @@ import newsUnsubForm from "./pages/email_newsletter_forms/unsubscribe";
 import newsRemoveForm from "./pages/email_newsletter_forms/remove";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NotificationComponent from "./components/notificationComp/NotificationComponent";
-import { SearchResults } from "./pages/search/SearchResults";
+import SearchResults from "./pages/search/SearchResults";
 
 function App() {
   return (
     <>
       <Router>
-
         {/* This is to ensure footer is at the bottom of the screen */}
         <div className="flex flex-col h-screen">
           <NotificationComponent />
@@ -59,7 +58,6 @@ function App() {
           </main>
           <Footer />
         </div>
-
       </Router>
     </>
   );

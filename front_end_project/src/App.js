@@ -22,19 +22,19 @@ import newsUnsubForm from "./pages/email_newsletter_forms/unsubscribe";
 import newsRemoveForm from "./pages/email_newsletter_forms/remove";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NotificationComponent from "./components/notificationComp/NotificationComponent";
+import SearchResults from "./pages/search/SearchResults";
 
 function App() {
   return (
     <>
       <Router>
-
         {/* This is to ensure footer is at the bottom of the screen */}
         <div className="flex flex-col h-screen">
           <NotificationComponent />
           <Header />
           <main>
             <Switch>
-              <Route path="/project/:projectId" component={ProjectDetails} />
+              <Route path="/project/:projectId" component={ProjectDetails} />
               <Route exact path="/" component={HomePage} />
               <Route exact path="/home" component={HomePage} />
               <Route path="/hello" component={Helloo} />
@@ -55,11 +55,12 @@ function App() {
               <Route path="/newsSignupForm" component={newsSignupForm} />
               <Route path="/newsUnsubForm" component={newsUnsubForm} />
               <Route path="/newsRemoveForm" component={newsRemoveForm} />
+              <Route path="/search-results" component={SearchResults} />
             </Switch>
           </main>
           <Footer />
         </div>
-        
+
       </Router>
     </>
   );

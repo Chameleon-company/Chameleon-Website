@@ -3,6 +3,17 @@ import cityOfMelProject from "./assets/Thumbnail-CoM.png";
 import evProject from "./assets/Thumbnail-EV.jpeg";
 import websiteProject from "./assets/Thumbnail-Website.png";
 
+const content1 =
+  "At Chameleon, our mission is to research, create, test, document and deploy IoT-based solutions to enhance life through the application of smart city technologies including: the building of smarter cities, homes, transportation, and energy management systems.";
+const content2 =
+  "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta possimus numquam atque odio ab suscipit ipsam reiciendis alias, facere enim.";
+const content3 = "City of Melbourne Open Data";
+const content4 =
+  "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta possimus numquam atque odio ab suscipit ipsam reiciendis alias, facere enim.";
+const content5 = "Website Uplift";
+const content6 =
+  "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta possimus numquam atque odio ab suscipit ipsam reiciendis alias, facere enim.";
+
 const Homepage = () => {
   return (
     <>
@@ -15,13 +26,7 @@ const Homepage = () => {
             className="mx-auto"
           />
           <div className="my-auto">
-            <p className="align-middle flex-1 text-xl">
-              At Chameleon, our mission is to research, create, test, document
-              and deploy IoT-based solutions to enhance life through the
-              application of smart city technologies including: the building of
-              smarter cities, homes, transportation, and energy management
-              systems.
-            </p>
+            <p className="align-middle flex-1 text-xl">{content1}</p>
           </div>
         </div>
       </header>
@@ -37,11 +42,7 @@ const Homepage = () => {
               />
               <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">EV Adoption</div>
-                <p class="text-gray-700 text-base">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Soluta possimus numquam atque odio ab suscipit ipsam
-                  reiciendis alias, facere enim.
-                </p>
+                <p class="text-gray-700 text-base">{content2}</p>
               </div>
             </div>
             <div class="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
@@ -51,14 +52,8 @@ const Homepage = () => {
                 alt="Sunset in the mountains"
               />
               <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">
-                  City of Melbourne Open Data
-                </div>
-                <p class="text-gray-700 text-base">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Soluta possimus numquam atque odio ab suscipit ipsam
-                  reiciendis alias, facere enim.
-                </p>
+                <div class="font-bold text-xl mb-2">{content3}</div>
+                <p class="text-gray-700 text-base">{content4}</p>
               </div>
             </div>
             <div class="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
@@ -68,12 +63,8 @@ const Homepage = () => {
                 alt="Sunset in the mountains"
               />
               <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">Website Uplift</div>
-                <p class="text-gray-700 text-base">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Soluta possimus numquam atque odio ab suscipit ipsam
-                  reiciendis alias, facere enim.
-                </p>
+                <div class="font-bold text-xl mb-2">{content5}</div>
+                <p class="text-gray-700 text-base">{content6}</p>
               </div>
             </div>
           </div>
@@ -82,5 +73,14 @@ const Homepage = () => {
     </>
   );
 };
+
+export const homeSearchableContents = [
+  content1,
+  content2,
+  content3,
+  content4,
+  content5,
+  content6,
+];
 
 export default Homepage;

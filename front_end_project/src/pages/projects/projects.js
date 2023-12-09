@@ -8,6 +8,10 @@ import chatIcon from "./image/chat-icon.png";
 import fileSelectIcon from "./image/file-select.png";
 import sendMessageImg from "./image/send-message.png";
 import projectList from "./data";
+
+const content1 =
+  "At Chameleon, our mission is to research, create, test, document and deploy loT-based solutions to enhance life through the application of smart city technologies including: the building of smarter cities, homes, transportation, and energy management systems.";
+
 const Projects = () => {
   const [chatOpen, setChatOpen] = useState(false);
 
@@ -26,10 +30,7 @@ const Projects = () => {
         <p
           className={`${styles.p} text-black text-center lg:text-[18px] md:text-[17px] text-[16px] m-0 font-thin`}
         >
-          At Chameleon, our mission is to research, create, test, document and
-          deploy loT-based solutions to enhance life through the application of
-          smart city technologies including: the building of smarter cities,
-          homes, transportation, and energy management systems.
+          {content1}
         </p>
         {/* this class combination sets a maximum width of 5xl (max-w-5xl), right padding of 5 units (pr-5), zero top and bottom margins (my-0), zero right margin (mr-0), positions the element to the far right within its container (ml-auto), sets the text color to black (text-black), and applies a semi-bold font weight (font-semibold). */}
         <p className="max-w-5xl pr-5 my-0 mr-0 ml-auto text-black font-semibold">
@@ -164,5 +165,7 @@ const Projects = () => {
     </div>
   );
 };
+
+export const projectsSearchableContents = [content1];
 
 export default Projects;

@@ -8,7 +8,9 @@ import { notifyWelcome } from "../../components/notificationComp/NotificationCom
 class Contact extends Component {
   componentDidMount() {
     // Display a welcome message when the component mounts
-    notifyWelcome("Make sure to contact us only on working days 9:00 AM onwards!");
+    notifyWelcome(
+      "Make sure to contact us only on working days 9:00 AM onwards!",
+    );
   }
 
   render() {
@@ -92,5 +94,12 @@ class Contact extends Component {
     );
   }
 }
+
+export const contactSearchableContents = [
+  "Contact Us",
+  "Phone Us",
+  "Send a Email",
+  "Live Chat",
+];
 
 export default Contact;

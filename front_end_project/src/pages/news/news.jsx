@@ -90,4 +90,8 @@ class News extends Component {
   }
 }
 
+export const newsSearchableContents = articleList.reduce((acc, article) => {
+  return [...acc, article.title, article.preview, article.author];
+}, []);
+
 export default News;

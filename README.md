@@ -2,32 +2,66 @@
 
 The central repository for the Chameleon front_end_project (react.js) and back_end_project (node.js) .
 
-To get started, clone the repo. Then run `npm install` from the root.
+To get started, clone the repo. Then run `npm ci` from the root.
 
 The repo is organized as a monorepo, . and follows this structure:
 
 ```
-├── back_end_project           # All API to be created here (node.js)
-    ├── controllers
-    ├── routes
-    └── services    
-├── front_end_project          # Customer facing website (React.js)
-    ├── public
-    └── src
-        ├── components
-        ├── layouts
-        ├── pages
-        ├── services
-└── old_website                # Old Chameleon website code
-
+├── back_end_project             # All API to be created here
+│   ├── back_end_project
+│   ├── controllers
+│   ├── proxy-api
+│   ├── routes
+│   └── services
+├── front_end_project            # Customer facing website
+│   ├──node_modules
+│   ├── public
+│   │   ├── AboutUs
+│   │   ├── Footer
+│   │   ├── Projects
+│   ├── src
+│   │   ├── assets
+│   │   ├── components
+│   │   │   ├── about
+│   │   │   ├── calendar
+│   │   │   ├── card
+│   │   │   ├── news
+│   │   │   ├── notificationComp
+│   │   │   ├── portfolio_card
+│   │   │   ├── projects
+│   │   │   ├── resources
+│   │   │   └── shared
+│   │   ├── constants
+│   │   ├── layouts
+│   │   │   ├── footer
+│   │   │   └── header
+│   │   ├── pages
+│   │   │   ├── Chatbot
+│   │   │   ├── about
+│   │   │   ├── calendar
+│   │   │   ├── contact
+│   │   │   ├── email_newsletter_forms
+│   │   │   ├── faq
+│   │   │   ├── hello
+│   │   │   ├── homepage
+│   │   │   ├── login
+│   │   │   ├── news
+│   │   │   ├── projects
+│   │   │   ├── report
+│   │   │   ├── reset_password
+│   │   │   ├── resources
+│   │   │   ├── signup
+│   │   │   ├── user_account_portal
+│   │   │   └── utils
+│   └── tailwind.config.js
+└── package-lock.json
 ```
 
 Both `back_end_project` and `front_end_project` are workspaces. Most actions, such as installing new npm packages, can and should be performed at the respective folder and not in the root of the project. Specific workspaces can be targeted from the root directory using `cd <workspace>`.
 
-e.g. To install a new package to the `front_end_project` package only `cd front_end_project` then `npm install package-name`
+e.g. To install a new package to the `front_end_project` package only `cd front_end_project` then `npm ci package-name`
 
 Note: Running `npm add <package>` will install it to the root . T.
-
 
 ---
 
@@ -45,7 +79,7 @@ Development should follow the [Feature branch git workflow](https://www.atlassia
 
 **:point_right: Note:**:
 
-> When pulling the latest from github, you may need to run `npm install` if any packages were added or removed in past commits. If you are experiencing errors unrelated to the code you are writing (or before writing any), try running  `npm install`.
+> When pulling the latest from github, you may need to run `npm install` if any packages were added or removed in past commits. If you are experiencing errors unrelated to the code you are writing (or before writing any), try running `npm install`.
 
 ---
 
@@ -61,7 +95,6 @@ Each package/app requires their own `.eslintrc.js` file.
 - Single quotes for strings
 - Do not use string interpolation for css classes
 - Do not use CSS-in-JS, StyledComponents or Emotion CSS
-
 
 ## :crossed_swords: Git etiquette
 
@@ -98,17 +131,17 @@ The **preferred** format for a commit message looks like this. Note that only `b
 
 ```js
 [
-  'build', // related to build processes
-  'chore', // small cleanup activities or other pedantry
-  'ci', // related to continuous integration activities
-  'docs', // documentation work
-  'feat', // feature work
-  'fix', // bugfixes or hotfixes
-  'perf', // performance tuning & optimization
-  'refactor', // code refactoring
-  'revert', // reverting previously committed changes.
-  'style', // styling changes
-  'test', // changes to tests
+  "build", // related to build processes
+  "chore", // small cleanup activities or other pedantry
+  "ci", // related to continuous integration activities
+  "docs", // documentation work
+  "feat", // feature work
+  "fix", // bugfixes or hotfixes
+  "perf", // performance tuning & optimization
+  "refactor", // code refactoring
+  "revert", // reverting previously committed changes.
+  "style", // styling changes
+  "test", // changes to tests
 ];
 ```
 

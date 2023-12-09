@@ -1,219 +1,144 @@
 import React, { Component } from "react";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import './aboutUs-media.css';
-import Container from "react-bootstrap/Container";
-import logo from "./assets/ChameleonLogo.png";
-import connected from "./assets/connected.png";
-import environment from "./assets/environment.png";
-import partner from "./assets/partner.png";
-import support from "./assets/support.png";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-import Breadcrumb from "react-bootstrap/Breadcrumb";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Accordion from "react-bootstrap/Accordion";
-import Button from "react-bootstrap/Button";
+import chameleonImg from "./assets/needToAdd.jpeg";
+import achievmentIcon1 from "./assets/achievmentIcon1.png";
+import achievmentIcon2 from "./assets/achievmentIcon2.png";
+import achievmentIcon3 from "./assets/achievmentIcon3.png";
+import achievmentIcon4 from "./assets/achievmentIcon4.png";
+// Import Css Cause Some Classes Are Conflicting With Bootstrap
+import styles from "./aboutUs.module.css";
 
 class aboutUs extends Component {
   render() {
     return (
       <>
-        <br></br>
-
-        {/*BREADCRUMB SECTION */}
-        <Container>
-          <Breadcrumb>
-            <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-            <Breadcrumb.Item href="#" active>
+        {/* This class bg-[#deece3] is used to set the background color to the hex code #deece3. */}
+        <div className=" bg-[#deece3] ">
+          {/* About Us Section */}
+          <div className={styles.aboutSection}>
+            {/* These classes combination centers text, sets it to a semi-bold font weight, and adjusts the text size to 4xl on large screens (lg:text-4xl) and 3xl by default (text-3xl) */}
+            <h3 className="text-center font-semibold lg:text-4xl text-3xl">
               About Us
-            </Breadcrumb.Item>
-          </Breadcrumb>
-        </Container>
+            </h3>
 
-        <br></br>
-
-        {/* ABOUT US SECTION */}
-
-{/* Added a custom class for styling */} 
-<Container className="about-page">
-          <h1 style={{ fontWeight: "900" }} className="text-sm-left pb-3">
-            ABOUT US
-          </h1>
-          <Row>
-            
-{/* Changed to specify lg size */} 
-<Col lg={6}>
-              <iframe
-                src="https://www.youtube.com/embed/JirJCCIeuvg"
-                autoPlay
-                width="550"
-                height="350"
-                title="Chameleon About"
-                className="pl-3"
-              ></iframe>
-            </Col>
-            
-{/* Changed to specify lg size */} 
-<Col lg={6}>
-              <h2>Chameleon is a Deakin Universty, student-led company dedicated to revolutionizing urban living through the strategic application of IoT-based solutions. Our organization is structured into three distinct divisions, each focused on key areas of strategic importance.</h2>
-            </Col>
-          </Row>
-        </Container>
-
-        <br></br>
-
-        {/* OUT MISSION SECTION*/}
-        {/* Added a custom class for styling */} 
-        <Container style={{ backgroundColor: "#67A170", maxWidth: '100%' }} className="about-mission-section">
-          <h2 className="text-center text-white fw-bold mt-2 pt-3">
-            OUR MISSION
-          </h2>
-          <Row>
-            
-{/* Changed to specify lg size */} 
-<Col lg={6}>
-              <img
-                src={logo}
-                className="img-fluid mx-auto d-block mt-5 pb-5"
-                alt="mission "
-                style={{ width: "300px" }}
-              />
-            </Col>
-            
-{/* Changed to specify lg size */} 
-<Col lg={6}>
-              <p className=" pb-5 text-white fs-4 text-start fw-light mt-5 pe-3" style={{ width: '70%' }}>
-                At Chameleon, our mission is to research, create, test, document and deploy IoT-based solutions to enhance life through the application of smart city technologies including: the building of smarter cities, homes, transportation, and energy management systems.
-              </p>
-            </Col>
-          </Row>
-        </Container>
-
-        <br></br>
-
-        {/* OUR GOALS SECTION*/}
-        {/* Added a custom class for styling */} 
-        <Container className="about-goals-section">
-          <h2 className="text-center text-black fw-bold mt-2 pt-3">
-            OUR GOALS
-          </h2>
-          <Row>
-            
-{/* Changed to specify md and sm sizes */} 
-<Col md={3} sm={4}>
-              <img
-                src={connected}
-                className="img-fluid mx-auto d-block mt-5"
-                alt="mission "
-                style={{ width: "200px" }}
-              />
-              <h4 className="text-center pt-3 fw-bold">Better Connected</h4>
-            </Col>
-            
-{/* Changed to specify md and sm sizes */} 
-<Col md={3} sm={4}>
-              <img
-                src={environment}
-                className="img-fluid mx-auto d-block mt-5"
-                alt="mission "
-                style={{ width: "200px" }}
-              />
-              <h4 className="text-center pt-3 fw-bold">
-                Environmentally Friendly
-              </h4>
-            </Col>
-            
-{/* Changed to specify md and sm sizes */} 
-<Col md={3} sm={4}>
-              <img
-                src={partner}
-                className="img-fluid mx-auto d-block mt-5"
-                alt="mission "
-                style={{ width: "200px" }}
-              />
-              <h4 className="text-center pt-3 fw-bold">Partnerships</h4>
-            </Col>
-            
-{/* Changed to specify md and sm sizes */} 
-<Col md={3} sm={4}>
-              <img
-                src={support}
-                className="img-fluid mx-auto d-block mt-5"
-                alt="mission "
-                style={{ width: "200px" }}
-              />
-              <h4 className="text-center pt-3 fw-bold">
-                Supporting our communities
-              </h4>
-            </Col>
-          </Row>
-        </Container>
-
-        <br></br>
-        <br></br>
-
-        {/* FAQ SECTION*/}
-        {/* Added a custom class for styling */} 
-        <Container style={{ backgroundColor: "#67A170", maxWidth: '100%' }} className="about-faq-section">
-          <h2 className="text-center text-white fw-bold mt-2 pt-3">
-            FREQUENTLY ASKED QUESTIONS
-          </h2>
-          <br></br>
-          <Accordion flush>
-            <Accordion.Item eventKey="0">
-              <Accordion.Header>
-                <h3>What does Chameleon do?</h3>
-              </Accordion.Header>
-              <Accordion.Body>Chameleon is an organization dedicated to creating innovative IoT-based solutions to enhance urban life. They focus on various divisions, including City of Melbourne Open Data, Chameleon Website, and Electric Vehicle (EV) Adoption Tools. These divisions work together to address urban challenges, promote sustainability, provide user-friendly access to project information, and champion the adoption of electric vehicles for a greener future.
-                Chameleon's overarching mission is to make cities smarter, more livable, and environmentally friendly through their strategic approach and collaborative efforts.
-              </Accordion.Body>
-            </Accordion.Item>
-            <br></br>
-            <Accordion.Item eventKey="1">
-              <Accordion.Header>
-                <h3>How can I sign up?</h3>
-              </Accordion.Header>
-              <Accordion.Body>You can easily sign up with us by following these steps:
-                <ul>
-                  <li><strong>Visit Our Website:</strong> Start by visiting our website, where you'll find a user-friendly sign-up or registration page.</li>
-                  <li><strong>Create Your Account:</strong>  Click on the "Sign Up" or "Register" button and provide the required information. This includes your name, email address, and a password.</li>
-                  <li><strong>Verify Your Email:</strong>  After you've filled in the necessary details, you will receive a verification email. Click the link in the email to confirm your registration.</li>
-                  <li><strong>Complete Your Profile:</strong>  Log in to your newly created account and complete your profile by adding any additional information or preferences.</li>
-                  <li><strong>Start Exploring:</strong>  Once your profile is set up, you can start exploring our platform, accessing resources, and engaging with our projects.</li>
-                </ul>
-                If you need assistance, feel free to reach out to our support team, and they will be happy to guide you through the process. You can find them under the support page or you can contact them using the phone number or email address provided at the bottom of each page on our website. We're excited to have you on board!
-              </Accordion.Body>
-            </Accordion.Item>
-            <br></br>
-            <Accordion.Item eventKey="2">
-              <Accordion.Header>
-                <h3>Where can I find a progress update?</h3>
-              </Accordion.Header>
-              <Accordion.Body>You can conveniently access progress updates for our projects through our Chameleon Website (CW). Our website serves as a central hub for comprehensive information about all our projects, including their objectives and ongoing developments. Simply navigate to the "Projects" or "News" section on our website to find the latest updates and milestones achieved by our City of Melbourne Open Data (MOP), Chameleon Website (CW), and Electric Vehicle (EV) Adoption Tools (EVAT) divisions. We regularly update this section to keep you informed about our progress in making cities smarter, more livable, and environmentally friendly.</Accordion.Body>
-            </Accordion.Item>
-          </Accordion>
-          <br></br>
-          <br></br>
-          <h4 className="text-white">More Questions? Send Us a Message!</h4>
-          <br></br>
-          <div className="d-flex flex-row">
-            <InputGroup size="sm" className="mb-3" style={{ width: "500px" }}>
-              <Form.Control
-                as={"textarea"}
-                aria-aria-label="with-textarea"
-                placeholder="Please write your message here..."
-              />
-            </InputGroup>
-            <Button variant="warning" className="ms-5" href="#">
-              Send Message
-            </Button>
+            {/* These class combination sets the text size to 2xl on large screens (lg:text-2xl), 1xl by default (text-xl), tightens the line height (leading-tight), centers the text (text-center), removes margin (m-0), and adds top margin on medium screens (md:mt-3). */}
+            <p
+              className={`${styles.aboutP} lg:text-2xl text-xl leading-tight text-center m-0 md:mt-3 `}
+            >
+              Chameleon aims to utilise the Internet of Things (IoT), which is
+              an ecosystem consisting of web-enabled smart devices such as
+              phones, suburban traffic systems and domestic appliances, that all
+              use embedded systems, such as processors, sensors, and
+              communication hardware, to collect, send and act on data they
+              acquire from their environments.
+            </p>
           </div>
-          <br></br>
-        </Container>
-        {/* Added a custom class for Display None it on Mobile Screens */} 
-        <br className="lastBR"></br>
+
+          {/* Mission Section */}
+          <div className={styles.missionSection}>
+            {/* These class combination centers the text (text-center), sets it to a semi-bold font weight (font-semibold), and adjusts the text size to 4xl on large screens (lg:text-4xl) and 3xl by default (text-3xl). */}
+            <h3 className="text-center font-semibold lg:text-4xl text-3xl">
+              Our Mission
+            </h3>
+
+            {/* These class combination creates a flexible and centered column layout with a maximum width of 6xl, adding specific gaps between elements on medium and default screens (md:gap-5 and gap-3), while distributing items evenly along the main axis and centering them along the cross-axis (justify-between and items-center). */}
+            <div className="flex mx-auto flex-col  md:gap-5 gap-3 justify-between items-center max-w-6xl">
+              {/*  These class combination sets the width of the element to 200px by default (w-[200px]), 250px on medium screens (md:w-[250px]), and 300px on large screens (lg:w-[300px]), while also adding a top margin of 3 units (mt-3). */}
+              <img
+                src={chameleonImg}
+                className="lg:w-[300px] md:w-[250px] mt-3 w-[200px] "
+              />
+
+              {/* These class combination sets the text size to extra-large on large screens (lg:text-xl), large by default (text-lg), centers the text (text-center), and removes margin (m-0). */}
+              <p className="lg:text-xl text-lg m-0 text-center">
+                Chameleon aims to utilise the Internet of Things (IoT), which is
+                an ecosystem consisting of web-enabled smart devices such as
+                phones, suburban traffic systems and domestic appliances, that
+                all use embedded systems, such as processors, sensors, and
+                communication hardware, to collect, send and act on data they
+                acquire from their environments.
+              </p>
+            </div>
+          </div>
+
+          {/* Achievements Section */}
+          <div className={styles.achievementsSection}>
+            {/* These classes combination centers the text (text-center), sets it to a semi-bold font weight (font-semibold), and adjusts the text size to 4xl on large screens (lg:text-4xl) and 3xl by default (text-3xl). */}
+            <h3 className="text-center font-semibold lg:text-4xl text-3xl">
+              Achievements
+            </h3>
+
+            {/* These classes combination creates a flexible layout with column orientation by default, transitioning to a row layout on medium screens (md:flex-row). It specifies gaps between elements for both default and large screens (gap-3 and lg:gap-5), centers and justifies elements on both axes (justify-center and items-center), adds margin on medium and default screens (md:mt-4 and mt-4), allows flex wrapping on screens up to 1199px (max-[1199px]:flex-wrap), and sets a maximum width of 6xl with horizontal centering (max-w-6xl and mx-auto). */}
+            <div className="flex gap-3 flex-col md:flex-row lg:gap-5 justify-center items-center md:mt-4 mt-4 max-[1199px]:flex-wrap max-w-6xl mx-auto ">
+              {/* Achievements Box 1 */}
+
+              {/* These classes combination utilizes Flexbox to create a container with horizontal alignment of items, achieved through the classes flex and items-center. The container is likely named achievementsBox. */}
+              <div className="achievementsBox flex items-center">
+                {/* These classes combination styles an element with a background color of #d9d9d9 (bg-[#d9d9d9]), adds padding of 2 units (p-2), rounds the corners to create a circular shape (rounded-full), sets the stacking order to 2 (z-2), adjusts the stacking order relative to its normal position (relative), places it slightly above the normal stacking level by 1px (z-[1px]), and adds a black border with a thickness of 1px (border-black and border-[1px]). The class likely applies to an element with the name boxIcon. */}
+                <div className="boxIcon bg-[#d9d9d9] p-2 rounded-full z-2  relative z-[1px] border-black border-[1px] ">
+                  {/* the class w-[40px] sets the width of the element to 40 pixels. */}
+                  <img src={achievmentIcon1} className="w-[40px]" />
+                </div>
+
+                {/*  These classes combination styles a text element with the color black (text-black), adds vertical padding of 15 pixels (py-[15px]), sets the width to 300 pixels by default and 250 pixels on medium screens (w-[300px] and md:w-[250px]), centers the text (text-center), adds a black border with a thickness of 2 pixels (border-black and border-[2px]), moves the element to the left by 45 pixels (ml-[-45px]), removes the left border (border-l-0), gives it a rounded shape (rounded-full), and sets the stacking order to 1 (z-1). The class likely applies to an element with the name boxText. */}
+                <div className="boxText text-black py-[15px] w-[300px] md:w-[250px] text-center border-black ml-[-45px] border-[2px] z-1 border-l-0 rounded-full">
+                  {/* These class combination sets the margin to zero (m-0) and applies a bold font weight (font-bold). */}
+                  <h5 className="m-0 font-bold">50,000</h5>
+                </div>
+              </div>
+
+              {/* Achievements Box 2 */}
+
+              {/* These classes combination utilizes Flexbox to create a container with horizontal alignment of items, achieved through the classes flex and items-center. The container is likely named achievementsBox. */}
+              <div className="achievementsBox flex items-center">
+                {/* These classes combination styles an element with a background color of #d9d9d9 (bg-[#d9d9d9]), adds padding of 2 units (p-2), rounds the corners to create a circular shape (rounded-full), sets the stacking order to 2 (z-2), adjusts the stacking order relative to its normal position (relative), places it slightly above the normal stacking level by 1px (z-[1px]), and adds a black border with a thickness of 1px (border-black and border-[1px]). The class likely applies to an element with the name boxIcon. */}
+                <div className="boxIcon bg-[#d9d9d9] p-2 rounded-full z-2  relative z-[1px] border-black border-[1px] ">
+                  {/* the class w-[40px] sets the width of the element to 40 pixels. */}
+                  <img src={achievmentIcon2} className="w-[40px]" />
+                </div>
+
+                {/*  These classes combination styles a text element with the color black (text-black), adds vertical padding of 15 pixels (py-[15px]), sets the width to 300 pixels by default and 250 pixels on medium screens (w-[300px] and md:w-[250px]), centers the text (text-center), adds a black border with a thickness of 2 pixels (border-black and border-[2px]), moves the element to the left by 45 pixels (ml-[-45px]), removes the left border (border-l-0), gives it a rounded shape (rounded-full), and sets the stacking order to 1 (z-1). The class likely applies to an element with the name boxText. */}
+                <div className="boxText text-black py-[15px] w-[300px] md:w-[250px] text-center border-black ml-[-45px] border-[2px] z-1 border-l-0 rounded-full">
+                  {/* These class combination sets the margin to zero (m-0) and applies a bold font weight (font-bold). */}
+                  <h5 className="m-0 font-bold">43,850 +</h5>
+                </div>
+              </div>
+
+              {/* Achievements Box 3*/}
+
+              {/* These classes combination utilizes Flexbox to create a container with horizontal alignment of items, achieved through the classes flex and items-center. The container is likely named achievementsBox. */}
+              <div className="achievementsBox flex items-center">
+                {/* These classes combination styles an element with a background color of #d9d9d9 (bg-[#d9d9d9]), adds padding of 2 units (p-2), rounds the corners to create a circular shape (rounded-full), sets the stacking order to 2 (z-2), adjusts the stacking order relative to its normal position (relative), places it slightly above the normal stacking level by 1px (z-[1px]), and adds a black border with a thickness of 1px (border-black and border-[1px]). The class likely applies to an element with the name boxIcon. */}
+                <div className="boxIcon bg-[#d9d9d9] p-2 rounded-full z-2  relative z-[1px] border-black border-[1px] ">
+                  {/* the class w-[40px] sets the width of the element to 40 pixels. */}
+                  <img src={achievmentIcon3} className="w-[40px]" />
+                </div>
+
+                {/*  These classes combination styles a text element with the color black (text-black), adds vertical padding of 15 pixels (py-[15px]), sets the width to 300 pixels by default and 250 pixels on medium screens (w-[300px] and md:w-[250px]), centers the text (text-center), adds a black border with a thickness of 2 pixels (border-black and border-[2px]), moves the element to the left by 45 pixels (ml-[-45px]), removes the left border (border-l-0), gives it a rounded shape (rounded-full), and sets the stacking order to 1 (z-1). The class likely applies to an element with the name boxText. */}
+                <div className="boxText text-black py-[15px] w-[300px] md:w-[250px] text-center border-black ml-[-45px] border-[2px] z-1 border-l-0 rounded-full">
+                  {/* These class combination sets the margin to zero (m-0) and applies a bold font weight (font-bold). */}
+                  <h5 className="m-0 font-bold">10,000 +</h5>
+                </div>
+              </div>
+
+              {/* Achievements Box 4 */}
+
+              {/* These classes combination utilizes Flexbox to create a container with horizontal alignment of items, achieved through the classes flex and items-center. The container is likely named achievementsBox. */}
+              <div className="achievementsBox flex items-center">
+                {/* These classes combination styles an element with a background color of #d9d9d9 (bg-[#d9d9d9]), adds padding of 2 units (p-2), rounds the corners to create a circular shape (rounded-full), sets the stacking order to 2 (z-2), adjusts the stacking order relative to its normal position (relative), places it slightly above the normal stacking level by 1px (z-[1px]), and adds a black border with a thickness of 1px (border-black and border-[1px]). The class likely applies to an element with the name boxIcon. */}
+                <div className="boxIcon bg-[#d9d9d9] p-2 rounded-full z-2  relative z-[1px] border-black border-[1px] ">
+                  {/* the class w-[40px] sets the width of the element to 40 pixels. */}
+                  <img src={achievmentIcon4} className="w-[40px]" />
+                </div>
+
+                {/*  These classes combination styles a text element with the color black (text-black), adds vertical padding of 15 pixels (py-[15px]), sets the width to 300 pixels by default and 250 pixels on medium screens (w-[300px] and md:w-[250px]), centers the text (text-center), adds a black border with a thickness of 2 pixels (border-black and border-[2px]), moves the element to the left by 45 pixels (ml-[-45px]), removes the left border (border-l-0), gives it a rounded shape (rounded-full), and sets the stacking order to 1 (z-1). The class likely applies to an element with the name boxText. */}
+                <div className="boxText text-black py-[15px] w-[300px] md:w-[250px] text-center border-black ml-[-45px] border-[2px] z-1 border-l-0 rounded-full">
+                  {/* These class combination sets the margin to zero (m-0) and applies a bold font weight (font-bold). */}
+                  <h5 className="m-0 font-bold">12</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </>
     );
   }

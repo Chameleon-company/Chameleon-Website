@@ -1,0 +1,27 @@
+
+# Base image Node v20 (build stage - 1)
+FROM node:20 as build
+
+# Set Current work dir
+WORKDIR /src/app/
+
+# Copying  package.json to the image
+COPY package.json .
+
+#Install the required dependency 
+RUN npm install
+
+#Copy all the files to the Work Dir 
+COPY . . 
+
+#Building react app
+RUN npm run build
+
+#Base image Nginx Server (Build stage - 2)
+FROM nginx
+
+#Copy Nginx Config to override default config
+COPY --from=build ./src/app/nginx/nginx.conf /etc/nginx/nginx.conf
+
+#Copy build folder from React Router
+COPY --from=build /src/app/build /usr/share/nginx/html

@@ -59,7 +59,7 @@ The repo is organized as a monorepo, . and follows this structure:
 
 Both `back_end_project` and `front_end_project` are workspaces. Most actions, such as installing new npm packages, can and should be performed at the respective folder and not in the root of the project. Specific workspaces can be targeted from the root directory using `cd <workspace>`.
 
-e.g. To install a new package to the `front_end_project` package only `cd front_end_project` then `npm ci package-name`
+e.g. To install a package to the `front_end_project`,  `cd front_end_project` then `npm ci`
 
 Note: Running `npm add <package>` will install it to the root . T.
 

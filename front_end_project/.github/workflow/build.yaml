@@ -27,5 +27,3 @@ jobs:
         gcloud auth configure-docker australia-southeast2-docker.pkg.dev
         docker build -t australia-southeast2-docker.pkg.dev/$GOOGLE_PROJECT/chameleon-image-prod/nginx:latest .
         docker push australia-southeast2-docker.pkg.dev/$GOOGLE_PROJECT/chameleon-image-prod/nginx:latest
-
-        australia-southeast2-docker.pkg.dev/$GOOGLE_PROJECT/chameleon-image-prod

@@ -1,6 +1,6 @@
 # CHAMELEON (Website Project)
 
-The central repository for the Chameleon front_end_project (react.js) and back_end_project (node.js) .
+The central repository for the Chameleon front_end_project (react.js) and back_end_project (node.js).
 
 To get started, clone the repo. Then run `npm ci` from the root.
 

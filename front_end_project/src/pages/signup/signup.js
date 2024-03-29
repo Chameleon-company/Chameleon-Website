@@ -80,21 +80,21 @@
 //                         <img src={mic} width="34" height="34" />
 //                     </div>
 
-//                     <div class="fullname">
+//                     <div className="fullname">
 //                         <label>Name:*</label>
 //                         <input name="Name"
 //                             onChange={handleChange}
 //                             value={contact.fullname} />
 //                     </div>
 
-//                     <div class="emailAdd">
+//                     <div className="emailAdd">
 //                         <label>Email:*</label>
 //                         <input name="email"
 //                             onChange={handleChange}
 //                             value={contact.email} />
 //                     </div>
 
-//                     <div class="password">
+//                     <div className="password">
 //                         <label>Password:*</label>
 //                         <input
 //                             type="password"
@@ -103,25 +103,25 @@
 //                             value={contact.password} />
 //                     </div>
 
-//                     <div class="create">
+//                     <div className="create">
 //                         <button onClick={handleSubmit}>
 //                             Login
 //                         </button>
 //                     </div>
-//                     <button class="make" hred="#home">Create Account</button>
+//                     <button className="make" hred="#home">Create Account</button>
 
 //                     {/* <div className='inputSign'>
-//                     <p class="name">NAME</p>
+//                     <p className="name">NAME</p>
 
-//                     <p class="email">EMAIL ADDRESS</p>
+//                     <p className="email">EMAIL ADDRESS</p>
 
-//                     <p class="pass">PASSWORD</p>
+//                     <p className="pass">PASSWORD</p>
 
-//                     <p class="log">LOGIN</p>
+//                     <p className="log">LOGIN</p>
 //                 </div> */}
 
 //                     <div className='accSign'>
-//                         <p class="ac">Have an account? Sign in</p>
+//                         <p className="ac">Have an account? Sign in</p>
 //                     </div>
 
 //                 </Row>
@@ -170,18 +170,18 @@ function Signup () {
 
                 <div className='inputSign'>
 
-                    <p class="name" >NAME</p>
+                    <p className="name" >NAME</p>
 
-                    <p class="email">EMAIL ADDRESS</p>
+                    <p className="email">EMAIL ADDRESS</p>
 
-                    <p class="pass">PASSWORD</p>
+                    <p className="pass">PASSWORD</p>
 
-                    <p class="log">LOGIN</p>
+                    <p className="log">LOGIN</p>
                 </div>
 
                 <Nav.Link href="/login">
                     <button className='accSign'>
-                        <p class="ac">Have an account? Sign in</p>
+                        <p className="ac">Have an account? Sign in</p>
                     </button>
                 </Nav.Link>
 

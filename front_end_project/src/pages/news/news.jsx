@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import SwiperNews from "./Swiper";
 import articleList from "./articles";
 import "./styles.css";
-import SearchButton from "./images/SearchButton.png"
+import SearchButton from "./images/SearchButton.png";
 class News extends Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
 
-    // Initialize the state
-  }
+  //   // Initialize the state
+  // }
 
-  render() {
+  render () {
     return (
       <main className="bg-[#4fa373] py-10 ">
         {/* Main container with a green background and padding */}
@@ -54,7 +54,7 @@ class News extends Component {
         {/* End of the search and dropdown container */}
         <div className=" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start justify-center mt-10 gap-3 gap-y-5 overflow-hidden md:grid hidden px-[20px]">
           {/* Container for grid layout with specified column sizes, spacing, and hidden on medium screens */}
-          {articleList.map((item) => (
+          {articleList.map((index, item) => (
             <div
               className="flex flex-col justify-center items-center "
               key={item.key}
@@ -65,6 +65,7 @@ class News extends Component {
               </h2>
               {/* News title with specific styling */}
               <img
+                alt={index}
                 src={item.image}
                 className="mt-2 w-[360px] h-[180px] border-white border-y-[16px] border-x-[20px]"
               />

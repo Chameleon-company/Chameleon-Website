@@ -10,7 +10,7 @@ function DarkMode () {
   // toggle function for + or - for query minimise or expand
   const toggle = (i) => {
     // if + is chosen, + = i
-    if (choose == i) {
+    if (choose === i) {
       return setChoose(null);
     }
     setChoose(i);

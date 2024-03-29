@@ -44,7 +44,7 @@ class aboutUs extends Component {
             <div className="flex mx-auto flex-col  md:gap-5 gap-3 justify-between items-center max-w-6xl">
               {/*  These class combination sets the width of the element to 200px by default (w-[200px]), 250px on medium screens (md:w-[250px]), and 300px on large screens (lg:w-[300px]), while also adding a top margin of 3 units (mt-3). */}
               <img
-                alt="chameleon-image"
+                alt="chameleon-logo"
                 src={chameleonImg}
                 className="lg:w-[300px] md:w-[250px] mt-3 w-[200px] "
               />

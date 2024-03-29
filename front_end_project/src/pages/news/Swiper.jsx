@@ -1,6 +1,5 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import articleList from "./articles";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 // Import Swiper styles
@@ -9,7 +8,7 @@ import "swiper/css/pagination";
 import "./styles.css";
 import { Pagination } from "swiper/modules";
 import { Navigation } from "swiper/modules";
-export default function SwiperNews() {
+export default function SwiperNews () {
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
@@ -27,7 +26,7 @@ export default function SwiperNews() {
         className="mySwiper md:hidden block mt-10 relative"
         style={{ width: "100%" }}
       >
-        {articleList.map((item) => (
+        {articleList.map((index, item) => (
           <SwiperSlide className=" w-[100%]" key={item.key}>
             {/* Swiper slide for each news item */}
             <div className=" max-w-[360px] mx-auto flex flex-col justify-center items-center">
@@ -37,6 +36,7 @@ export default function SwiperNews() {
               </h2>
               {/* News title with specific styling */}
               <img
+                alt={index}
                 src={item.image}
                 className="mt-2 w-[360px] h-[180px] border-white border-y-[16px] border-x-[20px]"
               />

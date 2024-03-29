@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import CustomCard from "../../components/card/card";
-import axios from "axios";
+// import axios from "axios";
 
 const Hello = () => {
   console.log("hello hit");
-  const [message, setMessage] = useState("");
-  const [searchText, setSearchText] = useState("");
+  const [message] = useState("");
+  // const [searchText, setSearchText] = useState("");
 
-  const handleButtonClick = () => {
-    console.log("Button clicked!");
+  // const handleButtonClick = () => {
+  //   console.log("Button clicked!");
 
-    axios.get("http://localhost:3001/hello/" + searchText).then((res) => {
-      setMessage(res.data.message);
-    });
-  };
-  const handleSearchTextChange = (event) => {
-    setSearchText(event.target.value);
-  };
+  //   axios.get("http://localhost:3001/hello/" + searchText).then((res) => {
+  //     setMessage(res.data.message);
+  //   });
+  // };
+  // const handleSearchTextChange = (event) => {
+  //   setSearchText(event.target.value);
+  // };
   // return (<div>hello</div>)
   return (
     <Container>

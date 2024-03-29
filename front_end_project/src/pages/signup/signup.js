@@ -134,24 +134,21 @@
 //     export default Signup;
 
 import { Container, Row } from 'react-bootstrap';
-import React, { useState, Component } from 'react';
-import {NavLink} from 'react-router-dom';
+import React from 'react';
 import { Nav } from 'react-bootstrap';
-import { Outlet, Link } from 'react-router-dom'
-import heading from './images/bg.jpg'
-import logo from './images/logo.png'
-import goo from './images/goo.png'
-import mic from './images/mic.png'
-import './signup.css'
+import logo from './images/logo.png';
+import goo from './images/goo.png';
+import mic from './images/mic.png';
+import './signup.css';
 
-function Signup() {
+function Signup () {
 
     return (
         <Container>
             <Row>
                 {/* <div className = "greeenBg"> */}
                 <div className='chamHeading'>
-                    <img src={logo} width="100" height="100" />
+                    <img alt="logo" src={logo} width="100" height="100" />
                     <h>CHAMELEON</h>
                 </div>
                 <div className='getStarted'>
@@ -163,16 +160,16 @@ function Signup() {
 
                 <div className='google'>
                     Log in with Google
-                    <img src={goo} width="34" height="34" />
+                    <img alt="goo" src={goo} width="34" height="34" />
                 </div>
 
                 <div className='microsoft'>
                     Log in with Microsoft
-                    <img src={mic} width="34" height="34" />
+                    <img alt="mic" src={mic} width="34" height="34" />
                 </div>
 
                 <div className='inputSign'>
-                   
+
                     <p class="name" >NAME</p>
 
                     <p class="email">EMAIL ADDRESS</p>
@@ -190,7 +187,7 @@ function Signup() {
 
             </Row>
         </Container>
-    )
+    );
 }
 
 

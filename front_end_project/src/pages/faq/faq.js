@@ -1,23 +1,23 @@
 import { Row, Col } from "react-bootstrap";
-import React, { useState, toggle, button, useEffect } from "react";
+import React, { useState } from "react";
 // import DarkMode from "./components/DarkMode/DarkMode"
-import './faq.css'
-import './darkMode.css'
+import './faq.css';
+import './darkMode.css';
 
-function Faq() {
+function Faq () {
   /* toggle function to set function for choosing 
   or not choosing the + button to expand query */
-  const [choose, setChoose] = useState(null)
+  const [choose, setChoose] = useState(null);
 
   // toggle function for + or - for query minimise or expand
   const toggle = (i) => {
 
     // if + is chosen, + = i
-    if (choose == i) {
-      return setChoose(null)
+    if (choose === i) {
+      return setChoose(null);
     }
-    setChoose(i)
-  }
+    setChoose(i);
+  };
 
   return (
     <Row>
@@ -46,7 +46,7 @@ function Faq() {
             <div className="box">
               <form>
                 <label>
-                  <input placeholder=""/>
+                  <input placeholder="" />
                 </label>
               </form>
             </div>
@@ -59,7 +59,7 @@ function Faq() {
         </div>
       </Col>
     </Row>
-  )
+  );
 }
 
 // questions to put in FAQ page
@@ -84,6 +84,6 @@ const data = [
     answer:
       '"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto iusto veniam eveniet labore impedit nam"'
   }
-]
+];
 
 export default Faq;

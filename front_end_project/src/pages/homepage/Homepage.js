@@ -34,37 +34,37 @@ const Homepage = () => {
         <div className="">
           <h2 className="text-center pt-3 font-bold">Our Projects</h2>
           <div className="flex flex-col items-center justify-center lg:flex-row text-center lg:justify-around gap-4 p-5 container">
-            <div class="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
+            <div className="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
               <img
-                class="w-full h-40 max-w-full object-cover"
+                className="w-full h-40 max-w-full object-cover"
                 src={evProject}
                 alt="Electric vehicle charging station"
               />
-              <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">EV Adoption</div>
-                <p class="text-gray-700 text-base">{content2}</p>
+              <div className="px-6 py-4">
+                <div className="font-bold text-xl mb-2">EV Adoption</div>
+                <p className="text-gray-700 text-base">{content2}</p>
               </div>
             </div>
-            <div class="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
+            <div className="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
               <img
-                class="w-full h-40 max-w-full object-cover"
+                className="w-full h-40 max-w-full object-cover"
                 src={cityOfMelProject}
                 alt="Melbourne street"
               />
-              <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">{content3}</div>
-                <p class="text-gray-700 text-base">{content4}</p>
+              <div className="px-6 py-4">
+                <div className="font-bold text-xl mb-2">{content3}</div>
+                <p className="text-gray-700 text-base">{content4}</p>
               </div>
             </div>
-            <div class="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
+            <div className="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
               <img
-                class="w-full h-40 max-w-full object-cover"
+                className="w-full h-40 max-w-full object-cover"
                 src={websiteProject}
                 alt="Chameleon"
               />
-              <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">{content5}</div>
-                <p class="text-gray-700 text-base">{content6}</p>
+              <div className="px-6 py-4">
+                <div className="font-bold text-xl mb-2">{content5}</div>
+                <p className="text-gray-700 text-base">{content6}</p>
               </div>
             </div>
           </div>

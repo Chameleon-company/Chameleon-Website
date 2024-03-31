@@ -11,7 +11,7 @@ class Chatbot extends Component {
         };
     }
 
-    componentDidMount() {
+    componentDidMount () {
         // Your Chatbot JavaScript code goes here
         const incomingMessageImage = "images/chameleon (2).png";
         const chatInput = document.querySelector(".chat-input textarea");
@@ -35,7 +35,7 @@ class Chatbot extends Component {
                 cancelable: true,
             });
             chatInput.dispatchEvent(inputEvent);
-        }
+        };
 
         option1Button.addEventListener('click', () => {
             const response = "Learn About our Projects";
@@ -87,7 +87,7 @@ class Chatbot extends Component {
             chatLi.innerHTML = chatContent;
             chatLi.querySelector("p").textContent = message;
             return chatLi;
-        }
+        };
 
         const generateResponse = (chatElement) => {
             const API_URL = "https://api.openai.com/v1/chat/completions";
@@ -104,7 +104,7 @@ class Chatbot extends Component {
                     model: "gpt-3.5-turbo",
                     messages: [{ role: "user", content: this.state.userMessage }],
                 })
-            }
+            };
 
             fetch(API_URL, requestOptions)
                 .then(res => res.json())
@@ -130,7 +130,7 @@ class Chatbot extends Component {
             } else {
                 chatElement.insertBefore(imageElement, messageElement);
             }
-        }
+        };
 
         const handleChat = () => {
             this.state.userMessage = chatInput.value.trim();
@@ -148,7 +148,7 @@ class Chatbot extends Component {
                 chatbox.scrollTo(0, chatbox.scrollHeight);
                 generateResponse(incomingChatLi);
             }, 600);
-        }
+        };
 
         chatInput.addEventListener("input", () => {
             chatInput.style.height = `${inputInitHeight}px`;
@@ -167,7 +167,7 @@ class Chatbot extends Component {
         chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
     }
 
-    render() {
+    render () {
         return (
             <div className="chatbot">
                 <button className="chatbot-toggler">

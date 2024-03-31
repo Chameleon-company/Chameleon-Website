@@ -6,14 +6,14 @@ import Email from "./image/email.png";
 import { notifyWelcome } from "../../components/notificationComp/NotificationComponent";
 
 class Contact extends Component {
-  componentDidMount() {
+  componentDidMount () {
     // Display a welcome message when the component mounts
     notifyWelcome(
       "Make sure to contact us only on working days 9:00 AM onwards!",
     );
   }
 
-  render() {
+  render () {
     return (
       // These Classes sets the background color to a specific shade of light blue with the hex code #deece3 (bg-[#deece3]).
       <div className="bg-[#deece3]">
@@ -28,7 +28,7 @@ class Contact extends Component {
             <div className="flex justify-start items-center gap-3">
               <div className="contact_item_img">
                 {/* These Classes combination sets the width of the element to 50 pixels by default (w-[50px]), 60 pixels on medium screens (md:w-[60px]), and 70 pixels on large screens (lg:w-[70px]). */}
-                <img src={Phone} className="lg:w-[70px] md:w-[60px] w-[50px]"></img>
+                <img alt="phone" src={Phone} className="lg:w-[70px] md:w-[60px] w-[50px]"></img>
               </div>
               {/* These Classes combination sets the text size to 3xl on large screens (lg:text-3xl), 2xl on medium screens (md:text-2xl), and 22 pixels by default (text-[22px]). It also applies a semi-bold font weight (font-semibold). Note that there's a missing hyphen in "lgtext-3xl," it should be lg:text-3xl. */}
               <div className="contact_item_title lgtext-3xl md:text-2xl text-[22px] font-semibold ">
@@ -47,7 +47,7 @@ class Contact extends Component {
             <div className="flex justify-start items-center gap-3">
               <div className="contact_item_img">
                 {/* These Classes combination sets the width of the element to 50 pixels by default (w-[50px]), 60 pixels on medium screens (md:w-[60px]), and 70 pixels on large screens (lg:w-[70px]). */}
-                <img src={Email} className="lg:w-[70px] md:w-[60px] w-[50px]"></img>
+                <img alt="email" src={Email} className="lg:w-[70px] md:w-[60px] w-[50px]"></img>
               </div>
               {/* These Classes combination sets the text size to 3xl on large screens (lg:text-3xl), 2xl on medium screens (md:text-2xl), and 22 pixels by default (text-[22px]). It also applies a semi-bold font weight (font-semibold). Note that there's a missing hyphen in "lgtext-3xl," it should be lg:text-3xl. */}
               <div className="contact_item_title lgtext-3xl md:text-2xl text-[22px] font-semibold ">
@@ -70,7 +70,7 @@ class Contact extends Component {
             <div className="flex justify-start items-center gap-3">
               <div className="contact_item_img">
                 {/* These Classes combination sets the width of the element to 50 pixels by default (w-[50px]), 60 pixels on medium screens (md:w-[60px]), and 70 pixels on large screens (lg:w-[70px]). */}
-                <img src={Chat} className="lg:w-[70px] md:w-[60px] w-[50px]"></img>
+                <img alt="chat" src={Chat} className="lg:w-[70px] md:w-[60px] w-[50px]"></img>
               </div>
               {/* These Classes combination sets the text size to 3xl on large screens (lg:text-3xl), 2xl on medium screens (md:text-2xl), and 22 pixels by default (text-[22px]). It also applies a semi-bold font weight (font-semibold). Note that there's a missing hyphen in "lgtext-3xl," it should be lg:text-3xl. */}
               <div className="contact_item_title lg:text-3xl md:text-2xl text-[22px] font-semibold ">

@@ -1,14 +1,8 @@
 import { Row, Col } from 'react-bootstrap';
-import React, {
-  useState,
-  toggle,
-  button,
-  useEffect,
-  useLayoutEffect,
-} from 'react';
+import React, { useState } from 'react';
 import './darkMode.css';
 
-function DarkMode() {
+function DarkMode () {
   /* toggle function to set function for choosing 
   or not choosing the + button to expand query */
   const [choose, setChoose] = useState(null);
@@ -16,7 +10,7 @@ function DarkMode() {
   // toggle function for + or - for query minimise or expand
   const toggle = (i) => {
     // if + is chosen, + = i
-    if (choose == i) {
+    if (choose === i) {
       return setChoose(null);
     }
     setChoose(i);

@@ -8,7 +8,7 @@ import achievmentIcon4 from "./assets/achievmentIcon4.png";
 import styles from "./aboutUs.module.css";
 
 class aboutUs extends Component {
-  render() {
+  render () {
     return (
       <>
         {/* This class bg-[#deece3] is used to set the background color to the hex code #deece3. */}
@@ -44,6 +44,7 @@ class aboutUs extends Component {
             <div className="flex mx-auto flex-col  md:gap-5 gap-3 justify-between items-center max-w-6xl">
               {/*  These class combination sets the width of the element to 200px by default (w-[200px]), 250px on medium screens (md:w-[250px]), and 300px on large screens (lg:w-[300px]), while also adding a top margin of 3 units (mt-3). */}
               <img
+                alt="chameleon-logo"
                 src={chameleonImg}
                 className="lg:w-[300px] md:w-[250px] mt-3 w-[200px] "
               />
@@ -76,7 +77,7 @@ class aboutUs extends Component {
                 {/* These classes combination styles an element with a background color of #d9d9d9 (bg-[#d9d9d9]), adds padding of 2 units (p-2), rounds the corners to create a circular shape (rounded-full), sets the stacking order to 2 (z-2), adjusts the stacking order relative to its normal position (relative), places it slightly above the normal stacking level by 1px (z-[1px]), and adds a black border with a thickness of 1px (border-black and border-[1px]). The class likely applies to an element with the name boxIcon. */}
                 <div className="boxIcon bg-[#d9d9d9] p-2 rounded-full z-2  relative z-[1px] border-black border-[1px] ">
                   {/* the class w-[40px] sets the width of the element to 40 pixels. */}
-                  <img src={achievmentIcon1} className="w-[40px]" />
+                  <img alt="achievement-icon-1" src={achievmentIcon1} className="w-[40px]" />
                 </div>
 
                 {/*  These classes combination styles a text element with the color black (text-black), adds vertical padding of 15 pixels (py-[15px]), sets the width to 300 pixels by default and 250 pixels on medium screens (w-[300px] and md:w-[250px]), centers the text (text-center), adds a black border with a thickness of 2 pixels (border-black and border-[2px]), moves the element to the left by 45 pixels (ml-[-45px]), removes the left border (border-l-0), gives it a rounded shape (rounded-full), and sets the stacking order to 1 (z-1). The class likely applies to an element with the name boxText. */}
@@ -93,7 +94,7 @@ class aboutUs extends Component {
                 {/* These classes combination styles an element with a background color of #d9d9d9 (bg-[#d9d9d9]), adds padding of 2 units (p-2), rounds the corners to create a circular shape (rounded-full), sets the stacking order to 2 (z-2), adjusts the stacking order relative to its normal position (relative), places it slightly above the normal stacking level by 1px (z-[1px]), and adds a black border with a thickness of 1px (border-black and border-[1px]). The class likely applies to an element with the name boxIcon. */}
                 <div className="boxIcon bg-[#d9d9d9] p-2 rounded-full z-2  relative z-[1px] border-black border-[1px] ">
                   {/* the class w-[40px] sets the width of the element to 40 pixels. */}
-                  <img src={achievmentIcon2} className="w-[40px]" />
+                  <img alt="achievement-icon-2" src={achievmentIcon2} className="w-[40px]" />
                 </div>
 
                 {/*  These classes combination styles a text element with the color black (text-black), adds vertical padding of 15 pixels (py-[15px]), sets the width to 300 pixels by default and 250 pixels on medium screens (w-[300px] and md:w-[250px]), centers the text (text-center), adds a black border with a thickness of 2 pixels (border-black and border-[2px]), moves the element to the left by 45 pixels (ml-[-45px]), removes the left border (border-l-0), gives it a rounded shape (rounded-full), and sets the stacking order to 1 (z-1). The class likely applies to an element with the name boxText. */}
@@ -110,7 +111,7 @@ class aboutUs extends Component {
                 {/* These classes combination styles an element with a background color of #d9d9d9 (bg-[#d9d9d9]), adds padding of 2 units (p-2), rounds the corners to create a circular shape (rounded-full), sets the stacking order to 2 (z-2), adjusts the stacking order relative to its normal position (relative), places it slightly above the normal stacking level by 1px (z-[1px]), and adds a black border with a thickness of 1px (border-black and border-[1px]). The class likely applies to an element with the name boxIcon. */}
                 <div className="boxIcon bg-[#d9d9d9] p-2 rounded-full z-2  relative z-[1px] border-black border-[1px] ">
                   {/* the class w-[40px] sets the width of the element to 40 pixels. */}
-                  <img src={achievmentIcon3} className="w-[40px]" />
+                  <img alt="achievement-icon-3" src={achievmentIcon3} className="w-[40px]" />
                 </div>
 
                 {/*  These classes combination styles a text element with the color black (text-black), adds vertical padding of 15 pixels (py-[15px]), sets the width to 300 pixels by default and 250 pixels on medium screens (w-[300px] and md:w-[250px]), centers the text (text-center), adds a black border with a thickness of 2 pixels (border-black and border-[2px]), moves the element to the left by 45 pixels (ml-[-45px]), removes the left border (border-l-0), gives it a rounded shape (rounded-full), and sets the stacking order to 1 (z-1). The class likely applies to an element with the name boxText. */}
@@ -127,7 +128,7 @@ class aboutUs extends Component {
                 {/* These classes combination styles an element with a background color of #d9d9d9 (bg-[#d9d9d9]), adds padding of 2 units (p-2), rounds the corners to create a circular shape (rounded-full), sets the stacking order to 2 (z-2), adjusts the stacking order relative to its normal position (relative), places it slightly above the normal stacking level by 1px (z-[1px]), and adds a black border with a thickness of 1px (border-black and border-[1px]). The class likely applies to an element with the name boxIcon. */}
                 <div className="boxIcon bg-[#d9d9d9] p-2 rounded-full z-2  relative z-[1px] border-black border-[1px] ">
                   {/* the class w-[40px] sets the width of the element to 40 pixels. */}
-                  <img src={achievmentIcon4} className="w-[40px]" />
+                  <img alt="achievement-icon-4" src={achievmentIcon4} className="w-[40px]" />
                 </div>
 
                 {/*  These classes combination styles a text element with the color black (text-black), adds vertical padding of 15 pixels (py-[15px]), sets the width to 300 pixels by default and 250 pixels on medium screens (w-[300px] and md:w-[250px]), centers the text (text-center), adds a black border with a thickness of 2 pixels (border-black and border-[2px]), moves the element to the left by 45 pixels (ml-[-45px]), removes the left border (border-l-0), gives it a rounded shape (rounded-full), and sets the stacking order to 1 (z-1). The class likely applies to an element with the name boxText. */}

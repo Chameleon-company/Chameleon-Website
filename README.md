@@ -1,4 +1,4 @@
-# CHAMELEON (Website Project) 2
+# CHAMELEON (Website Project) 3
 
 The central repository for the Chameleon front_end_project (react.js) and back_end_project (node.js).
 

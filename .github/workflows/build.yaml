@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: [self-hosted, x64]
+    runs-on: ubuntu-latest
     steps:
       - name: code checkout
         uses: actions/checkout@v2

@@ -31,5 +31,5 @@ jobs:
           gcloud run deploy $SERVICE_NAME \
             --image australia-southeast2-docker.pkg.dev/$GOOGLE_PROJECT/cloud-run-source-deploy:latest \
             --platform managed \
-            --australia-southeast2 \
+            #--australia-southeast2 \
             --allow-unauthenticated

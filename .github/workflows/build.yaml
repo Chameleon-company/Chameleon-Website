@@ -28,7 +28,7 @@ jobs:
           docker push australia-southeast2-docker.pkg.dev/$GOOGLE_PROJECT/cloud-run-source-deploy/nginx:latest
       - name: Deploy to Cloud Run
         run: |
-          gcloud run deploy $SERVICE_NAME \
+          gcloud run deploy chameleon-website \
             --image australia-southeast2-docker.pkg.dev/$GOOGLE_PROJECT/cloud-run-source-deploy:latest \
             --platform managed \
             --allow-unauthenticated

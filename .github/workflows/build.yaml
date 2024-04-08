@@ -21,6 +21,10 @@ jobs:
         with:
           project_id: ${{ secrets.GOOGLE_PROJECT }}
           credentials_json: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+
+      - name: Configure Docker
+        run: |
+          gcloud auth configure-docker   
           
       - name: build and push the docker image
         env:

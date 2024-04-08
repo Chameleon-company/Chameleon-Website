@@ -28,8 +28,8 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t australia-southeast2-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/${{ secrets.DOCKER_IMAGE_NAME }}:latest .
-          docker push australia-southeast2-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/${{ secrets.DOCKER_IMAGE_NAME }}:latest
+          docker build -t australia-southeast2-docker.pkg.dev/${{ secrets.GOOGLE_PROJECT }}/${{ secrets.DOCKER_IMAGE_NAME }}:latest .
+          docker push australia-southeast2-docker.pkg.dev/${{ secrets.GOOGLE_PROJECT }}/${{ secrets.DOCKER_IMAGE_NAME }}:latest
 
       - name: Deploy to Cloud Run
         run: |

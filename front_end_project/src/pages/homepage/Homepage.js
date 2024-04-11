@@ -22,8 +22,7 @@ const Homepage = () => {
           <img
             src={chameleonLogo}
             alt=""
-            style={{ width: "269px", height: "269px" }}
-            className="mx-auto"
+            className="mx-auto w-[269px] h-[269px]"
           />
           <div className="my-auto">
             <p className="align-middle flex-1 text-xl">{content1}</p>

@@ -1,38 +1,41 @@
-.bg {
+
+.bg
+{
     background-color: #242748;
 }  
 
-.faqheading {
+.faqheadingmode{
     color: white;
     font-size: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 400;
+    font-weight:400;
     position: relative;
     padding-bottom: 10px;
     padding-top: 10px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.wrapper {
-    display: flex;
+
+.wrappermode{
+    display:flex;
     position: relative;
     justify-content: center;
     align-items: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight:bold;
     font-size: 12px;
     margin: 2px;
 }
 
-.queries {
+.queriesmode{
     width: 900px;
     position: relative;
     justify-content: center;
 }
 
-.point {
+.pointmode{
     background-color: #54BBC9;
     border: 4px;
     padding: 10px 30px;
@@ -40,50 +43,52 @@
     border: 1.3px solid #000000;
 }
 
-.title {
+.titlemode{
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
     position: relative;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight:bold;
     color: white;
 }
 
-.faq {
+.faq{
     max-height: 0;
     overflow: hidden;
     font-size: 13px;
 }
 
-.faq.show {
+.faq.show{
     height: auto;
     max-height: 9999px;
     font-size: 14px;
 }
 
-.email {
+.emailmode
+{
     font-size: 18px;
     position: relative;
     color: white;
 }
 
-.box input {
+.boxmode input
+{
     font-size: 18px;
-    position: absolute;
+    position:absolute;
     display: inline-block;
     width: 40%;
     height: 30%;
-    border: 1px solid black;
+    border: 1px solid black
 }
 
-.send button {
+.sendmode button
+{
     background-color: #FF8717;
     font-size: 18px;
     color: white;
-    position: absolute;
-    bottom: -42%;
+    position:absolute; bottom: -42%;
     width: 20%;
     height: 10%;
     border-radius: 10px;

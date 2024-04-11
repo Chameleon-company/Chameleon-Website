@@ -41,36 +41,31 @@ class Chatbot extends Component {
             const response = "Learn About our Projects";
             simulateTyping(response);
             sendButton.click();
-            // quickOptionsContainer.style.display = 'none';
-            quickOptionsContainer.classList.add('hidden');
+            quickOptionsContainer.style.display = 'none';
         });
 
         option2Button.addEventListener('click', () => {
             const response = "Support Us";
             simulateTyping(response);
             sendButton.click();
-            // quickOptionsContainer.style.display = 'none';
-            quickOptionsContainer.classList.add('hidden');
+            quickOptionsContainer.style.display = 'none';
         });
 
         option3Button.addEventListener('click', () => {
             const response = "I have another Question";
             simulateTyping(response);
             sendButton.click();
-            // quickOptionsContainer.style.display = 'none';
-            quickOptionsContainer.classList.add('hidden');
+            quickOptionsContainer.style.display = 'none';
         });
 
         optionsButton.addEventListener('click', () => {
-            // optionsContainer.style.display = optionsContainer.style.display === 'block' ? 'none' : 'block';
-            optionsContainer.classList.contains('block') ? optionsContainer.classList.replace('block','hidden') : optionsContainer.classList.replace('hidden','block');
+            optionsContainer.style.display = optionsContainer.style.display === 'block' ? 'none' : 'block';
         });
 
         // Close options when clicking outside of it
         document.addEventListener('click', (event) => {
             if (!optionsButton.contains(event.target) && !optionsContainer.contains(event.target)) {
-                // optionsContainer.style.display = 'none';
-                quickOptionsContainer.classList.add('hidden');
+                optionsContainer.style.display = 'none';
             }
         });
 
@@ -142,8 +137,7 @@ class Chatbot extends Component {
             if (!this.state.userMessage) return;
 
             chatInput.value = "";
-            // chatInput.style.height = `${inputInitHeight}px`;
-            chatInput.classList.add(`h-[${inputInitHeight}px]`)
+            chatInput.style.height = `${inputInitHeight}px`;
 
             chatbox.appendChild(createChatLi(this.state.userMessage, "outgoing"));
             chatbox.scrollTo(0, chatbox.scrollHeight);
@@ -157,10 +151,8 @@ class Chatbot extends Component {
         };
 
         chatInput.addEventListener("input", () => {
-            // chatInput.style.height = `${inputInitHeight}px`;
-            chatInput.classList.add(`h-[${inputInitHeight}px]`);
-            // chatInput.style.height = `${chatInput.scrollHeight}px`;
-            chatInput.classList.add(`h-[${chatInput.scrollHeight}px]`);
+            chatInput.style.height = `${inputInitHeight}px`;
+            chatInput.style.height = `${chatInput.scrollHeight}px`;
         });
 
         chatInput.addEventListener("keydown", (e) => {

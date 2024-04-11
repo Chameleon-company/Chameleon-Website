@@ -2,7 +2,6 @@ import Header from "./layouts/header/header";
 import Footer from "./layouts/footer/footer";
 import HomePage from "./pages/homepage/Homepage";
 import Chatbot from "./pages/Chatbot/Chatbot";
-import Helloo from "./pages/hello/hello";
 import aboutUs from "./pages/about/aboutUs";
 import News from "./pages/news/news";
 import ProjectDetails from "./pages/projects/ProjectDetails";
@@ -37,7 +36,6 @@ function App() {
               <Route path="/project/:projectId" component={ProjectDetails} />
               <Route exact path="/" component={HomePage} />
               <Route exact path="/home" component={HomePage} />
-              <Route path="/hello" component={Helloo} />
               <Route path="/about_us" component={aboutUs} />
               <Route path="/news" component={News} />
               <Route path="/chatbot" component={Chatbot} />
@@ -48,7 +46,7 @@ function App() {
               <Route path="/iotTechnologies" component={IotTechnologies} />
               <Route path="/iotStatistics" component={IotStatistics} />
               <Route path="/iotUpdates" component={IotUpdates} />
-              <Route path="/faq" component={Main} />
+              <Route path="/faq" component={Main} /> //Tailwind migration done till here
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
               <Route path="/reset" component={ResetPassword} />

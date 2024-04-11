@@ -1,8 +1,10 @@
+import { Row, Col } from "react-bootstrap";
 import React, { useState } from "react";
+// import DarkMode from "./components/DarkMode/DarkMode"
 import './faq.css';
 import './darkMode.css';
 
-function Faq() {
+function Faq () {
   /* toggle function to set function for choosing 
   or not choosing the + button to expand query */
   const [choose, setChoose] = useState(null);
@@ -18,17 +20,17 @@ function Faq() {
   };
 
   return (
-    <div className="row">
+    <Row>
       <div className="faqheading">
         Frequently Asked Questions
       </div>
-      <div className="col-xs-12">
+      <Col xs={12}>
         <div className="wrapper">
 
           <div className="queries">
             {/* mapping data to the FAQ questions */}
             {data.map((point, i) => (
-              <div className="point" key={i}>
+              <div className="point">
                 {/* toggle function for choosing either + or - */}
                 <div className="title" onClick={() => toggle(i)} >
                   <h2>{point.question}</h2>
@@ -55,8 +57,8 @@ function Faq() {
 
           </div>
         </div>
-      </div>
-    </div>
+      </Col>
+    </Row>
   );
 }
 

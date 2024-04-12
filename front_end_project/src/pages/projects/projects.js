@@ -50,7 +50,7 @@ const Projects = () => {
           {projectList.map((item) => (
             <a href={`/project/${item.id}`} className="no-underline">
               {/* Styles a container with a specific background color, padding for different screen sizes, some spacing, and centered text */}
-              <div className="bg-[#deece3] lg:p-8 md:p-6 p-[15px] lg:pb-4 pb-3 text-center ">
+              <div className="bg-[#deece3] hover:border-[5px] hover:bg-slate-400 lg:p-8 md:p-6 p-[15px] lg:pb-4 pb-3 text-center ">
                 <img
                   alt=""
                   src={item.image}

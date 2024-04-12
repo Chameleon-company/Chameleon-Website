@@ -44,12 +44,12 @@ function ProjectDetails() {
                 className={`  ${styles.innerBtn} bg-[#333333] no-underline text-white rounded-[30px] border-2 border-[#ffffff] font-semibold cursor-pointer`}
               >
                 {" "}
-                <img alt="" src={githubImage} className="inline-block " /> GITHUB
+                <img alt="" src={githubImage} className="inline-block hover:border-[5px]" /> GITHUB
               </a>
               {/* text color to #006913, changes the text color to #006913 on hover, rounds the corners with a radius of 30px, adds a 2px white border, uses a bold font, and changes the cursor to a pointer for a clickable element. */}
               <a
                 href={project.learnMoreLink}
-                className={` ${styles.innerBtn} bg-[#ffffff]  no-underline text-[#006913] hover:text-[#006913] rounded-[30px] border-2 border-[#ffffff] font-semibold cursor-pointer`}
+                className={` ${styles.innerBtn} bg-[#ffffff] no-underline text-[#006913] hover:text-[#006913] rounded-[30px] border-2 border-[#ffffff] font-semibold cursor-pointer`}
               >
                 LEARN MORE{" "}
               </a>

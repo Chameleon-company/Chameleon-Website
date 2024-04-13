@@ -11,7 +11,8 @@ import Screen from '../../components/app/Screen';
 class aboutUs extends Component {
   render () {
     return (
-      <Screen>
+      <>
+      {/* ToDo: Move everything to a component */}
         {/* This class bg-[#deece3] is used to set the background color to the hex code #deece3. */}
         <div className=" bg-[#deece3] ">
           {/* About Us Section */}
@@ -47,7 +48,7 @@ class aboutUs extends Component {
               <img
                 alt="chameleon-logo"
                 src={chameleonImg}
-                className="lg:w-[300px] md:w-[250px] mt-3 w-[200px] "
+                className="lg:w-[300px] rounded-[50px] md:w-[250px] mt-3 w-[200px] "
               />
 
               {/* These class combination sets the text size to extra-large on large screens (lg:text-xl), large by default (text-lg), centers the text (text-center), and removes margin (m-0). */}

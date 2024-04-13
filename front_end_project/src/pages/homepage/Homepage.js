@@ -33,7 +33,7 @@ const Homepage = () => {
         <div className="">
           <h2 className="text-center pt-3 font-bold">Our Projects</h2>
           <div className="flex flex-col items-center justify-center lg:flex-row text-center lg:justify-around gap-4 p-5 container">
-            <div className="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
+            <div className="max-w-sm rounded hover:border-[5px] overflow-hidden shadow-lg bg-green-sage">
               <img
                 className="w-full h-40 max-w-full object-cover"
                 src={evProject}
@@ -44,7 +44,7 @@ const Homepage = () => {
                 <p className="text-gray-700 text-base">{content2}</p>
               </div>
             </div>
-            <div className="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
+            <div className="max-w-sm rounded hover:border-[5px] overflow-hidden shadow-lg bg-green-sage">
               <img
                 className="w-full h-40 max-w-full object-cover"
                 src={cityOfMelProject}
@@ -55,7 +55,7 @@ const Homepage = () => {
                 <p className="text-gray-700 text-base">{content4}</p>
               </div>
             </div>
-            <div className="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
+            <div className="max-w-sm rounded hover:border-[5px] overflow-hidden shadow-lg bg-green-sage">
               <img
                 className="w-full h-40 max-w-full object-cover"
                 src={websiteProject}

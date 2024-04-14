@@ -1,4 +1,24 @@
-import React, { Suspense, lazy } from "react";
+import Header from "./layouts/header/header";
+import Footer from "./layouts/footer/footer";
+import HomePage from "./pages/homepage/Homepage";
+import Chatbot from "./pages/Chatbot/Chatbot";
+import aboutUs from "./pages/about/aboutUs";
+import News from "./pages/news/news";
+import ProjectDetails from "./pages/projects/ProjectDetails";
+import Projects from "./pages/projects/projects";
+import Contact from "./pages/contact/contact";
+import IotResources from "./pages/resources/iotResources";
+import IotTechnologies from "./pages/resources/iotTechnologies";
+import IotStatistics from "./pages/resources/iotStatistics";
+import IotUpdates from "./pages/resources/iotUpdates";
+import Main from "./pages/faq/main";
+import Report from "./pages/report/report";
+import Login from "./pages/login/login";
+import Signup from "./pages/signup/signup";
+import ResetPassword from "./pages/reset_password/reset";
+import newsSignupForm from "./pages/email_newsletter_forms/subscribe";
+import newsUnsubForm from "./pages/email_newsletter_forms/unsubscribe";
+import newsRemoveForm from "./pages/email_newsletter_forms/remove";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NotificationComponent from "./components/notificationComp/NotificationComponent";
 import Screen from './components/app/Screen';
@@ -36,7 +56,6 @@ function App () {
               <Route path="/project/:projectId" component={ProjectDetails} />
               <Route exact path="/" component={Screen} />
               <Route exact path="/home" component={HomePage} />
-              <Route path="/hello" component={Helloo} />
               <Route path="/aboutus" component={aboutUs} />
               <Route path="/news" component={News} />
               <Route path="/chatbot" component={Chatbot} />

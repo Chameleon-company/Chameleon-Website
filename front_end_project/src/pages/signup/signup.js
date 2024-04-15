@@ -140,7 +140,7 @@ import { Button, Form, Container, Row, Col, } from 'react-bootstrap'
 import { Nav } from 'react-bootstrap';
 import logo from './images/logo.png';
 import google from './images/goo.png';
-import linkedin from './images/linkedin.png';
+import linkedin from './image/linkedin.png';
 import microsoft from './images/mic.png';
 import './signup.css';
 

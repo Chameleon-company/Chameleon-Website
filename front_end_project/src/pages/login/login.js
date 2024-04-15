@@ -140,11 +140,11 @@ class Login extends Component {
                                         <span class="m--in">Log In</span>
                                     </div>
                                 </div>
-                                <div class="form sign-up">
+                                <div class="form sign-up bg-black">
                                     <h2>Sign Up Now</h2>
                                     <form onSubmit={this.handleSubmitSignUp}>
                                     <label>
-                                        <span>Email</span>
+                                        <span className>Email</span>
                                         <input type="email" name="email" value={email} onChange={this.handleInputChange} />
                                     </label>
                                     <label>

@@ -13,7 +13,6 @@ import time from './icon/time.png';
 import collect from './icon/collect.png';
 import calendar from './icon/calendar.png';
 import github from './icon/github.png';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Screen from '../../components/app/Screen';
 
 

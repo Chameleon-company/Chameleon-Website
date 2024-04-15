@@ -177,8 +177,9 @@ class SignUp extends Component {
             });
             if (!response.ok) throw new Error('Failed to sign in');
             const data = await response.json();
+            // this is only to check if the function is actually working
+            console.log(data);
             this.setState({ showToast: true, toastMessage: 'Sign in successful!' });
-            // Redirect or perform other actions
         } catch (error) {
             this.setState({ showToast: true, toastMessage: error.message });
         }

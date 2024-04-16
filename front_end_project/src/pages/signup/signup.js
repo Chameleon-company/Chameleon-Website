@@ -140,7 +140,7 @@ import { Button, Form, Container, Row, Col, } from 'react-bootstrap'
 import { Nav } from 'react-bootstrap';
 import logo from './images/logo.png';
 import google from './images/goo.png';
-import linkedin from './images/linkedin.png';
+import linkedin from './image/linkedin.png';
 import microsoft from './images/mic.png';
 import './signup.css';
 
@@ -177,8 +177,9 @@ class SignUp extends Component {
             });
             if (!response.ok) throw new Error('Failed to sign in');
             const data = await response.json();
+            // this is only to check if the function is actually working
+            console.log(data);
             this.setState({ showToast: true, toastMessage: 'Sign in successful!' });
-            // Redirect or perform other actions
         } catch (error) {
             this.setState({ showToast: true, toastMessage: error.message });
         }

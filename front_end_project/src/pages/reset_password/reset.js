@@ -27,7 +27,7 @@ class ResetPassword extends Component {
         return (
 
             /* div family utilsed to apply style to web form and its various assets */
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', width: '40%', margin: '20px auto' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', width: '40%', margin: '20px auto' }}>
                 <Col>
                     <div style={{ backgroundColor: 'white', padding: 20, border: '1px solid black', height: '100%' }}>
                         <Container className="d-flex flex-column align-items-center">
@@ -44,7 +44,7 @@ class ResetPassword extends Component {
                                 <p>Enter your email address in the field below and we'll send you a link to reset your password.</p>
                                 <Form.Control
                                     style={{
-                                        height: 40,
+                                        height: 42,
                                         borderColor: 'black',
                                         borderWidth: 1,
                                         width: 200,

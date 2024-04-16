@@ -84,7 +84,7 @@ button {
 .form {
     position: relative;
     width: 640px;
-    height: 100%;
+    height: 100vh;
     transition: -webkit-transform 0.6s ease-in-out;
     transition: transform 0.6s ease-in-out;
     transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
@@ -114,8 +114,8 @@ button {
     display: block;
     margin: 0 auto;
     width: 260px;
-    height: 36px;
-    border-radius: 30px;
+    height: 35px;
+    border-radius: 32px;
     color: #fff;
     font-size: 15px;
     cursor: pointer;
@@ -128,9 +128,9 @@ button {
     position: absolute;
     left: 0;
     top: 0;
-    width: 260px;
+    width: 240px;
     height: 100%;
-    padding-top: 360px;
+    padding-top: 362px;
 }
 
 .img:before {

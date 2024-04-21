@@ -46,6 +46,28 @@
     height: 40px;
     width: 40px;
 }
+.toast-message {
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%; 
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeInOut 5s 1;
+}
+
+@keyframes fadeInOut {
+    0%,100% { opacity: 0; }
+    10%,90% { opacity: 1; }
+}
+
 
 .social-container a:hover {
     background-color: #eee;

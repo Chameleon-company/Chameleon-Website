@@ -134,8 +134,8 @@
 //     export default Signup;
 
 import React, { Component } from 'react';
-// import React, { Component } from 'react';
 import './signup.css';
+
 
 
 class SignUp extends Component {
@@ -183,6 +183,7 @@ class SignUp extends Component {
                 body: JSON.stringify({ email, password })
             });
             const data = await response.json();
+
             if (!response.ok){
                 const errorMessage = data.error === "Authentication failed"
                 ? "Authentication failed. Please check your username and password and try again."
@@ -192,6 +193,10 @@ class SignUp extends Component {
             
             this.displayToast( 'Sign in successful!');
             // Redirect or perform other actions
+            // this is only to check if the function is actually working
+            console.log(data);
+            this.setState({ showToast: true, toastMessage: 'Sign in successful!' });
+          
         } catch (error) {
             this.displayToast( error.message);
         }

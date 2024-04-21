@@ -7,13 +7,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh; /* This makes sure that the container is at least the height of the viewport */
-    text-align: center; /* This centers the text within the container if needed */
+    min-height: 80vh;    
+    text-align: center; 
     background-color: #f0f0f0;
-  }
+    background-image: url(./image/bg_2.jpg);
+    position: relative;
+    }
 
 .social-container {
     margin: 20px 0;
+}
+
+.width5 {
+    width: 20px;
+}
+
+.bottom-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .social-container a {
@@ -92,8 +104,8 @@ input, button {
     display: block;
     margin: 0 auto;
     width: 260px;
-    height: 36px;
-    border-radius: 30px;
+    height: 35px;
+    border-radius: 32px;
     color: #fff;
     font-size: 15px;
     cursor: pointer;

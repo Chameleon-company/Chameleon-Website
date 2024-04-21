@@ -112,11 +112,11 @@ class Login extends Component {
         const { email, password, isSignUp, showToast, toastMessage } = this.state;
         return (
 
-                    <div className='centered-container'>
+                    <div className='login-centered-container'>
                         <div className='container_2'>
                         <div className={`dowebok ${isSignUp ? 's--signup' : ''}`}>
                         {showToast && (
-                        <div className="toast-message">
+                        <div className="login-toast-message">
                             {toastMessage}
                         </div>
                     )}
@@ -160,7 +160,7 @@ class Login extends Component {
                                         <span class="m--in">Log In</span>
                                     </div>
                                 </div>
-                                <div class="form sign-up bg-black">
+                                <div class="form sign-up">
                                     <h2>Sign Up Now</h2>
                                     <form onSubmit={this.handleSubmitSignUp}>
                                     <label>

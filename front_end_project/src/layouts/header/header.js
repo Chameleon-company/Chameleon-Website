@@ -66,7 +66,7 @@ const Header = () => {
               <li className="nav-item">
                 <a
                   className="px-3 py-2 flex items-center  uppercase font-bold leading-snug hover:opacity-75 no-underline"
-                  href="/about_us"
+                  href="/aboutus"
                 >
                   About
                 </a>

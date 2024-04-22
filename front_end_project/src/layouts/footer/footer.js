@@ -25,68 +25,68 @@ const Footer = () => {
 
 
   return (
-    <footer className="">
+    <footer className="mt-auto">
       <div className="footer-content">
-      <div className="flex flex-col-reverse md:flex-row md:justify-between">
-        <div className="flex items-center mb-4 md:mb-0 md:mr-4 justify-center">
-          <a href="/" className="mr-4">
-            <img
-              src={chameleonLogo}
-              alt="Chameleon Logo"
-              className="w-20 h-20"
-            />
-          </a>
-          <div>
-            <span className="">Chameleon Company</span>
-            <div className="flex">
-              {/* Social media */}
-              <a href="/" className="mx-1">
-                <img
-                  src={instagramLogo}
-                  alt="Instagram Logo"
-                  className="w-10 h-10 md:w-8 md:h-8"
-                />
-              </a>
-              <a href="/" className="mx-1">
-                <img
-                  src={facebookLogo}
-                  alt="Facebook Logo"
-                  className="w-10 h-10 md:w-8 md:h-8"
-                />
-              </a>
-              <a href="/" className="mx-1">
-                <img
-                  src={twitterLogo}
-                  alt="Twitter Logo"
-                  className="w-10 h-10 md:w-8 md:h-8"
-                />
-              </a>
-              <a href="/" className="mx-1">
-                <img
-                  src={emailLogo}
-                  alt="Email Logo"
-                  className="w-10 h-10 md:w-8 md:h-8"
-                />
-              </a>
+        <div className="flex flex-col-reverse md:flex-row md:justify-between">
+          <div className="flex items-center mb-4 md:mb-0 md:mr-4 justify-center">
+            <a href="/" className="mr-4">
+              <img
+                src={chameleonLogo}
+                alt="Chameleon Logo"
+                className="w-20 h-20"
+              />
+            </a>
+            <div>
+              <span className="">Chameleon Company</span>
+              <div className="flex">
+                {/* Social media */}
+                <a href="/" className="mx-1">
+                  <img
+                    src={instagramLogo}
+                    alt="Instagram Logo"
+                    className="w-10 h-10 md:w-8 md:h-8"
+                  />
+                </a>
+                <a href="/" className="mx-1">
+                  <img
+                    src={facebookLogo}
+                    alt="Facebook Logo"
+                    className="w-10 h-10 md:w-8 md:h-8"
+                  />
+                </a>
+                <a href="/" className="mx-1">
+                  <img
+                    src={twitterLogo}
+                    alt="Twitter Logo"
+                    className="w-10 h-10 md:w-8 md:h-8"
+                  />
+                </a>
+                <a href="/" className="mx-1">
+                  <img
+                    src={emailLogo}
+                    alt="Email Logo"
+                    className="w-10 h-10 md:w-8 md:h-8"
+                  />
+                </a>
+              </div>
+              <span className=" text-xs">
+                © 2023 Copyright reserved by Chameleon
+              </span>
             </div>
-            <span className=" text-xs">
-              © 2023 Copyright reserved by Chameleon
-            </span>
+          </div>
+          <div className="text-center font-bold text-2xl mb-3">
+            <div>Contact us</div>
+            <div>E: chameleon@deakin.edu.au</div>
+          </div>
+          <div className="flex justify-center mb-2">
+            <img src={deakinLogo} alt="Deakin Logo" className="w-20 h-20" />
           </div>
         </div>
-        <div className="text-center font-bold text-2xl mb-3">
-          <div>Contact us</div>
-          <div>E: chameleon@deakin.edu.au</div>
-        </div>
-        <div className="flex justify-center mb-2">
-          <img src={deakinLogo} alt="Deakin Logo" className="w-20 h-20" />
-        </div>
-      </div>
-      <button onClick={toggleTheme} className="mt-2 mb-2 ml-3 me-1">Theme Switch</button>
-    
+        <button onClick={toggleTheme} className="mt-2 mb-2 ml-3 me-1">Theme Switch</button>
+
       </div>
       <style>
-      {`
+        {`
           .footer-content {
 
             ${theme === 'dark' ? `

@@ -2,6 +2,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Screen from '../../components/app/Screen';
 
 const content1 =
   "The advancement of 6G wireless technology: 6G is the following generation of wireless technology and is anticipated to provide significantly higher speeds and lower latency than 5G. IoT applications will have more options as a result of the ability for devices to communicate data more quickly and dependably.";
@@ -13,9 +14,9 @@ const content4 =
   "The creation of new IoT standards: To solve the issues of scalability, interoperability, and security, new IoT standards are being created. These standards will aid in ensuring the security and dependability of IoT devices as well as their ability to connect with one another and other systems.";
 
 class IotUpdates extends Component {
-  render() {
+  render () {
     return (
-      <>
+      <Screen>
         <Container>
           <h1 class="text-center pt-3 pb-3">LATEST IOT UPDATES</h1>
         </Container>
@@ -81,7 +82,7 @@ class IotUpdates extends Component {
         </Container>
 
         <br></br>
-      </>
+      </Screen>
     );
   }
 }

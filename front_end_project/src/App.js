@@ -42,7 +42,7 @@ function App () {
               <Route exact path="/" component={Screen} />
               <Route exact path="/home" component={HomePage} />
               <Route path="/hello" component={Helloo} />
-              <Route path="/about_us" component={aboutUs} />
+              <Route path="/aboutus" component={aboutUs} />
               <Route path="/news" component={News} />
               <Route path="/chatbot" component={Chatbot} />
               <Route path="/projects" component={Projects} />

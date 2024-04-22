@@ -5,11 +5,12 @@ import ev from './images/ev.png';
 import mop from './images/mop.png';
 import cham from './images/cham.png';
 import "bootstrap/dist/css/bootstrap.min.css";
+import Screen from '../../components/app/Screen';
 
 function Report () {
 
     return (
-        <Container>
+        <Screen>
             <Row>
                 <div className="report">
                     Project Progress Report: Trimester 1, 2023
@@ -187,7 +188,7 @@ function Report () {
                     </div>
                 </Col>
             </Row>
-        </Container>
+        </Screen>
     );
 }
 

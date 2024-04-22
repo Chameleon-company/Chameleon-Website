@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './login.css'; // Make sure the path is correct
+import Screen from '../../components/app/Screen';
 
 
 class Login extends Component {
@@ -111,6 +112,7 @@ class Login extends Component {
         
         const { email, password, isSignUp, showToast, toastMessage } = this.state;
         return (
+            <Screen>
 
                     <div className='login-centered-container'>
                         <div className='container_2'>
@@ -189,6 +191,7 @@ class Login extends Component {
                             </div>
                         </div></div>
             </div>
+            </Screen>
         );
     }
 }

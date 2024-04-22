@@ -51,6 +51,7 @@ function App () {
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
               <Route path="/reset" component={ResetPassword} />
+              {/* TODO: Support Page Route */}
               <Route path="/newsSignupForm" component={newsSignupForm} />
               <Route path="/newsUnsubForm" component={newsUnsubForm} />
               <Route path="/newsRemoveForm" component={newsRemoveForm} />

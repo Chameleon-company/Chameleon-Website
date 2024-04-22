@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NotificationComponent from "./components/notificationComp/NotificationComponent";
 import Screen from './components/app/Screen';
 
-const Header = lazy(() => import("./layouts/header/header"));
-const Footer = lazy(() => import("./layouts/footer/footer"));
 const HomePage = lazy(() => import("./pages/homepage/Homepage"));
 const Chatbot = lazy(() => import("./pages/Chatbot/Chatbot"));
 const Helloo = lazy(() => import("./pages/hello/hello"));

@@ -31,11 +31,8 @@ function App () {
   return (
     <>
       <Router>
-        {/* This is to ensure footer is at the bottom of the screen */}
-        {/* <div className="flex flex-col h-screen"> */}
         <NotificationComponent />
         <Suspense fallback={<div>Loading...</div>}>
-          {/* <Header /> */}
           <main>
             <Switch>
               <Route path="/project/:projectId" component={ProjectDetails} />
@@ -62,9 +59,7 @@ function App () {
               <Route path="/search-results" component={SearchResults} />
             </Switch>
           </main>
-          {/* <Footer /> */}
         </Suspense>
-        {/* </div> */}
       </Router>
     </>
   );

@@ -5,7 +5,6 @@ import Screen from './components/app/Screen';
 
 const HomePage = lazy(() => import("./pages/homepage/Homepage"));
 const Chatbot = lazy(() => import("./pages/Chatbot/Chatbot"));
-const Helloo = lazy(() => import("./pages/hello/hello"));
 const aboutUs = lazy(() => import("./pages/about/aboutUs"));
 const News = lazy(() => import("./pages/news/news"));
 const ProjectDetails = lazy(() => import("./pages/projects/ProjectDetails"));
@@ -36,7 +35,6 @@ function App () {
               <Route path="/project/:projectId" component={ProjectDetails} />
               <Route exact path="/" component={Screen} />
               <Route exact path="/home" component={HomePage} />
-              <Route path="/hello" component={Helloo} />
               <Route path="/aboutus" component={aboutUs} />
               <Route path="/news" component={News} />
               <Route path="/chatbot" component={Chatbot} />

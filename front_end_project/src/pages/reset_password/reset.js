@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, Col, Container, Row } from 'react-bootstrap';
+import './reset.css';
 import Chameleon_Logo from "./images/Chameleon_Logo.png";
 import Screen from '../../components/app/Screen';
 
@@ -84,8 +84,3 @@ class ResetPassword extends Component {
 }
 
 export default ResetPassword;
-
-
-
-
-

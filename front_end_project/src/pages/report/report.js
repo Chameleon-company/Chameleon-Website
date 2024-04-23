@@ -183,7 +183,7 @@ function Report() {
                         <br />
                         <br />
                     </div>
-                </Col>
+                </div>
             </Row>
         </Screen>
     );

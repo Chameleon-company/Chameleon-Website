@@ -16,7 +16,7 @@ class IotUpdates extends Component {
       <Screen>
         <Container>
           <h1 class="text-center pt-3 pb-3">LATEST IOT UPDATES</h1>
-        </div>
+        </Container>
 
         <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px]">
           <h2 className="text-center font-bold">6G Wireless Technology</h2>

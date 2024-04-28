@@ -42,6 +42,9 @@ class Contact extends Component {
                 <br />
                 PH:03 5975 6586
               </div>
+              <button className={`${styles.contact_item_btn} hover:border-[2px] text-center bg-[#00b165] py-2 px-10 text-white mt-2 rounded-[15px] font-semibold text-lg m-0 leading-[1] shadow-md md:text-[18px] text-[17px] `}>
+                  Call Us
+                </button>
             </div>
             <div className="contact_item text-center">
               {/* These Classes combination creates a flex container with items aligned at the start of the main axis (justify-start) and centered along the cross-axis (items-center). It also specifies a gap of 3 units between the flex items (gap-3). */}
@@ -61,7 +64,7 @@ class Contact extends Component {
               </div>
               <a href="mailto:info@chameleon.com.au">
                 {/* These Classes combination styles a paragraph element with centered text, a green background (#00b165), padding, rounded corners, a semi-bold font, varying text sizes for different screen sizes, and a drop shadow. It is designed for use within a paragraph of text. */}
-                <button className={`${styles.contact_item_btn} text-center bg-[#00b165] py-2 px-10 text-white mt-2 rounded-[15px] font-semibold text-lg m-0 leading-[1] shadow-md md:text-[18px] text-[17px] `}>
+                <button className={`${styles.contact_item_btn} text-center bg-[#00b165] py-2 px-10 text-white mt-2 rounded-[15px] font-semibold text-lg m-0 leading-[1] shadow-md md:text-[18px] text-[17px] hover:border-[2px]`}>
                   Email Us
                 </button>
               </a>
@@ -86,7 +89,7 @@ class Contact extends Component {
                 bot.
               </div>
               {/* These Classes combination styles a paragraph element with centered text, a green background (#00b165), padding, rounded corners, a semi-bold font, varying text sizes for different screen sizes, and a drop shadow. It is designed for use within a paragraph of text. */}
-              <button className={`${styles.contact_item_btn} text-center bg-[#00b165] py-2 px-10 text-white mt-2 rounded-[15px] font-semibold text-lg m-0 leading-[1] shadow-md md:text-[18px] text-[17px] `}>
+              <button className={`${styles.contact_item_btn} text-center bg-[#00b165] py-2 px-10 text-white mt-2 rounded-[15px] font-semibold text-lg m-0 leading-[1] shadow-md md:text-[18px] text-[17px] hover:border-[2px]`}>
                 Start Chat
               </button>
             </div>

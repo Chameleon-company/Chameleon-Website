@@ -17,7 +17,8 @@ const Projects = () => {
   const [chatOpen, setChatOpen] = useState(false);
 
   return (
-    // Sets the background color to a specific shade of light blue with the hex code #deece3 (bg-[#deece3]).
+    <Screen>
+    {/* // Sets the background color to a specific shade of light blue with the hex code #deece3 (bg-[#deece3]). */}
     <div className="bg-[#deece3]">
       {/* Creates a flex container with column orientation, centered items, a maximum width of 4xl, some spacing, and padding */}
       <div className=" flex flex-col items-center max-w-4xl mx-auto gap-3 py-6 px-3">
@@ -70,31 +71,6 @@ const Projects = () => {
         <div
           className={` ${styles.projectSection} bg-[#4fa373] text-black relative`}
         >
-          {/* Styles the text to be centered, semi-bold, with a font size of 4xl on large screens, 3xl on small screens, 26px by default, and in uppercase. */}
-          <h3 className="text-center font-semibold lg:text-4xl sm:text-3xl text-[26px] uppercase">
-            Our Projects
-          </h3>
-          {/* Sets up a grid layout with varying numbers of columns based on screen size, maximum width of 6xl, some spacing, and padding */}
-          <div className="grid lg:grid-cols-3 grid-cols-2 max-[520px]:grid-cols-1 gap-3 max-w-6xl mx-auto mt-3 px-3">
-            {projectList.map((item) => (
-              <a href={`/project/${item.id}`} className="no-underline">
-                {/* Styles a container with a specific background color, padding for different screen sizes, some spacing, and centered text */}
-                <div className="bg-[#deece3] lg:p-8 md:p-6 p-[15px] lg:pb-4 pb-3 text-center ">
-                  <img
-                    alt=""
-                    src={item.image}
-                    // Sets the width to 100% and a fixed height of 250 pixels with the object cover property for an image
-                    className="w-100 h-[250px] object-cover "
-                  />
-                  {/* Styles text with a specific color, top margin, and bottom margin, and a font size of 20px */}
-                  <h4 className="text-black mt-3 mb-0 text-[20px]">
-                    {item.title}
-                  </h4>
-                </div>
-              </a>
-            ))}
-          </div>
-
           {/* CHATBOT STARTS */}
 
           {/* Positions a chat bot element absolutely at the bottom with a flex column layout  */}
@@ -192,7 +168,8 @@ const Projects = () => {
           </div>
         </div>
       </div>
-    </Screen>
+      </div>
+      </Screen>
   );
 };
 

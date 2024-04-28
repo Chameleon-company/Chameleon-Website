@@ -11,7 +11,6 @@ import Screen from '../../components/app/Screen';
 class aboutUs extends Component {
   render () {
     return (
-      <>
       <Screen>
         {/* This class bg-[#deece3] is used to set the background color to the hex code #deece3. */}
         <div className=" bg-[#deece3] ">

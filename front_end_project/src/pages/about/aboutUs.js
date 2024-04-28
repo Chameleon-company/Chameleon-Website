@@ -4,14 +4,15 @@ import achievmentIcon1 from "./assets/achievmentIcon1.png";
 import achievmentIcon2 from "./assets/achievmentIcon2.png";
 import achievmentIcon3 from "./assets/achievmentIcon3.png";
 import achievmentIcon4 from "./assets/achievmentIcon4.png";
-// Import Css Cause Some Classes Are Conflicting With Bootstrap
+
 import styles from "./aboutUs.module.css";
+import Screen from '../../components/app/Screen';
 
 class aboutUs extends Component {
   render () {
     return (
       <>
-      {/* ToDo: Move everything to a component */}
+      <Screen>
         {/* This class bg-[#deece3] is used to set the background color to the hex code #deece3. */}
         <div className=" bg-[#deece3] ">
           {/* About Us Section */}
@@ -141,7 +142,7 @@ class aboutUs extends Component {
             </div>
           </div>
         </div>
-      </>
+      </Screen>
     );
   }
 }

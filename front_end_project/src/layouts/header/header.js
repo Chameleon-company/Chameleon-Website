@@ -127,46 +127,6 @@ const Header = () => {
           </div>
         </nav>
       </header>
-      <style>
-      {`
-          .footer-content {
-
-            ${theme === 'dark' ? `
-              background-color: #2D6039;
-              color: white;
-            ` : `
-              background-color: white;
-              color: black;
-            `}
-          }
-
-          .header-content {
-            ${theme === 'dark' ? `
-              background-color: black;
-              color: white;
-            ` : `
-              background-color: white;
-              color: black;
-            `}
-          }
-
-          #root {
-            ${theme === 'dark' ? `
-              background-color: #151818;
-            ` : `
-              background-color:  white;
-            `}
-          }
-
-          .nav-item a {
-            ${theme === 'dark' ? `
-              color: white;
-            ` : `
-              color: black;
-            `}
-          }
-        `}
-      </style>  
     </div>
   );
 };

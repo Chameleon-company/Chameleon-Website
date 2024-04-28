@@ -3,11 +3,13 @@ import './report.css';
 import ev from './images/ev.png';
 import mop from './images/mop.png';
 import cham from './images/cham.png';
+import Screen from '../../components/app/Screen';
 
 function Report() {
+
     return (
-        <div className="container">
-            <div className="row">
+        <Screen>
+            <Row>
                 <div className="report">
                     Project Progress Report: Trimester 1, 2023
                     <br />
@@ -17,7 +19,6 @@ function Report() {
                     <div className="back">
                         <br />
                         <br />
-
                         <div id="evDiv">
                             <div id="myBar">30%</div>
                             <div className='evImage'>
@@ -25,11 +26,9 @@ function Report() {
                                 <p>EV Chargers</p>
                             </div>
                         </div>
-
                         <br />
                         <br />
                         <br />
-
                         <div id="websiteDiv">
                             <div id="webBar">40%</div>
                             <div className='chamImage'>
@@ -185,8 +184,8 @@ function Report() {
                         <br />
                     </div>
                 </div>
-            </div>
-        </div>
+            </Row>
+        </Screen>
     );
 }
 

@@ -4,7 +4,6 @@ import background from "./images/Sydney1.jpg";
 import profile from "../src/layouts/header/images/profile.jpg";
 import Chameleon from "./images/Chameleon.png";
 import City from "./images/City.png";
-import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function Profile() {
   return (
@@ -13,44 +12,42 @@ function Profile() {
         <div>
           <img className="background_S"
             src={background}
-            alt="background for user profile"
+            alt="Background for user profile"
           />
-
         </div>
         <div className="profile_position">
           <img
             src={profile}
-            className="rounded-circle ml-3 img-with-border"
+            className="img-with-border profile-image"
             alt="User Profile Avatar"
             height="200"
             width="200"
           />
         </div>
         <div className="blod_font">
-          <p className="blod_font">Name Surname</p>
-          <p className="blod_font">Product Designer</p>
-          <p className="blod_font">Waurn Ponds, Australia</p>
+          <p>Name Surname</p>
+          <p>Product Designer</p>
+          <p>Waurn Ponds, Australia</p>
           <button className="share_profile">Share Profile</button>
         </div>
         <div>
-          <div className="container">
+          <div className="container organization">
             <img
               src={City}
-              className="organization1"
+              className="organization-image"
               alt="City of Mel"
             />
-            <div className="organization1_title">
+            <div className="organization-title">
               <p>City of Melbourne Open Data</p>
             </div>
           </div>
-
-          <div className="container">
+          <div className="container organization">
             <img
               src={Chameleon}
-              className="organization2"
+              className="organization-image"
               alt="Chameleon"
             />
-            <div className="organization2_title">
+            <div className="organization-title">
               <p>Website Uplift</p>
             </div>
           </div>
@@ -58,9 +55,9 @@ function Profile() {
       </div>
 
       <div className="Bio">
-        <p className="bio_font">Bio</p>
+        <p className="bio-font">Bio</p>
         <p className="underline">_____________________________________________________________________________________________________________________________________________________</p>
-        <p className="font">Add personal bio about role within the company you are working on.</p>
+        <p className="bio-description">Add personal bio about role within the company you are working on.</p>
       </div>
     </div>
   );

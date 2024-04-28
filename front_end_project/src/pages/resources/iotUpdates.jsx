@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Screen from '../../components/app/Screen';
 
 const content1 =
   "The advancement of 6G wireless technology: 6G is the following generation of wireless technology and is anticipated to provide significantly higher speeds and lower latency than 5G. IoT applications will have more options as a result of the ability for devices to communicate data more quickly and dependably.";
@@ -10,12 +11,12 @@ const content4 =
   "The creation of new IoT standards: To solve the issues of scalability, interoperability, and security, new IoT standards are being created. These standards will aid in ensuring the security and dependability of IoT devices as well as their ability to connect with one another and other systems.";
 
 class IotUpdates extends Component {
-  render() {
+  render () {
     return (
-      <>
-        <div className="text-center py-[20px]">
-          <h1>LATEST IOT UPDATES</h1>
-        </div>
+      <Screen>
+        <Container>
+          <h1 class="text-center pt-3 pb-3">LATEST IOT UPDATES</h1>
+        </Container>
 
         <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px]">
           <h2 className="text-center font-bold">6G Wireless Technology</h2>
@@ -51,8 +52,8 @@ class IotUpdates extends Component {
           </div>
         </div>
 
-        <br />
-      </>
+        <br></br>
+      </Screen>
     );
   }
 }

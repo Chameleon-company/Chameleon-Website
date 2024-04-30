@@ -45,7 +45,7 @@ function App () {
               <Route path="/iotTechnologies" component={IotTechnologies} />
               <Route path="/iotStatistics" component={IotStatistics} />
               <Route path="/iotUpdates" component={IotUpdates} />
-              <Route path="/faq" component={Main} />
+              <Route path="/faq" component={Main} /> {/*Tailwind migration done till here */}
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
               <Route path="/reset" component={ResetPassword} />

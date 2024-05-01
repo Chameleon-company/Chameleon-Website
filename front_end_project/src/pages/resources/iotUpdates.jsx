@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Screen from '../../components/app/Screen';
+// import Container from 'react-bootstrap';
 
 const content1 =
   "The advancement of 6G wireless technology: 6G is the following generation of wireless technology and is anticipated to provide significantly higher speeds and lower latency than 5G. IoT applications will have more options as a result of the ability for devices to communicate data more quickly and dependably.";
@@ -14,9 +15,9 @@ class IotUpdates extends Component {
   render () {
     return (
       <Screen>
-        {/* <Container>
+        <div>
           <h1 class="text-center pt-3 pb-3">LATEST IOT UPDATES</h1>
-        </Container> */}
+        </div>
 
         <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px]">
           <h2 className="text-center font-bold">6G Wireless Technology</h2>

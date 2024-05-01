@@ -29,7 +29,11 @@ function Contact() {
               <div className="contact_item_title lg:text-3xl md:text-2xl text-[22px] font-semibold ">
                 Phone Us
               </div>
+              <button className={`${styles.contact_item_btn} hover:border-[2px] text-center bg-[#00b165] py-2 px-10 text-white mt-2 rounded-[15px] font-semibold text-lg m-0 leading-[1] shadow-md md:text-[18px] text-[17px] `}>
+                  Call Us
+                </button>
             </div>
+
             <div className="contact_item_context border-2 border-[#7a7e7c] w-[100%] p-2 text-center font-semibold text-black lg:text-[18px] text-[17px] mt-3">
               Mon-Fri 9-pm(AEST)
               <br />
@@ -44,6 +48,7 @@ function Contact() {
               <div className="contact_item_title lg:text-3xl md:text-2xl text-[22px] font-semibold ">
                 Send a Email
               </div>
+
             </div>
             <div className="contact_item_context border-2 border-[#7a7e7c] w-[100%] p-2 text-center font-semibold text-black lg:text-[18px] text-[17px] mt-3">
               Send us your question via email info@chameleon.com.au and we will get back to you

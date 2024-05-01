@@ -47,7 +47,6 @@ function AboutUs() {
             </p>
           </div>
         </div>
-
         {/* Achievements Section */}
         <div className={styles.achievementsSection}>
           <h3 className="text-center font-semibold lg:text-4xl text-3xl">

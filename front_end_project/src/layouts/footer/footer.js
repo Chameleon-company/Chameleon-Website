@@ -9,9 +9,9 @@ import React, { useState, useEffect } from 'react';
 const Footer = () => {
   // Retrieve the theme from sessionStorage or default to the user's preference or 'dark'
   const storedTheme = sessionStorage.getItem('theme') || (window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const [theme, setTheme] = useState(storedTheme);
 
   // Set the initial theme state
-  const [theme, setTheme] = useState(storedTheme);
 
   // Update sessionStorage whenever the theme changes
   useEffect(() => {

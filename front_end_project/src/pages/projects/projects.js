@@ -18,6 +18,7 @@ const Projects = () => {
 
   return (
     // Sets the background color to a specific shade of light blue with the hex code #deece3 (bg-[#deece3]).
+    <Screen>
     <div className="bg-[#deece3]">
       {/* Creates a flex container with column orientation, centered items, a maximum width of 4xl, some spacing, and padding */}
       <div className=" flex flex-col items-center max-w-4xl mx-auto gap-3 py-6 px-3">

@@ -4,14 +4,16 @@ import achievmentIcon1 from "./assets/achievmentIcon1.png";
 import achievmentIcon2 from "./assets/achievmentIcon2.png";
 import achievmentIcon3 from "./assets/achievmentIcon3.png";
 import achievmentIcon4 from "./assets/achievmentIcon4.png";
-
+import { about_us } from "../../content/about_us";
 import styles from "./aboutUs.module.css";
 import Screen from '../../components/app/Screen';
+
 
 class aboutUs extends Component {
   render () {
     return (
       <>
+      <Screen>
       {/* ToDo: Move everything to a component */}
         {/* This class bg-[#deece3] is used to set the background color to the hex code #deece3. */}
         <div className=" bg-[#deece3] ">
@@ -19,19 +21,14 @@ class aboutUs extends Component {
           <div className={styles.aboutSection}>
             {/* These classes combination centers text, sets it to a semi-bold font weight, and adjusts the text size to 4xl on large screens (lg:text-4xl) and 3xl by default (text-3xl) */}
             <h3 className="text-center font-semibold lg:text-4xl text-3xl">
-              About Us
+              {about_us.title}
             </h3>
 
             {/* These class combination sets the text size to 2xl on large screens (lg:text-2xl), 1xl by default (text-xl), tightens the line height (leading-tight), centers the text (text-center), removes margin (m-0), and adds top margin on medium screens (md:mt-3). */}
             <p
               className={`${styles.aboutP} lg:text-2xl text-xl leading-tight text-center m-0 md:mt-3 `}
             >
-              Chameleon aims to utilise the Internet of Things (IoT), which is
-              an ecosystem consisting of web-enabled smart devices such as
-              phones, suburban traffic systems and domestic appliances, that all
-              use embedded systems, such as processors, sensors, and
-              communication hardware, to collect, send and act on data they
-              acquire from their environments.
+              {about_us.description}
             </p>
           </div>
 
@@ -39,7 +36,7 @@ class aboutUs extends Component {
           <div className={styles.missionSection}>
             {/* These class combination centers the text (text-center), sets it to a semi-bold font weight (font-semibold), and adjusts the text size to 4xl on large screens (lg:text-4xl) and 3xl by default (text-3xl). */}
             <h3 className="text-center font-semibold lg:text-4xl text-3xl">
-              Our Mission
+              {about_us.mission_title}
             </h3>
 
             {/* These class combination creates a flexible and centered column layout with a maximum width of 6xl, adding specific gaps between elements on medium and default screens (md:gap-5 and gap-3), while distributing items evenly along the main axis and centering them along the cross-axis (justify-between and items-center). */}
@@ -53,12 +50,7 @@ class aboutUs extends Component {
 
               {/* These class combination sets the text size to extra-large on large screens (lg:text-xl), large by default (text-lg), centers the text (text-center), and removes margin (m-0). */}
               <p className="lg:text-xl text-lg m-0 text-center">
-                Chameleon aims to utilise the Internet of Things (IoT), which is
-                an ecosystem consisting of web-enabled smart devices such as
-                phones, suburban traffic systems and domestic appliances, that
-                all use embedded systems, such as processors, sensors, and
-                communication hardware, to collect, send and act on data they
-                acquire from their environments.
+                {about_us.description}
               </p>
             </div>
           </div>
@@ -143,6 +135,7 @@ class aboutUs extends Component {
           </div>
         </div>
       </Screen>
+      </>
     );
   }
 }

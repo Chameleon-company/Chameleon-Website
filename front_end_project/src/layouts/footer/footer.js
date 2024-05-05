@@ -5,11 +5,16 @@ import twitterLogo from "./assets/Footer-Twitter.png";
 import instagramLogo from "./assets/Footer-Instagram.png";
 import emailLogo from "./assets/Footer-Email.png";
 import React, { useState, useEffect } from 'react';
+import { useContext } from "react";
+import ThemeContext from "../../context/theme-provider";
 
 const Footer = () => {
   // Retrieve the theme from sessionStorage or default to the user's preference or 'dark'
-  const storedTheme = sessionStorage.getItem('theme') || (window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  const [theme, setTheme] = useState(storedTheme);
+  // const storedTheme = sessionStorage.getItem('theme') || (window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const [theme, setTheme] = useContext(ThemeContext);
+  // const [theme, setTheme] = useState(storedTheme);
+  // const themeContext = useContext(ThemeContext);
+
 
   // Set the initial theme state
 

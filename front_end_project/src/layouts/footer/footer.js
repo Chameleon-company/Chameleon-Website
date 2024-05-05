@@ -5,6 +5,9 @@ import twitterLogo from "./assets/Footer-Twitter.png";
 import instagramLogo from "./assets/Footer-Instagram.png";
 import emailLogo from "./assets/Footer-Email.png";
 import React, { useState, useEffect } from 'react';
+import { FaInstagram, FaFacebookSquare, FaTwitterSquare } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
+// import {ChameleonLogo}  from "./ChameleonLogo.svg";
 
 const Footer = () => {
   // Retrieve the theme from sessionStorage or default to the user's preference or 'dark'
@@ -38,37 +41,24 @@ const Footer = () => {
             </a>
             <div>
               <span className="">Chameleon Company</span>
+
+              {/* Social Media */}
               <div className="flex">
                 {/* Social media */}
                 <a href="/" className="mx-1">
-                  <img
-                    src={instagramLogo}
-                    alt="Instagram Logo"
-                    className="w-10 h-10 md:w-8 md:h-8"
-                  />
+                  <FaInstagram size={30} />
                 </a>
                 <a href="/" className="mx-1">
-                  <img
-                    src={facebookLogo}
-                    alt="Facebook Logo"
-                    className="w-10 h-10 md:w-8 md:h-8"
-                  />
+                  <FaFacebookSquare size={30} />
                 </a>
                 <a href="/" className="mx-1">
-                  <img
-                    src={twitterLogo}
-                    alt="Twitter Logo"
-                    className="w-10 h-10 md:w-8 md:h-8"
-                  />
+                  <FaTwitterSquare size={30} />
                 </a>
                 <a href="/" className="mx-1">
-                  <img
-                    src={emailLogo}
-                    alt="Email Logo"
-                    className="w-10 h-10 md:w-8 md:h-8"
-                  />
+                  <MdOutlineEmail size={30} />
                 </a>
               </div>
+
               <span className=" text-xs">
                 © 2023 Copyright reserved by Chameleon
               </span>

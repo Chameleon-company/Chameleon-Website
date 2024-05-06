@@ -1,5 +1,4 @@
 import chameleonLogo from "../../assets/ChameleonLogo.png";
-import deakinLogo from "./assets/Footer-Deakin.png";
 import React, { useState, useEffect } from 'react';
 import { FaInstagram, FaFacebookSquare, FaTwitterSquare, FaSun, FaMoon } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";

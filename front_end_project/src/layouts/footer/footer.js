@@ -73,20 +73,20 @@ const Footer = () => {
           .footer-content {
 
             ${theme === 'dark' ? `
-              background-color: #2D6039;
+              background-color: ${colors.primaryDark};
               color: white;
             ` : `
-              background-color: #d1e2c4;
+              background-color: ${colors.primaryLight};
               color: black;
             `}
           }
 
           .header-content {
             ${theme === 'dark' ? `
-              background-color: #2D6039;
+              background-color: ${colors.primaryDark};
               color: white;
             ` : `
-              background-color: #d1e2c4;
+              background-color: ${colors.primaryLight};
               color: black;
             `}
           }

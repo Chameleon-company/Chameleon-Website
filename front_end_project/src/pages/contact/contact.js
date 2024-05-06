@@ -1,15 +1,11 @@
 import React, { useEffect } from "react";
 import styles from "./contact.module.css";
-import Phone from "./image/phone.png";
-import Chat from "./image/chat.png";
-import Email from "./image/email.png";
 import { notifyWelcome } from "../../components/notificationComp/NotificationComponent";
 import Screen from '../../components/app/Screen';
-
 import { MdEmail } from "react-icons/md";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { IoChatbubbleEllipsesSharp } from "react-icons/io5";
-import { colors } from "../../constants/colors";
+
 
 function Contact() {
   useEffect(() => {

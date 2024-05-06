@@ -59,7 +59,7 @@ node_modules/jest/
 coverage/
 
 # Ignore the public directory inside front_end_project
-front_end_project/public/
+# front_end_project/public/
 !front_end_project/public/sitemap.xml
 !front_end_project/public/robots.txt
 

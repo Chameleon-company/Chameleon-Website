@@ -58,8 +58,10 @@ node_modules/jest/
 # Ignore all files and folders inside coverage directory
 coverage/
 
-# Ignore the public directory
-public/
+# Ignore the public directory inside front_end_project
+front_end_project/public/
+!front_end_project/public/sitemap.xml
+!front_end_project/public/robots.txt
 
 # Ignore .nyc_output folder
 .nyc_output/

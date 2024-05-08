@@ -17,6 +17,7 @@ const Projects = () => {
   const [chatOpen, setChatOpen] = useState(false);
 
   return (
+    // Sets the background color to a specific shade of light blue with the hex code #deece3 (bg-[#deece3]).
     <Screen>
     {/* // Sets the background color to a specific shade of light blue with the hex code #deece3 (bg-[#deece3]). */}
     <div className="bg-[#deece3]">

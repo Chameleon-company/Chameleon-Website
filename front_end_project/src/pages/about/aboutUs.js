@@ -4,7 +4,7 @@ import achievmentIcon1 from "./assets/achievmentIcon1.png";
 import achievmentIcon2 from "./assets/achievmentIcon2.png";
 import achievmentIcon3 from "./assets/achievmentIcon3.png";
 import achievmentIcon4 from "./assets/achievmentIcon4.png";
-
+import { about_us } from "../../content/about_us";
 import styles from "./aboutUs.module.css";
 import Screen from '../../components/app/Screen';
 
@@ -15,21 +15,17 @@ function AboutUs() {
         {/* About Us Section */}
         <div className={styles.aboutSection}>
           <h3 className="text-center font-semibold lg:text-4xl text-3xl">
-            About Us
+            {about_us.title}
           </h3>
           <p className={`${styles.aboutP} lg:text-2xl text-xl leading-tight text-center m-0 md:mt-3`}>
-            Chameleon aims to utilize the Internet of Things (IoT), which is
-            an ecosystem consisting of web-enabled smart devices such as phones,
-            suburban traffic systems, and domestic appliances, that all use
-            embedded systems, such as processors, sensors, and communication
-            hardware, to collect, send and act on data they acquire from their environments.
+            {about_us.description}
           </p>
         </div>
 
         {/* Mission Section */}
         <div className={styles.missionSection}>
           <h3 className="text-center font-semibold lg:text-4xl text-3xl">
-            Our Mission
+            {about_us.mission_title}
           </h3>
           <div className="flex mx-auto flex-col md:gap-5 gap-3 justify-between items-center max-w-6xl">
             <img
@@ -38,12 +34,7 @@ function AboutUs() {
               className="lg:w-[300px] md:w-[250px] mt-3 w-[200px]"
             />
             <p className="lg:text-xl text-lg m-0 text-center">
-              Chameleon aims to utilize the Internet of Things (IoT), which is
-              an ecosystem consisting of web-enabled smart devices such as
-              phones, suburban traffic systems, and domestic appliances, that
-              all use embedded systems, such as processors, sensors, and
-              communication hardware, to collect, send and act on data they
-              acquire from their environments.
+              {about_us.description}
             </p>
           </div>
         </div>

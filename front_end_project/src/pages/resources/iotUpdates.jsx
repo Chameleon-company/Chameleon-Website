@@ -1,190 +1,3 @@
-// import React, { Component } from "react";
-
-// let content1 =
-//   "The advancement of 6G wireless technology: 6G is the following generation of wireless technology and is anticipated to provide significantly higher speeds and lower latency than 5G. IoT applications will have more options as a result of the ability for devices to communicate data more quickly and dependably.";
-// let content2 =
-//   "Edge computing is becoming more popular because it moves storage and computation closer to the network's edge. In addition to making IoT applications more resilient to network failures, this can increase performance and decrease latency for such applications.";
-// let content3 =
-//   "Artificial intelligence (AI) is becoming more prevalent in the Internet of Things (IoT). AI is being utilised to power a variety of IoT applications, from smart home gadgets to industrial automation systems. IoT devices' efficiency, precision, and ability to make decisions can all be improved by AI. The IoT is increasingly using distributed ledger technology called blockchain, which may be used to track and record transactions between IoT devices. This could aid in enhancing the security and openness of IoT applications.";
-// let content4 =
-//   "The creation of new IoT standards: To solve the issues of scalability, interoperability, and security, new IoT standards are being created. These standards will aid in ensuring the security and dependability of IoT devices as well as their ability to connect with one another and other systems.";
-
-// class IotUpdates extends Component {
-//   state = {
-//     editingContent: null,
-//     editedContent: "",
-//   };
-
-//   handleEditClick = (index) => {
-//     this.setState({
-//       editingContent: index,
-//       editedContent: [content1, content2, content3, content4][index],
-//     });
-//   };
-
-//   handleSaveClick = (index) => {
-//     const updatedContents = [...[content1, content2, content3, content4]];
-//     updatedContents[index] = this.state.editedContent;
-//     [content1, content2, content3, content4] = updatedContents;
-//     this.setState({ editingContent: null, editedContent: "" });
-//   };
-
-//   handleContentChange = (event) => {
-//     this.setState({ editedContent: event.target.value });
-//   };
-
-//   render() {
-//     return (
-//       <div className="iot-updates-container font-poppins">
-//         <div className="text-center py-6">
-//           <h1 className="text-black text-2xl font-bold">LATEST IOT UPDATES</h1>
-//         </div>
-
-//         <div className="iot-update-card bg-[#D1E2C4] rounded-md shadow-md p-6 mb-6 max-w-[800px] mx-auto">
-//           <h2 className="text-center font-bold text-black text-xl mb-4">
-//             6G Wireless Technology
-//           </h2>
-//           {this.state.editingContent === 0 ? (
-//             <div>
-//               <textarea
-//                 className="iot-update-content text-black w-full h-40 resize-none border border-gray-300 rounded-md p-2 mb-4"
-//                 value={this.state.editedContent}
-//                 onChange={this.handleContentChange}
-//               />
-//               <div className="flex justify-end">
-//                 <button
-//                   className="iot-update-button bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800"
-//                   onClick={() => this.handleSaveClick(0)}
-//                 >
-//                   Save
-//                 </button>
-//               </div>
-//             </div>
-//           ) : (
-//             <p className="iot-update-content text-black">{content1}</p>
-//           )}
-//           <div className="flex justify-end mt-4">
-//             <button
-//               className="iot-update-button bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800"
-//               onClick={() => this.handleEditClick(0)}
-//             >
-//               Edit
-//             </button>
-//           </div>
-//         </div>
-
-//         <div className="iot-update-card bg-[#D1E2C4] rounded-md shadow-md p-6 mb-6 max-w-[800px] mx-auto">
-//           <h2 className="text-center font-bold text-black text-xl mb-4">
-//             Edge Computing
-//           </h2>
-//           {this.state.editingContent === 1 ? (
-//             <div>
-//               <textarea
-//                 className="iot-update-content text-black w-full h-40 resize-none border border-gray-300 rounded-md p-2 mb-4"
-//                 value={this.state.editedContent}
-//                 onChange={this.handleContentChange}
-//               />
-//               <div className="flex justify-end">
-//                 <button
-//                   className="iot-update-button bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800"
-//                   onClick={() => this.handleSaveClick(1)}
-//                 >
-//                   Save
-//                 </button>
-//               </div>
-//             </div>
-//           ) : (
-//             <p className="iot-update-content text-black">{content2}</p>
-//           )}
-//           <div className="flex justify-end mt-4">
-//             <button
-//               className="iot-update-button bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800"
-//               onClick={() => this.handleEditClick(1)}
-//             >
-//               Edit
-//             </button>
-//           </div>
-//         </div>
-
-//         <div className="iot-update-card bg-[#D1E2C4] rounded-md shadow-md p-6 mb-6 max-w-[800px] mx-auto">
-//           <h2 className="text-center font-bold text-black text-xl mb-4">
-//             Artificial intelligence
-//           </h2>
-//           {this.state.editingContent === 2 ? (
-//             <div>
-//               <textarea
-//                 className="iot-update-content text-black w-full h-40 resize-none border border-gray-300 rounded-md p-2 mb-4"
-//                 value={this.state.editedContent}
-//                 onChange={this.handleContentChange}
-//               />
-//               <div className="flex justify-end">
-//                 <button
-//                   className="iot-update-button bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800"
-//                   onClick={() => this.handleSaveClick(2)}
-//                 >
-//                   Save
-//                 </button>
-//               </div>
-//             </div>
-//           ) : (
-//             <p className="iot-update-content text-black">{content3}</p>
-//           )}
-//           <div className="flex justify-end mt-4">
-//             <button
-//               className="iot-update-button bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800"
-//               onClick={() => this.handleEditClick(2)}
-//             >
-//               Edit
-//             </button>
-//           </div>
-//         </div>
-
-//         <div className="iot-update-card bg-[#D1E2C4] rounded-md shadow-md p-6 mb-6 max-w-[800px] mx-auto">
-//           <h2 className="text-center font-bold text-black text-xl mb-4">
-//             New IoT Standards
-//           </h2>
-//           {this.state.editingContent === 3 ? (
-//             <div>
-//               <textarea
-//                 className="iot-update-content text-black w-full h-40 resize-none border border-gray-300 rounded-md p-2 mb-4"
-//                 value={this.state.editedContent}
-//                 onChange={this.handleContentChange}
-//               />
-//               <div className="flex justify-end">
-//                 <button
-//                   className="iot-update-button bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800"
-//                   onClick={() => this.handleSaveClick(3)}
-//                 >
-//                   Save
-//                 </button>
-//               </div>
-//             </div>
-//           ) : (
-//             <p className="iot-update-content text-black">{content4}</p>
-//           )}
-//           <div className="flex justify-end mt-4">
-//             <button
-//               className="iot-update-button bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800"
-//               onClick={() => this.handleEditClick(3)}
-//             >
-//               Edit
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// export const iotUpdatesSearchableContents = [
-//   content1,
-//   content2,
-//   content3,
-//   content4,
-// ];
-
-// export default IotUpdates;
-
 import React, { Component } from "react";
 import { Editor } from "react-draft-wysiwyg";
 import {
@@ -195,6 +8,7 @@ import {
 } from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import axios from "axios"; // Add axios for HTTP requests
+import "./iotUpdates.css";
 
 class IotUpdates extends Component {
   state = {
@@ -219,14 +33,6 @@ class IotUpdates extends Component {
       });
   };
 
-  // handleEditClick = (index) => {
-  //   const { news } = this.state;
-  //   this.setState({
-  //     editingContent: index,
-  //     editorState: news[index].editorState,
-  //   });
-  // };
-
   handleEditClick = (index) => {
     const { news } = this.state;
     this.setState({
@@ -238,12 +44,22 @@ class IotUpdates extends Component {
   };
 
   handleSaveClick = async () => {
+    // const { editingContent, editorState, news } = this.state;
+    // const contentRaw = convertToRaw(editorState.getCurrentContent());
+    // const updatedNews = {
+    //   ...news[editingContent],
+    //   content: JSON.stringify(contentRaw),
+    // };
+
     const { editingContent, editorState, news } = this.state;
-    const contentRaw = convertToRaw(editorState.getCurrentContent());
+    const plainText = editorState.getCurrentContent().getPlainText(); // Get plain text content
     const updatedNews = {
       ...news[editingContent],
-      content: JSON.stringify(contentRaw),
+      content: plainText, // Save plain text content instead of rich text
+      // Other fields from fullNewsData object
     };
+
+    console.log("contentRaw:", plainText);
 
     try {
       await axios.put(
@@ -276,11 +92,11 @@ class IotUpdates extends Component {
           <h1 className="text-black">LATEST IOT UPDATES</h1>
         </div>
 
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 gap-6 grid-container">
           {news.map((item, index) => (
             <div
               key={item.id}
-              className="iot-update-card bg-[#D1E2C4] rounded-md shadow-md p-6 flex flex-row justify-between items-center max-w-[1000px] mx-auto"
+              className="iot-update-card bg-[#D1E2C4] rounded-md shadow-md p-6 flex flex-row justify-between items-center w-[1000px] mx-auto"
             >
               <div className="w-3/4">
                 <h2 className="text-center font-bold text-black mb-4">

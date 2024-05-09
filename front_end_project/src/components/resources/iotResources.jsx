@@ -1,6 +1,7 @@
 const IotResourcesComponent = ({ img, altImg, url, heading }) => {
   return (
     <div className="mb-[50px] ml-auto mr-auto w-full max-w-[400px] bg-[#D1E2C4]">
+      <a href={url} className="text-decoration-none">
       <div className="shrink-0 grow">
         <div className="ml-3 mr-3 mt-0 flex flex-wrap">
           <img
@@ -10,8 +11,6 @@ const IotResourcesComponent = ({ img, altImg, url, heading }) => {
           />
         </div>
       </div>
-
-      <a href={url} className="text-decoration-none">
         <h2 className="fw-bold pb-4 text-center text-black">{heading}</h2>
       </a>
     </div>

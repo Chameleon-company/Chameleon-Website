@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
 import { Editor } from "react-draft-wysiwyg";
 import {
   EditorState,
@@ -9,6 +10,19 @@ import {
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import axios from "axios"; // Add axios for HTTP requests
 import "./iotUpdates.css";
+=======
+import Screen from '../../components/app/Screen';
+// import Container from 'react-bootstrap';
+
+const content1 =
+  "The advancement of 6G wireless technology: 6G is the following generation of wireless technology and is anticipated to provide significantly higher speeds and lower latency than 5G. IoT applications will have more options as a result of the ability for devices to communicate data more quickly and dependably.";
+const content2 =
+  "Edge computing is becoming more popular because it moves storage and computation closer to the network's edge. In addition to making IoT applications more resilient to network failures, this can increase performance and decrease latency for such applications.";
+const content3 =
+  "Artificial intelligence (AI) is becoming more prevalent in the Internet of Things (IoT). AI is being utilised to power a variety of IoT applications, from smart home gadgets to industrial automation systems. IoT devices' efficiency, precision, and ability to make decisions can all be improved by AI. The IoT is increasingly using distributed ledger technology called blockchain, which may be used to track and record transactions between IoT devices. This could aid in enhancing the security and openness of IoT applications.";
+const content4 =
+  "The creation of new IoT standards: To solve the issues of scalability, interoperability, and security, new IoT standards are being created. These standards will aid in ensuring the security and dependability of IoT devices as well as their ability to connect with one another and other systems.";
+>>>>>>> db1939d69bb9697f788773c90f333f0b8a741edc
 
 class IotUpdates extends Component {
   state = {
@@ -87,9 +101,22 @@ class IotUpdates extends Component {
   render() {
     const { news, editingContent } = this.state;
     return (
+<<<<<<< HEAD
       <div className="iot-updates-container font-poppins">
         <div className="text-center py-[20px]">
           <h1 className="text-black">LATEST IOT UPDATES</h1>
+=======
+      <Screen>
+        <div>
+          <h1 class="text-center pt-3 pb-3">LATEST IOT UPDATES</h1>
+        </div>
+
+        <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px]">
+          <h2 className="text-center font-bold">6G Wireless Technology</h2>
+          <div className="flex justify-center">
+            <p className="max-w-[800px] text-xl">{content1}</p>
+          </div>
+>>>>>>> db1939d69bb9697f788773c90f333f0b8a741edc
         </div>
 
         <div className="grid grid-cols-1 gap-6 grid-container">

@@ -1,8 +1,8 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NotificationComponent from "./components/notificationComp/NotificationComponent";
 import Screen from './components/app/Screen';
-
+import ThemeContext from "./context/theme-provider";
 const HomePage = lazy(() => import("./pages/homepage/Homepage"));
 const Chatbot = lazy(() => import("./pages/Chatbot/Chatbot"));
 const aboutUs = lazy(() => import("./pages/about/aboutUs"));
@@ -25,8 +25,12 @@ const newsRemoveForm = lazy(() => import("./pages/email_newsletter_forms/remove"
 const SearchResults = lazy(() => import("./pages/search/SearchResults"));
 
 function App () {
+  // const theme = useContext(ThemeContext);
+  const storedTheme = sessionStorage.getItem('theme') || (window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const [theme, setTheme] = useState(storedTheme);
   return (
     <>
+    <ThemeContext.Provider value={{theme, setTheme}}>
       <Router>
         <NotificationComponent />
         <Suspense fallback={<div>Loading...</div>}>
@@ -45,7 +49,7 @@ function App () {
               <Route path="/iotTechnologies" component={IotTechnologies} />
               <Route path="/iotStatistics" component={IotStatistics} />
               <Route path="/iotUpdates" component={IotUpdates} />
-              <Route path="/faq" component={Main} />
+              <Route path="/faq" component={Main} /> {/*Tailwind migration done till here */}
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
               <Route path="/reset" component={ResetPassword} />
@@ -58,6 +62,7 @@ function App () {
           </main>
         </Suspense>
       </Router>
+    </ThemeContext.Provider>
     </>
   );
 }

@@ -1,14 +1,12 @@
-
 import chameleonHeader from "./images/Header-Chameleon.png";
-import { FaBars, FaSearch, FaMoon, FaSun } from "react-icons/fa";
-import { useContext, useState } from "react";
+import { FaBars } from "react-icons/fa"; // Hamburger icon
+import { useState } from "react";
 import SearchBox from "./SearchBox";
-import ThemeContext from "../../context/theme-provider";
 
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [theme, setTheme] = useContext(ThemeContext);
-  
+
   const toggleNavbar = () => {
     setNavbarOpen(!navbarOpen);
   };
@@ -179,7 +177,7 @@ const Header = () => {
               <li className="nav-item">
                 <a
                   className="px-3 py-2 flex items-center  uppercase font-bold leading-snug hover:opacity-75 no-underline"
-                  href="/support"
+                  href="/"
                 >
                   Support
                 </a>
@@ -202,7 +200,7 @@ const Header = () => {
               </li>
 
 
-            ${theme === 'dark' ? `
+              ${theme === 'dark' ? `
               background-color: #2D6039;
               color: white;
             ` : `
@@ -211,8 +209,8 @@ const Header = () => {
             `}
           }
 
-          .header-content {
-            ${theme === 'dark' ? `
+              .header-content {
+                ${theme === 'dark' ? `
               background-color: black;
               color: white;
             ` : `
@@ -221,25 +219,25 @@ const Header = () => {
             `}
           }
 
-          #root {
-            ${theme === 'dark' ? `
+              #root {
+                ${theme === 'dark' ? `
               background-color: #151818;
             ` : `
               background-color:  white;
             `}
           }
 
-          .nav-item a {
-            ${theme === 'dark' ? `
+              .nav-item a {
+                ${theme === 'dark' ? `
               color: white;
             ` : `
               color: black;
             `}
           }
         `}
-      </style>  
-    </div>
-  );
+            </style>
+          </div>
+          );
 };
 
-export default Header;
+          export default Header;;

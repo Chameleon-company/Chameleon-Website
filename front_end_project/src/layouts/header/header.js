@@ -1,7 +1,7 @@
-import chameleonHeader from "./images/Header-Chameleon.png";
-import { FaBars } from "react-icons/fa"; // Hamburger icon
 import { useState } from "react";
+import { FaBars } from "react-icons/fa"; // Hamburger icon
 import SearchBox from "./SearchBox";
+import chameleonHeader from "./images/Header-Chameleon.png";
 
 const Header = () => {
   //State hook to capture Navbar's state
@@ -82,7 +82,7 @@ const Header = () => {
               <li className="nav-item">
                 <a
                   className="px-3 py-2 flex items-center  uppercase font-bold leading-snug hover:opacity-75 no-underline"
-                  href="/"
+                  href="/support"
                 >
                   Support
                 </a>

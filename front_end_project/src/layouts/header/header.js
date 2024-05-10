@@ -1,3 +1,4 @@
+
 import chameleonHeader from "./images/Header-Chameleon.png";
 import { FaBars, FaSearch, FaMoon, FaSun } from "react-icons/fa";
 import { useContext, useState } from "react";
@@ -125,11 +126,81 @@ const Header = () => {
               <FaBars />
             </button>
           </div>
-        </nav>
-      </header>
-      <style>
-      {`
-          .footer-content {
+
+          <div
+            className={
+              "lg:flex flex-grow items-center transition duration-500 ease-in-out" +
+              (navbarOpen ? " flex" : " hidden")
+            }
+            id="example-navbar-danger"
+          >
+            <ul className="flex flex-col mx-auto lg:flex-row list-none lg:ml-auto ">
+              <li className="nav-item">
+                <a
+                  className="px-3 py-2 flex items-center  uppercase font-bold leading-snug  hover:opacity-75 no-underline"
+                  href="/"
+                >
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="px-3 py-2 flex items-center  uppercase font-bold leading-snug hover:opacity-75 no-underline"
+                  href="/projects"
+                >
+                  Projects
+                </a>
+              </li>
+
+              <li className="nav-item">
+                <a
+                  className="px-3 py-2 flex items-center  uppercase font-bold leading-snug hover:opacity-75 no-underline"
+                  href="/news"
+                >
+                  News and Insight
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="px-3 py-2 flex items-center  uppercase font-bold leading-snug hover:opacity-75 no-underline"
+                  href="/about_us"
+                >
+                  About
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="px-3 py-2 flex items-center  uppercase font-bold leading-snug hover:opacity-75 no-underline"
+                  href="/contact"
+                >
+                  Contact
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="px-3 py-2 flex items-center  uppercase font-bold leading-snug hover:opacity-75 no-underline"
+                  href="/support"
+                >
+                  Support
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="px-3 py-2 flex items-center  uppercase font-bold leading-snug hover:opacity-75 no-underline"
+                  href="/iotResources"
+                >
+                  Resources
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="px-3 py-2 flex items-center  uppercase font-bold leading-snug hover:opacity-75 no-underline"
+                  href="/login"
+                >
+                  Login
+                </a>
+              </li>
+
 
             ${theme === 'dark' ? `
               background-color: #2D6039;

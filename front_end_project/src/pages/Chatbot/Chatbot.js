@@ -1,278 +1,163 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Chatbot.css';
-//import ChatBot from 'react-simple-chatbot';
-// import { ThemeProvider } from 'styled-components';
+import ChatbotLogo from './images/Logo_2.png';
+import UserAvatar from './images/user1.jpg';
+import BotAvatar from './images/chabot.png';
+import Screen from '../../components/app/Screen';
 
-class Chatbot extends Component {
-    constructor() {
-        super();
-        this.state = {
-            userMessage: '',
-        };
-    }
+const Chatbot = () => {
+    const [message, setMessage] = useState('');
+    const [chatHistory, setChatHistory] = useState(() => {
+        // Load chat history from local storage if available
+        const savedHistory = localStorage.getItem('chatHistory');
+        return savedHistory ? JSON.parse(savedHistory) : [];
+    });
+ 
+    const sendMessage = (msg, fromUser = true) => {
+        setChatHistory(prevChatHistory => {
+            const updatedHistory = [...prevChatHistory, { message: msg, fromUser: fromUser }];
+            localStorage.setItem('chatHistory', JSON.stringify(updatedHistory)); // Save to local storage
+            return updatedHistory;
+        });
+    };
 
-    componentDidMount() {
-        // Your Chatbot JavaScript code goes here
-        const incomingMessageImage = "images/chameleon (2).png";
-        const chatInput = document.querySelector(".chat-input textarea");
-        const sendButton = document.getElementById('send-btn');
-        const optionsButton = document.querySelector('.options-button');
-        const optionsContainer = document.querySelector('.options-container');
-        const quickOptionsContainer = document.querySelector('.quick-options');
-
-        const option1Button = document.getElementById('option1');
-        const option2Button = document.getElementById('option2');
-        const option3Button = document.getElementById('option3');
-
-        const closeBtn = document.querySelector(".close-btn");
-        const chatbotToggler = document.querySelector(".chatbot-toggler");
-
-
-        const simulateTyping = (message) => {
-            chatInput.value = message;
-            const inputEvent = new Event('input', {
-                bubbles: true,
-                cancelable: true,
-            });
-            chatInput.dispatchEvent(inputEvent);
+    useEffect(() => {
+        // Check if chatHistory is empty or if it does not already contain the welcome message
+        if (!chatHistory.some(msg => msg.message.includes("Here is the Chameleon Website Chatbot"))) {
+            sendMessage("Here is the Chameleon Website Chatbot powered by OpenAI, do you have any questions?", false);
         }
+    }, []); // Ensure this effect runs only once
 
-        option1Button.addEventListener('click', () => {
-            const response = "Learn About our Projects";
-            simulateTyping(response);
-            sendButton.click();
-            quickOptionsContainer.style.display = 'none';
-        });
-
-        option2Button.addEventListener('click', () => {
-            const response = "Support Us";
-            simulateTyping(response);
-            sendButton.click();
-            quickOptionsContainer.style.display = 'none';
-        });
-
-        option3Button.addEventListener('click', () => {
-            const response = "I have another Question";
-            simulateTyping(response);
-            sendButton.click();
-            quickOptionsContainer.style.display = 'none';
-        });
-
-        optionsButton.addEventListener('click', () => {
-            optionsContainer.style.display = optionsContainer.style.display === 'block' ? 'none' : 'block';
-        });
-
-        // Close options when clicking outside of it
-        document.addEventListener('click', (event) => {
-            if (!optionsButton.contains(event.target) && !optionsContainer.contains(event.target)) {
-                optionsContainer.style.display = 'none';
-            }
-        });
-
-        const chatbox = document.querySelector(".chatbox");
-        const inputInitHeight = chatInput.scrollHeight;
-
-        const createChatLi = (message, className) => {
-            const chatLi = document.createElement("li");
-            chatLi.classList.add("chat", `${className}`);
-
-            let chatContent;
-
-            if (className === "outgoing") {
-                chatContent = `<p></p>`;
-            } else if (className === "incoming") {
-                chatContent = `<img src="${incomingMessageImage}" alt="Incoming Message Icon"><p></p>`;
-            }
-
-            chatLi.innerHTML = chatContent;
-            chatLi.querySelector("p").textContent = message;
-            return chatLi;
-        }
-
-        const generateResponse = (chatElement) => {
-            const API_URL = "https://api.openai.com/v1/chat/completions";
-            const messageElement = chatElement.querySelector("p");
-            const API_KEY = "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"; // API key
-
-            const requestOptions = {
-                method: "POST",
+    // OpenAi with backend
+    const fetchChatbotResponse = async (userInput) => {
+        try {
+            const response = await fetch('http://localhost:3002/api/chatbot', {
+                method: 'POST',
                 headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${API_KEY}`
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    model: "gpt-3.5-turbo",
-                    messages: [{ role: "user", content: this.state.userMessage }],
-                })
-            }
+                body: JSON.stringify({ "prompt": userInput })
+            });
+            const data = await response.json();
+            // console.log(data);
 
-            fetch(API_URL, requestOptions)
-                .then(res => res.json())
-                .then(data => {
-                    messageElement.textContent = data.choices[0].message.content.trim();
-                })
-                .catch(() => {
-                    messageElement.classList.add("error");
-                    messageElement.textContent = "Oops! Something went wrong. Please try again.";
-                })
-                .finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
-
-            const imageElement = document.createElement("img");
-            imageElement.src = incomingMessageImage;
-            imageElement.alt = "Incoming Message Image";
-            imageElement.classList.add("incoming-image");
-            chatElement.insertBefore(imageElement, messageElement);
-
-            const existingImage = chatElement.querySelector(".incoming-image");
-
-            if (existingImage) {
-                chatElement.replaceChild(imageElement, existingImage);
+            // Assuming data.choices[0].message.content is the correct path based on your backend response structure
+            if (data && data.choices && data.choices.length > 0 && data.choices[0].message && data.choices[0].message.content) {
+                const gptResponse = "Chameleon-GPT: " + data.choices[0].message.content;
+                sendMessage(gptResponse, false); // Display bot's response in chat
             } else {
-                chatElement.insertBefore(imageElement, messageElement);
+                console.log('No message received:', data);  // Log for debugging
+                sendMessage("No response message was received.", false);
+            }
+        } catch (error) {
+            console.error('Error fetching chatbot response:', error);
+            sendMessage("Sorry, I couldn't fetch a response.", false);
+        }
+    };
+
+    const chatContainerRef = useRef(null);
+
+    useEffect(() => {
+        if (chatContainerRef.current) {
+            chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+        }
+    }, [chatHistory]);
+    
+    useEffect(() => {
+        const lastMessage = chatHistory[chatHistory.length - 1];
+
+        if (lastMessage) {
+            let autoReply = '';
+            switch (lastMessage.message) {
+                case 'Website Project':
+                    autoReply = 'Autorely: At Chameleon, our mission is to research, create, test, document and deploy loT-based solutions to enhance life through the application of smart city technologies including: the building of smarter cities, homes, transportation, and energy management systems.';
+                    break;
+                case 'MOP Project':
+                    autoReply = "Autorely: Melbourne Open Data refers to the City of Melbourne's initiative to make a wide range of public data sets available to the public for free";
+                    break;
+                case 'Evoleon Project':
+                    autoReply = 'Autorely: The EV Adoption Tools company announces a groundbreaking partnership with major electric vehicle manufacturers to further advance sustainable mobility solution.';
+                    break;
+                default:
+                    autoReply = '';
+                    break;
+            }
+
+            if (autoReply) {
+                // console.log('Auto replying with:', autoReply);
+                sendMessage(autoReply, false);
             }
         }
+    }, [chatHistory]);
 
-        const handleChat = () => {
-            this.state.userMessage = chatInput.value.trim();
-            if (!this.state.userMessage) return;
-
-            chatInput.value = "";
-            chatInput.style.height = `${inputInitHeight}px`;
-
-            chatbox.appendChild(createChatLi(this.state.userMessage, "outgoing"));
-            chatbox.scrollTo(0, chatbox.scrollHeight);
-
-            setTimeout(() => {
-                const incomingChatLi = createChatLi("Thinking...", "incoming");
-                chatbox.appendChild(incomingChatLi);
-                chatbox.scrollTo(0, chatbox.scrollHeight);
-                generateResponse(incomingChatLi);
-            }, 600);
+    const handleSendMessage = (e) => {
+        e.preventDefault();
+        if (message.trim() !== '') {
+            sendMessage(message, true);
+            fetchChatbotResponse(message);
+            setMessage('');
         }
+    };
 
-        chatInput.addEventListener("input", () => {
-            chatInput.style.height = `${inputInitHeight}px`;
-            chatInput.style.height = `${chatInput.scrollHeight}px`;
-        });
+    const handleProjectClick = (project) => {
+        console.log(`Project clicked: ${project}`);
+        sendMessage(project, true);
+    };
 
-        chatInput.addEventListener("keydown", (e) => {
-            if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
-                e.preventDefault();
-                handleChat();
-            }
-        });
-
-        sendButton.addEventListener("click", handleChat);
-        closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
-        chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
-    }
-
-    render() {
-        return (
-            <div className="chatbot">
-                <button className="chatbot-toggler">
-                    <span className="material-symbols-outlined">more_horiz</span>
-                    <span className="material-symbols-outlined">arrow_back</span>
-                </button>
-                <header>
-                    <img
-                        src="images/ChameleonLogo.png"
-                        alt="Chatbot Image"
-                        className="chatbot-image"
-                    />
-                    <h2>Chameleon</h2>
-                    <button className="options-button material-symbols-outlined">
-                        more_vert
-                    </button>
+    return (
+        <Screen>
+            <div className='chatbot-page-container'>
+                <div className='chatbot-container'>
+                    <div className='chat-header'>
+                        <div className='chatbot-info'>
+                            <div className='chatbot-info-container'>
+                                <img className="chatbog-logo" src={ChatbotLogo} alt='Chatbot Logo' />
+                                <span>Chameleon Website Chatbot</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='chat-content' ref={chatContainerRef}>
+                        {chatHistory.map((item, index) => (
+                            <div key={index} className={`message-container ${item.fromUser ? 'from-user' : 'from-bot'}`}>
+                                {item.fromUser ? (
+                                    <>
+                                        <div className='message from-user'>{item.message}</div>
+                                        <img className="avatar" src={UserAvatar} alt='User Avatar' />
+                                    </>
+                                ) : (
+                                    <>
+                                        <img className="avatar" src={BotAvatar} alt='Bot Avatar' />
+                                        <div className='message from-bot'>{item.message}</div>
+                                    </>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                    <div className='chat-footer'>
+                        <form onSubmit={handleSendMessage}>
+                            <input
+                                type="text"
+                                placeholder="Type a message..."
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                            />
+                            <button type="submit">Send</button>
+                        </form>
+                    </div>
+                </div>
+                <div className='faq-container'>
+                    <h5>Frequently Asked Questions</h5>
                     <div className="options-container">
                         <ul>
-                            <li>Website Project</li>
-                            <li>MOP project</li>
-                            <li>Evoleon Project</li>
+                            <li onClick={() => handleProjectClick("Website Project")}>Website Project</li>
+                            <li onClick={() => handleProjectClick("MOP Project")}>MOP Project</li>
+                            <li onClick={() => handleProjectClick("Evoleon Project")}>Evoleon Project</li>
                         </ul>
                     </div>
-                    <span className="close-btn material-symbols-outlined">arrow_back</span>
-                </header>
-                <ul className="chatbox">
-                    {/* Chat messages will be displayed here */}
-                </ul>
-                <div className="quick-options">
-                    <button id="option1">Learn About our Projects</button>
-                    <button id="option2">Support Us</button>
-                    <button id="option3">I have another Question</button>
-                </div>
-                <div className="chat-input">
-                    <textarea
-                        placeholder="Enter your message here.."
-                        spellCheck="false"
-                        required
-                    ></textarea>
-                    <span id="send-btn" className="material-symbols-rounded">send</span>
                 </div>
             </div>
-        );
-    }
-}
-
-/*
-// This is the code for changing the bot's responses, integrate it with the rest of the code once the UI is fixed.
-const steps = [
-    {
-        id: '0',
-        message: 'This is Chameleon Chatbot!',
- 
-        // This calls the next id
-        // i.e. id 1 in this case
-        trigger: '1',
-    }, {
-        id: '1',
- 
-        // This message appears in
-        // the bot chat bubble
-        message: 'Please write your username',
-        trigger: '2'
-    }, {
-        id: '2',
- 
-        // Here we want the user
-        // to enter input
-        user: true,
-        trigger: '3',
-    }, {
-        id: '3',
-        message: " hi {previousValue}, how can I help you?",
-        trigger: 4
-    }, {
-        id: '4',
-        options: [
-             
-            { value: 1, label: 'Resources Link' },
-            { value: 2, label: 'Projects Link' },
- 
-        ],
-        end: true
-    }
-];
- 
-// Set some properties of the bot
-const config = {
-    botAvatar: "img.png",
-    floating: true,
-};
- 
-function Chatbot() {
-    return (
-        <div className="App">
-            <ChatBot
- 
-                // This appears as the header text for the chat bot
-                headerTitle="Chameleon Bot"
-                steps={steps}
-                {...config}
- 
-            />
-        </div>
+        </Screen>
     );
-}
-*/
+};
+
 export default Chatbot;

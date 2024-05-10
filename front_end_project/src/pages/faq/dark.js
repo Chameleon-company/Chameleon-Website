@@ -1,11 +1,4 @@
-import { Row, Col } from 'react-bootstrap';
-import React, {
-  useState,
-  toggle,
-  button,
-  useEffect,
-  useLayoutEffect,
-} from 'react';
+import React, { useState } from 'react';
 import './darkMode.css';
 
 function DarkMode() {
@@ -16,7 +9,7 @@ function DarkMode() {
   // toggle function for + or - for query minimise or expand
   const toggle = (i) => {
     // if + is chosen, + = i
-    if (choose == i) {
+    if (choose === i) {
       return setChoose(null);
     }
     setChoose(i);
@@ -24,9 +17,9 @@ function DarkMode() {
 
   return (
     <div className="bg">
-      <Row>
+      <div className="row">
         <div className="faqheadingmode">Frequently Asked Questions</div>
-        <Col xs={12}>
+        <div className="col-xs-12">
           <div className="wrappermode">
             <div className="queriesmode">
               {/* mapping data to the FAQ questions */}
@@ -59,8 +52,8 @@ function DarkMode() {
               </div>
             </div>
           </div>
-        </Col>
-      </Row>
+        </div>
+      </div>
     </div>
   );
 }
@@ -69,23 +62,19 @@ function DarkMode() {
 const data = [
   {
     question: 'What is Chameleon?',
-    answer:
-      '"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto iusto veniam eveniet labore impedit nam"',
+    answer: '"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto iusto veniam eveniet labore impedit nam"',
   },
   {
     question: 'What projects does Chameleon have?',
-    answer:
-      '"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto iusto veniam eveniet labore impedit nam"',
+    answer: '"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto iusto veniam eveniet labore impedit nam"',
   },
   {
     question: 'Membership',
-    answer:
-      '"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto iusto veniam eveniet labore impedit nam"',
+    answer: '"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto iusto veniam eveniet labore impedit nam"',
   },
   {
     question: 'How do I contact Chameleon?',
-    answer:
-      '"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto iusto veniam eveniet labore impedit nam"',
+    answer: '"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto iusto veniam eveniet labore impedit nam"',
   },
 ];
 

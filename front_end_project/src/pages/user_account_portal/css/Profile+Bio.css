@@ -1,14 +1,8 @@
 .temp_background {
     display: flex;
-    /* 将 .temp_background 设置为 Flex 容器 */
     flex-direction: column;
-    /* 垂直排列子元素 */
     justify-content: center;
-    /* 垂直居中 */
     align-items: center;
-    /* 水平居中 */
-
-    /* margin-top: 30px; */
     background-color: #EBEBE8;
     height: 1000px;
     width: 100%;
@@ -16,27 +10,27 @@
 }
 
 .profile {
-    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    /* 水平居中 */
-    margin-top: 30px;
-    /* background-color: rgb(183, 79, 79); */
     background-color: white;
     height: 700px;
     width: 90%;
     border-radius: 10px;
+    margin-top: 30px;
 }
 
 .Bio {
-    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    /* 水平居中 */
-    margin-top: 30px;
-    /* background-color: rgb(183, 79, 79); */
     background-color: white;
     height: 200px;
     width: 90%;
     border-radius: 10px;
+    margin-top: 30px;
 }
 
 .background_S {
@@ -57,71 +51,60 @@
 
 .img-with-border {
     box-shadow: 0 0 100px white;
-    /* 添加白色边缘 */
 }
 
 .share_profile {
     background-color: black;
-    border: none;
     color: white;
     padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+    border: none;
     border-radius: 10px;
     margin-left: 45px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .container {
     display: flex;
-    align-items: center; /* 垂直居中 */
-  }
+    align-items: center;
+}
 
-.organization1 {
+.organization1, .organization2 {
     height: 60px;
     width: 60px;
     margin-left: 800px;
-    margin-top: -340px;
 }
 
-.organization2 {
-    height: 60px;
-    width: 60px;
-    margin-left: 800px;
-    margin-top: -200px;
-}
-
-.organization1_title{
+.organization1_title, .organization2_title {
     margin-left: 10px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.organization1_title {
     margin-top: -320px;
-    font-weight: bold;
-    font-size: large;
 }
 
-.organization2_title{
-    margin-left: 10px;
+.organization2_title {
     margin-top: -180px;
-    font-weight: bold;
-    font-size: large;
 }
 
 .bio_font {
-    margin-top: 20px;
-    margin-left: 50px;
     font-weight: bold;
     font-size: large;
+    margin-top: 20px;
+    margin-left: 50px;
 }
 
 .underline {
-    color:gray;
+    color: gray;
     font-size: large;
     margin-top: -30px;
     margin-left: 50px;
 }
 
-.font{
+.font {
+    margin-left: 50px;
     font-weight: bold;
     font-size: large;
-    margin-left: 50px;
 }

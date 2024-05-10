@@ -1,36 +1,34 @@
-import { Row, Col } from "react-bootstrap";
-import React, { useState, toggle, button, useEffect } from "react";
-// import DarkMode from "./components/DarkMode/DarkMode"
-import './faq.css'
-import './darkMode.css'
+import React, { useState } from "react";
+import './faq.css';
+import './darkMode.css';
 
 function Faq() {
   /* toggle function to set function for choosing 
   or not choosing the + button to expand query */
-  const [choose, setChoose] = useState(null)
+  const [choose, setChoose] = useState(null);
 
   // toggle function for + or - for query minimise or expand
   const toggle = (i) => {
 
     // if + is chosen, + = i
-    if (choose == i) {
-      return setChoose(null)
+    if (choose === i) {
+      return setChoose(null);
     }
-    setChoose(i)
-  }
+    setChoose(i);
+  };
 
   return (
-    <Row>
+    <div className="row">
       <div className="faqheading">
         Frequently Asked Questions
       </div>
-      <Col xs={12}>
+      <div className="col-xs-12">
         <div className="wrapper">
 
           <div className="queries">
             {/* mapping data to the FAQ questions */}
             {data.map((point, i) => (
-              <div className="point">
+              <div className="point" key={i}>
                 {/* toggle function for choosing either + or - */}
                 <div className="title" onClick={() => toggle(i)} >
                   <h2>{point.question}</h2>
@@ -46,7 +44,7 @@ function Faq() {
             <div className="box">
               <form>
                 <label>
-                  <input placeholder=""/>
+                  <input placeholder="" />
                 </label>
               </form>
             </div>
@@ -57,9 +55,9 @@ function Faq() {
 
           </div>
         </div>
-      </Col>
-    </Row>
-  )
+      </div>
+    </div>
+  );
 }
 
 // questions to put in FAQ page
@@ -84,6 +82,6 @@ const data = [
     answer:
       '"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto iusto veniam eveniet labore impedit nam"'
   }
-]
+];
 
 export default Faq;

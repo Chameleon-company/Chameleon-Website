@@ -1,12 +1,11 @@
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import React from 'react';
 
 function Footer() {
   return (
-    <footer className="mt-5">
-      <Container className="text-center">
-        <Row>
-          <Col xs={6}>
+    <footer className="footer mt-5">
+      <div className="container text-center">
+        <div className="row">
+          <div className="col col-6">
             <img
               alt="Company Logo"
               src={require('../../assets/logo.png')}
@@ -14,31 +13,30 @@ function Footer() {
             />
             <h1>CHAMELEON</h1>
             <p>Striving to create a smarter world</p>
-          </Col>
-          <Col xs={3}>
+          </div>
+          <div className="col col-3">
             <h5>Contact Us</h5>
-            <p> Phone Number: +611111111</p>
+            <p>Phone Number: +611111111</p>
             <p>Email: chameleon@gmail.com</p>
-          </Col>
-          <Col xs={3}>
+          </div>
+          <div className="col col-3">
             <h5>JOIN OUR NEWSLETTER</h5>
-            <Form.Group>
+            <div className="form-group">
               <div className="input-container">
-                <Form.Control type="email" placeholder="Enter your email" />
+                <input type="email" placeholder="Enter your email" className="form-control" />
                 <p></p>
-                <Button
-                  variant="orange"
+                <button
                   type="submit"
                   style={{ backgroundColor: 'orange', color: 'white' }}
                 >
                   Submit
-                </Button>
+                </button>
               </div>
-            </Form.Group>
-          </Col>
-        </Row>
+            </div>
+          </div>
+        </div>
         <p>&copy; CHAMELEON 2023</p>
-      </Container>
+      </div>
     </footer>
   );
 }

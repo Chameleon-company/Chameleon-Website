@@ -1,16 +1,16 @@
 import chameleonHeader from "./images/Header-Chameleon.png";
 import { FaBars, FaSearch, FaMoon, FaSun } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import SearchBox from "./SearchBox";
+import ThemeContext from "../../context/theme-provider";
 
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [theme, setTheme] = useContext(ThemeContext);
   
   const toggleNavbar = () => {
     setNavbarOpen(!navbarOpen);
   };
-  const storedTheme = sessionStorage.getItem('theme') || (window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  const [theme, setTheme] = useState(storedTheme);
 
   const toggleTheme = () => {
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
@@ -127,6 +127,46 @@ const Header = () => {
           </div>
         </nav>
       </header>
+      <style>
+      {`
+          .footer-content {
+
+            ${theme === 'dark' ? `
+              background-color: #2D6039;
+              color: white;
+            ` : `
+              background-color: white;
+              color: black;
+            `}
+          }
+
+          .header-content {
+            ${theme === 'dark' ? `
+              background-color: black;
+              color: white;
+            ` : `
+              background-color: white;
+              color: black;
+            `}
+          }
+
+          #root {
+            ${theme === 'dark' ? `
+              background-color: #151818;
+            ` : `
+              background-color:  white;
+            `}
+          }
+
+          .nav-item a {
+            ${theme === 'dark' ? `
+              color: white;
+            ` : `
+              color: black;
+            `}
+          }
+        `}
+      </style>  
     </div>
   );
 };

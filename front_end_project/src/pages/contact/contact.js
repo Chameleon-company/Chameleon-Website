@@ -8,7 +8,7 @@ import { FaPhoneVolume } from "react-icons/fa6";
 import { IoChatbubbleEllipsesSharp } from "react-icons/io5";
 
 
-function Contact() {
+function Contact () {
   useEffect(() => {
     // Display a welcome message when the component mounts
     notifyWelcome(
@@ -23,7 +23,7 @@ function Contact() {
       email: { title: 'Email', description: 'We will get back to you soon', contact: 'info@chameleon.com.au' },
       chat: { title: 'Chat', description: 'Chat with our friendly Chameleon Bot', contact: 'Start Live Chat' }
     }
-  }
+  };
 
   return (
     <Screen>
@@ -101,48 +101,49 @@ function Contact() {
               <button className={`${styles.contact_item_btn} text-center bg-[#00b165] py-2 px-10 text-white mt-2 rounded-[15px] font-semibold text-lg m-0 leading-[1] shadow-md md:text-[18px] text-[17px] `}>
                 {contact.chat_cta}
               </button>
-          </div>
-
-          {/* Email */}
-          <div className="contact_item text-center p-2">
-            <div className="flex justify-start items-center gap-3 p-3 border-bottom border-success">
-
-              <div className="contact_item_img">
-                <MdEmail size={25} />
-              </div>
-
-              <div className="contact_item_title lg:text-3xl md:text-2xl font-semibold ">
-                {page.content.email.title}
-              </div>
-
-              <span class="badge bg-success ml-auto align-self-center p-2">{page.content.email.contact}</span>
             </div>
 
-            <div className="contact_item_context w-[100%] p-2 text-center font-semibold text-black mt-3">
-              {page.content.email.description}
-            </div>
-          </div>
+            {/* Email */}
+            <div className="contact_item text-center p-2">
+              <div className="flex justify-start items-center gap-3 p-3 border-bottom border-success">
 
-          {/* Chat */}
-          <div className="contact_item text-center p-2">
-            <div className="flex justify-start items-center gap-3 p-3 border-bottom border-success">
+                <div className="contact_item_img">
+                  <MdEmail size={25} />
+                </div>
 
-              <div className="contact_item_img">
-                <IoChatbubbleEllipsesSharp size={25} />
+                <div className="contact_item_title lg:text-3xl md:text-2xl font-semibold ">
+                  {page.content.email.title}
+                </div>
+
+                <span class="badge bg-success ml-auto align-self-center p-2">{page.content.email.contact}</span>
               </div>
 
-              <div className="contact_item_title lg:text-3xl md:text-2xl font-semibold ">
-                {page.content.chat.title}
-
+              <div className="contact_item_context w-[100%] p-2 text-center font-semibold text-black mt-3">
+                {page.content.email.description}
               </div>
-             
-              {/* <span class="badge bg-success ml-auto align-self-center p-2">{page.content.chat.contact}</span> */}
-              <a href="/chatbot" className="badge bg-success ml-auto align-self-center p-2">{page.content.chat.contact}</a>
             </div>
-            
 
-            <div className="contact_item_context w-[100%] p-2 text-center font-semibold text-black mt-3">
-              {page.content.chat.description}
+            {/* Chat */}
+            <div className="contact_item text-center p-2">
+              <div className="flex justify-start items-center gap-3 p-3 border-bottom border-success">
+
+                <div className="contact_item_img">
+                  <IoChatbubbleEllipsesSharp size={25} />
+                </div>
+
+                <div className="contact_item_title lg:text-3xl md:text-2xl font-semibold ">
+                  {page.content.chat.title}
+
+                </div>
+
+                {/* <span class="badge bg-success ml-auto align-self-center p-2">{page.content.chat.contact}</span> */}
+                <a href="/chatbot" className="badge bg-success ml-auto align-self-center p-2">{page.content.chat.contact}</a>
+              </div>
+
+
+              <div className="contact_item_context w-[100%] p-2 text-center font-semibold text-black mt-3">
+                {page.content.chat.description}
+              </div>
             </div>
           </div>
         </div>

@@ -1,0 +1,60 @@
+.footer {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 200px 0; /* Adjusted padding to be only vertical */
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex; /* Ensures that contents are flexed */
+  flex-wrap: wrap; /* Allows items to wrap in smaller screens */
+  width: 100%;
+}
+
+.footer h5 {
+  margin-bottom: 5px;
+}
+
+.footer form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  width: 200px;
+  margin-right: 10px;
+}
+
+.footer button {
+  background-color: #FF8D24;
+  color: white;
+  border: none; /* Updated to remove black border */
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.footer button:hover {
+  cursor: pointer;
+  background-color: #e67e22; /* Slightly darker on hover */
+}
+
+.footer .input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.image-col img {
+  width: 20px; 
+  height: auto;
+}

@@ -1,0 +1,110 @@
+.card-wrapper {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.custom-card {
+    height: 404px;
+    padding: 24px;
+}
+
+.custom-card:nth-child(2) .card-header,
+.custom-card:nth-child(2) .card-footer {
+    background-color: #ffffff;
+}
+
+.custom-card:first-child button,
+.custom-card:last-child button {
+    background-color: #41bb23;
+}
+
+.custom-card button {
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+}
+
+.custom-card button:hover {
+    background-color: #2cc007;
+}
+
+.custom-card {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.middle-card {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-container button {
+    margin: 0 10px;
+    border-radius: 50px;
+    background-color: #5dbb50;
+    color: #ffffff;
+}
+
+.date-container {
+    margin-top: 20px;
+}
+
+.project-heading {
+    text-align: center;
+}
+
+.project-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.project-context {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 200px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.rounded-button {
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.image-col {
+    display: flex;
+    align-items: center;
+}
+
+.image-col img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.card-col {
+    margin-top: 0px;
+}
+
+.card-footer {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

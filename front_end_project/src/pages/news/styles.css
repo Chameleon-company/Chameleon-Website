@@ -1,0 +1,157 @@
+/* #app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+} */
+
+/* body {
+  background: #eee;
+  font-family:
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+} */
+/* 
+.swiper {
+  width: 100%;
+  height: 100%;
+} */
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* background: #fff; */
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  /* width: 100%;
+  height: 100%; */
+  object-fit: cover;
+}
+
+.swiper-pagination {
+  position: relative !important;
+  z-index: -10 !important;
+}
+
+.swiper-pagination-clickable {
+  z-index: -20 !important;
+  position: relative !important;
+}
+
+.swiper-pagination-horizontal {
+  z-index: -20 !important;
+  position: relative !important;
+}
+
+.swiper-pagination-bullet {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  /* margin-top: 24px; */
+  padding-inline: 8px;
+  line-height: 20px;
+  font-size: 20px;
+  background: transparent !important;
+  color: #000 !important;
+  opacity: 0;
+  display: none;
+  /* background-color: transparent; */
+  background: none;
+}
+
+.swiper-pagination-bullet-active {
+  color: #000 !important;
+  /* background: #007aff; */
+}
+
+/* .swiper-slide-active {
+  padding-bottom: 20px;
+} */
+
+.swiper-wrapper {
+  padding-bottom: 35px;
+}
+
+/* .swiper-button-prev {
+  margin-top: 30px;
+} */
+
+.swiper-initialized {
+  position: relative !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute !important;
+  bottom: 0 !important;
+  top: unset !important;
+  color: #000 !important;
+}
+
+.swiper-button-next {
+  right: 150px !important;
+  left: unset !important;
+}
+
+.swiper-button-prev {
+  left: 150px !important;
+  right: unset !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 22px !important;
+}
+
+@media only screen and (max-width: 575px) {
+  .swiper-button-next {
+    right: 100px !important;
+  }
+
+  .swiper-button-prev {
+    left: 100px !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .swiper-button-next {
+    right: 70px !important;
+  }
+
+  .swiper-button-prev {
+    left: 70px !important;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .swiper-button-next {
+    right: 50px !important;
+  }
+
+  .swiper-button-prev {
+    left: 50px !important;
+  }
+}
+
+.hidetext {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 4; /* Adjust the number of lines as needed */
+  white-space: normal; /* Ensures that text wraps within the specified number of lines */
+}

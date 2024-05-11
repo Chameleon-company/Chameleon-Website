@@ -1,0 +1,110 @@
+.temp_background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #EBEBE8;
+    height: 1000px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 700px;
+    width: 90%;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.Bio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 200px;
+    width: 90%;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.background_S {
+    width: 100%;
+}
+
+.profile_position {
+    margin-top: -100px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+
+.blod_font {
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.img-with-border {
+    box-shadow: 0 0 100px white;
+}
+
+.share_profile {
+    background-color: black;
+    color: white;
+    padding: 15px 32px;
+    border: none;
+    border-radius: 10px;
+    margin-left: 45px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.organization1, .organization2 {
+    height: 60px;
+    width: 60px;
+    margin-left: 800px;
+}
+
+.organization1_title, .organization2_title {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.organization1_title {
+    margin-top: -320px;
+}
+
+.organization2_title {
+    margin-top: -180px;
+}
+
+.bio_font {
+    font-weight: bold;
+    font-size: large;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.underline {
+    color: gray;
+    font-size: large;
+    margin-top: -30px;
+    margin-left: 50px;
+}
+
+.font {
+    margin-left: 50px;
+    font-weight: bold;
+    font-size: large;
+}

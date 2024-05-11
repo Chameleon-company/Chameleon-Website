@@ -1,18 +1,13 @@
 import chameleonLogo from "../../assets/ChameleonLogo.png";
 import React, { useState, useEffect } from 'react';
-import { useContext } from "react";
-import ThemeContext from "../../context/theme-provider";
 import { FaInstagram, FaFacebookSquare, FaTwitterSquare, FaSun, FaMoon } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { colors } from '../../constants/colors';
 
 const Footer = () => {
   // Retrieve the theme from sessionStorage or default to the user's preference or 'dark'
-  // const storedTheme = sessionStorage.getItem('theme') || (window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  const [theme, setTheme] = useContext(ThemeContext);
-  // const [theme, setTheme] = useState(storedTheme);
-  // const themeContext = useContext(ThemeContext);
-
+  const storedTheme = sessionStorage.getItem('theme') || (window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const [theme, setTheme] = useState(storedTheme);
 
   // Update sessionStorage whenever the theme changes
   useEffect(() => {

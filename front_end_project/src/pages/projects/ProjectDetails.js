@@ -46,7 +46,7 @@ function ProjectDetails() {
                 className={`  ${styles.innerBtn} bg-[#333333] no-underline text-white rounded-[30px] border-2 border-[#ffffff] font-semibold cursor-pointer hover:border-[5px] box-border`}
               >
                 {" "}
-                <img alt="" src={githubImage} className="inline-block hover:border-[5px]" /> GITHUB
+                <img alt="" src={githubImage} className="inline-block" /> GITHUB
               </a>
               {/* text color to #006913, changes the text color to #006913 on hover, rounds the corners with a radius of 30px, adds a 2px white border, uses a bold font, and changes the cursor to a pointer for a clickable element. */}
               <a

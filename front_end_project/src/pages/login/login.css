@@ -142,6 +142,48 @@ button {
     cursor: pointer;
 }
 
+.signin-up-button:hover{
+    background-color: #917651;
+}
+.icon:hover {
+    filter: invert(50%);
+}
+.auth-form{
+    background-color: white;
+    padding: 16px 24px;
+    border-radius: 16px 16px 0 0; 
+}
+
+.auth-form-switch{
+    padding: 16px;
+    background-image: url(./image/bg_2.png);
+    background-size: cover;
+    border-radius: 0 0 16px 16px; 
+    background-color: rgba(200,100,0,.5);
+    background-blend-mode: multiply;
+
+}
+
+@media only screen and (min-width: 600px) {
+    .container_2{
+        display: flex;
+        flex-direction: row;
+    }
+    .auth-form{
+        width: 60%;
+        padding: 32px;
+        border-radius: 16px 0 0 16px; 
+    }
+    .auth-form-switch{
+        display: flex;
+        width: 46%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 16px 16px 0; 
+    }
+}
+
 
 .img {
     overflow: hidden;
@@ -185,9 +227,6 @@ button {
 
 .img__text {
     z-index: 2;
-    position: absolute;
-    left: 0;
-    top: 50px;
     width: 100%;
     padding: 0 20px;
     text-align: center;
@@ -228,7 +267,7 @@ button {
     position: relative;
     width: 100px;
     height: 36px;
-    margin: 0 auto;
+    margin: 24px auto;
     background: transparent;
     color: #fff;
     text-transform: uppercase;

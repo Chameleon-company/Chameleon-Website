@@ -1,9 +1,0 @@
-# Ignore all files in the node_modules directory
-node_modules
-
-# Ignore the following specific files
-.eslintrc.js
-.prettierrc
-.prettierignore
-.gitignore
-build

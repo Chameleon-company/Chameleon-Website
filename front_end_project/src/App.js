@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NotificationComponent from "./components/notificationComp/NotificationComponent";
 import Screen from './components/app/Screen';
+import NotFoundPage from "./pages/error404/404.js";
 
 const HomePage = lazy(() => import("./pages/homepage/Homepage"));
 const Chatbot = lazy(() => import("./pages/Chatbot/Chatbot"));
@@ -45,7 +46,7 @@ function App () {
               <Route path="/iotTechnologies" component={IotTechnologies} />
               <Route path="/iotStatistics" component={IotStatistics} />
               <Route path="/iotUpdates" component={IotUpdates} />
-              <Route path="/faq" component={Main} /> {/*Tailwind migration done till here */}
+              <Route path="/faq" component={Main} />
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
               <Route path="/reset" component={ResetPassword} />
@@ -54,6 +55,7 @@ function App () {
               <Route path="/newsUnsubForm" component={newsUnsubForm} />
               <Route path="/newsRemoveForm" component={newsRemoveForm} />
               <Route path="/search-results" component={SearchResults} />
+              <Route component={NotFoundPage} />
             </Switch>
           </main>
         </Suspense>

@@ -4,6 +4,8 @@ import { CgProfile } from "react-icons/cg";
 import { MdEmail, MdLocalPhone } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 import Posts from './posts';
+import Password from './password';
+import User from './user';
 
 function Profile (props) {
     const initial_object = {
@@ -27,12 +29,13 @@ function Profile (props) {
         ]
     };
 
-
     const [user, setUser] = useState(initial_object);
-    const [activeTab, setActiveTab] = useState('dashboard');
+    const [activeTab, setActiveTab] = useState('profile');
 
-    const handleTabClick = (tabId) => {
-        setActiveTab(tabId);
+    const handleTabClick = (tabId) => { setActiveTab(tabId); };
+
+    const handleUser = (user) => {
+        setUser(prevUser => ({ ...prevUser, ...user }));
     };
 
     return (
@@ -78,11 +81,6 @@ function Profile (props) {
                                     <a href={user.githubLink} target="_blank" rel="noopener noreferrer"> <FaGithub size={30} /> </a>
                                 </div>
                             </div>
-
-                            {/* Edit Profile */}
-                            <div className='row mt-4 mt-lg-4'>
-                                <button type="button" className="btn btn-link display-8 text-decoration-none">Edit Profile</button>
-                            </div>
                         </div>
 
 
@@ -93,8 +91,8 @@ function Profile (props) {
                             <div className='row'>
                                 <nav>
                                     <div className="nav nav-tabs" id="nav-tab" role="tablist">
-                                        <button className={`nav-link text-muted disabled ${activeTab === 'dashboard' ? 'active' : ''}`} id="nav-dashboard-tab" data-toggle="tab" data-target="#nav-dashboard" type="button" role="tab" aria-controls="nav-dashboard" aria-selected="true" onClick={() => handleTabClick('dashboard')}>Dashboard</button>
-                                        <button className={`nav-link text-success ${activeTab === 'profile' ? 'active' : ''}`} id="nav-profile-tab" data-toggle="tab" data-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" onClick={() => handleTabClick('profile')}>Profile</button>
+                                        <button className={`nav-link text-muted disabled ${activeTab === 'dashboard' ? 'active' : ''}`} id="nav-dashboard-tab" data-toggle="tab" data-target="#nav-dashboard" type="button" role="tab" aria-controls="nav-dashboard" aria-selected="false" onClick={() => handleTabClick('dashboard')}>Dashboard</button>
+                                        <button className={`nav-link text-success ${activeTab === 'profile' ? 'active' : ''}`} id="nav-profile-tab" data-toggle="tab" data-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="true" onClick={() => handleTabClick('profile')}>Profile</button>
                                         <button className={`nav-link text-success ${activeTab === 'password' ? 'active' : ''}`} id="nav-profile-tab" data-toggle="tab" data-target="#nav-Password" type="button" role="tab" aria-controls="nav-Password" aria-selected="false" onClick={() => handleTabClick('password')}>Password</button>
                                         <button className={`nav-link text-success ${activeTab === 'posts' ? 'active' : ''}`} id="nav-posts-tab" data-toggle="tab" data-target="#nav-posts" type="button" role="tab" aria-controls="nav-posts" aria-selected="false" onClick={() => handleTabClick('posts')}>Posts</button>
                                     </div>
@@ -102,18 +100,21 @@ function Profile (props) {
 
                                 <div className="tab-content" id="nav-tabContent">
                                     <div className={`tab-pane fade ${activeTab === 'dashboard' ? 'show active' : ''}`} id="nav-dashboard" role="tabpanel" aria-labelledby="nav-dashboard-tab">Dashboard</div>
-                                    <div className={`tab-pane fade ${activeTab === 'profile' ? 'show active' : ''}`} id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Profile</div>
-                                    <div className={`tab-pane fade ${activeTab === 'password' ? 'show active' : ''}`} id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">Password</div>
+
+                                    <div className={`tab-pane fade ${activeTab === 'profile' ? 'show active' : ''}`} id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                        <User user={user} handleUser={handleUser} />
+                                    </div>
+
+                                    <div className={`tab-pane fade ${activeTab === 'password' ? 'show active' : ''}`} id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">
+                                        <Password />
+                                    </div>
+
                                     <div className={`tab-pane fade ${activeTab === 'posts' ? 'show active' : ''}`} id="nav-posts" role="tabpanel" aria-labelledby="nav-posts-tab">
                                         <Posts posts={user.posts} />
                                     </div>
                                 </div>
-
-
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </Screen>

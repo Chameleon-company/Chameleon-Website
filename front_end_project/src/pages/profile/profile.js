@@ -46,6 +46,7 @@ function Profile (props) {
 
                         {/* Profile */}
                         <div className='col-12 col-lg-4 col-xl-3 text-center p-3 pt-4 pt-xl-5'>
+
                             {/* Profile Image */}
                             <div className='row mt-auto'>
                                 <div className='col'>
@@ -71,14 +72,14 @@ function Profile (props) {
 
                             {/* Social Icons */}
                             <div className='row mt-3 p-2 justify-content-center'>
-                                <div className='col-auto '>
+                                <div className='col-auto'>
                                     <a className='text-decoration-none text-dark' href={`mailto:${user.email}`}> <MdEmail size={30} /> </a>
                                 </div>
-                                <div className='col-auto '>
+                                <div className='col-auto'>
                                     <a className='text-decoration-none text-dark' href={`tel:${user.phone}`}> <MdLocalPhone size={30} /> </a>
                                 </div>
-                                <div className='col-auto '>
-                                    <a href={user.githubLink} target="_blank" rel="noopener noreferrer"> <FaGithub size={30} /> </a>
+                                <div className='col-auto'>
+                                    <a className='text-decoration-none text-dark' href={user.githubLink} target="_blank"> <FaGithub size={30} /> </a>
                                 </div>
                             </div>
                         </div>

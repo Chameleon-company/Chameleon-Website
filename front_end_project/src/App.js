@@ -1,6 +1,10 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NotificationComponent from "./components/notificationComp/NotificationComponent";
+<<<<<<< Updated upstream
+=======
+import Screen from './components/app/Screen';
+>>>>>>> Stashed changes
 
 const Header = lazy(() => import("./layouts/header/header"));
 const Footer = lazy(() => import("./layouts/footer/footer"));
@@ -20,12 +24,13 @@ const Main = lazy(() => import("./pages/faq/main"));
 const Report = lazy(() => import("./pages/report/report"));
 const Login = lazy(() => import("./pages/login/login"));
 const Signup = lazy(() => import("./pages/signup/signup"));
-const ResetPassword = lazy(() => import("./pages/reset_password/reset"));
+const ResetPassword = lazy(() => import("./pages/reset_password/reset_demo"));
 const newsSignupForm = lazy(() => import("./pages/email_newsletter_forms/subscribe"));
 const newsUnsubForm = lazy(() => import("./pages/email_newsletter_forms/unsubscribe"));
 const newsRemoveForm = lazy(() => import("./pages/email_newsletter_forms/remove"));
 const SearchResults = lazy(() => import("./pages/search/SearchResults"));
 
+<<<<<<< Updated upstream
 function App() {
   return (
     <>
@@ -64,6 +69,44 @@ function App() {
             <Footer />
           </Suspense>
         </div>
+=======
+function App () {
+  const rememberMe = localStorage.getItem('rememberMe') === 'true';
+  const session = sessionStorage.getItem('session') === 'logged in';
+  return (
+    <>
+      <Router>
+        <NotificationComponent />
+        <Suspense fallback={<div>Loading...</div>}>
+          <main>
+            <Switch>
+              <Route path="/project/:projectId" component={ProjectDetails} />
+              <Route exact path="/home" component={HomePage} />
+              <Route path="/aboutus" component={aboutUs} />
+              <Route path="/news" component={News} />
+              <Route path="/chatbot" component={Chatbot} />
+              <Route path="/projects" component={Projects} />
+              <Route path="/report" component={Report} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/iotResources" component={IotResources} />
+              <Route path="/iotTechnologies" component={IotTechnologies} />
+              <Route path="/iotStatistics" component={IotStatistics} />
+              <Route path="/iotUpdates" component={IotUpdates} />
+              <Route path="/faq" component={Main} /> {/*Tailwind migration done till here */}
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/logout" /> {/*TODO: Logout page component */}
+              <Route path="/signup" component={Signup} />
+              <Route path="/reset" component={ResetPassword} />
+              {/* TODO: Support Page Route */}
+              <Route path="/newsSignupForm" component={newsSignupForm} />
+              <Route path="/newsUnsubForm" component={newsUnsubForm} />
+              <Route path="/newsRemoveForm" component={newsRemoveForm} />
+              <Route path="/search-results" component={SearchResults} />
+              {rememberMe ? (<Route path='/' component={HomePage}/>) : (session ? (<Route path='/' component={HomePage}/>) : (<Route path='/' component={Screen}/>))}
+            </Switch>
+          </main>
+        </Suspense>
+>>>>>>> Stashed changes
       </Router>
     </>
   );

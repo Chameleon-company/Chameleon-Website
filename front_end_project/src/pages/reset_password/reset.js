@@ -87,6 +87,9 @@ class ResetPassword extends Component {
 export default ResetPassword;
 
 
+<<<<<<< Updated upstream
 
 
 
+=======
+>>>>>>> Stashed changes

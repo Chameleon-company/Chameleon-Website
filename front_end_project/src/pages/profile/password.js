@@ -43,7 +43,7 @@ function Password (props) {
                     {error && <small id="passwordHelp" className="form-text text-danger">{error}</small>}
                 </div>
 
-                <button type="submit" className="btn btn-primary mt-3">Submit</button>
+                <button type="submit" className="btn btn-success mt-3">Submit</button>
             </form>
         </>
     );

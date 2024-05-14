@@ -103,7 +103,7 @@ const HeaderAuth = () => {
                   <li className="nav-item">
                     <a
                       className="px-3 py-2 flex items-center uppercase font-bold leading-snug hover:opacity-75 no-underline"
-                      href="/logout"
+                      href="/signout"
                     >
                       Logout
                     </a>

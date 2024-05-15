@@ -2,12 +2,12 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NotificationComponent from "./components/notificationComp/NotificationComponent";
 import Screen from './components/app/Screen';
+import NotFoundPage from "./pages/error404/404.js";
+import Profile from './pages/profile/profile.js';
 
-const Header = lazy(() => import("./layouts/header/header"));
-const Footer = lazy(() => import("./layouts/footer/footer"));
+
 const HomePage = lazy(() => import("./pages/homepage/Homepage"));
 const Chatbot = lazy(() => import("./pages/Chatbot/Chatbot"));
-const Helloo = lazy(() => import("./pages/hello/hello"));
 const aboutUs = lazy(() => import("./pages/about/aboutUs"));
 const News = lazy(() => import("./pages/news/news"));
 const ProjectDetails = lazy(() => import("./pages/projects/ProjectDetails"));
@@ -39,6 +39,7 @@ function App () {
           <main>
             <Switch>
               <Route path="/project/:projectId" component={ProjectDetails} />
+              <Route exact path="/" component={Screen} />
               <Route exact path="/home" component={HomePage} />
               <Route path="/aboutus" component={aboutUs} />
               <Route path="/news" component={News} />
@@ -50,16 +51,17 @@ function App () {
               <Route path="/iotTechnologies" component={IotTechnologies} />
               <Route path="/iotStatistics" component={IotStatistics} />
               <Route path="/iotUpdates" component={IotUpdates} />
-              <Route path="/faq" component={Main} /> {/*Tailwind migration done till here */}
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/logout" component={Logout}/> {/*TODO: Logout page component */}
+              <Route path="/faq" component={Main} />
+              <Route path="/login" component={Login} />
+              <Route exact path="/logout" component={Logout}/>
               <Route path="/signup" component={Signup} />
               <Route path="/reset" component={ResetPassword} />
-              {/* TODO: Support Page Route */}
+              <Route path="/profile" component={Profile} />
               <Route path="/newsSignupForm" component={newsSignupForm} />
               <Route path="/newsUnsubForm" component={newsUnsubForm} />
               <Route path="/newsRemoveForm" component={newsRemoveForm} />
               <Route path="/search-results" component={SearchResults} />
+              <Route component={NotFoundPage} />
               {rememberMe ? (<Route path='/' component={HomePage}/>) : (session ? (<Route path='/' component={HomePage}/>) : (<Route path='/' component={Screen}/>))}
             </Switch>
           </main>

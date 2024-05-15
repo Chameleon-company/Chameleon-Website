@@ -72,6 +72,8 @@ Note: Running `npm add <package>` will install it to the root . T.
 
 From the root, run `npm run devall` to launch both node server and react app.
 
+**NB**: `npm run devall` isn't working
+
 From the root, run `npm run server` to launch node server alone. This can be used by API developers to test their api , through POSTMAN.
 
 Development should follow the [Feature branch git workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)

@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import './login.css'; // Make sure the path is correct
+import Logo from "./image/Chameleon_Logo.png";
+import Google from "./image/google.png";
+import Linkedin from "./image/linkedin.png";
+import Microsoft from "./image/microsoft.png";
 import Screen from '../../components/app/Screen';
 import {Redirect} from 'react-router-dom'
 import { auth } from '../utils/firebase';
@@ -16,6 +20,14 @@ class Login extends Component {
         isSignUp: false,
         isAuthenticated: false,
         rememberMe: false
+    };
+
+    displayToast = (message) => {
+        this.setState({ showToast: true, toastMessage: message });
+        
+        setTimeout(() => {
+            this.setState({ showToast: false });
+        }, 5000);  
     };
 
     handleExternalSignIn = (service) => {
@@ -42,12 +54,10 @@ class Login extends Component {
     handleSubmitSignIn = async (event) => {
         event.preventDefault();
         const { email, password, rememberMe } = this.state;
-
         if (!email || !password) {
             this.displayToast('Please enter both email and password');
             return;
         }
-
         try {
             const response = await fetch('http://localhost:3002/auth/signin', {
                 method: 'POST',
@@ -56,8 +66,8 @@ class Login extends Component {
                 },
                 body: JSON.stringify({ email, password })
             });
-            if (!response.ok) throw new Error('Failed to sign in');
             const data = await response.json();
+            this.setState({ showToast: true, toastMessage: 'Sign in successful!' });
             if (!response.ok){
                 const errorMessage = data.error === "Authentication failed"
                     ? "Authentication failed. Please check your username and password and try again."
@@ -76,14 +86,14 @@ class Login extends Component {
             }
             // Redirect or perform other actions
         } catch (error) {
-            this.setState({ showToast: true, toastMessage: error.message });
+            this.displayToast( error.message);
         }
     };
 
     
     handleSubmitSignUp = async (event) => {
         event.preventDefault();
-        const { email, password,confirmPassword  } = this.state;
+        const { email, password, confirmPassword  } = this.state;
         if (password !== confirmPassword) {
             this.setState({ showToast: true, toastMessage: 'Passwords do not match!' });
             return; // Stop the form submission if passwords do not match
@@ -96,8 +106,8 @@ class Login extends Component {
                 },
                 body: JSON.stringify({ email, password })
             });
-            if (!response.ok) throw new Error('Failed to sign up');
             const data = await response.json();
+            this.setState({ showToast: true, toastMessage: 'Sign up successful!', email: '', password: '', confirmPassword: '' });
             if (!response.ok) {
                 const errorMessage = data.error === "Email already exists"
                     ? "An account with this email already exists. Please use a different email or log in."
@@ -108,7 +118,7 @@ class Login extends Component {
             this.setState({ email: '', password: '', confirmPassword: '', isSignUp: false });
             // Redirect or perform other actions
         } catch (error) {
-            this.setState({ showToast: true, toastMessage: error.message });
+            this.displayToast(error.message);
         }
     };
 
@@ -132,7 +142,6 @@ class Login extends Component {
     };
 
     render() {
-        
         const { email, password, isSignUp, showToast, toastMessage, isAuthenticated, rememberMe } = this.state;
         return (
             <Screen>
@@ -155,7 +164,32 @@ class Login extends Component {
                                     <label>
                                         <span>Password</span>
                                         <input type="password" name="password" value={password} onChange={this.handleInputChange} />
+                                    <label/>
+                                        <span>Confirm Password</span>
+                                        <input type="password" name="confirmPassword" value={this.state.confirmPassword} onChange={this.handleInputChange} required />
                                     </label>
+                                    <p className="forgot-pass"><a href="/reset">Forgot your password?</a></p>
+                                    <button type="submit" className="submit signin-up-button">Log In</button>
+                                    <div className='bottom-box'>
+                                        <svg t="1712763892469" type="button" onClick={() => this.handleExternalSignUp('Facebook')} className="icon" viewBox="0 0 1026 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+                                            <g id="SVGRepo_bgCarrier" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+                                                <g id="SVGRepo_tracerCarrier"></g>
+                                                <g id="SVGRepo_iconCarrier">
+                                                    <path d="M486.5,0 C755.719,0 972.442,216.724 972.442,486.5 C972.442,666.955 878.653,831.097 686.791,929.426 L686.791,593.469 L540.1,593.469 L540.1,486.5 L686.791,486.5 L686.791,372.29 C686.791,186.744 790.309,85.792 918.097,85.792 C957.088,85.792 992.77,86.555 1026.666,87.54 L1026.666,244.612 L928.836,244.612 C843.378,244.612 825.5,275.375 825.5,327.121 L825.5,486.5 L1031.319,486.5 L994.417,593.469 L825.5,593.469 L825.5,929.426 C635.34,840.76 486.5,679.378 486.5,486.5" id="Shape" fill="#1877F2"></path>
+                                                    <polygon id="Shape" fill="#FFFFFF" points="825.5 486.5 825.5 327.121 686.791 327.121 686.791 244.612 1026.666 244.612 1026.666 87.54 918.097 85.792 918.097 0 825.5 0"></polygon>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <svg t="1712763976440" type="button" onClick={() => this.handleExternalSignUp('Google')} className="icon" viewBox="0 0 1026 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+                                            <g id="SVGRepo_bgCarrier" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+                                                <g id="SVGRepo_tracerCarrier"></g>
+                                                <g id="SVGRepo_iconCarrier">
+                                                    <path d="M486.5,0 C755.719,0 972.442,216.724 972.442,486.5 C972.442,666.955 878.653,831.097 686.791,929.426 L686.791,593.469 L540.1,593.469 L540.1,486.5 L686.791,486.5 L686.791,372.29 C686.791,186.744 790.309,85.792 918.097,85.792 C957.088,85.792 992.77,86.555 1026.666,87.54 L1026.666,244.612 L928.836,244.612 C843.378,244.612 825.5,275.375 825.5,327.121 L825.5,486.5 L1031.319,486.5 L994.417,593.469 L825.5,593.469 L825.5,929.426 C635.34,840.76 486.5,679.378 486.5,486.5" id="Shape" fill="#4285F4"></path>
+                                                    <polygon id="Shape" fill="#FFFFFF" points="825.5 486.5 825.5 327.121 686.791 327.121 686.791 244.612 1026.666 244.612 1026.666 87.54 918.097 85.792 918.097 0 825.5 0"></polygon>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
                                     <div>
                                         <label className='text-sm'>
                                             <input
@@ -189,124 +223,3 @@ class Login extends Component {
 
 
 export default Login;
-
-
-
-
-// import React, { Component } from 'react';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import Background from './image/Background.png';
-// import Logo from './image/Chameleon_Logo.png';
-// import Google from './image/google.png';
-// import Linkedin from './image/linkedin.png';
-// import Microsoft from './image/microsoft.png';
-// import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-// import { signInWithGooglePopup, createUserDocFromAuth, signinAuthUserWithEmailAndPassword } from './utils/firebase'
-
-
-// class Login extends Component {
-//   render() {
-//     const Login = (props) => {
-
-//       const nanvigate = useNavigate();
-    
-//       const logGoogleUser = async () => {
-//         const { user } = await signInWithGooglePopup();
-//         const userDocRef = await createUserDocFromAuth(user)
-//       }
-    
-//       const [contact, setContact] = useState({
-//         email: '',
-//         password: '',
-//       })
-    
-//       const { email, password } = contact
-    
-//       const handleChange = (event) => {
-    
-//         const { name, value } = event.target
-//         setContact((preValue) => {
-//           return {
-//             ...preValue,
-//             [name]: value
-//           }
-//         })
-//       }
-    
-//       const handleSubmit = async (event) => {
-//         event.preventDefault();
-//         try {
-//           const { user } = await signinAuthUserWithEmailAndPassword(username, password);
-//           await createUserDocFromAuth(user, { email });
-//         }
-//         catch (error) {
-//           console.log('error', error.message)
-//         }
-//       }
-    
-    
-//     }
-
-//     return (
-//       <div style={{
-//         height: '100vh', 
-//         backgroundImage: `linear-gradient(to right, transparent 43.43%, white 0%), url(${Background})`, 
-//         backgroundSize: 'cover',
-//         backgroundPosition: 'left center',
-//         overflow: 'hidden' 
-//         }}>
-
-//         <Container fluid style={{ maxWidth: '80%', marginTop: '3%', border: '3px solid gray'}}>
-//           <Row> 
-//             <Col md={5} style={{ backgroundColor: 'gray', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>                      
-//               <img src={Logo} alt="Logo" style={{ width: '50%', height: 'auto', marginBottom: '2rem' }} />
-//               <p style={{ fontSize: '1.7rem', fontWeight: 'bold', textAlign: 'center' }}>Enhancing life through IoT-Powered Smart City Solutions</p>
-//               <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '1px', backgroundColor: 'black' }}></div>
-//             </Col>
-
-//             <Col md={7} style={{ padding: '8%' }}>
-//               <h1 style={{ fontWeight: 'bold', marginBottom: '2rem', textAlign: 'center' }}>Login</h1>
-
-//               <Form>
-//                 <Form.Group controlId="formEmail" style={{ marginBottom: '2rem' }}>
-//                   <Form.Control type="Email" placeholder="EMAIL ADDRESS" style={{ backgroundColor: '#ccc', border: '1px solid black', height: '50px' }} />
-//                 </Form.Group>
-
-//                 <Form.Group controlId="formpassword" style={{ marginBottom: '2rem' }}>
-//                     <Form.Control type="password" placeholder="PASSWORD" style={{ backgroundColor: '#ccc', border: '1px solid black', height: '50px' }} />
-//                 </Form.Group>
-
-//                 <p style={{ color: 'green', fontWeight: 'bold', textAlign: 'right' }}>
-//                   <a href="/signup">Sign-up?</a><br />
-//                   <a href="/forgot">Forgot password?</a>
-//                 </p>
-
-//                 <div className="d-flex justify-content-center mb-3">
-//                   <Button variant="success" type="submit" style={{ padding: '10px 80px', fontSize: '1rem' }}>
-//                     LOGIN
-//                   </Button>
-//                 </div>
-
-//                 <div className="d-flex justify-content-between">
-//                   <div style={{ backgroundColor: 'green', borderRadius: '50%', width: '40px', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-//                     <img src={Linkedin} alt="LinkedIn Icon"/>
-//                   </div>
-
-//                   <div style={{ backgroundColor: 'green', borderRadius: '50%', width: '40px', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-//                     <img src={Google} alt="Google Icon" style={{ width: '60%', height: '60%' }} />
-//                   </div>
-
-//                   <div style={{ backgroundColor: 'green', borderRadius: '50%', width: '40px', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-//                     <img src={Microsoft} alt="Microsoft Icon" style={{ width: '60%', height: '60%' }} />
-//                   </div>
-//                 </div>
-//               </Form>
-//             </Col>
-//           </Row>
-//         </Container>
-//       </div>
-//     );
-//   }
-// }
-
-// export default Login;

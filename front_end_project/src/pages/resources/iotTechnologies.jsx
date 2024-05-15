@@ -1,4 +1,5 @@
 import { Component } from "react";
+import Screen from '../../components/app/Screen';
 
 const content1 =
   "The Internet of Things (IoT) is a network of connected computing devices, mechanical and digital machinery, items, animals, or people that can exchange data across a network without the need for human-to-human or human-to-computer interaction. The Internet of Things (IoT) is a huge network of physical items that are equipped with sensors, software, and network connectivity in order to gather and share data. By using this information, procedures can be automated and judgements can be improved.";
@@ -8,11 +9,16 @@ const content3 =
   "Smart homes: Home appliances, security systems, and lighting may all be controlled and monitored via IoT devices. For instance, you might use your smartphone to adjust the thermostat or turn on the lights before you get home, or you could programme your security system to arm itself once you leave the house. Smart cities: IoT devices can be used to keep an eye on water use, air quality, and traffic conditions. Making better resource allocation decisions and improving city planning are both possible with the use of this data. For instance, IoT-connected sensors can be used to monitor water use and find leaks, or they can be used to detect traffic congestion and automatically modify traffic lights. Transportation: IoT devices may be used to optimise routes, track the position of assets and vehicles, and increase safety. IoT-connected sensors, for instance, can be used to track the whereabouts of buses and trains in real-time or to keep an eye on the state of roads and bridges. Energy management systems:IoT devices can be used to monitor energy usage and optimise it using energy management systems. For instance, IoT-connected sensors can be used to monitor the energy usage of electronics and appliances or to instantly manage the power grid";
 
 class IotTechnolgies extends Component {
-  render() {
+  render () {
+
+    const titleStyle = {
+      color: 'white'
+    };
+
     return (
-      <>
+      <Screen>
         <div className="2xl:max-w-[1320px] ml-auto mr-auto w-full sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]">
-          <h1 className="pb-3 pt-3 text-center">WHAT IS INTERNET OF THINGS?</h1>
+          <h1 className="pb-3 pt-3 text-center" style={titleStyle}>WHAT IS INTERNET OF THINGS?</h1>
         </div>
 
         <div className="ml-auto mr-auto w-full max-w-[1000px] bg-[#D1E2C4]">
@@ -21,7 +27,7 @@ class IotTechnolgies extends Component {
           </h2>
           <div className="ml-3 mr-3 mt-0 flex flex-wrap">
             <div className="flex-[1_0]">
-              <p class="fw-normal fs-4 pb-3 pt-3 text-start text-black">
+              <p class="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: 'justify', padding: '30px' }} >
                 {content1}
               </p>
             </div>
@@ -36,7 +42,7 @@ class IotTechnolgies extends Component {
           </h2>
           <div className="ml-3 mr-3 mt-0 flex flex-wrap">
             <div className="flex-[1_0]">
-              <p class="fw-normal fs-4 pb-3 pt-3 text-start text-black">
+              <p class="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: 'justify', padding: '30px' }} >
                 {content2}
               </p>
             </div>
@@ -51,7 +57,7 @@ class IotTechnolgies extends Component {
           </h2>
           <div className="ml-3 mr-3 mt-0 flex flex-wrap">
             <div className="flex-[1_0]">
-              <p class="fw-normal fs-4 pb-3 pt-3 text-start text-black">
+              <p class="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: 'justify', padding: '30px' }} >
                 {content3}
               </p>
             </div>
@@ -59,7 +65,7 @@ class IotTechnolgies extends Component {
         </div>
 
         <br></br>
-      </>
+      </Screen>
     );
   }
 }

@@ -30,7 +30,8 @@ const SearchResults = lazy(() => import("./pages/search/SearchResults"));
 
 function App () {
   const rememberMe = localStorage.getItem('rememberMe') === 'true';
-  const session = sessionStorage.getItem('session') === 'logged in';
+  const status = sessionStorage.getItem('status') === 'logged in';
+  const session = rememberMe ? true : status;
   return (
     <>
       <Router>

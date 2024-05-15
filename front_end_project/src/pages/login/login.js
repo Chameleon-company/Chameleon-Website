@@ -44,6 +44,7 @@ class Login extends Component {
         signInWithPopup(auth,provider).then(()=>{
             this.displayToast( 'Sign in successful!');
             this.setState({isAuthenticated:true});
+            sessionStorage.setItem('status','logged in');
         }).catch((err) => alert(err));
         if(rememberMe){
             localStorage.setItem("rememberMe", "true");
@@ -77,12 +78,11 @@ class Login extends Component {
             
             this.displayToast( 'Sign in successful!');
             this.setState({isAuthenticated:true});
+            sessionStorage.setItem('status','logged in');
             if(rememberMe){
                 localStorage.setItem("rememberMe", "true");
-                sessionStorage.removeItem("session");
             }else {
                 localStorage.removeItem("rememberMe");
-                sessionStorage.setItem("session","logged in"); 
             }
             // Redirect or perform other actions
         } catch (error) {

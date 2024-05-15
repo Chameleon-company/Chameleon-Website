@@ -50,7 +50,7 @@ function App () {
               <Route path="/iotUpdates" component={IotUpdates} />
               <Route path="/faq" component={Main} /> {/*Tailwind migration done till here */}
               <Route path="/login" component={Login} />
-              <Route path ="/signout" component={Logout}/>
+              <Route path ="/logout" component={Logout}/>
               <Route path="/signup" component={Signup} />
               <Route path="/reset" component={ResetPassword} />
               {/* TODO: Support Page Route */}

@@ -13,16 +13,15 @@
 }
 
 .width5 {
-    width: 5px;
+    width: 20px;
 }
 
-.centered-container {
-    /* display: flex; */
-    /* justify-content: center; */
+.login-centered-container {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    /* min-height: 40vh; This makes sure that the container is at least the height of the viewport */
+    min-height: 80vh;
     text-align: center;
-    /* This centers the text within the container if needed */
     background-color: #f0f0f0;
     background-image: url(./image/bg_2.jpg);
     position: relative;
@@ -46,6 +45,28 @@
     height: 40px;
     width: 40px;
 }
+.login-toast-message {
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%; 
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeInOut 5s 1;
+}
+
+@keyframes fadeInOut {
+    0%,100% { opacity: 0; }
+    10%,90% { opacity: 1; }
+}
+
 
 .social-container a:hover {
     background-color: #eee;
@@ -84,7 +105,7 @@ button {
 .form {
     position: relative;
     width: 640px;
-    height: 100vh;
+    height: 100%;
     transition: -webkit-transform 0.6s ease-in-out;
     transition: transform 0.6s ease-in-out;
     transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
@@ -121,6 +142,48 @@ button {
     cursor: pointer;
 }
 
+.signin-up-button:hover{
+    background-color: #917651;
+}
+.icon:hover {
+    filter: invert(50%);
+}
+.auth-form{
+    background-color: white;
+    padding: 16px 24px;
+    border-radius: 16px 16px 0 0; 
+}
+
+.auth-form-switch{
+    padding: 16px;
+    background-image: url(./image/bg_2.png);
+    background-size: cover;
+    border-radius: 0 0 16px 16px; 
+    background-color: rgba(200,100,0,.5);
+    background-blend-mode: multiply;
+
+}
+
+@media only screen and (min-width: 600px) {
+    .container_2{
+        display: flex;
+        flex-direction: row;
+    }
+    .auth-form{
+        width: 60%;
+        padding: 32px;
+        border-radius: 16px 0 0 16px; 
+    }
+    .auth-form-switch{
+        display: flex;
+        width: 46%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 16px 16px 0; 
+    }
+}
+
 
 .img {
     overflow: hidden;
@@ -128,9 +191,9 @@ button {
     position: absolute;
     left: 0;
     top: 0;
-    width: 240px;
+    width: 260px;
     height: 100%;
-    padding-top: 362px;
+    padding-top: 360px;
 }
 
 .img:before {
@@ -164,9 +227,6 @@ button {
 
 .img__text {
     z-index: 2;
-    position: absolute;
-    left: 0;
-    top: 50px;
     width: 100%;
     padding: 0 20px;
     text-align: center;
@@ -207,7 +267,7 @@ button {
     position: relative;
     width: 100px;
     height: 36px;
-    margin: 0 auto;
+    margin: 24px auto;
     background: transparent;
     color: #fff;
     text-transform: uppercase;

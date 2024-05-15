@@ -1,20 +1,21 @@
-import { Container, Row, Col } from 'react-bootstrap';
-import React, { Component } from 'react';
+import React from 'react';
 import CalendarView from '../../components/calendar/calenderView';
-class Calendar extends Component {
-  render() {
-    return (
-      <Container>
-        <Row>
-          <h1>Events Calendar</h1>
+import './calendar.css';
+
+function Calendar() {
+  return (
+    <div className="calendar-container">
+      <div className="calendar-row">
+        <h1>Events Calendar</h1>
+        <div className="calendar-view">
           <CalendarView />
-          <Col xs={12}>
-            <div></div>
-          </Col>
-        </Row>
-      </Container>
-    );
-  }
+        </div>
+        <div className="calendar-column">
+          <div></div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Calendar;

@@ -1,4 +1,4 @@
-.faqheadingmode {
+.faq-heading-mode {
   color: white;
   font-size: 50px;
   display: flex;
@@ -26,11 +26,14 @@
   width: 900px;
   position: relative;
   justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pointmode {
   background-color: #ebebe8 !important;
-  border: 1px solid #d9d9d9 !important ;
+  border: 1px solid #d9d9d9 !important;
   padding: 10px 30px;
   margin-bottom: 3%;
 }
@@ -49,12 +52,65 @@
 .faq {
   max-height: 0;
   overflow: hidden;
+  transition: max-height 0.2s ease-out;
   font-size: 13px;
 }
 
 .faq.show {
   height: auto;
-  max-height: 9999px;
+  max-height: 9999px; /* High max-height to accommodate dynamic content */
   font-size: 14px;
   margin-top: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.items-end {
+  display: flex;
+  align-items: flex-end;
+}
+
+.flex {
+  display: flex;
+}
+
+.bg-yellow {
+  background-color: yellow; /* Adjust color as necessary */
+}
+
+.bg-green {
+  background-color: green; /* Adjust color as necessary */
+}
+
+.text-xl {
+  font-size: 1.25rem; /* 20px */
+}
+
+.text-lg {
+  font-size: 1.125rem; /* 18px */
+}
+
+.text-3xl {
+  font-size: 1.875rem; /* 30px */
+}
+
+.text-black {
+  color: black;
+}
+
+.px-4 {
+  padding-left: 1rem; /* 16px */
+  padding-right: 1rem; /* 16px */
+}
+
+.py-2 {
+  padding-top: 0.5rem; /* 8px */
+  padding-bottom: 0.5rem; /* 8px */
+}
+
+.rounded-lg {
+  border-radius: 0.5rem; /* 8px */
 }

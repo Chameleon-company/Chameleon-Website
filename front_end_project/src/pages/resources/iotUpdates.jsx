@@ -1,7 +1,6 @@
-import { Container, Row, Col } from "react-bootstrap";
 import React, { Component } from "react";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import Screen from '../../components/app/Screen';
+// import Container from 'react-bootstrap';
 
 const content1 =
   "The advancement of 6G wireless technology: 6G is the following generation of wireless technology and is anticipated to provide significantly higher speeds and lower latency than 5G. IoT applications will have more options as a result of the ability for devices to communicate data more quickly and dependably.";
@@ -13,75 +12,49 @@ const content4 =
   "The creation of new IoT standards: To solve the issues of scalability, interoperability, and security, new IoT standards are being created. These standards will aid in ensuring the security and dependability of IoT devices as well as their ability to connect with one another and other systems.";
 
 class IotUpdates extends Component {
-  render() {
+  render () {
     return (
-      <>
-        <Container>
+      <Screen>
+        <div>
           <h1 class="text-center pt-3 pb-3">LATEST IOT UPDATES</h1>
-        </Container>
+        </div>
 
-        <Container style={{ backgroundColor: "#D1E2C4", maxWidth: 1000 }}>
-          <h2 class="text-center text-black fw-bold pt-3">
-            6G Wireless Technology
-          </h2>
-          <Row>
-            <Col>
-              <p class="text-black text-start pb-3 pt-3 fw-normal fs-4">
-                {content1}
-              </p>
-            </Col>
-          </Row>
-        </Container>
+        <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px]">
+          <h2 className="text-center font-bold">6G Wireless Technology</h2>
+          <div className="flex justify-center">
+            <p className="max-w-[800px] text-xl">{content1}</p>
+          </div>
+        </div>
 
-        <br></br>
+        <br />
 
-        <Container style={{ backgroundColor: "#D1E2C4", maxWidth: 1000 }}>
-          <h2 class="text-center text-black fw-bold pt-3">Edge Computing</h2>
-          <Row>
-            <Col>
-              <p class="text-black text-start pb-3 pt-3 fw-normal fs-4">
-                {content2}
-              </p>
-            </Col>
-          </Row>
-        </Container>
+        <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px]">
+          <h2 className="text-center font-bold">Edge Computing</h2>
+          <div className="flex justify-center">
+            <p className="max-w-[800px] text-xl">{content2}</p>
+          </div>
+        </div>
 
-        <br></br>
+        <br />
 
-        <Container style={{ backgroundColor: "#D1E2C4", maxWidth: 1000 }}>
-          <h2 class="text-center text-black fw-bold pt-3">
-            Artificial intelligence
-          </h2>
-          <Row>
-            <Col>
-              <p class="text-black text-start pb-3 pt-3 fw-normal fs-4">
-                {content3}
-              </p>
-            </Col>
-          </Row>
-        </Container>
+        <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px]">
+          <h2 className="text-center font-bold">Artificial intelligence</h2>
+          <div className="flex justify-center">
+            <p className="max-w-[800px] text-xl">{content3}</p>
+          </div>
+        </div>
+
+        <br />
+
+        <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px] mb-[80px]">
+          <h2 className="text-center font-bold">New IoT Standards</h2>
+          <div className="flex justify-center">
+            <p className="max-w-[800px] text-xl">{content4}</p>
+          </div>
+        </div>
 
         <br></br>
-
-        <Container
-          style={{
-            backgroundColor: "#D1E2C4",
-            maxWidth: 1000,
-            marginBottom: "80px",
-          }}
-        >
-          <h2 class="text-center text-black fw-bold pt-3">New IoT Standards</h2>
-          <Row>
-            <Col>
-              <p class="text-black text-start pb-3 pt-3 fw-normal fs-4">
-                {content4}
-              </p>
-            </Col>
-          </Row>
-        </Container>
-
-        <br></br>
-      </>
+      </Screen>
     );
   }
 }

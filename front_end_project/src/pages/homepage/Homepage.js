@@ -1,3 +1,4 @@
+import Screen from '../../components/app/Screen';
 import chameleonLogo from "./assets/Header-Chameleon.png";
 import cityOfMelProject from "./assets/Thumbnail-CoM.png";
 import evProject from "./assets/Thumbnail-EV.jpeg";
@@ -6,35 +7,23 @@ import websiteProject from "./assets/Thumbnail-Website.png";
 const content1 =
   "At Chameleon, our mission is to research, create, test, document and deploy IoT-based solutions to enhance life through the application of smart city technologies including: the building of smarter cities, homes, transportation, and energy management systems.";
 const content2 =
-  "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta possimus numquam atque odio ab suscipit ipsam reiciendis alias, facere enim.";
+  "Further advancing sustainable mobility solutions ";
 const content3 = "City of Melbourne Open Data";
 const content4 =
-  "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta possimus numquam atque odio ab suscipit ipsam reiciendis alias, facere enim.";
+  "Melbourne Open Data refers to the City of Melbourne's initiative to make a wide range of public data sets available to the public for free";
 const content5 = "Website Uplift";
 const content6 =
-  "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta possimus numquam atque odio ab suscipit ipsam reiciendis alias, facere enim.";
+  "Research, create, test, document and deploy loT-based solutions to enhance life through the application of smart city technologies.";
 
 const Homepage = () => {
   return (
     <>
-      <header className="bg-pewter p-2">
-        <div className="container flex flex-col align-center md:flex-row md:justify-between p-4 gap-4">
-          <img
-            src={chameleonLogo}
-            alt=""
-            style={{ width: "269px", height: "269px" }}
-            className="mx-auto"
-          />
-          <div className="my-auto">
-            <p className="align-middle flex-1 text-xl">{content1}</p>
-          </div>
-        </div>
-      </header>
-      <section className="bg-green-emrld">
-        <div className="">
-          <h2 className="text-center pt-3 font-bold">Our Projects</h2>
+      <Screen>
+        <section className="bg-green-emrld mt-auto mb-auto pt-auto pb-auto">
+          {/* <div className=""> */}
+          <h1 className="text-center pt-3 font-bold">Our Projects</h1>
           <div className="flex flex-col items-center justify-center lg:flex-row text-center lg:justify-around gap-4 p-5 container">
-            <div className="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
+            <div className="max-w-sm rounded hover:border-[5px] overflow-hidden shadow-lg bg-green-sage">
               <img
                 className="w-full h-40 max-w-full object-cover"
                 src={evProject}
@@ -45,7 +34,7 @@ const Homepage = () => {
                 <p className="text-gray-700 text-base">{content2}</p>
               </div>
             </div>
-            <div className="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
+            <div className="max-w-sm rounded hover:border-[5px] overflow-hidden shadow-lg bg-green-sage">
               <img
                 className="w-full h-40 max-w-full object-cover"
                 src={cityOfMelProject}
@@ -56,7 +45,7 @@ const Homepage = () => {
                 <p className="text-gray-700 text-base">{content4}</p>
               </div>
             </div>
-            <div className="max-w-sm rounded overflow-hidden shadow-lg bg-green-sage">
+            <div className="max-w-sm rounded hover:border-[5px] overflow-hidden shadow-lg bg-green-sage">
               <img
                 className="w-full h-40 max-w-full object-cover"
                 src={websiteProject}
@@ -68,8 +57,9 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+          {/* </div> */}
+        </section>
+      </Screen>
     </>
   );
 };

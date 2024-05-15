@@ -94,3 +94,8 @@ exports.LoginStatus = (req, res) => {
     res.send('Please sign in');
   }
 };
+
+exports.getUserID = (req,res) =>{
+  const user = authService.getCurrentUser();
+  res.send(user.uid);
+}

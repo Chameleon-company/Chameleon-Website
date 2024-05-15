@@ -3,7 +3,7 @@ import { FaBars, FaSearch, FaMoon, FaSun } from "react-icons/fa";
 import { useState } from "react";
 import SearchBox from "./SearchBox";
 
-const Header = () => {
+const HeaderAuth = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   
   const toggleNavbar = () => {
@@ -103,9 +103,9 @@ const Header = () => {
                   <li className="nav-item">
                     <a
                       className="px-3 py-2 flex items-center uppercase font-bold leading-snug hover:opacity-75 no-underline"
-                      href="/login"
+                      href="/logout"
                     >
-                      Login
+                      Logout
                     </a>
                   </li>
                 </ul>
@@ -126,4 +126,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderAuth;

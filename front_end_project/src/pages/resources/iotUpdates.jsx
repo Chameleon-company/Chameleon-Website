@@ -13,16 +13,20 @@ const content4 =
 
 class IotUpdates extends Component {
   render () {
+
+    const titleStyle = {
+      color: 'white'
+    };
     return (
       <Screen>
         <div>
-          <h1 class="text-center pt-3 pb-3">LATEST IOT UPDATES</h1>
+          <h1 class="text-center pt-3 pb-3"style={titleStyle}>LATEST IOT UPDATES</h1>
         </div>
 
         <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px]">
           <h2 className="text-center font-bold">6G Wireless Technology</h2>
           <div className="flex justify-center">
-            <p className="max-w-[800px] text-xl">{content1}</p>
+            <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black"style={{ textAlign: 'justify', padding: '30px'}}>{content1}</p>
           </div>
         </div>
 
@@ -31,7 +35,7 @@ class IotUpdates extends Component {
         <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px]">
           <h2 className="text-center font-bold">Edge Computing</h2>
           <div className="flex justify-center">
-            <p className="max-w-[800px] text-xl">{content2}</p>
+            <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black"style={{ textAlign: 'justify', padding: '30px'}}>{content2}</p>
           </div>
         </div>
 
@@ -40,7 +44,7 @@ class IotUpdates extends Component {
         <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px]">
           <h2 className="text-center font-bold">Artificial intelligence</h2>
           <div className="flex justify-center">
-            <p className="max-w-[800px] text-xl">{content3}</p>
+            <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black"style={{ textAlign: 'justify', padding: '30px'}}>{content3}</p>
           </div>
         </div>
 
@@ -49,7 +53,7 @@ class IotUpdates extends Component {
         <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px] mb-[80px]">
           <h2 className="text-center font-bold">New IoT Standards</h2>
           <div className="flex justify-center">
-            <p className="max-w-[800px] text-xl">{content4}</p>
+            <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black"style={{ textAlign: 'justify', padding: '30px'}}>{content4}</p>
           </div>
         </div>
 

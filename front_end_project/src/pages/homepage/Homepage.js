@@ -3,7 +3,7 @@ import chameleonLogo from "./assets/Header-Chameleon.png";
 import cityOfMelProject from "./assets/Thumbnail-CoM.png";
 import evProject from "./assets/Thumbnail-EV.jpeg";
 import websiteProject from "./assets/Thumbnail-Website.png";
-
+import './home.css'
 const content1 =
   "At Chameleon, our mission is to research, create, test, document and deploy IoT-based solutions to enhance life through the application of smart city technologies including: the building of smarter cities, homes, transportation, and energy management systems.";
 const content2 =
@@ -19,7 +19,7 @@ const Homepage = () => {
   return (
     <>
       <Screen>
-        <section className="bg-green-emrld mt-auto mb-auto pt-auto pb-auto">
+        <section className="bg-green-emrld mt-auto mb-auto section-height">
           {/* <div className=""> */}
           <h1 className="text-center pt-3 font-bold">Our Projects</h1>
           <div className="flex flex-col items-center justify-center lg:flex-row text-center lg:justify-around gap-4 p-5 container">

@@ -1,0 +1,9 @@
+.section-height{
+    height: 60vh;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .section-height{
+        height: auto;
+    }
+  }

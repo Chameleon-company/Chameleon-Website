@@ -42,7 +42,7 @@ class resetPassword extends React.Component {
                         : data.error || 'An unknown error occurred.';
                     throw new Error(errorMessage);
                 } 
-                
+
                 alert( 'Password reset email sent successful!');
                 // Redirect or perform other actions
             } catch (error) {

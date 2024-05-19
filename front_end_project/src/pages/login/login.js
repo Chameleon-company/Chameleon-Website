@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import './login.css'; // Make sure the path is correct
+import Logo from "./image/Chameleon_Logo.png";
+import Google from "./image/google.png";
+import Linkedin from "./image/linkedin.png";
+import Microsoft from "./image/microsoft.png";
 import Screen from '../../components/app/Screen';
-
 import {Redirect} from 'react-router-dom'
 import { auth } from '../utils/firebase';
 import {  GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
@@ -42,6 +45,7 @@ class Login extends Component {
         signInWithPopup(auth,provider).then(()=>{
             this.displayToast( 'Sign in successful!');
             this.setState({isAuthenticated:true});
+            sessionStorage.setItem('status','logged in');
         }).catch((err) => alert(err));
         if(rememberMe){
             localStorage.setItem("rememberMe", "true");
@@ -51,12 +55,15 @@ class Login extends Component {
     };
     handleSubmitSignIn = async (event) => {
         event.preventDefault();
+        if(this.state.isSignUp){
+            this.handleSubmitSignUp(event);
+            return;
+        }
         const { email, password, rememberMe } = this.state;
         if (!email || !password) {
             this.displayToast('Please enter both email and password');
             return;
         }
-
         try {
             const response = await fetch('http://localhost:3002/auth/signin', {
                 method: 'POST',
@@ -66,6 +73,7 @@ class Login extends Component {
                 body: JSON.stringify({ email, password })
             });
             const data = await response.json();
+            this.setState({ showToast: true, toastMessage: 'Sign in successful!' });
             if (!response.ok){
                 const errorMessage = data.error === "Authentication failed"
                     ? "Authentication failed. Please check your username and password and try again."
@@ -75,12 +83,13 @@ class Login extends Component {
             
             this.displayToast( 'Sign in successful!');
             this.setState({isAuthenticated:true});
+
+            sessionStorage.setItem('status','logged in');
             if(rememberMe){
                 localStorage.setItem("rememberMe", "true");
-                sessionStorage.removeItem("session");
             }else {
                 localStorage.removeItem("rememberMe");
-                sessionStorage.setItem("session","logged in"); 
+
             }
             // Redirect or perform other actions
         } catch (error) {
@@ -105,6 +114,7 @@ class Login extends Component {
                 body: JSON.stringify({ email, password })
             });
             const data = await response.json();
+            this.setState({ showToast: true, toastMessage: 'Sign up successful!', email: '', password: '', confirmPassword: '' });
             if (!response.ok) {
                 const errorMessage = data.error === "Email already exists"
                     ? "An account with this email already exists. Please use a different email or log in."
@@ -138,8 +148,7 @@ class Login extends Component {
         this.setState(prevState => ({ isSignUp: !prevState.isSignUp }));
     };
 
-    render() {
-       
+    render() {    
         const { email, password, isSignUp, showToast, toastMessage, isAuthenticated, rememberMe } = this.state;
         return (
             <Screen>
@@ -188,8 +197,29 @@ class Login extends Component {
                             </div>
                         </div>
                     </div>
+                  </form>
                 </div>
-            </Screen>
+                
+                <div className="auth-form-switch">
+                  {!this.state.isSignUp ? (
+                    <div className="img__text">
+                      <h2>Not registered yet?</h2>
+                      <p>Register now and explore abundant opportunities!</p>
+                    </div>
+                  ) : (
+                    <div className="img__text">
+                      <h2>Already have an account?</h2>
+                      <p>Log in with your account, long time no see!</p>
+                    </div>
+                  )}
+                  <div class="img__btn" onClick={this.toggleSignUp}>
+                    {!this.state.isSignUp ? <span class="m--up">Sign Up</span> :
+                    <span class="m--up">Log In</span>}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Screen>
         );
     }
 }

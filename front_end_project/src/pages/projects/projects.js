@@ -9,6 +9,7 @@ import fileSelectIcon from "./image/file-select.png";
 import sendMessageImg from "./image/send-message.png";
 import projectList from "./data";
 import Screen from '../../components/app/Screen';
+import './project.css'
 
 const content1 =
   "At Chameleon, our mission is to research, create, test, document and deploy loT-based solutions to enhance life through the application of smart city technologies including: the building of smarter cities, homes, transportation, and energy management systems.";
@@ -41,7 +42,7 @@ const Projects = () => {
       </div>
       {/* Applies a combination of styles, including a background color, text color, and relative positioning, likely for a project section . */}
       <div
-        className={` ${styles.projectSection} bg-[#4fa373] text-black relative`}
+        className={` ${styles.projectSection} bg-[#4fa373] text-black relative section-height`}
       >
         {/* Styles the text to be centered, semi-bold, with a font size of 4xl on large screens, 3xl on small screens, 26px by default, and in uppercase. */}
         <h3 className="text-center font-semibold lg:text-4xl sm:text-3xl text-[26px] uppercase">

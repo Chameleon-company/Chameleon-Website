@@ -1,0 +1,13 @@
+.nav-responsive{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.nav-links-margin{
+    margin-top: -50px;
+}
+@media screen and (max-width: 600px) {
+    .nav-links-margin{
+        margin-top: 0px;
+    }
+}

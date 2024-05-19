@@ -9,7 +9,7 @@ export default function Screen ({ children }) {
     const session = rememberMe ? true : sessionStorage.getItem('status') === 'logged in';
     return (
         <>
-            <div className="flex flex-col h-screen">
+            <div className="flex flex-col h-screen bg-[#4fa373]">
                 {session ? (<HeaderAuth/>):(<Header/>)}
                 <>
                     {children}

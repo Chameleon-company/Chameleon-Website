@@ -2,6 +2,7 @@ import chameleonHeader from "./images/Header-Chameleon.png";
 import { FaBars, FaSearch, FaMoon, FaSun } from "react-icons/fa";
 import { useState } from "react";
 import SearchBox from "./SearchBox";
+import './header.css'
 
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -18,9 +19,10 @@ const Header = () => {
 
   return (
     <div>
-      <header className="header-content mx-1 my-0 mr-1 justify-between">
+      <header className="header-content mx-0 my-0 mr-1 justify-between">
         <nav className="relative flex flex-wrap items-center justify-between px-2 py-3">
           <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+            <div className="nav-responsive">
             <div className="flex justify-start lg:w-auto lg:static lg:block lg:justify-start">
               <a
                 className="font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase "
@@ -33,7 +35,15 @@ const Header = () => {
                 />
               </a>
             </div>
-            <div className="flex justify-end items-center flex-grow">
+            <button
+              className="text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+              type="button"
+              onClick={toggleNavbar}
+            >
+              <FaBars />
+            </button>
+            </div>
+            <div className="flex justify-end items-center flex-grow nav-links-margin">
               {/* <SearchBox /> */}
           
               <div
@@ -112,13 +122,7 @@ const Header = () => {
                 <hr className="border-gray-200 dark:border-gray-600" />
               </div>
             </div>
-            <button
-              className="text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-              type="button"
-              onClick={toggleNavbar}
-            >
-              <FaBars />
-            </button>
+            
           </div>
         </nav>
       </header>

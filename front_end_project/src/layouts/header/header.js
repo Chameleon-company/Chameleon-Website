@@ -18,6 +18,20 @@ const Header = () => {
   };
 
   return (
+    <header className="header-content">
+      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3">
+        <div className="container px-4  flex flex-wrap justify-between">
+          <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+            <a
+              className="font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase "
+              href="/"
+            >
+              <img
+                src={chameleonHeader}
+                alt=""
+                style={{ height: "70px", width: "70px" }}
+              />
+            </a>
     <div>
       <header className="header-content mx-0 my-0 mr-1 justify-between">
         <nav className="relative flex flex-wrap items-center justify-between px-2 py-3">

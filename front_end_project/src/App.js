@@ -63,6 +63,7 @@ function App () {
               <Route path="/iotTechnologies" component={IotTechnologies} />
               <Route path="/iotStatistics" component={IotStatistics} />
               <Route path="/iotUpdates" component={IotUpdates} />
+
               <Route path="/faq" component={Main} />
               <Route path="/login" component={Login} />
               <Route exact path="/logout" component={Logout}/>
@@ -84,6 +85,7 @@ function App () {
               <Route path="/newsUnsubForm" component={newsUnsubForm} />
               <Route path="/newsRemoveForm" component={newsRemoveForm} />
               <Route path="/search-results" component={SearchResults} />
+              {session ? (<Route path='/' component={HomePage}/>) : (<Route path='/' component={Screen}/>)}
               <Route component={NotFoundPage} />
               {rememberMe ? (<Route path='/' component={HomePage}/>) : (session ? (<Route path='/' component={HomePage}/>) : (<Route path='/' component={Screen}/>))}
             </Switch>

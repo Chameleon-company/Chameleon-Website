@@ -138,7 +138,6 @@ import './signup.css';
 import Screen from '../../components/app/Screen';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
-
 class SignUp extends Component {
     state = {
         name: '',
@@ -199,6 +198,7 @@ class SignUp extends Component {
             // this is only to check if the function is actually working
             console.log(data);
             this.setState({ showToast: true, toastMessage: 'Sign in successful!', isAuthenticated:true });
+            sessionStorage.setItem('status','logged in');
             if(rememberMe){
                 localStorage.setItem("rememberMe", "true");
             }else {
@@ -227,7 +227,7 @@ class SignUp extends Component {
             });
             const data = await response.json();
             this.setState({ showToast: true, toastMessage: 'Sign up successful!', email: '', password: '', confirmPassword: '' });
-          
+
             if (!response.ok) {
                 const errorMessage = data.error === "Email already exists"
                     ? "An account with this email already exists. Please use a different email or log in."
@@ -293,6 +293,7 @@ class SignUp extends Component {
                                   <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                               </div> */}
                               <div className='bottom-box'>
+
                                     <div>
                                         <label className='text-sm'>
                                             <input
@@ -315,7 +316,6 @@ class SignUp extends Component {
                                     </div>
                                 </div>
                                 </form>
-
                             </div>
                             <div class="sub-cont">
                                 <div class="img">

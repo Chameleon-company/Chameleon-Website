@@ -1,46 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./portfolio_card.css";
+// Importing portfolio_card-media.css to style the component for different media sizes.
+import "./portfolio_card-media.css";
 
-const ProjectCard = ({
-  title,
-  about,
-  lastUpdated,
-  learnMoreLink,
-  img,
-  direction,
-}) => {
+// PortfolioCard: Component representing a card in a portfolio with title, body, and button.
+const PortfolioCard = ({ title, body, onButtonClick, isMiddleCard }) => {
+  // Determine the class name based on whether the card is in the middle or not.
+  const cardClassName = isMiddleCard
+    ? "custom-card middle-card"
+    : "custom-card";
+
   return (
-    <div className='w-full h-full grid md:grid-cols-2 px-2 pb-1'>
-      <div
-        className={`w-full h-full ${
-          direction === 'left' ? 'md:order-1' : 'md:order-2'
-        }`}>
-        <img
-          src={img}
-          alt={title}
-          className='w-full h-full object-contain md:object-cover'
-        />
+    <div className={`p-6 ${cardClassName}`}> {/* Main container for the portfolio card */}
+      <div>
+        <div className="project-heading">
+          <h1 className="project-title">{title}</h1> 
+        </div>
+        <div className="project-context">{body}</div> {/* Body/content of the project */}
       </div>
-      <div
-        className={`px-2 md:px-4 py-3 flex flex-col w-full h-full ${
-          direction === 'left' ? 'md:order-2' : 'md:order-1'
-        } items-center gap-3 font-bold font-poppins`}>
-        <h1 className='text-center'>{title}</h1>
-        <p className='text-center'>{about}</p>
-        <div className='w-full h-full flex justify-between items-end '>
-          <p className='flex items-end h-full mb-0'>
-            Last Updated At: {lastUpdated}
-          </p>
-          <Link
-            className='px-2 py-2 rounded-md bg-green-emerald text-white no-underline hover:underline
-           hover:text-white'
-            to={learnMoreLink}>
-            Learn More
-          </Link>
+      <div className="card-footer"> 
+        <div className="date-container">Last Updated: 10/09/23</div> {/* Display the last updated date */}
+        <div className="button-container"> 
+          <div className="button-spacing" /> 
+          <button className="rounded-full bg-green-emerald p-3 text-white" onClick={onButtonClick}>
+            LEARN MORE 
+          </button>
         </div>
       </div>
     </div>
   );
 };
 
-export default ProjectCard;
+export default PortfolioCard; // Exporting PortfolioCard as default

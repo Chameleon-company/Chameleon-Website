@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <header className="header-content">
-      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3">
+      <nav className="relative flex flex-wrap items-center justify-between w-full px-2 py-3 overflow-x-hidden">
         <div className="container px-4  flex flex-wrap justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <a
@@ -23,7 +23,7 @@ const Header = () => {
               />
             </a>
             <button
-              className=" cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+              className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
               onClick={() => setNavbarOpen(!navbarOpen)}
             >
@@ -107,14 +107,7 @@ const Header = () => {
               <li>
                 <SearchBox />
               </li>
-
             </ul>
-
-            <div>
-
-            </div>
-
-
           </div>
         </div>
       </nav>
@@ -123,4 +116,3 @@ const Header = () => {
 };
 
 export default Header;
-

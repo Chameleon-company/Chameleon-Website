@@ -1,0 +1,24 @@
+.header {
+    background-color: #DEECE3;
+  }  
+
+  .header-img {
+    width: 269px;
+    height: 269px;
+  }
+
+p {
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;           
+}
+
+section div h2 {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.thumbnail {
+    object-fit: fill;
+    width: 100%;
+    height: 235px;
+}

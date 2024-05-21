@@ -8,21 +8,29 @@ import achievmentIcon4 from "./assets/achievmentIcon4.png";
 import styles from "./aboutUs.module.css";
 
 class aboutUs extends Component {
-  render () {
+  render() {
     return (
       <>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap"
+        />
         {/* This class bg-[#deece3] is used to set the background color to the hex code #deece3. */}
         <div className=" bg-[#deece3] ">
           {/* About Us Section */}
           <div className={styles.aboutSection}>
             {/* These classes combination centers text, sets it to a semi-bold font weight, and adjusts the text size to 4xl on large screens (lg:text-4xl) and 3xl by default (text-3xl) */}
             <h3 className="text-center font-semibold lg:text-4xl text-3xl">
-              About Us
+              ABOUT US
             </h3>
 
             {/* These class combination sets the text size to 2xl on large screens (lg:text-2xl), 1xl by default (text-xl), tightens the line height (leading-tight), centers the text (text-center), removes margin (m-0), and adds top margin on medium screens (md:mt-3). */}
             <p
-              className={`${styles.aboutP} lg:text-2xl text-xl leading-tight text-center m-0 md:mt-3 `}
+              // className={`${styles.aboutP} lg:text-2xl text-xl leading-tight text-center m-0 md:mt-3 `}
+              style={{ fontFamily: "Roboto, sans-serif", fontStyle: "normal" }}
+              className={
+                "lg:text-xl text-xl leading-tight text-center m-0 md:mt-3"
+              }
             >
               Chameleon aims to utilise the Internet of Things (IoT), which is
               an ecosystem consisting of web-enabled smart devices such as
@@ -37,7 +45,7 @@ class aboutUs extends Component {
           <div className={styles.missionSection}>
             {/* These class combination centers the text (text-center), sets it to a semi-bold font weight (font-semibold), and adjusts the text size to 4xl on large screens (lg:text-4xl) and 3xl by default (text-3xl). */}
             <h3 className="text-center font-semibold lg:text-4xl text-3xl">
-              Our Mission
+              OUR MISSION
             </h3>
 
             {/* These class combination creates a flexible and centered column layout with a maximum width of 6xl, adding specific gaps between elements on medium and default screens (md:gap-5 and gap-3), while distributing items evenly along the main axis and centering them along the cross-axis (justify-between and items-center). */}
@@ -50,7 +58,13 @@ class aboutUs extends Component {
               />
 
               {/* These class combination sets the text size to extra-large on large screens (lg:text-xl), large by default (text-lg), centers the text (text-center), and removes margin (m-0). */}
-              <p className="lg:text-xl text-lg m-0 text-center">
+              <p
+                style={{
+                  fontFamily: "Roboto, sans-serif",
+                  fontStyle: "normal",
+                }}
+                className="lg:text-xl text-lg m-0 text-center"
+              >
                 Chameleon aims to utilise the Internet of Things (IoT), which is
                 an ecosystem consisting of web-enabled smart devices such as
                 phones, suburban traffic systems and domestic appliances, that
@@ -77,7 +91,11 @@ class aboutUs extends Component {
                 {/* These classes combination styles an element with a background color of #d9d9d9 (bg-[#d9d9d9]), adds padding of 2 units (p-2), rounds the corners to create a circular shape (rounded-full), sets the stacking order to 2 (z-2), adjusts the stacking order relative to its normal position (relative), places it slightly above the normal stacking level by 1px (z-[1px]), and adds a black border with a thickness of 1px (border-black and border-[1px]). The class likely applies to an element with the name boxIcon. */}
                 <div className="boxIcon bg-[#d9d9d9] p-2 rounded-full z-2  relative z-[1px] border-black border-[1px] ">
                   {/* the class w-[40px] sets the width of the element to 40 pixels. */}
-                  <img alt="achievement-icon-1" src={achievmentIcon1} className="w-[40px]" />
+                  <img
+                    alt="achievement-icon-1"
+                    src={achievmentIcon1}
+                    className="w-[40px]"
+                  />
                 </div>
 
                 {/*  These classes combination styles a text element with the color black (text-black), adds vertical padding of 15 pixels (py-[15px]), sets the width to 300 pixels by default and 250 pixels on medium screens (w-[300px] and md:w-[250px]), centers the text (text-center), adds a black border with a thickness of 2 pixels (border-black and border-[2px]), moves the element to the left by 45 pixels (ml-[-45px]), removes the left border (border-l-0), gives it a rounded shape (rounded-full), and sets the stacking order to 1 (z-1). The class likely applies to an element with the name boxText. */}
@@ -94,7 +112,11 @@ class aboutUs extends Component {
                 {/* These classes combination styles an element with a background color of #d9d9d9 (bg-[#d9d9d9]), adds padding of 2 units (p-2), rounds the corners to create a circular shape (rounded-full), sets the stacking order to 2 (z-2), adjusts the stacking order relative to its normal position (relative), places it slightly above the normal stacking level by 1px (z-[1px]), and adds a black border with a thickness of 1px (border-black and border-[1px]). The class likely applies to an element with the name boxIcon. */}
                 <div className="boxIcon bg-[#d9d9d9] p-2 rounded-full z-2  relative z-[1px] border-black border-[1px] ">
                   {/* the class w-[40px] sets the width of the element to 40 pixels. */}
-                  <img alt="achievement-icon-2" src={achievmentIcon2} className="w-[40px]" />
+                  <img
+                    alt="achievement-icon-2"
+                    src={achievmentIcon2}
+                    className="w-[40px]"
+                  />
                 </div>
 
                 {/*  These classes combination styles a text element with the color black (text-black), adds vertical padding of 15 pixels (py-[15px]), sets the width to 300 pixels by default and 250 pixels on medium screens (w-[300px] and md:w-[250px]), centers the text (text-center), adds a black border with a thickness of 2 pixels (border-black and border-[2px]), moves the element to the left by 45 pixels (ml-[-45px]), removes the left border (border-l-0), gives it a rounded shape (rounded-full), and sets the stacking order to 1 (z-1). The class likely applies to an element with the name boxText. */}
@@ -111,7 +133,11 @@ class aboutUs extends Component {
                 {/* These classes combination styles an element with a background color of #d9d9d9 (bg-[#d9d9d9]), adds padding of 2 units (p-2), rounds the corners to create a circular shape (rounded-full), sets the stacking order to 2 (z-2), adjusts the stacking order relative to its normal position (relative), places it slightly above the normal stacking level by 1px (z-[1px]), and adds a black border with a thickness of 1px (border-black and border-[1px]). The class likely applies to an element with the name boxIcon. */}
                 <div className="boxIcon bg-[#d9d9d9] p-2 rounded-full z-2  relative z-[1px] border-black border-[1px] ">
                   {/* the class w-[40px] sets the width of the element to 40 pixels. */}
-                  <img alt="achievement-icon-3" src={achievmentIcon3} className="w-[40px]" />
+                  <img
+                    alt="achievement-icon-3"
+                    src={achievmentIcon3}
+                    className="w-[40px]"
+                  />
                 </div>
 
                 {/*  These classes combination styles a text element with the color black (text-black), adds vertical padding of 15 pixels (py-[15px]), sets the width to 300 pixels by default and 250 pixels on medium screens (w-[300px] and md:w-[250px]), centers the text (text-center), adds a black border with a thickness of 2 pixels (border-black and border-[2px]), moves the element to the left by 45 pixels (ml-[-45px]), removes the left border (border-l-0), gives it a rounded shape (rounded-full), and sets the stacking order to 1 (z-1). The class likely applies to an element with the name boxText. */}
@@ -128,7 +154,11 @@ class aboutUs extends Component {
                 {/* These classes combination styles an element with a background color of #d9d9d9 (bg-[#d9d9d9]), adds padding of 2 units (p-2), rounds the corners to create a circular shape (rounded-full), sets the stacking order to 2 (z-2), adjusts the stacking order relative to its normal position (relative), places it slightly above the normal stacking level by 1px (z-[1px]), and adds a black border with a thickness of 1px (border-black and border-[1px]). The class likely applies to an element with the name boxIcon. */}
                 <div className="boxIcon bg-[#d9d9d9] p-2 rounded-full z-2  relative z-[1px] border-black border-[1px] ">
                   {/* the class w-[40px] sets the width of the element to 40 pixels. */}
-                  <img alt="achievement-icon-4" src={achievmentIcon4} className="w-[40px]" />
+                  <img
+                    alt="achievement-icon-4"
+                    src={achievmentIcon4}
+                    className="w-[40px]"
+                  />
                 </div>
 
                 {/*  These classes combination styles a text element with the color black (text-black), adds vertical padding of 15 pixels (py-[15px]), sets the width to 300 pixels by default and 250 pixels on medium screens (w-[300px] and md:w-[250px]), centers the text (text-center), adds a black border with a thickness of 2 pixels (border-black and border-[2px]), moves the element to the left by 45 pixels (ml-[-45px]), removes the left border (border-l-0), gives it a rounded shape (rounded-full), and sets the stacking order to 1 (z-1). The class likely applies to an element with the name boxText. */}

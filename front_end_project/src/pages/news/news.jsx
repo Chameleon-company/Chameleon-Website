@@ -12,9 +12,14 @@ class News extends Component {
 
   render () {
     return (
-      <main className="bg-[#4fa373] py-10 ">
+      <>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap"
+      />
+      <main className="bg-[#559066] py-10 ">
         {/* Main container with a green background and padding */}
-        <h1 className="text-[27px] font-bold text-center text-black">
+        <h1 className="text-[27px] font-bold text-center text-white">
           Latest News
         </h1>
         {/* Header with bold, centered, and black text */}
@@ -52,9 +57,11 @@ class News extends Component {
           </select>
         </div>
         {/* End of the search and dropdown container */}
+        
         <div className=" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start justify-center mt-10 gap-3 gap-y-5 overflow-hidden md:grid hidden px-[20px]">
           {/* Container for grid layout with specified column sizes, spacing, and hidden on medium screens */}
-          {articleList.map((index, item) => (
+          {/* {articleList.map((index, item) => ( */}
+          {articleList.map((item, index) => (
             <div
               className="flex flex-col justify-center items-center "
               key={item.key}
@@ -82,11 +89,13 @@ class News extends Component {
           ))}
         </div>
         {/* End of the news grid layout container */}
+
         <div className="px-[10px] md:hidden block">
           <SwiperNews />
         </div>
         {/* Container for mobile view with a SwiperNews component */}
       </main>
+      </>
     );
   }
 }

@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { Children } from 'react';
 import Header from '../../layouts/header/header';
 import Footer from '../../layouts/footer/footer';
 
-function Screen ({ children }) {
+
+export default function Screen ({ children }) {
   return (
-    <div className="">
-      <Header />
-      <div className=''>
-        {children}
+    <>
+      <div className="flex flex-col h-screen">
+        <Header />
+        <>
+          {children}
+        </>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
   );
 }
-
-export default Screen;

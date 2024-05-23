@@ -1,7 +1,7 @@
 import React from 'react';
 import Wrapper from '../shared/Wrapper';
 import Heading from '../shared/Heading';
-import Mission from './Mission';
+// import Mission from './Mission';
 import FAQS from './FAQS';
 import './about.css';
 
@@ -68,9 +68,9 @@ const About = () => {
         <Heading text="Our Goals" />
         <div className="w-full h-full grid place-items-center gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-8">
           {/* This is a list of goals */}
-          {AboutJSON.goals.map((item, idx) => {
+          {/* {AboutJSON.goals.map((item, idx) => {
             return <Mission key={idx} item={item} />;
-          })}
+          })} */}
         </div>
       </div>
       {/* This is the FAQs section */}

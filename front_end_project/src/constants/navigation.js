@@ -6,4 +6,5 @@ export const navigation = [
     { id: 5, name: 'Contact us', link: '/contact' },
     { id: 6, name: 'Support', link: '/support' },
     { id: 7, name: 'Resources', link: '/iotResources' },
+    { id: 8, name: 'Register', link: 'signup' }
 ];

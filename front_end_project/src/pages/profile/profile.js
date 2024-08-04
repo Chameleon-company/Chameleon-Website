@@ -6,6 +6,7 @@ import { FaGithub } from "react-icons/fa";
 import Posts from './posts';
 import Password from './password';
 import User from './user';
+import { Button } from 'react-bootstrap';
 
 function Profile (props) {
     const initial_object = {
@@ -38,10 +39,12 @@ function Profile (props) {
         setUser(prevUser => ({ ...prevUser, ...user }));
     };
 
+    const handleLogout = () => { console.log("Logging Out..."); };
+
     return (
         <>
             <Screen>
-                <div className='container mt-xl-5 my-auto p-5 bg-light text-dark' style={{ borderRadius: 25 }}>
+                <div className='container mt-xl-auto my-auto p-5 bg-light text-dark' style={{ borderRadius: 25 }}>
                     <div className='row'>
 
                         {/* Profile */}
@@ -80,6 +83,12 @@ function Profile (props) {
                                 </div>
                                 <div className='col-auto'>
                                     <a className='text-decoration-none text-dark' href={user.githubLink} target="_blank"> <FaGithub size={30} /> </a>
+                                </div>
+                            </div>
+
+                            <div className='row mt-3 p-2 justify-content-center'>
+                                <div className='col-auto'>
+                                    <Button className='mt-1' variant='outline-danger' onClick={handleLogout}>Logout</Button>
                                 </div>
                             </div>
                         </div>

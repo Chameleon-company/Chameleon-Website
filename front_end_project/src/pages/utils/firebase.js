@@ -28,13 +28,13 @@ provider.setCustomParameters({
 
 export const auth = getAuth();
 
-signOut(auth)
-  .then(() => {
-    console.log("logged out successfully");
-  })
-  .catch((error) => {
-    error.message();
-  });
+// signOut(auth)
+//   .then(() => {
+//     console.log("logged out successfully");
+//   })
+//   .catch((error) => {
+//     error.message();
+//   });
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 export const db = getFirestore();
 

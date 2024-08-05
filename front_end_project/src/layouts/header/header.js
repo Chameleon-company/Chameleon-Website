@@ -1,12 +1,25 @@
 import chameleonHeader from "./images/Header-Chameleon.png";
 import { FaBars, FaSearch, FaMoon, FaSun } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SearchBox from "./SearchBox";
 import './header.css'
 
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
-  
+
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    if (sessionStorage.getItem('status') === 'logged in')
+    {
+      setLoggedIn(true);
+    }
+    else
+    {
+      setLoggedIn(false);
+    }
+  })
+
   const toggleNavbar = () => {
     setNavbarOpen(!navbarOpen);
   };
@@ -111,12 +124,20 @@ const Header = () => {
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a
+                    { loggedIn ? 
+                      <a
                       className="px-3 py-2 flex items-center uppercase font-bold leading-snug hover:opacity-75 no-underline"
-                      href="/login"
-                    >
-                      Login
-                    </a>
+                      href="/logout"
+                      >
+                        Log out
+                      </a>  :
+                      <a
+                        className="px-3 py-2 flex items-center uppercase font-bold leading-snug hover:opacity-75 no-underline"
+                        href="/login"
+                      >
+                        Login
+                      </a>
+                    }
                   </li>
                 </ul>
                 <hr className="border-gray-200 dark:border-gray-600" />

@@ -7,6 +7,7 @@ import Posts from './posts';
 import Password from './password';
 import User from './user';
 import { Button } from 'react-bootstrap';
+import { signOut } from '../../routes/user';
 
 function Profile (props) {
     const initial_object = {
@@ -34,12 +35,8 @@ function Profile (props) {
     const [activeTab, setActiveTab] = useState('profile');
 
     const handleTabClick = (tabId) => { setActiveTab(tabId); };
-
-    const handleUser = (user) => {
-        setUser(prevUser => ({ ...prevUser, ...user }));
-    };
-
-    const handleLogout = () => { console.log("Logging Out..."); };
+    const handleUser = (user) => { setUser(prevUser => ({ ...prevUser, ...user })); };
+    const handleLogout = () => { signOut(); };
 
     return (
         <>
@@ -64,13 +61,8 @@ function Profile (props) {
 
                             {/* Project and Role */}
                             <div className='row'>
-                                <span className='display-8 text-secondary'>
-                                    {user.role}
-                                </span>
-                                <span className='display-8 text-secondary'>
-                                    {user.project}
-                                </span>
-
+                                <span className='display-8 text-secondary'> {user.role} </span>
+                                <span className='display-8 text-secondary'> {user.project} </span>
                             </div>
 
                             {/* Social Icons */}

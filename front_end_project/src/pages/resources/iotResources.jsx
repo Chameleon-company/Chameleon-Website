@@ -1,51 +1,51 @@
-import { Component } from "react";
-import tech from "./images/tech.png";
-import IoTMelbourne from "./images/IoTMelbourne.jpg";
-import device from "./images/device.jpg";
-import IotResourcesComponent from "../../components/resources/iotResources";
+import React from "react";
+import { useHistory } from 'react-router-dom';
+import { startTransition } from 'react';
+import { Card, Col, Row } from 'react-bootstrap';
 import Screen from '../../components/app/Screen';
-import './iot.css'
+import './iot.css';
 
-class IotResources extends Component {
-  render () {
-    return (
+export default function IotResources () {
+  const history = useHistory();
+
+  const handleCardClick = (url) => {
+    startTransition(() => { history.push(url); });
+  };
+
+  const contents = [
+    { id: 1, title: 'Technologies', subtitle: 'Click to view more', image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', link: '/iotTechnologies' },
+    { id: 2, title: 'Statistics', subtitle: 'Click to view more', image: 'https://images.unsplash.com/photo-1603539947678-cd3954ed515d?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', link: '/iotStatistics' },
+    { id: 3, title: 'Innovation', subtitle: 'Click to view more', image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', link: '/iotUpdates' }
+  ];
+
+  return (
+    <>
       <Screen >
-        <div className="m-auto flex max-w-[1500px] flex-row flex-wrap justify-between bg-[#67A170] p-5 section-height">
-          <div className="2xl:max-w-[1320px] ml-auto mr-auto w-full sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]">
-            <h1 className="pb-3 pt-3 text-center">RESOURCES</h1>
-          </div>
-          <div className="hover:scale-105 hover:shadow-lg transition-transform duration-300">
-            <IotResourcesComponent
-              img={device}
-              altImg="Technology Graphic"
-              url="/iotTechnologies"
-              heading="Technologies"
-            />
-          </div>
+        <div className='container mt-xl-5 my-auto p-5 bg-light text-dark' style={{ borderRadius: 25 }}>
 
-          <div className="hover:scale-105 hover:shadow-lg transition-transform duration-300">
-            <IotResourcesComponent
-              img={IoTMelbourne}
-              altImg="Melbourne Street View"
-              url="/iotStatistics"
-              heading="Statistics"
-            />
-          </div>
+          {/* Page Title */}
+          <Row className='text-center p-3'>
+            <h1>Resources</h1>
+          </Row>
 
-          <div className="hover:scale-105 hover:shadow-lg transition-transform duration-300">
-            <IotResourcesComponent
-              img={tech}
-              altImg="Technology Graphic"
-              url="/iotUpdates"
-              heading="Innovations"
-            />
-          </div>
+          {/* Page Content */}
+          <Row className='p-5'>
+            {Array.isArray(contents) && contents.map((content) => (
+              <Col key={content.id} lg={4} md={6} xs={12} className='p-2'>
+                <Card className='h-100' border='rounded' onClick={() => handleCardClick(content.link)}>
+                  <Card.Img variant="top" src={content.image} alt='Technology Graphic' />
+                  <Card.Body>
+                    <Card.Title>{content.title}</Card.Title>
+                    <Card.Text> Click to view more </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
 
-          <br></br>
         </div>
       </Screen>
-    );
-  }
-}
+    </>
+  );
 
-export default IotResources;
+}

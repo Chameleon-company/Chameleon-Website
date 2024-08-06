@@ -50,7 +50,7 @@ function Profile (props) {
                             {/* Profile Image */}
                             <div className='row mt-auto'>
                                 <div className='col'>
-                                    {user.image ? <img className="mx-auto rounded-circle" src={user.image} alt='profile-image' style={{ width: '200px', height: '200px' }} /> : <CgProfile className='mx-auto my-5' size={100} height={100} width={100} />}
+                                    {user.image ? <img className="mx-auto rounded-circle" src={user.image} alt='profile' style={{ width: '200px', height: '200px' }} /> : <CgProfile className='mx-auto my-5' size={100} height={100} width={100} />}
                                 </div>
                             </div>
 
@@ -74,7 +74,7 @@ function Profile (props) {
                                     <a className='text-decoration-none text-dark' href={`tel:${user.phone}`}> <MdLocalPhone size={30} /> </a>
                                 </div>
                                 <div className='col-auto'>
-                                    <a className='text-decoration-none text-dark' href={user.githubLink} target="_blank"> <FaGithub size={30} /> </a>
+                                    <a className='text-decoration-none text-dark' href={user.githubLink} target="_blank" rel="noreferrer"> <FaGithub size={30} /> </a>
                                 </div>
                             </div>
 

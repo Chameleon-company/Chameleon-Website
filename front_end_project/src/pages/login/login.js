@@ -200,7 +200,7 @@ class Login extends Component {
                         </div>
                     </div>
 
-                    <div className="auth-form-switch">
+                    {/* <div className="auth-form-switch">
                         {!this.state.isSignUp ? (
                             <div className="img__text">
                                 <h2>Not registered yet?</h2>
@@ -216,7 +216,7 @@ class Login extends Component {
                             {!this.state.isSignUp ? <span class="m--up">Sign Up</span> :
                                 <span class="m--up">Log In</span>}
                         </div>
-                    </div>
+                    </div> */}
                 </Screen >
             </>
         );

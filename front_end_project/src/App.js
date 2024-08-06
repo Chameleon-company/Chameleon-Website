@@ -52,7 +52,7 @@ function App () {
         <main>
           <Switch>
             <Route path="/project/:projectId" component={ProjectDetails} />
-            <Route exact path="/" component={Screen} />
+            <Route exact path="/" component={HomePage} />
             <Route exact path="/home" component={HomePage} />
             <Route path="/aboutus" component={aboutUs} />
             <Route path="/news" component={News} />

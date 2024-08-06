@@ -11,11 +11,13 @@ import projectList from "./data";
 import Screen from '../../components/app/Screen';
 import './project.css'
 
-const content1 =
-  "At Chameleon, our mission is to research, create, test, document and deploy loT-based solutions to enhance life through the application of smart city technologies including: the building of smarter cities, homes, transportation, and energy management systems.";
 
+
+const content1 =
+"";
 const Projects = () => {
   const [chatOpen, setChatOpen] = useState(false);
+  
 
   return (
     <Screen>
@@ -37,7 +39,7 @@ const Projects = () => {
         </p>
         {/* this class combination sets a maximum width of 5xl (max-w-5xl), right padding of 5 units (pr-5), zero top and bottom margins (my-0), zero right margin (mr-0), positions the element to the far right within its container (ml-auto), sets the text color to black (text-black), and applies a semi-bold font weight (font-semibold). */}
         <p className="max-w-5xl pr-5 my-0 mr-0 ml-auto text-black font-semibold">
-          -Chameleon CEO
+          &nbsp;
         </p>
       </div>
       {/* Applies a combination of styles, including a background color, text color, and relative positioning, likely for a project section . */}

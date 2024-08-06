@@ -8,3 +8,12 @@
         height: auto;
     }
 }
+
+.hidetext {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 4; /* Adjust the number of lines as needed */
+    white-space: normal; /* Ensures that text wraps within the specified number of lines */
+  }
+  

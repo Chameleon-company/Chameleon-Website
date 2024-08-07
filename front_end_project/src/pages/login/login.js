@@ -9,6 +9,8 @@ import { Redirect } from 'react-router-dom';
 import { auth } from '../utils/firebase';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
+// init branch
+
 class Login extends Component {
 
     state = {

@@ -7,17 +7,8 @@
 }
 .form input,
 .form button {
-  width: 100%;
   max-width: 260px; /* Ensure a consistent width */
-  margin: 0 auto; /* Center the elements */
   display: block; /* Make sure the elements are block-level */
-}
-
-.form label {
-  width: 100%;
-  max-width: 260px; /* Ensure the labels are aligned with the inputs */
-  margin: 0 auto;
-  display: block;
 }
 
 .bottom-box {
@@ -31,18 +22,7 @@
 }
 
 .login-centered-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-  text-align: center;
-  background-color: #f0f0f0;
   background-image: url(./image/bg_2.jpg);
-  position: relative;
-}
-
-.container_2 {
-  position: absolute;
 }
 
 .social-container {
@@ -111,13 +91,6 @@ button {
 }
 
 .dowebok {
-  overflow: hidden;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 900px;
-  height: 550px;
-  margin: -300px 0 0 -450px;
   background: #fff;
 }
 
@@ -179,18 +152,40 @@ button {
 
 .auth-form-switch {
   padding: 16px;
-  background-image: url(./image/bg_2.png);
+  background-image: url("./image/bg_2.png");
   background-size: cover;
+  background-position: center; /* Ensure the image is centered */
   border-radius: 0 0 16px 16px;
   background-color: rgba(200, 100, 0, 0.5);
-  background-blend-mode: multiply;
+  background-blend-mode: multiply; /* Proper blending mode */
+  color: white; /* Ensure text is readable */
+  position: relative; /* Position context for z-index */
+}
+
+.auth-form-switch::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(200, 100, 0, 0.5); /* Apply the overlay color */
+  border-radius: 0 0 16px 16px; /* Match the border-radius */
+  z-index: 1; /* Ensure the overlay is below the content */
+}
+
+.auth-form-switch .content {
+  position: relative; /* Position context for content */
+  z-index: 2; /* Ensure the content is above the overlay */
+  padding: 16px; /* Add padding to ensure no content overlap */
+}
+
+.container_2 {
+  display: flex;
+  flex-direction: column;
 }
 
 @media only screen and (min-width: 600px) {
-  .container_2 {
-    display: flex;
-    flex-direction: row;
-  }
   .auth-form {
     width: 60%;
     padding: 32px;
@@ -198,7 +193,7 @@ button {
   }
   .auth-form-switch {
     display: flex;
-    width: 46%;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -351,8 +346,6 @@ h2 {
 
 label {
   display: block;
-  width: 260px;
-  margin: 25px auto 0;
   text-align: center;
 }
 
@@ -364,7 +357,6 @@ label span {
 
 input {
   display: block;
-  width: 100%;
   margin-top: 5px;
   padding-bottom: 5px;
   font-size: 16px;

@@ -18,7 +18,7 @@ const Header = () => {
     {
       setLoggedIn(false);
     }
-  })
+  }, []);
 
   const toggleNavbar = () => {
     setNavbarOpen(!navbarOpen);
@@ -123,6 +123,17 @@ const Header = () => {
                       Resources
                     </a>
                   </li>
+                    {loggedIn && ( // Conditional rendering for the Profile button
+                    <li className="nav-item">
+                    <a
+                      className="px-3 py-2 flex items-center uppercase font-bold leading-snug hover:opacity-75 no-underline"
+                       href="/profile"
+                    >
+                       Profile
+                    </a>
+                  </li>
+                   )}
+
                   <li className="nav-item">
                     { loggedIn ? 
                       <a

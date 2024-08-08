@@ -176,17 +176,17 @@ class Login extends Component {
       rememberMe,
     } = this.state;
     return (
-      <div className="login-centered-container">
+      <div className="login-centered-container w-full h-full overflow-y-auto">
         <Screen>
           {isAuthenticated && <Redirect to="/home" />}
-          <div className="max-w-5xl mx-auto my-auto flex flex-column">
+          <div className="max-w-5xl mx-auto my-4 flex rounded-lg overflow-hidden">
             <div className="container_2">
               <div className={`dowebok ${isSignUp ? "s--signup" : ""}`}>
                 {showToast && (
                   <div className="login-toast-message">{toastMessage}</div>
                 )}
 
-                <div className="form sign-in">
+                <div className="form sign-in rounded-md">
                   <h2>Welcome Back</h2>
                   <form
                     action="#"

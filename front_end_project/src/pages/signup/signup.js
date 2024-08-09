@@ -133,7 +133,7 @@
 
 //     export default Signup;
 
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import './signup.css';
 import Screen from '../../components/app/Screen';
 import { Redirect, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
@@ -154,7 +154,14 @@ class SignUp extends Component {
         toastMessage: '',
         isSignUp: true,
         isAuthenticated:false,
-        rememberMe: false
+        rememberMe: false,
+        errorMessage: '',  // password validation
+        lowerValidated: false,
+        upperValidated: false,
+        numberValidated: false,
+        specialValidated: false,
+        lengthValidated: false,
+        passwordValidated: false //
     };
 
     displayToast = (message) => {
@@ -271,6 +278,84 @@ class SignUp extends Component {
         this.setState(prevState => ({ rememberMe: !prevState.rememberMe }));
     };
 
+    // Dynamic password validation
+    handleErrorMessage = (message) => {
+        this.setState({ errorMessage: message});
+    }
+
+    setLowerValidated = (bool) => {
+        this.setState({lowerValidated : bool});
+    }
+
+    setUpperValidated = (bool) => {
+        this.setState({ upperValidated: bool});
+    }
+
+    setNumberValidated = (bool) => {
+        this.setState({ numberValidated: bool});
+    }
+
+    setSpecialValidated = (bool) => {
+        this.setState({ specialValidated: bool});
+    }
+
+    setLengthValidated = (bool) => {
+        this.setState({ lengthValidated: bool});
+    }
+
+    setPasswordValidated = (bool) => {
+        this.setState({ passwordValidated: bool});
+    }
+
+    handlePassword = (value) => {
+        let new_pass = value;
+        const lower = new RegExp('(?=.*[a-z])');
+        const upper = new RegExp('(?=.*[A-Z])');
+        const number = new RegExp('(?=.*[0-9])');
+        const special = new RegExp('(?=.*[!@#\$%\^&\*])');
+        const length = new RegExp('(?=.{8,})')
+        if(lower.test(value)){
+            this.setLowerValidated(true);
+        }
+        else{
+            this.setLowerValidated(false);
+        }
+        if(upper.test(value)){
+            this.setUpperValidated(true);
+        }
+        else{
+            this.setUpperValidated(false);
+        }
+        if(number.test(value)){
+            this.setNumberValidated(true);
+        }
+        else{
+            this.setNumberValidated(false);
+        }
+        if(special.test(value)){
+            this.setSpecialValidated(true);
+        }
+        else{
+            this.setSpecialValidated(false);
+        }
+        if(length.test(value)){
+            this.setLengthValidated(true);
+        }
+        else{
+            this.setLengthValidated(false);
+        }
+
+        if (this.state.lowerValidated && 
+            this.state.upperValidated &&
+            this.state.numberValidated &&
+            this.state.specialValidated &&
+            this.state.lengthValidated
+        ) 
+        {
+            this.state.password = new_pass;
+        }
+    }
+
     render () {
 
         const { 
@@ -286,7 +371,14 @@ class SignUp extends Component {
             showToast, 
             toastMessage, 
             isAuthenticated, 
-            rememberMe 
+            rememberMe,
+            errorMessage,
+            lowerValidated,
+            upperValidated,
+            numberValidated,
+            specialValidated,
+            lengthValidated,
+            passwordValidated
         } = this.state;
         return (
             <Screen>
@@ -394,12 +486,38 @@ class SignUp extends Component {
                                         </label>
                                         <label>
                                             <span>Password</span>
-                                            <input type="password" name="password" value={password} onChange={this.handleInputChange} required/>
+                                            {/* <input type="password" name="password" value={password} onChange={this.handleInputChange} required/> */}
+                                            <input type="password" name="password" onChange={(e) => this.handlePassword(e.target.value)} required/>
                                         </label>
+                                        {/* style = {{ color: "red" }} */}
                                         <label>
                                             <span>Confirm Password</span>
                                             <input type="password" name="confirmPassword" value={this.state.confirmPassword} onChange={this.handleInputChange} required />
                                         </label>
+                                        <div class="centered-container-2">
+                                            <div class="password-checklist">
+                                                {lowerValidated ? 
+                                                    <label style = {{ color: "green" }}> Lower case letter included </label> :
+                                                    <label style = {{ color: "rgb(242, 72, 72)" }}> Lower case letter not included </label>
+                                                } 
+                                                {upperValidated ? 
+                                                    <label style = {{ color: "green" }}> Upper case letter included </label> :
+                                                    <label style = {{ color: "rgb(242, 72, 72)" }}> Upper case letter not included </label>
+                                                } 
+                                                {numberValidated ? 
+                                                    <label style = {{ color: "green" }}> Number included </label> :
+                                                    <label style = {{ color: "rgb(242, 72, 72)" }}> Number not included </label>
+                                                }
+                                                {specialValidated ? 
+                                                    <label style = {{ color: "green" }}> Special character included </label> :
+                                                    <label style = {{ color: "rgb(242, 72, 72)" }}> Special character not included </label>
+                                                } 
+                                                {lengthValidated ? 
+                                                    <label style = {{ color: "green" }}> Password length is 8 characters or more </label> :
+                                                    <label style = {{ color: "rgb(242, 72, 72)" }}> Password length is not 8 characters </label>
+                                                } 
+                                            </div>
+                                        </div>
                                         <button type="submit" class="submit signin-up-button" href="/signup">Sign Up</button>
                                     </form>
                                 </div>

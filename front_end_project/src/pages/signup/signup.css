@@ -319,3 +319,27 @@ input {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
+
+.password-checklist {
+    background-color: rgb(231, 231, 231);
+    width: 400px;
+    border-radius:1em;
+    
+}
+
+.password-checklist label {
+    display: block;
+    font-weight:bolder;
+    width: 260px;
+    margin: 15px auto 15px;
+    text-align: center;
+}
+
+.centered-container-2 {
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    text-align: center; 
+    position: relative;
+}

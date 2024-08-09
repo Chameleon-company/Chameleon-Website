@@ -48,7 +48,7 @@ function App () {
     <>
       <Router>
         <NotificationComponent />
-        {/* <Suspense fallback={<div>Loading...</div>}> */}
+        <Suspense fallback={<div>Loading...</div>}>
         <main>
           <Switch>
             <Route path="/project/:projectId" component={ProjectDetails} />
@@ -92,6 +92,7 @@ function App () {
           </Switch>
         </main>
         {/* </Suspense> */}
+        </Suspense>
       </Router >
     </>
   );

@@ -10,6 +10,7 @@ import sendMessageImg from "./image/send-message.png";
 import projectList from "./data";
 import Screen from '../../components/app/Screen';
 import './project.css'
+import '../Chatbot/Chatbox.css'; // newly added
 
 const content1 =
   "At Chameleon, our mission is to research, create, test, document and deploy loT-based solutions to enhance life through the application of smart city technologies including: the building of smarter cities, homes, transportation, and energy management systems.";

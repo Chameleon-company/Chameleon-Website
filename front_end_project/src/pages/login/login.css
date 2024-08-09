@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 .width5 {
@@ -342,7 +343,7 @@ input {
     padding-bottom: 5px;
     font-size: 16px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-    text-align: center;
+    text-align: left;
 }
 
 .forgot-pass {
@@ -392,4 +393,34 @@ input {
 .dowebok.s--signup .sign-up {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+}
+
+input[type="email"],
+input[type="password"] {
+    border: none;
+    box-shadow: 0 0 0 2px #bbb;
+    padding: 8px;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease; 
+}
+
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    box-shadow: 0 0 0 2px #000; 
+    background-color: #e0e0e0; 
+}
+
+.text-sm {
+    display: flex;
+    align-items: center; 
+    font-size: 0.875rem; 
+    cursor: pointer;
+}
+
+.text-sm input[type="checkbox"] {
+    margin-right: 0.5rem; 
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
 }

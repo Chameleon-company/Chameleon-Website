@@ -5,8 +5,6 @@ import chameleonLogo from "./assets/Header-Chameleon.png";
 import cityOfMelProject from "./assets/Thumbnail-CoM.png";
 import evProject from "./assets/Thumbnail-EV.jpeg";
 import websiteProject from "./assets/Thumbnail-Website.png";
-
-//newly added
 import chatOpenImg from "../Chatbot/images/chat-open.png";
 import chatCloseImg from "../Chatbot/images/chat-close.png";
 import dotMenuImg from "../Chatbot/images/dot-menu.png";
@@ -14,8 +12,8 @@ import chatIcon from "../Chatbot/images/chat-icon.png";
 import fileSelectIcon from "../Chatbot/images/file-select.png";
 import sendMessageImg from "../Chatbot/images/send-message.png";
 
-import './home.css'
-import '../Chatbot/Chatbot.css'; // newly added
+import './home.css';
+import '../Chatbot/Chatbot.css';
 
 const content1 =
   "At Chameleon, our mission is to research, create, test, document and deploy IoT-based solutions to enhance life through the application of smart city technologies including: the building of smarter cities, homes, transportation, and energy management systems.";

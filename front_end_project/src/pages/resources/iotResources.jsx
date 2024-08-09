@@ -4,13 +4,9 @@ import IoTMelbourne from "./images/IoTMelbourne.jpg";
 import device from "./images/device.jpg";
 import IotResourcesComponent from "../../components/resources/iotResources";
 import Screen from '../../components/app/Screen';
-
-import Chatbox from '../Chatbot/Chatbox'; // newly add
-
-import './iot.css'
-import '../Chatbot/Chatbox.css'; // newly added
-
-// newly added
+import Chatbox from '../Chatbot/Chatbox';
+import './iot.css';
+import '../Chatbot/chatbox.css';
 import chameleonLogo from "../../assets/ChameleonLogo.png";
 import chatOpenImg from "../Chatbot/images/chat-open.png";
 import chatCloseImg from "../Chatbot/images/chat-close.png";
@@ -28,30 +24,15 @@ class IotResources extends Component {
             <h1 className="pb-3 pt-3 text-center">RESOURCES</h1>
           </div>
           <div className="hover:scale-105 hover:shadow-lg transition-transform duration-300">
-            <IotResourcesComponent
-              img={device}
-              altImg="Technology Graphic"
-              url="/iotTechnologies"
-              heading="Technologies"
-            />
+            <IotResourcesComponent img={device} altImg="Technology Graphic" url="/iotTechnologies" heading="Technologies" />
           </div>
 
           <div className="hover:scale-105 hover:shadow-lg transition-transform duration-300">
-            <IotResourcesComponent
-              img={IoTMelbourne}
-              altImg="Melbourne Street View"
-              url="/iotStatistics"
-              heading="Statistics"
-            />
+            <IotResourcesComponent img={IoTMelbourne} altImg="Melbourne Street View" url="/iotStatistics" heading="Statistics" />
           </div>
 
           <div className="hover:scale-105 hover:shadow-lg transition-transform duration-300">
-            <IotResourcesComponent
-              img={tech}
-              altImg="Technology Graphic"
-              url="/iotUpdates"
-              heading="Innovations"
-            />
+            <IotResourcesComponent img={tech} altImg="Technology Graphic" url="/iotUpdates" heading="Innovations" />
           </div>
 
           <br></br>

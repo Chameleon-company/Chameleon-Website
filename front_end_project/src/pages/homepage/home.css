@@ -1,0 +1,10 @@
+.section-height{
+    padding-top: 80px;
+    height: 90vh;
+}
+
+@media screen and (max-width: 600px) {
+    .section-height{
+        height: auto;
+    }
+}

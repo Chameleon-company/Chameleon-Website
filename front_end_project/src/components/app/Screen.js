@@ -4,15 +4,15 @@ import Footer from '../../layouts/footer/footer';
 
 
 export default function Screen ({ children }) {
-    return (
+  return (
+    <>
+      <div className="flex flex-col h-screen">
+        <Header />
         <>
-            <div className="flex flex-col h-screen">
-                <Header />
-                <>
-                    {children}
-                </>
-                <Footer />
-            </div>
+          {children}
         </>
-    );
+        <Footer />
+      </div>
+    </>
+  );
 }

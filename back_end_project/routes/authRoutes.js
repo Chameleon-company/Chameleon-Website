@@ -21,4 +21,7 @@ router.post('/signout', authController.userSignOut);
 // Login status
 router.get('/status', authController.LoginStatus);
 
+//get uid of current user
+router.get ('/getUID', authController.getUserID );
+
 module.exports = router;

@@ -231,6 +231,46 @@ class SignUp extends Component {
             this.setState({ showToast: true, toastMessage: 'Passwords do not match!' });
             return; // Stop the form submission if passwords do not match
         }
+
+        if (!email.includes('@')) {
+            this.setState({ showToast: true, toastMessage: 'Please enter a valid email address' });
+            return; // Stop the form submission if email is invalid
+        }
+    
+        // Check if passwords match
+        if (password !== confirmPassword) {
+            this.setState({ showToast: true, toastMessage: 'Passwords do not match!' });
+            return; // Stop the form submission if passwords do not match
+        }
+    
+        // Check if password meets validation criteria
+        if (!this.state.passwordValidated) {
+            this.setState({ showToast: true, toastMessage: 'Password doesn\'t meet the requirements' });
+            return; // Stop the form submission if password is not valid
+        }
+    
+        try {
+            const response = await fetch('http://localhost:3002/auth/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password })
+            });
+            const data = await response.json();
+            this.setState({ showToast: true, toastMessage: 'Sign up successful!', email: '', password: '', confirmPassword: '' });
+    
+            if (!response.ok) {
+                const errorMessage = data.error === "Email already exists"
+                    ? "An account with this email already exists. Please use a different email or log in."
+                    : data.error || 'An unknown error occurred during sign up.';
+                throw new Error(errorMessage);
+            }
+            this.displayToast('One Step! Please verify your email now!');
+            this.setState({ email: '', password: '', confirmPassword: '', isSignUp: false });
+        } catch (error) {
+            this.displayToast(error.message);
+        }
         // implement other validations here
         if (!this.state.passwordValidated) {
             this.setState({ showToast: true, toastMessage: 'Password doesn\'t meet the requirements' });

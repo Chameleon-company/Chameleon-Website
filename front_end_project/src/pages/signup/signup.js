@@ -229,11 +229,15 @@ class SignUp extends Component {
         // implement password validation here
         if (password !== confirmPassword) {
             this.setState({ showToast: true, toastMessage: 'Passwords do not match!' });
+            alert('Passwords do not match!');
+            console.log("Passwords do not match!"); // <-- alert bug -- fixed
             return; // Stop the form submission if passwords do not match
-        }
-        // implement other validations here
-        if (!this.state.passwordValidated) {
-            this.setState({ showToast: true, toastMessage: 'Password doesn\'t meet the requirements' });
+        } // implement other validations here
+        else if (!this.state.passwordValidated) {
+            // this.setState({ showToast: true, toastMessage: 'Password doesn\'t meet the requirements' });
+            // this.displayToast('One Step! Please verify your email now!');
+            alert('Password doesn\'t meet the requirements!');
+            console.log("Password doesn\'t meet the requirements!"); // <-- alert bug -- fixed
             return; // Stop the form submission if passwords do not match
         }
         else {
@@ -252,6 +256,8 @@ class SignUp extends Component {
                     const errorMessage = data.error === "Email already exists"
                         ? "An account with this email already exists. Please use a different email or log in."
                         : data.error || 'An unknown error occurred during sign up.';
+                    alert('An account with this email already exists. Please use a different email or log in.');
+                    console.log("An account with this email already exists. Please use a different email or log in."); // <-- alert bug
                     throw new Error(errorMessage);
                 }
                 this.displayToast('One Step! Please verify your email now!');
@@ -354,9 +360,10 @@ class SignUp extends Component {
             this.state.lengthValidated
         ) 
         {
-            this.state.password = new_pass;
             this.state.passwordValidated = true;
         }
+        
+        this.state.password = new_pass;
     }
 
     render () {

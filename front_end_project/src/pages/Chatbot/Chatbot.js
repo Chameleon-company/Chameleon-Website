@@ -3,7 +3,7 @@ import "./Chatbot.css";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Screen from "../../components/app/Screen";
-
+ 
 const Chatbot = () => {
   const [userMessage, setUserMessage] = useState("");
   const chatInputRef = useRef(null);
@@ -12,20 +12,20 @@ const Chatbot = () => {
   const onclickHandler = (func) => {
     if (func) func();
   };
-
+ 
   const initialMessages = [
     {
       id: "0",
       message:
         "This is Chameleon Chatbot! To get started choose from one of the below",
-
+ 
       // This calls the next id
       // i.e. id 1 in this case
       trigger: "1",
     },
     {
       id: "1",
-
+ 
       // This message appears in
       // the bot chat bubble
       message: "Learn about our projects",
@@ -34,7 +34,7 @@ const Chatbot = () => {
     },
     {
       id: "2",
-
+ 
       // Here we want the user
       // to enter input
       message: "Support us",
@@ -48,38 +48,38 @@ const Chatbot = () => {
       onclick: () => window.location.replace("/projects"),
     },
   ];
-
+ 
   useEffect(() => {
     const handleChat = () => {
       const userMsg = userMessage.trim();
       if (!userMsg) return;
-
+ 
       const chatLi = document.createElement("li");
       chatLi.classList.add("chat", "outgoing");
       chatLi.innerHTML = `<p>${userMsg}</p>`;
-
+ 
       chatboxRef.current.appendChild(chatLi);
       chatInputRef.current.value = "";
       setUserMessage("");
-
+ 
       setTimeout(() => {
         const incomingChatLi = document.createElement("li");
         incomingChatLi.classList.add("chat", "incoming");
         incomingChatLi.innerHTML = `<img src="images/chameleon (2).png" alt="Incoming Message Icon"><p>Thinking...</p>`;
-
+ 
         chatboxRef.current.appendChild(incomingChatLi);
         // Simulate response
       }, 600);
     };
-
+ 
     const sendButton = sendButtonRef.current;
     sendButton.addEventListener("click", handleChat);
-
+ 
     return () => {
       sendButton.removeEventListener("click", handleChat);
     };
   }, [userMessage]);
-
+ 
   return (
     <Screen>
       <div className="chatbot-container">
@@ -93,7 +93,7 @@ const Chatbot = () => {
               />
               <h2>Chameleon</h2>
             </div>
-
+ 
             <button className="options-button">
               <MoreHorizIcon style={{ color: 'white' }}/>
             </button>
@@ -108,7 +108,7 @@ const Chatbot = () => {
                   width={50}
                 />
               </div>
-
+ 
               <div
                 style={{
                   display: "flex",
@@ -178,5 +178,5 @@ const Chatbot = () => {
     </Screen>
   );
 };
-
+ 
 export default Chatbot;

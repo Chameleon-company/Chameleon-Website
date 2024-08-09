@@ -1,7 +1,6 @@
 import React from 'react';
 import { Accordion, Button, Col, Form, Row } from 'react-bootstrap';
 import Screen from '../../components/app/Screen';
-
 import Chatbox from '../Chatbot/Chatbox';
 import '../Chatbot/chatbox.css';
 import chameleonLogo from "../../assets/ChameleonLogo.png";
@@ -11,9 +10,8 @@ import dotMenuImg from "../Chatbot/images/dot-menu.png";
 import chatIcon from "../Chatbot/images/chat-icon.png";
 import fileSelectIcon from "../Chatbot/images/file-select.png";
 import sendMessageImg from "../Chatbot/images/send-message.png";
-export default function Support (props) {
 
-    // TODO: Fill in questions and answers
+export default function Support (props) {
     const general_questions = [
         { id: 1, title: `What is Chameleon's mission?`, content: `Provide a concise overview of Chameleon's mission to research, create, test, document, and deploy IoT-based solutions aimed at enhancing life through smart city technologies.` },
         { id: 2, title: `What areas does Chameleon focus on?`, content: `Detail the specific areas where Chameleon applies its expertise, including: \n Building smarter cities: Discuss how Chameleon develops solutions to improve urban infrastructure and services. \n Smart homes: Explain Chameleon's role in creating IoT devices and systems for residential use. \n Transportation: Describe Chameleon's efforts to enhance transportation systems through IoT technology, such as traffic management and public transit systems. \n Energy management systems: Highlight Chameleon's initiatives to optimize energy usage and promote sustainability in urban environments.` },

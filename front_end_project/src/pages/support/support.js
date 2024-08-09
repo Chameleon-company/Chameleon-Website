@@ -2,10 +2,8 @@ import React, { Component } from "react";
 import { notifyWelcome } from "../../components/notificationComp/NotificationComponent";
 import styles from "./support.module.css";
 
-import Chatbox from '../Chatbot/Chatbox'; // newly add
-import '../Chatbot/Chatbox.css'; // newly added
-
-// newly added
+import Chatbox from '../Chatbot/Chatbox';
+import '../Chatbot/Chatbot.css';
 import chameleonLogo from "../../assets/ChameleonLogo.png";
 import chatOpenImg from "../Chatbot/images/chat-open.png";
 import chatCloseImg from "../Chatbot/images/chat-close.png";
@@ -17,12 +15,10 @@ import sendMessageImg from "../Chatbot/images/send-message.png";
 class Contact extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            showGeneralQuestions: false
-        };
+        this.state = { showGeneralQuestions: false };
     }
 
-    componentDidMount() {
+    componentDidMount () {
         notifyWelcome(
             "Make sure to contact us only on working days 9:00 AM onwards!",
         );
@@ -35,18 +31,18 @@ class Contact extends Component {
     };
 
     toggleTechnologyQuestions = () => {
-      this.setState(prevState => ({
-          showTechnologyQuestions: !prevState.showTechnologyQuestions
-      }));
-  };
+        this.setState(prevState => ({
+            showTechnologyQuestions: !prevState.showTechnologyQuestions
+        }));
+    };
 
-  toggleResourcesQuestions = () => {
-      this.setState(prevState => ({
-          showResourcesQuestions: !prevState.showResourcesQuestions
-      }));
-  };
+    toggleResourcesQuestions = () => {
+        this.setState(prevState => ({
+            showResourcesQuestions: !prevState.showResourcesQuestions
+        }));
+    };
 
-    render() {
+    render () {
         return (
             <div className="bg-[#deece3]">
                 <div className={`${styles.contact_title} bg-[#4fa373]  md:text-5xl text-4xl font-medium text-center text-black`}>
@@ -69,7 +65,7 @@ class Contact extends Component {
                                     <li><a href="general_ques4" style={{ color: 'black' }}>Highlight the potential benefits of Chameleon's solutions</a></li>                                </ul>
                             </div>
                         )}
-                         </div>
+                    </div>
 
                     <div className="support_item">
                         <div className="flex justify-start items-center gap-3" onClick={this.toggleTechnologyQuestions}>
@@ -80,15 +76,15 @@ class Contact extends Component {
                         </div>
                         {this.state.showTechnologyQuestions && (
                             <div className="support_item_context border-2 border-[#7a7e7c] w-[100%] p-2 font-semibold text-black mt-3">
-                               <ul>
+                                <ul>
                                     <li><a href="technology_ques1" style={{ color: 'black' }}>Does Chameleon prioritize data privacy and security?</a></li>
                                     <li><a href="technology_ques2" style={{ color: 'black' }}>Can Chameleon's solutions be customized for specific needs?</a></li>
                                     <li><a href="technology_ques3" style={{ color: 'black' }}>How does Chameleon deploy its solutions in real-world environments?</a></li>
-                                    <li><a href="technology_ques4" style={{ color: 'black' }}>Where can users find support and troubleshooting resources?</a></li>                                </ul>
-                           
+                                    <li><a href="technology_ques4" style={{ color: 'black' }}>Where can users find support and troubleshooting resources?</a></li>
+                                </ul>
                             </div>
                         )}
-                        </div>
+                    </div>
                     <div className="support_item">
                         <div className="flex justify-start items-center gap-3" onClick={this.toggleResourcesQuestions}>
                             <div className="support_item_title lg:text-3xl md:text-2xl text-[22px] font-semibold ">
@@ -98,92 +94,41 @@ class Contact extends Component {
                         </div>
                         {this.state.showResourcesQuestions && (
                             <div className="support_item_context border-2 border-[#7a7e7c] w-[100%] p-2 font-semibold text-black mt-3">
-                                 <ul>
+                                <ul>
                                     <li><a href="resource_ques1" style={{ color: 'black' }}>Are there collaboration opportunities or partnerships available with Chameleon?</a></li>
                                     <li><a href="resource_ques2" style={{ color: 'black' }}>How can users provide feedback or suggestions to Chameleon?</a></li>
                                     <li><a href="resource_ques3" style={{ color: 'black' }}>How can I learn more or get involved with Chameleon's projects?</a></li>
                                 </ul>
-                           
                             </div>
                         )}
-                    
                     </div>
                 </div>
 
                 <div className="md:col-span-7" style={{ padding: "8%" }}>
-                    <h1
-                        style={{
-                            fontWeight: "bold",
-                            marginBottom: "2rem",
-                            textAlign: "center",
-                        }}
-                    >
-                        Submit your Query
-                    </h1>
+                    <h1 style={{ fontWeight: "bold", marginBottom: "2rem", textAlign: "center", }}> Submit your Query </h1>
                     <form>
                         <div controlId="formname" style={{ marginBottom: "2rem" }}>
-                            <input
-                                type="text"
-                                placeholder="Name"
-                                className="w-100"
-                                style={{
-                                    backgroundColor: "#ccc",
-                                    border: "1px solid black",
-                                    height: "50px",
-                                }}
-                            />
+                            <input type="text" placeholder="Name" className="w-100" style={{ backgroundColor: "#ccc", border: "1px solid black", height: "50px", }} />
                         </div>
 
                         <div controlId="formemail" style={{ marginBottom: "2rem" }}>
-                            <input
-                                type="email"
-                                placeholder="Email"
-                                className="w-100"
-                                style={{
-                                    backgroundColor: "#ccc",
-                                    border: "1px solid black",
-                                    height: "50px",
-                                }}
-                            />
+                            <input type="email" placeholder="Email" className="w-100" style={{ backgroundColor: "#ccc", border: "1px solid black", height: "50px", }} />
                         </div>
 
                         <div controlId="formquery" style={{ marginBottom: "2rem" }}>
-                            <input
-                                type="text"
-                                placeholder="Enter your query.."
-                                className="w-100"
-                                style={{
-                                    backgroundColor: "#ccc",
-                                    border: "1px solid black",
-                                    height: "50px",
-                                }}
-                            />
+                            <input type="text" placeholder="Enter your query.." className="w-100" style={{ backgroundColor: "#ccc", border: "1px solid black", height: "50px", }} />
                         </div>
 
                         <div className="d-flex justify-content-center mb-3">
-                            <button
-                                className="bg-green-emrld p-3 text-black-24"
-                                type="submit"
-                                style={{ padding: "10px 80px", fontSize: "1rem" }}
-                            >
-                                Submit
-                            </button>
+                            <button className="bg-green-emrld p-3 text-black-24" type="submit" style={{ padding: "10px 80px", fontSize: "1rem" }} > Submit </button>
                         </div>
 
-                        
+
                     </form>
                 </div>
 
-                {/* Add the Chatbox component */} {/* newly added */}
-                <Chatbox // newly added
-                    chameleonLogo={chameleonLogo} // newly added
-                    chatOpenImg={chatOpenImg} // newly added
-                    chatCloseImg={chatCloseImg} // newly added
-                    dotMenuImg={dotMenuImg} // newly added
-                    chatIcon={chatIcon} // newly added
-                    fileSelectIcon={fileSelectIcon} // newly added
-                    sendMessageImg={sendMessageImg} // newly added
-                /> {/* newly added */}
+                {/* Add the Chatbox component */}
+                <Chatbox chameleonLogo={chameleonLogo} chatOpenImg={chatOpenImg} chatCloseImg={chatCloseImg} dotMenuImg={dotMenuImg} chatIcon={chatIcon} fileSelectIcon={fileSelectIcon} sendMessageImg={sendMessageImg} />
 
             </div>
         );

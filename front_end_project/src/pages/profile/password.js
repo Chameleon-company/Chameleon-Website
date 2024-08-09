@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { changePassword } from '../../routes/user';
 
-function Password (props) {
-
+function Password(props) {
     const [passwords, setPasswords] = useState({
         currentPassword: '',
         newPassword: '',
@@ -24,25 +24,63 @@ function Password (props) {
         }
     };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (error) return; // Prevent submission if there are errors
+
+        const result = await changePassword(passwords.currentPassword, passwords.newPassword);
+
+        if (result.success) {
+            setSuccessMessage('Password changed successfully!');
+            setPasswords({
+                currentPassword: '',
+                newPassword: '',
+                confirmNewPassword: ''
+            });
+        } else {
+            setError(result.message || 'An unknown error occurred.');
+        }
+    };
+
     return (
         <>
-            <form className='p-5'>
+            <form className='p-5' onSubmit={handleSubmit}>
                 <h1>Change Password</h1>
                 <div className="form-group mt-3">
-                    <label htmlFor="current-password">Current Password</label>
-                    <input type="password" className="form-control" id="current-password" onChange={handleChange} />
+                    <label htmlFor="currentPassword">Current Password</label>
+                    <input
+                        type="password"
+                        className="form-control"
+                        id="currentPassword"
+                        name="currentPassword"
+                        value={passwords.currentPassword}
+                        onChange={handleChange}
+                    />
                 </div>
                 <div className="form-group mt-3">
                     <label htmlFor="newPassword">New Password</label>
-                    <input type="text" className="form-control" id="newPassword" name="newPassword" aria-describedby="passwordHelp" onChange={handleChange} />
-                    {error && <small id="passwordHelp" className="form-text text-danger">{error}</small>}
+                    <input
+                        type="password"
+                        className="form-control"
+                        id="newPassword"
+                        name="newPassword"
+                        value={passwords.newPassword}
+                        onChange={handleChange}
+                    />
                 </div>
                 <div className="form-group mt-3">
                     <label htmlFor="confirmNewPassword">Confirm New Password</label>
-                    <input type="text" className="form-control" id="confirmNewPassword" name="confirmNewPassword" aria-describedby="passwordHelp" onChange={handleChange} />
+                    <input
+                        type="password"
+                        className="form-control"
+                        id="confirmNewPassword"
+                        name="confirmNewPassword"
+                        value={passwords.confirmNewPassword}
+                        onChange={handleChange}
+                    />
                     {error && <small id="passwordHelp" className="form-text text-danger">{error}</small>}
                 </div>
-
+                {successMessage && <div className="mt-3 alert alert-success">{successMessage}</div>}
                 <button type="submit" className="btn btn-success mt-3">Submit</button>
             </form>
         </>

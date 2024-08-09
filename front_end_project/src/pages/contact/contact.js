@@ -7,6 +7,17 @@ import { FaPhoneVolume } from "react-icons/fa6";
 import { IoChatbubbleEllipsesSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
+import Chatbox from '../Chatbot/Chatbox'; //newly added
+import '../Chatbot/Chatbox.css'; // newly added
+
+// newly added
+import chameleonLogo from "../../assets/ChameleonLogo.png";
+import chatOpenImg from "../Chatbot/images/chat-open.png";
+import chatCloseImg from "../Chatbot/images/chat-close.png";
+import dotMenuImg from "../Chatbot/images/dot-menu.png";
+import chatIcon from "../Chatbot/images/chat-icon.png";
+import fileSelectIcon from "../Chatbot/images/file-select.png";
+import sendMessageImg from "../Chatbot/images/send-message.png";
 
 function Contact() {
   useEffect(() => {
@@ -98,6 +109,18 @@ function Contact() {
             </div>
           </div>
         </div>
+
+        {/* Add the Chatbox component */} {/* newly added */}
+        <Chatbox // newly added
+          chameleonLogo={chameleonLogo} // newly added
+          chatOpenImg={chatOpenImg} // newly added
+          chatCloseImg={chatCloseImg} // newly added
+          dotMenuImg={dotMenuImg} // newly added
+          chatIcon={chatIcon} // newly added
+          fileSelectIcon={fileSelectIcon} // newly added
+          sendMessageImg={sendMessageImg} // newly added
+        /> {/* newly added */}
+
       </div>
     </Screen>
   );

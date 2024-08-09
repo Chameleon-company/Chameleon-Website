@@ -133,7 +133,12 @@
 
 //     export default Signup;
 
+<<<<<<< HEAD
 import React, { Component, useState } from 'react';
+=======
+import React, { Component } from 'react';
+import {useForm} from 'react-hook-form';
+>>>>>>> da989a764 (Added interactive email and password validation.)
 import './signup.css';
 import Screen from '../../components/app/Screen';
 import { Redirect, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
@@ -155,6 +160,7 @@ class SignUp extends Component {
         isSignUp: true,
         isAuthenticated:false,
         rememberMe: false,
+<<<<<<< HEAD
         errorMessage: '',  // password validation
         lowerValidated: false,
         upperValidated: false,
@@ -162,8 +168,10 @@ class SignUp extends Component {
         specialValidated: false,
         lengthValidated: false,
         passwordValidated: false //
+=======
+        errors: {}
+>>>>>>> da989a764 (Added interactive email and password validation.)
     };
-
     displayToast = (message) => {
         this.setState({ showToast: true, toastMessage: message });
 
@@ -222,9 +230,38 @@ class SignUp extends Component {
         }
     };
 
+    formValidation = () =>{
+        const { email, password, confirmPassword } = this.state;
+        let isValid = true;
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const errors = {};
+        if (!email) {
+            errors.email = "Email is required";
+            isValid = false;
+        } else if (!emailPattern.test(email)) {
+            errors.email = "Email address is invalid";
+            isValid = false;
+        }
+        if (!password) {
+            errors.password = "Password is required";
+            isValid = false;
+        } else if(password.trim().length < 8){
+            errors.passwordlength = "Password must have at least 8 characters";
+            isValid = false;
+        }
+       /* const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailPattern.test(email)) {
+            this.setState({ isValid: true, errorMessage: ''});
+        }else {
+            this.setState({ isValid: false, errorMessage: ''});
+        }*/
 
+        this.setState({errors});
+        return isValid;
+    }
     handleSubmitSignUp = async (event) => {
         event.preventDefault();
+        const isValid = this.formValidation();
         const { email, password, confirmPassword } = this.state;
         // implement password validation here
         if (password !== confirmPassword) {
@@ -366,6 +403,7 @@ class SignUp extends Component {
 
     render () {
 
+<<<<<<< HEAD
         const { 
             fname,
             lname,
@@ -388,6 +426,9 @@ class SignUp extends Component {
             lengthValidated,
             passwordValidated
         } = this.state;
+=======
+        const { email, password, errors, isSignUp, showToast, toastMessage, isAuthenticated, rememberMe } = this.state;
+>>>>>>> da989a764 (Added interactive email and password validation.)
         return (
             <Screen>
                 {isAuthenticated && <Redirect to='/home'/>} 
@@ -490,17 +531,32 @@ class SignUp extends Component {
                                         </label>
                                         <label>
                                             <span>Email</span>
+<<<<<<< HEAD
                                             <input type="email" name="email" value={email} onChange={this.handleInputChange} required/>
                                         </label>
                                         <label>
                                             <span>Password</span>
                                             {/* <input type="password" name="password" value={password} onChange={this.handleInputChange} required/> */}
                                             <input type="password" name="password" onChange={(e) => this.handlePassword(e.target.value)} required/>
+=======
+                                            <input type="email" name="email" value={email} onChange={this.handleInputChange}
+                                                   //ref={register({ required: "Email is required"})}
+                                            />
+                                        </label>
+                                        <label>
+                                            <span>Password</span>
+                                            <input type="password" name="password" value={password} onChange={this.handleInputChange}
+                                                   //ref={register({ required: "Password is required"})}
+                                            />
+
+>>>>>>> da989a764 (Added interactive email and password validation.)
                                         </label>
                                         {/* style = {{ color: "red" }} */}
                                         <label>
                                             <span>Confirm Password</span>
-                                            <input type="password" name="confirmPassword" value={this.state.confirmPassword} onChange={this.handleInputChange} required />
+                                            <input type="password" name="confirmPassword" value={this.state.confirmPassword} onChange={this.handleInputChange} required 
+                                                   //ref={register({ required: "This field is required"})}
+                                            />
                                         </label>
                                         <div class="centered-container-2">
                                             <div class="password-checklist">
@@ -527,6 +583,9 @@ class SignUp extends Component {
                                             </div>
                                         </div>
                                         <button type="submit" class="submit signin-up-button" href="/signup">Sign Up</button>
+                                        {Object.keys(errors).map((key)=>{
+                                            return <div style={{color : "red"}}key={key}>{errors[key]}</div>
+                                        })}
                                     </form>
                                 </div>
                             </div>

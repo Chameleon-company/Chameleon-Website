@@ -11,7 +11,7 @@ function Chatbox() {
                     className="incoming-image"
                 />
                 <p>
-                    Hi, I'm Chameleon and I'm here to help you.<br />How can I help you
+                    Hi, I'm Chameleon and I'm here to help you<br />How can I help you
                     today?
                 </p>
             </li>

@@ -76,7 +76,8 @@ const Projects = () => {
 
           {/* Positions a chat bot element absolutely at the bottom with a flex column layout  */}
           <div className="chatBot absolute bottom-5 flex flex-col">
-            {!chatOpen && (
+            {/* TO-DO' SPRINT 2 */}
+            {/* {!chatOpen && (
               <img
                 alt=""
                 src={chatOpenImg}
@@ -84,7 +85,7 @@ const Projects = () => {
                 className="md:w-[60px] w-[50px]"
                 onClick={() => setChatOpen(true)}
               />
-            )}
+            )} */}
 
             {chatOpen && (
               <>
@@ -127,7 +128,7 @@ const Projects = () => {
                       Learn About Our Project
                     </p>
                     <p className="p-2 text-center w-fit my-2 ml-auto mr-0 border-[#069f89] border-2 rounded-[10px] font-medium bg-[#d9d9d9]">
-                      Support Us
+                      Support Us 
                     </p>
                     <p className="p-2 text-center w-fit my-2 ml-auto mr-0 border-[#069f89] border-2 rounded-[10px] font-medium bg-[#d9d9d9]">
                       I have another question

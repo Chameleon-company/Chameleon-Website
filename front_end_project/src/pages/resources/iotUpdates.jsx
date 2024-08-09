@@ -1,63 +1,73 @@
 import React, { Component } from "react";
 import Screen from '../../components/app/Screen';
-// import Container from 'react-bootstrap';
 
-const content1 =
-  "The advancement of 6G wireless technology: 6G is the following generation of wireless technology and is anticipated to provide significantly higher speeds and lower latency than 5G. IoT applications will have more options as a result of the ability for devices to communicate data more quickly and dependably.";
-const content2 =
-  "Edge computing is becoming more popular because it moves storage and computation closer to the network's edge. In addition to making IoT applications more resilient to network failures, this can increase performance and decrease latency for such applications.";
-const content3 =
-  "Artificial intelligence (AI) is becoming more prevalent in the Internet of Things (IoT). AI is being utilised to power a variety of IoT applications, from smart home gadgets to industrial automation systems. IoT devices' efficiency, precision, and ability to make decisions can all be improved by AI. The IoT is increasingly using distributed ledger technology called blockchain, which may be used to track and record transactions between IoT devices. This could aid in enhancing the security and openness of IoT applications.";
-const content4 =
-  "The creation of new IoT standards: To solve the issues of scalability, interoperability, and security, new IoT standards are being created. These standards will aid in ensuring the security and dependability of IoT devices as well as their ability to connect with one another and other systems.";
+const content1 = 
+  "The advancement of 6G wireless technology: 6G is the next generation of wireless technology, anticipated to offer significantly higher speeds and lower latency compared to 5G. This progress will enhance IoT applications by enabling faster and more reliable data communication between devices.";
+
+const content2 = 
+  "Edge computing is gaining traction by bringing storage and computation closer to the network's edge. This approach improves performance, reduces latency, and increases the resilience of IoT applications to network failures.";
+
+const content3 = 
+  "Artificial intelligence (AI) is increasingly integrated into the Internet of Things (IoT). AI enhances various IoT applications, from smart home devices to industrial automation systems, improving efficiency, precision, and decision-making capabilities. Additionally, blockchain technology is being adopted to track and record transactions between IoT devices, enhancing security and transparency.";
+
+const content4 = 
+  "The development of new IoT standards aims to address challenges related to scalability, interoperability, and security. These standards will help ensure the security and reliability of IoT devices, facilitating better integration and communication between devices and systems.";
 
 class IotUpdates extends Component {
-  render () {
-
+  render() {
     const titleStyle = {
       color: 'white'
     };
+
     return (
       <Screen>
         <div>
-          <h1 class="text-center pt-3 pb-3"style={titleStyle}>LATEST IOT UPDATES</h1>
+          <h1 className="text-center pt-3 pb-3" style={titleStyle}>Latest IoT Updates</h1>
         </div>
 
-        <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px]">
+        <div className="bg-[#D1E2C4] max-w-[1000px] mx-auto py-5">
           <h2 className="text-center font-bold">6G Wireless Technology</h2>
           <div className="flex justify-center">
-            <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black"style={{ textAlign: 'justify', padding: '30px'}}>{content1}</p>
+            <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: 'justify', padding: '30px' }}>
+              {content1}
+            </p>
           </div>
         </div>
 
         <br />
 
-        <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px]">
+        <div className="bg-[#D1E2C4] max-w-[1000px] mx-auto py-5">
           <h2 className="text-center font-bold">Edge Computing</h2>
           <div className="flex justify-center">
-            <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black"style={{ textAlign: 'justify', padding: '30px'}}>{content2}</p>
+            <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: 'justify', padding: '30px' }}>
+              {content2}
+            </p>
           </div>
         </div>
 
         <br />
 
-        <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px]">
-          <h2 className="text-center font-bold">Artificial intelligence</h2>
+        <div className="bg-[#D1E2C4] max-w-[1000px] mx-auto py-5">
+          <h2 className="text-center font-bold">Artificial Intelligence</h2>
           <div className="flex justify-center">
-            <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black"style={{ textAlign: 'justify', padding: '30px'}}>{content3}</p>
+            <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: 'justify', padding: '30px' }}>
+              {content3}
+            </p>
           </div>
         </div>
 
         <br />
 
-        <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px] mb-[80px]">
+        <div className="bg-[#D1E2C4] max-w-[1000px] mx-auto py-5 mb-20">
           <h2 className="text-center font-bold">New IoT Standards</h2>
           <div className="flex justify-center">
-            <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black"style={{ textAlign: 'justify', padding: '30px'}}>{content4}</p>
+            <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: 'justify', padding: '30px' }}>
+              {content4}
+            </p>
           </div>
         </div>
 
-        <br></br>
+        <br />
       </Screen>
     );
   }

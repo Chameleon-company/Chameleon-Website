@@ -176,108 +176,111 @@ class Login extends Component {
       rememberMe,
     } = this.state;
     return (
-      <div className="login-centered-container w-full h-full overflow-y-auto">
-        <Screen>
-          {isAuthenticated && <Redirect to="/home" />}
-          <div className="max-w-5xl mx-auto my-4 flex rounded-lg overflow-hidden">
-            <div className="container_2">
-              <div className={`dowebok ${isSignUp ? "s--signup" : ""}`}>
-                {showToast && (
-                  <div className="login-toast-message">{toastMessage}</div>
-                )}
+        <>
+            {isAuthenticated ? <Redirect to="/home" /> :
+                <div className="login-centered-container w-full h-full overflow-y-auto">
+                    <Screen>
+                    <div className="max-w-5xl mx-auto my-4 flex rounded-lg overflow-hidden">
+                        <div className="container_2">
+                        <div className={`dowebok ${isSignUp ? "s--signup" : ""}`}>
+                            {showToast && (
+                            <div className="login-toast-message">{toastMessage}</div>
+                            )}
 
-                <div className="form sign-in rounded-md">
-                  <h2>Welcome Back</h2>
-                  <form
-                    action="#"
-                    method="POST"
-                    className="space-y-6 flex flex-col items-center"
-                    onSubmit={this.handleSubmitSignIn}
-                  >
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium leading-6 text-gray-900"
-                    >
-                      Email address
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={email}
-                      onChange={this.handleInputChange}
-                      autoComplete="email"
-                      className="block w-full rounded-md border-0 py-1.5 mt-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
+                            <div className="form sign-in rounded-md">
+                            <h2>Welcome Back</h2>
+                            <form
+                                action="#"
+                                method="POST"
+                                className="space-y-6 flex flex-col items-center"
+                                onSubmit={this.handleSubmitSignIn}
+                            >
+                                <label
+                                htmlFor="email"
+                                className="block text-sm font-medium leading-6 text-gray-900"
+                                >
+                                Email address
+                                </label>
+                                <input
+                                type="email"
+                                name="email"
+                                value={email}
+                                onChange={this.handleInputChange}
+                                autoComplete="email"
+                                className="block w-full rounded-md border-0 py-1.5 mt-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                />
 
-                    <label
-                      htmlFor="password"
-                      className="block text-sm font-medium leading-6 text-gray-900"
-                    >
-                      Password
-                    </label>
-                    <input
-                      type="password"
-                      name="password"
-                      value={password}
-                      onChange={this.handleInputChange}
-                      autoComplete="current-password"
-                      className="block w-full rounded-md border-0 py-1.5 mt-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
+                                <label
+                                htmlFor="password"
+                                className="block text-sm font-medium leading-6 text-gray-900"
+                                >
+                                Password
+                                </label>
+                                <input
+                                type="password"
+                                name="password"
+                                value={password}
+                                onChange={this.handleInputChange}
+                                autoComplete="current-password"
+                                className="block w-full rounded-md border-0 py-1.5 mt-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                />
 
-                    <div className="flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        checked={rememberMe}
-                        onChange={this.toggleRememberMe}
-                        id="remember"
-                        className="mt-0"
-                      />
-                      <label htmlFor="remember">Remember Me</label>
+                                <div className="flex items-center gap-2">
+                                <input
+                                    type="checkbox"
+                                    checked={rememberMe}
+                                    onChange={this.toggleRememberMe}
+                                    id="remember"
+                                    className="mt-0"
+                                />
+                                <label htmlFor="remember">Remember Me</label>
+                                </div>
+
+                                <p className="forgot-pass">
+                                <a href="/reset">Forgot your password?</a>
+                                </p>
+
+                                <button
+                                type="submit"
+                                className="submit flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                >
+                                Log In
+                                </button>
+                            </form>
+                            <p className="signup text-center pt-4">
+                                Don't have an account?{" "}
+                                <a href="signup" onClick={this.toggleSignUp}>
+                                Sign up
+                                </a>
+                            </p>
+                            </div>
+                        </div>
+                        </div>
+                        <div className="auth-form-switch">
+                        {!this.state.isSignUp ? (
+                            <div className="img__text">
+                            <h2>Not registered yet?</h2>
+                            <p>Register now and explore abundant opportunities!</p>
+                            </div>
+                        ) : (
+                            <div className="img__text">
+                            <h2>Already have an account?</h2>
+                            <p>Log in with your account, long time no see!</p>
+                            </div>
+                        )}
+                        <div class="img__btn" onClick={this.toggleSignUp}>
+                            {!this.state.isSignUp ? (
+                            <span class="m--up">Sign Up</span>
+                            ) : (
+                            <span class="m--up">Log In</span>
+                            )}
+                        </div>
+                        </div>
                     </div>
-
-                    <p className="forgot-pass">
-                      <a href="/reset">Forgot your password?</a>
-                    </p>
-
-                    <button
-                      type="submit"
-                      className="submit flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                    >
-                      Log In
-                    </button>
-                  </form>
-                  <p className="signup text-center pt-4">
-                    Don't have an account?{" "}
-                    <a href="signup" onClick={this.toggleSignUp}>
-                      Sign up
-                    </a>
-                  </p>
+                    </Screen>
                 </div>
-              </div>
-            </div>
-            <div className="auth-form-switch">
-              {!this.state.isSignUp ? (
-                <div className="img__text">
-                  <h2>Not registered yet?</h2>
-                  <p>Register now and explore abundant opportunities!</p>
-                </div>
-              ) : (
-                <div className="img__text">
-                  <h2>Already have an account?</h2>
-                  <p>Log in with your account, long time no see!</p>
-                </div>
-              )}
-              <div class="img__btn" onClick={this.toggleSignUp}>
-                {!this.state.isSignUp ? (
-                  <span class="m--up">Sign Up</span>
-                ) : (
-                  <span class="m--up">Log In</span>
-                )}
-              </div>
-            </div>
-          </div>
-        </Screen>
-      </div>
+            }
+        </>
     );
   }
 }

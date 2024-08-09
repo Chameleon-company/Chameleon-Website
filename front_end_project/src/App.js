@@ -48,7 +48,7 @@ function App () {
     <>
       <Router>
         <NotificationComponent />
-        {/* <Suspense fallback={<div>Loading...</div>}> */}
+        <Suspense fallback={<div>Loading...</div>}>
         <main>
           <Switch>
             <Route path="/project/:projectId" component={ProjectDetails} />
@@ -91,7 +91,7 @@ function App () {
             {/* {rememberMe ? (<Route path='/' component={HomePage}/>) : (session ? (<Route path='/' component={HomePage}/>) : (<Route path='/' component={Screen}/>))} */}
           </Switch>
         </main>
-        {/* </Suspense> */}
+        </Suspense>
       </Router >
     </>
   );

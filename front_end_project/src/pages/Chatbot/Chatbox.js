@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Chatbot.css';
-import '../Chatbot/Chatbox.css';
+import './chatbox.css';
 
 const Chatbox = ({
   chameleonLogo = chameleonLogo,

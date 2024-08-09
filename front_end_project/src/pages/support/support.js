@@ -3,7 +3,7 @@ import { notifyWelcome } from "../../components/notificationComp/NotificationCom
 import styles from "./support.module.css";
 
 import Chatbox from '../Chatbot/Chatbox';
-import '../Chatbot/Chatbot.css';
+import '../Chatbot/chatbox.css';
 import chameleonLogo from "../../assets/ChameleonLogo.png";
 import chatOpenImg from "../Chatbot/images/chat-open.png";
 import chatCloseImg from "../Chatbot/images/chat-close.png";

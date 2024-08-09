@@ -9,10 +9,8 @@ import { Redirect } from 'react-router-dom';
 import { auth } from '../utils/firebase';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
-import Chatbox from '../Chatbot/Chatbox'; // newly add
-import '../Chatbot/Chatbox.css'; // newly added
-
-// newly added
+import Chatbox from '../Chatbot/Chatbox';
+import '../Chatbot/chatbox.css';
 import chameleonLogo from "../../assets/ChameleonLogo.png";
 import chatOpenImg from "../Chatbot/images/chat-open.png";
 import chatCloseImg from "../Chatbot/images/chat-close.png";

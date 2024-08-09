@@ -6,7 +6,7 @@ import IotResourcesComponent from "../../components/resources/iotResources";
 import Screen from '../../components/app/Screen';
 import Chatbox from '../Chatbot/Chatbox';
 import './iot.css';
-import '../Chatbot/Chatbot.css';
+import '../Chatbot/chatbox.css';
 import chameleonLogo from "../../assets/ChameleonLogo.png";
 import chatOpenImg from "../Chatbot/images/chat-open.png";
 import chatCloseImg from "../Chatbot/images/chat-close.png";

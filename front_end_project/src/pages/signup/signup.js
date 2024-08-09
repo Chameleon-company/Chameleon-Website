@@ -232,32 +232,34 @@ class SignUp extends Component {
             return; // Stop the form submission if passwords do not match
         }
         // implement other validations here
-        if (password !== confirmPassword) {
-            this.setState({ showToast: true, toastMessage: 'Passwords do not match!' });
+        if (!passwordValidated) {
+            this.setState({ showToast: true, toastMessage: 'Password doesn\'t meet the requirements' });
             return; // Stop the form submission if passwords do not match
         }
-        try {
-            const response = await fetch('http://localhost:3002/auth/signup', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password })
-            });
-            const data = await response.json();
-            this.setState({ showToast: true, toastMessage: 'Sign up successful!', email: '', password: '', confirmPassword: '' });
+        else {
+            try {
+                const response = await fetch('http://localhost:3002/auth/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+                const data = await response.json();
+                this.setState({ showToast: true, toastMessage: 'Sign up successful!', email: '', password: '', confirmPassword: '' });
 
-            if (!response.ok) {
-                const errorMessage = data.error === "Email already exists"
-                    ? "An account with this email already exists. Please use a different email or log in."
-                    : data.error || 'An unknown error occurred during sign up.';
-                throw new Error(errorMessage);
+                if (!response.ok) {
+                    const errorMessage = data.error === "Email already exists"
+                        ? "An account with this email already exists. Please use a different email or log in."
+                        : data.error || 'An unknown error occurred during sign up.';
+                    throw new Error(errorMessage);
+                }
+                this.displayToast('One Step! Please verify your email now!');
+                this.setState({ email: '', password: '', confirmPassword: '', isSignUp:false });
+                // Redirect or perform other actions
+            } catch (error) {
+                this.displayToast(error.message);
             }
-            this.displayToast('One Step! Please verify your email now!');
-            this.setState({ email: '', password: '', confirmPassword: '', isSignUp:false });
-            // Redirect or perform other actions
-        } catch (error) {
-            this.displayToast(error.message);
         }
     };
 
@@ -353,6 +355,7 @@ class SignUp extends Component {
         ) 
         {
             this.state.password = new_pass;
+            this.state.passwordValidated = true;
         }
     }
 

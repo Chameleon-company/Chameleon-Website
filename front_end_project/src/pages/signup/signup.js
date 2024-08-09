@@ -232,7 +232,7 @@ class SignUp extends Component {
             return; // Stop the form submission if passwords do not match
         }
         // implement other validations here
-        if (!passwordValidated) {
+        if (!this.state.passwordValidated) {
             this.setState({ showToast: true, toastMessage: 'Password doesn\'t meet the requirements' });
             return; // Stop the form submission if passwords do not match
         }

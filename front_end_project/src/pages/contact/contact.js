@@ -5,6 +5,7 @@ import Screen from '../../components/app/Screen';
 import { MdEmail } from "react-icons/md";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { IoChatbubbleEllipsesSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 
 function Contact() {
@@ -88,7 +89,8 @@ function Contact() {
                 {page.content.chat.title}
               </div>
               
-              <span class="badge bg-success ml-auto align-self-center p-2">{page.content.chat.contact}</span>
+              {/*<span class="badge bg-success ml-auto align-self-center p-2">{page.content.chat.contact}</span>*/}
+              <Link to="/Chatbot" className="badge bg-success ml-auto align-self-center p-2 text-decoration-none">{page.content.chat.contact}</Link>
             </div>
             
             <div className="contact_item_context w-[100%] p-2 text-center font-semibold text-black mt-3">

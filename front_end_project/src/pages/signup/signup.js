@@ -232,12 +232,10 @@ class SignUp extends Component {
             alert('Passwords do not match!');
             console.log("Passwords do not match!"); // <-- alert bug -- fixed
             return; // Stop the form submission if passwords do not match
-        } // implement other validations here
-        else if (!this.state.passwordValidated) {
-            // this.setState({ showToast: true, toastMessage: 'Password doesn\'t meet the requirements' });
-            // this.displayToast('One Step! Please verify your email now!');
-            alert('Password doesn\'t meet the requirements!');
-            console.log("Password doesn\'t meet the requirements!"); // <-- alert bug -- fixed
+        }
+        // implement other validations here
+        if (!this.state.passwordValidated) {
+            this.setState({ showToast: true, toastMessage: 'Password doesn\'t meet the requirements' });
             return; // Stop the form submission if passwords do not match
         }
         else {

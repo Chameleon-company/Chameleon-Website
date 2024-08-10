@@ -1,6 +1,6 @@
 //import chameleonLogo from "./assets/Header-Chameleon.png";
 //import evProject from "./assets/Thumbnail-EV.jpeg";
-
+import Screen  from "../../components/app/Screen";
 const content1 =
   "Highlight the potential benefits of Chameleon's solutions.";
 const content2 = "Improving efficiency and sustainability in urban environments.";
@@ -10,6 +10,7 @@ const content4 = "Promoting economic development and growth in smart cities.";
 const Ques4 = () => {
     return (
       <>
+      <Screen>
         <header className="bg-pewter p-2">
           <div className="container flex flex-col align-center md:flex-row md:justify-between p-4 gap-4 bg-green-emrld ">
             <div className="my-auto">
@@ -35,6 +36,7 @@ const Ques4 = () => {
             </div>
           
         </section>
+        </Screen>
       </>
     );
   };

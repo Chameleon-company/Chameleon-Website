@@ -1,20 +1,10 @@
-import React from "react";//newly add
 import Screen from '../../components/app/Screen';
-import Chatbox from '../Chatbot/Chatbox';//newly add
 import chameleonLogo from "./assets/Header-Chameleon.png";
 import cityOfMelProject from "./assets/Thumbnail-CoM.png";
 import evProject from "./assets/Thumbnail-EV.jpeg";
 import websiteProject from "./assets/Thumbnail-Website.png";
-import chatOpenImg from "../Chatbot/images/chat-open.png";
-import chatCloseImg from "../Chatbot/images/chat-close.png";
-import dotMenuImg from "../Chatbot/images/dot-menu.png";
-import chatIcon from "../Chatbot/images/chat-icon.png";
-import fileSelectIcon from "../Chatbot/images/file-select.png";
-import sendMessageImg from "../Chatbot/images/send-message.png";
-
-import './home.css';
-import '../Chatbot/Chatbot.css';
-
+import './home.css'
+import BOT from '../../components/bot/bot';
 const content1 =
   "At Chameleon, our mission is to research, create, test, document and deploy IoT-based solutions to enhance life through the application of smart city technologies including: the building of smarter cities, homes, transportation, and energy management systems.";
 const content2 =
@@ -69,18 +59,10 @@ const Homepage = () => {
             </div>
           </div>
           {/* </div> */}
+          
         </section>
-
-        {/* Add the Chatbox component */}
-        <Chatbox
-          chameleonLogo={chameleonLogo}
-          chatOpenImg={chatOpenImg}
-          chatCloseImg={chatCloseImg}
-          dotMenuImg={dotMenuImg}
-          chatIcon={chatIcon}
-          fileSelectIcon={fileSelectIcon}
-          sendMessageImg={sendMessageImg}
-        />
+        <BOT></BOT>
+     
       </Screen>
     </>
   );

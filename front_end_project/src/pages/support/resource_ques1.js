@@ -1,6 +1,6 @@
 //import chameleonLogo from "./assets/Header-Chameleon.png";
 //import evProject from "./assets/Thumbnail-EV.jpeg";
-
+import Screen from "../../components/app/Screen";
 const content1 = "Are there collaboration opportunities or partnerships available with Chameleon?";
 const content2 =
   "Yes, Chameleon welcomes collaboration opportunities and partnerships on smart city projects, research initiatives, and innovation ventures. Partnering with Chameleon provides access to expertise, resources, and networks within the smart city ecosystem.";
@@ -9,6 +9,7 @@ const content2 =
 const ResourceQues1 = () => {
     return (
       <>
+        <Screen>
         <header className="bg-pewter p-2">
           <div className="container flex flex-col align-center md:flex-row md:justify-between p-4 gap-4 bg-green-emrld ">
             <div className="my-auto">
@@ -31,6 +32,7 @@ const ResourceQues1 = () => {
             </div>
           
         </section>
+        </Screen>
       </>
     );
   };

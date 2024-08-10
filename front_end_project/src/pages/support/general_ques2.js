@@ -1,6 +1,6 @@
 //import chameleonLogo from "./assets/Header-Chameleon.png";
 //import evProject from "./assets/Thumbnail-EV.jpeg";
-
+import Screen from "../../components/app/Screen";
 const content1 =
   "What areas does Chameleon focus on?";
 const content2 ="Detail the specific areas where Chameleon applies its expertise, including:";
@@ -11,6 +11,7 @@ const content6 = " Energy management systems: Highlight Chameleon's initiatives 
 const Ques2 = () => {
     return (
       <>
+      <Screen>
         <header className="bg-pewter p-2">
           <div className="container flex flex-col align-center md:flex-row md:justify-between p-4 gap-4 bg-green-emrld ">
             <div className="my-auto">
@@ -40,6 +41,7 @@ const Ques2 = () => {
             </div>
           
         </section>
+        </Screen>
       </>
     );
   };

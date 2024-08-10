@@ -1,6 +1,6 @@
 //import chameleonLogo from "./assets/Header-Chameleon.png";
 //import evProject from "./assets/Thumbnail-EV.jpeg";
-
+import Screen from "../../components/app/Screen";
 const content1 = "How can I learn more or get involved with Chameleon's projects?";
 const content2 =
   "To learn more about Chameleon's projects or to get involved, you can contact us through our website, social media channels, or email. We welcome inquiries, collaboration opportunities, and engagement with our projects.";
@@ -9,6 +9,7 @@ const content2 =
 const ResourceQues3 = () => {
     return (
       <>
+        <Screen>
         <header className="bg-pewter p-2">
           <div className="container flex flex-col align-center md:flex-row md:justify-between p-4 gap-4 bg-green-emrld ">
             <div className="my-auto">
@@ -31,6 +32,7 @@ const ResourceQues3 = () => {
             </div>
           
         </section>
+        </Screen>
       </>
     );
   };

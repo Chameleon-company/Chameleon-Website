@@ -1,6 +1,6 @@
 //import chameleonLogo from "./assets/Header-Chameleon.png";
 //import evProject from "./assets/Thumbnail-EV.jpeg";
-
+import Screen from "../../components/app/Screen";
 const content1 = "How can users provide feedback or suggestions to Chameleon?";
 const content2 =
   "Users are encouraged to share feedback, suggestions, or ideas for improving Chameleon's products and services. They can submit their input through contact forms, feedback forms, or directly contacting us via email or other communication channels. We value user feedback and continuously strive to improve our offerings.";
@@ -9,6 +9,7 @@ const content2 =
 const ResourceQues2 = () => {
     return (
       <>
+      <Screen>
         <header className="bg-pewter p-2">
           <div className="container flex flex-col align-center md:flex-row md:justify-between p-4 gap-4 bg-green-emrld ">
             <div className="my-auto">
@@ -31,6 +32,7 @@ const ResourceQues2 = () => {
             </div>
           
         </section>
+        </Screen>
       </>
     );
   };

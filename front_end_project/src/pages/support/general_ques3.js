@@ -1,6 +1,6 @@
 //import chameleonLogo from "./assets/Header-Chameleon.png";
 //import evProject from "./assets/Thumbnail-EV.jpeg";
-
+import Screen from "../../components/app/Screen";
 const content1 =
   "How does Chameleon approach its projects?";
 const content2 = "Outline Chameleon's methodology for researching, creating, testing, documenting, and deploying IoT solutions.";
@@ -9,6 +9,7 @@ const content3 = "Emphasize the importance of rigorous testing and documentation
 const Ques3 = () => {
     return (
       <>
+      <Screen>
         <header className="bg-pewter p-2">
           <div className="container flex flex-col align-center md:flex-row md:justify-between p-4 gap-4 bg-green-emrld ">
             <div className="my-auto">
@@ -32,6 +33,7 @@ const Ques3 = () => {
             </div>
           
         </section>
+        </Screen>
       </>
     );
   };

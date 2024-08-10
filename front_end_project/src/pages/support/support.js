@@ -1,90 +1,153 @@
-import React from 'react';
-import { Accordion, Button, Col, Form, Row } from 'react-bootstrap';
+import React, { Component } from "react";
+import { notifyWelcome } from "../../components/notificationComp/NotificationComponent";
+import styles from "./support.module.css";
 import Screen from '../../components/app/Screen';
-import Chatbox from '../Chatbot/Chatbox';
-import '../Chatbot/chatbox.css';
-import chameleonLogo from "../../assets/ChameleonLogo.png";
-import chatOpenImg from "../Chatbot/images/chat-open.png";
-import chatCloseImg from "../Chatbot/images/chat-close.png";
-import dotMenuImg from "../Chatbot/images/dot-menu.png";
-import chatIcon from "../Chatbot/images/chat-icon.png";
-import fileSelectIcon from "../Chatbot/images/file-select.png";
-import sendMessageImg from "../Chatbot/images/send-message.png";
 
-export default function Support (props) {
-    const general_questions = [
-        { id: 1, title: `What is Chameleon's mission?`, content: `Provide a concise overview of Chameleon's mission to research, create, test, document, and deploy IoT-based solutions aimed at enhancing life through smart city technologies.` },
-        { id: 2, title: `What areas does Chameleon focus on?`, content: `Detail the specific areas where Chameleon applies its expertise, including: \n Building smarter cities: Discuss how Chameleon develops solutions to improve urban infrastructure and services. \n Smart homes: Explain Chameleon's role in creating IoT devices and systems for residential use. \n Transportation: Describe Chameleon's efforts to enhance transportation systems through IoT technology, such as traffic management and public transit systems. \n Energy management systems: Highlight Chameleon's initiatives to optimize energy usage and promote sustainability in urban environments.` },
-        { id: 3, title: `How does Chameleon approach its projects?`, content: `Outline Chameleon's methodology for researching, creating, testing, documenting, and deploying IoT solutions. \n Emphasize the importance of rigorous testing and documentation in ensuring the reliability and effectiveness of deployed solutions.` },
-        { id: 4, title: `Are there collaboration opportunities or partnerships available with Chameleon?`, content: `Yes, Chameleon welcomes collaboration opportunities and partnerships on smart city projects, research initiatives, and innovation ventures. Partnering with Chameleon provides access to expertise, resources, and networks within the smart city ecosystem.` },
-        { id: 5, title: `Does Chameleon prioritize data privacy and security?`, content: `Yes, data privacy and security are top priorities for Chameleon. We implement measures to safeguard sensitive information and comply with relevant regulations such as GDPR or CCPA to ensure the protection of user data in our IoT solutions.` },
-    ];
+class Contact extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            showGeneralQuestions: false
+        };
+    }
 
-    return (
-        <div className='bg-green-emrld'>
+    componentDidMount() {
+        notifyWelcome(
+            "Make sure to contact us only on working days 9:00 AM onwards!",
+        );
+    }
+
+    toggleGeneralQuestions = () => {
+        this.setState(prevState => ({
+            showGeneralQuestions: !prevState.showGeneralQuestions
+        }));
+    };
+
+    toggleTechnologyQuestions = () => {
+        this.setState(prevState => ({
+            showTechnologyQuestions: !prevState.showTechnologyQuestions
+        }));
+    };
+
+    toggleResourcesQuestions = () => {
+        this.setState(prevState => ({
+            showResourcesQuestions: !prevState.showResourcesQuestions
+        }));
+    };
+
+    render() {
+        return (
             <Screen>
-                <div className='container bg-green-sage mt-xl-5 my-auto p-5 text-dark' style={{ borderRadius: 25 }}>
-                    {/* Page Title */}
-                    <Row className='p-2 text-center'>
-                        <h1>Support</h1>
-                    </Row>
+                <div className="bg-[#deece3]">
 
-                    {/* Page Content */}
-                    <Row className='p-5'>
-
-                        {/* FAQs TODO: Border*/}
-                        <Col className='p-3' xs={12} md={12} lg={6} xl={6} style={{ border: '1px solid #0fcd25', borderRadius: '0.25rem' }}>
-
-                            {/* Section Title */}
-                            <div className='text-center p-1'>
-                                <h2>FAQs</h2>
+                    <div className={`${styles.contact_title} bg-[#4fa373]  md:text-5xl text-4xl font-medium text-center text-black`}>
+                        Frequently Asked Questions
+                    </div>
+                    <div className={`${styles.contact_body} grid grid-cols-1   max-w-6xl mx-auto   justify-between items-start gap-3 `}>
+                        <div className="contact_item">
+                            <div className="flex justify-start items-center gap-3" onClick={this.toggleGeneralQuestions}>
+                                <div className="contact_item_title lg:text-3xl md:text-2xl text-[22px] font-semibold ">
+                                    General Questions
+                                </div>
+                                <div className="arrow-icon">{this.state.showGeneralQuestions ? '▼' : '▲'}</div>
                             </div>
+                            {this.state.showGeneralQuestions && (
+                                <div className="contact_item_context border-2 border-[#7a7e7c] w-[100%] p-2 font-semibold text-black mt-3">
+                                    <ul>
+                                        <li><a href="general_ques1" style={{ color: 'black' }}>What is Chameleon's mission?</a></li>
+                                        <li><a href="general_ques2" style={{ color: 'black' }}>What areas does Chameleon focus on?</a></li>
+                                        <li><a href="general_ques3" style={{ color: 'black' }}>How does Chameleon approach its projects?</a></li>
+                                        <li><a href="general_ques4" style={{ color: 'black' }}>Highlight the potential benefits of Chameleon's solutions</a></li>                                </ul>
+                                </div>
+                            )}
+                        </div>
 
-                            {/* Section Content */}
-                            <Accordion defaultActiveKey="0">
-                                {Array.isArray(general_questions) && general_questions.map((question) => (
-                                    <Accordion.Item eventKey={question.id} key={question.id}>
-                                        <Accordion.Header>{question.title}
-                                        </Accordion.Header>
-                                        <Accordion.Body>{question.content} </Accordion.Body>
-                                    </Accordion.Item>
-                                ))}
-                            </Accordion>
-                        </Col>
-
-                        {/* Submit Query */}
-                        <Col style={{ border: '1px solid #0fcd25', borderRadius: '0.25rem' }}>
-                            {/* Section Title */}
-                            <div className='text-center p-1'>
-                                <h2>Submit a Query</h2>
+                        <div className="support_item">
+                            <div className="flex justify-start items-center gap-3" onClick={this.toggleTechnologyQuestions}>
+                                <div className="support_item_title lg:text-3xl md:text-2xl text-[22px] font-semibold ">
+                                    Technology
+                                </div>
+                                <div className="arrow-icon">{this.state.showTechnologyQuestions ? '▼' : '▲'}</div>
                             </div>
+                            {this.state.showTechnologyQuestions && (
+                                <div className="support_item_context border-2 border-[#7a7e7c] w-[100%] p-2 font-semibold text-black mt-3">
+                                    <ul>
+                                        <li><a href="technology_ques1" style={{ color: 'black' }}>Does Chameleon prioritize data privacy and security?</a></li>
+                                        <li><a href="technology_ques2" style={{ color: 'black' }}>Can Chameleon's solutions be customized for specific needs?</a></li>
+                                        <li><a href="technology_ques3" style={{ color: 'black' }}>How does Chameleon deploy its solutions in real-world environments?</a></li>
+                                        <li><a href="technology_ques4" style={{ color: 'black' }}>Where can users find support and troubleshooting resources?</a></li>                                </ul>
 
-                            {/* Section Content */}
-                            <Form className='p-2'>
-                                <fieldset>
-                                    <Form.Group className="mb-3" controlId="fullname">
-                                        <Form.Label>Name</Form.Label>
-                                        <Form.Control type="text" placeholder="John Doe" />
-                                    </Form.Group>
-                                    <Form.Group className="mb-3" controlId="email">
-                                        <Form.Label>Email address</Form.Label>
-                                        <Form.Control type="email" placeholder="john@doe.com" />
-                                    </Form.Group>
-                                    <Form.Group className="mb-3" controlId="query">
-                                        <Form.Label>Example textarea</Form.Label>
-                                        <Form.Control as="textarea" rows={3} placeholder='Type your query here' />
-                                    </Form.Group>
-                                    <Button type='submit' variant='outline-success'>Submit</Button>
-                                </fieldset>
-                            </Form>
-                        </Col>
+                                </div>
+                            )}
+                        </div>
+                        <div className="support_item">
+                            <div className="flex justify-start items-center gap-3" onClick={this.toggleResourcesQuestions}>
+                                <div className="support_item_title lg:text-3xl md:text-2xl text-[22px] font-semibold ">
+                                    Resources
+                                </div>
+                                <div className="arrow-icon">{this.state.showResourcesQuestions ? '▼' : '▲'}</div>
+                            </div>
+                            {this.state.showResourcesQuestions && (
+                                <div className="support_item_context border-2 border-[#7a7e7c] w-[100%] p-2 font-semibold text-black mt-3">
+                                    <ul>
+                                        <li><a href="resource_ques1" style={{ color: 'black' }}>Are there collaboration opportunities or partnerships available with Chameleon?</a></li>
+                                        <li><a href="resource_ques2" style={{ color: 'black' }}>How can users provide feedback or suggestions to Chameleon?</a></li>
+                                        <li><a href="resource_ques3" style={{ color: 'black' }}>How can I learn more or get involved with Chameleon's projects?</a></li>
+                                    </ul>
 
-                    </Row>
+                                </div>
+                            )}
+
+                        </div>
+                    </div>
+
+                    <div className="md:col-span-7" style={{ padding: "8%", border: "10px", color: "black" }}>
+                        <h1
+                            style={{
+                                fontWeight: "bold",
+                                marginBottom: "2rem",
+                                textAlign: "center",
+                            }}
+                        >
+                            Submit your Query
+                        </h1>
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">NAME</label>
+                                <input
+                                    type="text"
+                                    placeholder="Name"
+                                    class="form-control" id="exampleFormControlInput1"
+                                />
+                                <label for="exampleFormControlInput1" class="form-label">EMAIL</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">ENTER YOUR QUERRY HERE </label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                            <div className="d-flex justify-content-center mb-3">
+                                <button
+                                    className="bg-green-emrld p-3 text-black-24"
+                                    type="submit"
+                                    style={{ padding: "10px 80px", fontSize: "1rem", borderRadius: 20 }}
+                                >
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-
-                {/* Add the Chatbox component */}
-                <Chatbox chameleonLogo={chameleonLogo} chatOpenImg={chatOpenImg} chatCloseImg={chatCloseImg} dotMenuImg={dotMenuImg} chatIcon={chatIcon} fileSelectIcon={fileSelectIcon} sendMessageImg={sendMessageImg} />
             </Screen>
-        </div>
-    );
+        );
+    }
 }
+
+export const contactSearchableContents = [
+    "Contact Us",
+    "Phone Us",
+    "Send a Email",
+    "Live Chat",
+];
+
+export default Contact;

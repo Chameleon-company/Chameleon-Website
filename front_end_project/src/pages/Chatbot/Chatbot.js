@@ -63,7 +63,7 @@ const Chatbot = () => {
             </div>
 
             <button className="options-button">
-              <MoreHorizIcon style={{ color: 'white' }} />
+             <MoreHorizIcon style={{ color: 'white' }} />
             </button>
           </header>
           <ul className="chatbox" ref={chatboxRef}>

@@ -178,7 +178,7 @@ class Login extends Component {
     return (
         <>
             {isAuthenticated ? <Redirect to="/home" /> :
-                <div className="login-centered-container w-full h-full overflow-y-auto">
+                <div className="bg-gray-100 w-full h-full overflow-y-auto">
                     <Screen>
                     <div className="max-w-5xl mx-auto my-4 flex rounded-lg overflow-hidden">
                         <div className="container_2">
@@ -188,16 +188,16 @@ class Login extends Component {
                             )}
 
                             <div className="form sign-in rounded-md">
-                            <h2>Welcome Back</h2>
+                            <h2 className="text-gray-600 font-bold">Login to Chameleon</h2>
                             <form
                                 action="#"
                                 method="POST"
-                                className="space-y-6 flex flex-col items-center"
+                                className="space-y-6 flex flex-col items-center mt-5"
                                 onSubmit={this.handleSubmitSignIn}
                             >
                                 <label
                                 htmlFor="email"
-                                className="block text-sm font-medium leading-6 text-gray-900"
+                                className="text-sm text-gray-700 text-start"
                                 >
                                 Email address
                                 </label>
@@ -207,12 +207,12 @@ class Login extends Component {
                                 value={email}
                                 onChange={this.handleInputChange}
                                 autoComplete="email"
-                                className="block w-full rounded-md border-0 py-1.5 mt-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                className="w-full rounded-2xl border-3 py-1.5 mt-2 text-gray-700 sm:text-sm sm:leading-6"
                                 />
 
                                 <label
                                 htmlFor="password"
-                                className="block text-sm font-medium leading-6 text-gray-900"
+                                className="text-sm text-gray-700"
                                 >
                                 Password
                                 </label>
@@ -222,7 +222,7 @@ class Login extends Component {
                                 value={password}
                                 onChange={this.handleInputChange}
                                 autoComplete="current-password"
-                                className="block w-full rounded-md border-0 py-1.5 mt-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                className="w-full rounded-2xl border-3 py-1.5 mt-2 text-gray-700 sm:text-sm sm:leading-6"
                                 />
 
                                 <div className="flex items-center gap-2">
@@ -233,24 +233,30 @@ class Login extends Component {
                                     id="remember"
                                     className="mt-0"
                                 />
-                                <label htmlFor="remember">Remember Me</label>
+                                <label htmlFor="remember" className="text-gray-700">Remember Me</label>
                                 </div>
 
-                                <p className="forgot-pass">
-                                <a href="/reset">Forgot your password?</a>
+                                <p>
+                                <a href="/reset" className="text-gray-500 text-sm">Forgot your password?</a>
                                 </p>
 
                                 <button
                                 type="submit"
-                                className="submit flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                className="submit bg-[#559166] flex justify-center rounded-3xl py-2 px-5 font-semibold shadow-sm text-gray-50 hover:text-[#559166] hover:bg-green-sage focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                 >
-                                Log In
+                                Login
                                 </button>
                             </form>
-                            <p className="signup text-center pt-4">
+                            <p className="text-center mt-3">-- or login with --</p>
+                            <div className="flex justify-center items-center space-x-4">
+                            <a href=""><img className="inline h-9 w-9" src={Google}></img></a>
+                            <a href=""><img className="inline h-12 w-12" src={Linkedin}></img></a>
+                            <a href=""><img className="inline h-7 w-7" src={Microsoft}></img></a>
+                            </div>
+                            <p className="text-center pt-4">
                                 Don't have an account?{" "}
-                                <a href="signup" onClick={this.toggleSignUp}>
-                                Sign up
+                                <a className="text-[#559166] no-underline font-semibold" href="signup" onClick={this.toggleSignUp}>
+                                Sign Up
                                 </a>
                             </p>
                             </div>

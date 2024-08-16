@@ -180,8 +180,8 @@ class Login extends Component {
             {isAuthenticated ? <Redirect to="/home" /> :
                 <div className="bg-gray-100 w-full h-full overflow-y-auto">
                     <Screen>
-                    <div className="max-w-5xl mx-auto my-4 flex rounded-lg overflow-hidden">
-                        <div className="container_2">
+                    <div className="max-w-5xl mx-auto my-14 flex flex-col lg:flex-row rounded-lg overflow-hidden">
+                        <div className="container_2 w-[540px] lg:w-[640px]">
                         <div className={`dowebok ${isSignUp ? "s--signup" : ""}`}>
                             {showToast && (
                             <div className="login-toast-message">{toastMessage}</div>

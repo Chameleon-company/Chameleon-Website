@@ -84,7 +84,6 @@ body {
 
 .form {
   position: relative;
-  width: 640px;
   height: 100%;
   transition: -webkit-transform 0.6s ease-in-out;
   transition: transform 0.6s ease-in-out;
@@ -92,27 +91,6 @@ body {
     transform 0.6s ease-in-out,
     -webkit-transform 0.6s ease-in-out;
   padding: 50px 30px 0;
-}
-
-.sub-cont {
-  overflow: hidden;
-  position: absolute;
-  left: 640px;
-  top: 0;
-  width: 900px;
-  height: 100%;
-  padding-left: 260px;
-  background: #fff;
-  transition: -webkit-transform 0.6s ease-in-out;
-  transition: transform 0.6s ease-in-out;
-  transition:
-    transform 0.6s ease-in-out,
-    -webkit-transform 0.6s ease-in-out;
-}
-
-.dowebok.s--signup .sub-cont {
-  -webkit-transform: translate3d(-640px, 0, 0);
-  transform: translate3d(-640px, 0, 0);
 }
 
 .signin-up-button {
@@ -200,11 +178,6 @@ body {
   padding-top: 360px;
 }
 
-.dowebok.s--signup .img:before {
-  -webkit-transform: translate3d(640px, 0, 0);
-  transform: translate3d(640px, 0, 0);
-}
-
 .img__text {
   z-index: 2;
   width: 100%;
@@ -226,21 +199,6 @@ body {
 .img__text p {
   font-size: 14px;
   line-height: 1.5;
-}
-
-.dowebok.s--signup .img__text.m--up {
-  -webkit-transform: translateX(520px);
-  transform: translateX(520px);
-}
-
-.img__text.m--in {
-  -webkit-transform: translateX(-520px);
-  transform: translateX(-520px);
-}
-
-.dowebok.s--signup .img__text.m--in {
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
 }
 
 .img__btn {
@@ -283,21 +241,6 @@ body {
   transition:
     transform 0.6s,
     -webkit-transform 0.6s;
-}
-
-.img__btn span.m--in {
-  -webkit-transform: translateY(-72px);
-  transform: translateY(-72px);
-}
-
-.dowebok.s--signup .img__btn span.m--in {
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-
-.dowebok.s--signup .img__btn span.m--up {
-  -webkit-transform: translateY(72px);
-  transform: translateY(72px);
 }
 
 h2 {

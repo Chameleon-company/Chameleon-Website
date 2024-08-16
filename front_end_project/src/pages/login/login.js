@@ -178,9 +178,9 @@ class Login extends Component {
     return (
         <>
             {isAuthenticated ? <Redirect to="/home" /> :
-                <div className="bg-gray-100 w-full h-full overflow-y-auto font-poppins">
+                <div className= "bg-gray-100 w-full h-full overflow-y-auto font-poppins">
                     <Screen>
-                    <div className="max-w-5xl mx-auto my-14 flex flex-col lg:flex-row rounded-lg overflow-hidden">
+                    <div className="max-w-5xl mx-auto my-14 flex flex-col lg:flex-row rounded-lg overflow-hidden drop-shadow-lg">
                         <div className="container_2 w-[540px] lg:w-[640px]">
                         <div className={`dowebok ${isSignUp ? "s--signup" : ""}`}>
                             {showToast && (
@@ -264,7 +264,7 @@ class Login extends Component {
                         </div>
                         <div className="auth-form-switch">
                         {!this.state.isSignUp ? (
-                            <div className="img__text">
+                            <div className="img__text drop-shadow-xl">
                             <h2>Not registered yet?</h2>
                             <p>Register now and explore abundant opportunities!</p>
                             </div>
@@ -274,7 +274,7 @@ class Login extends Component {
                             <p>Log in with your account, long time no see!</p>
                             </div>
                         )}
-                        <div class="img__btn" onClick={this.toggleSignUp}>
+                        <div class="img__btn  hover:text-base" onClick={this.toggleSignUp}>
                             {!this.state.isSignUp ? (
                             <span class="m--up">Sign Up</span>
                             ) : (

@@ -178,7 +178,7 @@ class Login extends Component {
     return (
         <>
             {isAuthenticated ? <Redirect to="/home" /> :
-                <div className="bg-gray-100 w-full h-full overflow-y-auto">
+                <div className="bg-gray-100 w-full h-full overflow-y-auto font-poppins">
                     <Screen>
                     <div className="max-w-5xl mx-auto my-14 flex flex-col lg:flex-row rounded-lg overflow-hidden">
                         <div className="container_2 w-[540px] lg:w-[640px]">
@@ -188,7 +188,7 @@ class Login extends Component {
                             )}
 
                             <div className="form sign-in rounded-md">
-                            <h2 className="text-gray-600 font-bold">Login to Chameleon</h2>
+                            <h2 className="text-gray-600 font-semibold">Login to Chameleon</h2>
                             <form
                                 action="#"
                                 method="POST"

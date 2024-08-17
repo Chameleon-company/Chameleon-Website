@@ -1,19 +1,18 @@
 import Screen from '../../components/app/Screen';
-import chameleonLogo from "./assets/Header-Chameleon.png";
-import cityOfMelProject from "./assets/Thumbnail-CoM.png";
-import evProject from "./assets/Thumbnail-EV.jpeg";
-import websiteProject from "./assets/Thumbnail-Website.png";
-import './home.css'
+// import chameleonLogo from "./assets/Header-Chameleon.png";
+import cityOfMelProject from './assets/Thumbnail-CoM.png';
+import evProject from './assets/Thumbnail-EV.jpeg';
+import websiteProject from './assets/Thumbnail-Website.png';
+import './home.css';
 const content1 =
-  "At Chameleon, our mission is to research, create, test, document and deploy IoT-based solutions to enhance life through the application of smart city technologies including: the building of smarter cities, homes, transportation, and energy management systems.";
-const content2 =
-  "Further advancing sustainable mobility solutions ";
-const content3 = "City of Melbourne Open Data";
+  'At Chameleon, our mission is to research, create, test, document and deploy IoT-based solutions to enhance life through the application of smart city technologies including: the building of smarter cities, homes, transportation, and energy management systems.';
+const content2 = 'Further advancing sustainable mobility solutions ';
+const content3 = 'City of Melbourne Open Data';
 const content4 =
   "Melbourne Open Data refers to the City of Melbourne's initiative to make a wide range of public data sets available to the public for free";
-const content5 = "Website Uplift";
+const content5 = 'Website Uplift';
 const content6 =
-  "Research, create, test, document and deploy loT-based solutions to enhance life through the application of smart city technologies.";
+  'Research, create, test, document and deploy loT-based solutions to enhance life through the application of smart city technologies.';
 
 const Homepage = () => {
   return (

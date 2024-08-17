@@ -1,49 +1,54 @@
-import React, { Suspense, lazy } from "react";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import React, { lazy } from 'react';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Screen from './components/app/Screen';
-import NotificationComponent from "./components/notificationComp/NotificationComponent";
-import NotFoundPage from "./pages/error404/404.js";
+import NotificationComponent from './components/notificationComp/NotificationComponent';
+import NotFoundPage from './pages/error404/404.js';
 import Profile from './pages/profile/profile.js';
 
+const HomePage = lazy(() => import('./pages/homepage/Homepage'));
+const Chatbot = lazy(() => import('./pages/Chatbot/Chatbot'));
+const aboutUs = lazy(() => import('./pages/about/aboutUs'));
+const News = lazy(() => import('./pages/news/news'));
+const ProjectDetails = lazy(() => import('./pages/projects/ProjectDetails'));
+const Projects = lazy(() => import('./pages/projects/projects'));
+const Contact = lazy(() => import('./pages/contact/contact'));
+const IotResources = lazy(() => import('./pages/resources/iotResources'));
+const IotTechnologies = lazy(() => import('./pages/resources/iotTechnologies'));
+const IotStatistics = lazy(() => import('./pages/resources/iotStatistics'));
+const IotUpdates = lazy(() => import('./pages/resources/iotUpdates'));
+const Main = lazy(() => import('./pages/faq/main'));
+const Report = lazy(() => import('./pages/report/report'));
+const Login = lazy(() => import('./pages/login/login'));
+const Logout = lazy(() => import('./pages/logout/logout'));
+const Signup = lazy(() => import('./pages/signup/signup'));
+const ResetPassword = lazy(() => import('./pages/reset_password/reset_demo'));
+const newsSignupForm = lazy(
+  () => import('./pages/email_newsletter_forms/subscribe'),
+);
+const newsUnsubForm = lazy(
+  () => import('./pages/email_newsletter_forms/unsubscribe'),
+);
+const newsRemoveForm = lazy(
+  () => import('./pages/email_newsletter_forms/remove'),
+);
+const SearchResults = lazy(() => import('./pages/search/SearchResults'));
+const Ques1 = lazy(() => import('./pages/support/general_ques1'));
+const Ques2 = lazy(() => import('./pages/support/general_ques2'));
+const Ques3 = lazy(() => import('./pages/support/general_ques3'));
+const Ques4 = lazy(() => import('./pages/support/general_ques4'));
+const ResourceQues1 = lazy(() => import('./pages/support/resource_ques1'));
+const ResourceQues2 = lazy(() => import('./pages/support/resource_ques2'));
+const ResourceQues3 = lazy(() => import('./pages/support/resource_ques3'));
+const Support = lazy(() => import('./pages/support/support'));
+const TechnologyQues1 = lazy(() => import('./pages/support/technology_ques1'));
+const TechnologyQues2 = lazy(() => import('./pages/support/technology_ques2'));
+const TechnologyQues3 = lazy(() => import('./pages/support/technology_ques3'));
+const TechnologyQues4 = lazy(() => import('./pages/support/technology_ques4'));
 
-const HomePage = lazy(() => import("./pages/homepage/Homepage"));
-const Chatbot = lazy(() => import("./pages/Chatbot/Chatbot"));
-const aboutUs = lazy(() => import("./pages/about/aboutUs"));
-const News = lazy(() => import("./pages/news/news"));
-const ProjectDetails = lazy(() => import("./pages/projects/ProjectDetails"));
-const Projects = lazy(() => import("./pages/projects/projects"));
-const Contact = lazy(() => import("./pages/contact/contact"));
-const IotResources = lazy(() => import("./pages/resources/iotResources"));
-const IotTechnologies = lazy(() => import("./pages/resources/iotTechnologies"));
-const IotStatistics = lazy(() => import("./pages/resources/iotStatistics"));
-const IotUpdates = lazy(() => import("./pages/resources/iotUpdates"));
-const Main = lazy(() => import("./pages/faq/main"));
-const Report = lazy(() => import("./pages/report/report"));
-const Login = lazy(() => import("./pages/login/login"));
-const Logout = lazy(() => import("./pages/logout/logout"));
-const Signup = lazy(() => import("./pages/signup/signup"));
-const ResetPassword = lazy(() => import("./pages/reset_password/reset_demo"));
-const newsSignupForm = lazy(() => import("./pages/email_newsletter_forms/subscribe"));
-const newsUnsubForm = lazy(() => import("./pages/email_newsletter_forms/unsubscribe"));
-const newsRemoveForm = lazy(() => import("./pages/email_newsletter_forms/remove"));
-const SearchResults = lazy(() => import("./pages/search/SearchResults"));
-const Ques1 = lazy(() => import("./pages/support/general_ques1"));
-const Ques2 = lazy(() => import("./pages/support/general_ques2"));
-const Ques3 = lazy(() => import("./pages/support/general_ques3"));
-const Ques4 = lazy(() => import("./pages/support/general_ques4"));
-const ResourceQues1 = lazy(() => import("./pages/support/resource_ques1"));
-const ResourceQues2 = lazy(() => import("./pages/support/resource_ques2"));
-const ResourceQues3 = lazy(() => import("./pages/support/resource_ques3"));
-const Support = lazy(() => import("./pages/support/support"));
-const TechnologyQues1 = lazy(() => import("./pages/support/technology_ques1"));
-const TechnologyQues2 = lazy(() => import("./pages/support/technology_ques2"));
-const TechnologyQues3 = lazy(() => import("./pages/support/technology_ques3"));
-const TechnologyQues4 = lazy(() => import("./pages/support/technology_ques4"));
-
-function App () {
-  const rememberMe = localStorage.getItem('rememberMe') === 'true';
-  const status = sessionStorage.getItem('status') === 'logged in';
-  const session = rememberMe ? true : status;
+function App() {
+  // const rememberMe = localStorage.getItem('rememberMe') === 'true';
+  // const status = sessionStorage.getItem('status') === 'logged in';
+  // const session = rememberMe ? true : status;
   return (
     <>
       <Router>
@@ -53,7 +58,7 @@ function App () {
           <Switch>
             <Route path="/project/:projectId" component={ProjectDetails} />
             <Route exact path="/" component={Screen} />
-            <Route exact path="/home" component={HomePage} />
+            <Route path="/home" component={HomePage} />
             <Route path="/aboutus" component={aboutUs} />
             <Route path="/news" component={News} />
             <Route path="/chatbot" component={Chatbot} />
@@ -92,7 +97,7 @@ function App () {
           </Switch>
         </main>
         {/* </Suspense> */}
-      </Router >
+      </Router>
     </>
   );
 }

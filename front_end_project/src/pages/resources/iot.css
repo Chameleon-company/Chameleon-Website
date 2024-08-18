@@ -1,10 +1,65 @@
 .section-height{
-    padding-top: 80px;
-    height: 90vh;
+  padding-top: 80px;
+  height: 90vh;
+}
+
+@media screen and (max-width: 600px) {
+  .section-height{
+      height: auto;
   }
-  
-  @media screen and (max-width: 600px) {
-    .section-height{
-        height: auto;
-    }
+}
+.favorite-button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.favorite-button.favorite {
+  background-color: #ff0; /* Highlight color for favorite items */
+}
+
+.favorite-button:hover {
+  background-color: #ddd; /* Hover effect */
+}
+.section-height {
+  padding-top: 80px;
+  height: 90vh;
+}
+
+@media screen and (max-width: 600px) {
+  .section-height {
+    height: auto;
   }
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between input and button */
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 250px; /* Adjust width as needed */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #4CAF50; /* Button background color */
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-button:hover {
+  background-color: #45a049; /* Button hover color */
+}

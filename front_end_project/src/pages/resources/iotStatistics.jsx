@@ -1,24 +1,14 @@
 import { Component } from "react";
 import Screen from '../../components/app/Screen';
-import CommentSection from "../../components/resources/CommentSection";
 
 const content1 =
   "By 2028, the Australian IoT market is projected to have increased from US$15.46 billion to US$27.13 billion. The largest IoT market in Australia is the automotive industry, followed by the industrial and retail sectors. In Australia, there will be 16.7 million linked IoT devices by 2022. By 2028, Australia is projected to have 28.9 million linked IoT devices. IoT devices are connected to 10 ordinary Australian homes. Smart speakers, smart thermostats, and smart security cameras are the most widely used IoT devices in Australia. The adoption of Industry 4.0 technologies, the rise of the Internet of Vehicles (IAV), and the desire for smart city solutions are what are driving the IoT market in Australia.";
 
 class IotStatistics extends Component {
-  render() {
+  render () {
+
     const titleStyle = {
       color: 'white'
-    };
-
-    // Styling for comment section
-    const commentSectionStyle = {
-      width: '100%',           
-      maxWidth: '1000px',       
-      margin: '20px auto',     
-      padding: '60px',
-      backgroundColor: '#f9f9f9',
-      borderRadius: '8px',
     };
 
     return (
@@ -39,8 +29,6 @@ class IotStatistics extends Component {
             </div>
           </div>
         </div>
-
-        <div style={commentSectionStyle}><CommentSection /></div>
       </Screen>
     );
   }

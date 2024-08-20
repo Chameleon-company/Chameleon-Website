@@ -6,8 +6,6 @@ import { FaGithub } from "react-icons/fa";
 import Posts from './posts';
 import Password from './password';
 import User from './user';
-import { Button } from 'react-bootstrap';
-import { signOut } from '../../routes/user';
 
 function Profile (props) {
     const initial_object = {
@@ -35,13 +33,15 @@ function Profile (props) {
     const [activeTab, setActiveTab] = useState('profile');
 
     const handleTabClick = (tabId) => { setActiveTab(tabId); };
-    const handleUser = (user) => { setUser(prevUser => ({ ...prevUser, ...user })); };
-    const handleLogout = () => { signOut(); };
+
+    const handleUser = (user) => {
+        setUser(prevUser => ({ ...prevUser, ...user }));
+    };
 
     return (
         <>
             <Screen>
-                <div className='container mt-xl-auto my-auto p-5 bg-light text-dark' style={{ borderRadius: 25 }}>
+                <div className='container mt-xl-5 my-auto p-5 bg-light text-dark' style={{ borderRadius: 25 }}>
                     <div className='row'>
 
                         {/* Profile */}
@@ -50,7 +50,7 @@ function Profile (props) {
                             {/* Profile Image */}
                             <div className='row mt-auto'>
                                 <div className='col'>
-                                    {user.image ? <img className="mx-auto rounded-circle" src={user.image} alt='profile' style={{ width: '200px', height: '200px' }} /> : <CgProfile className='mx-auto my-5' size={100} height={100} width={100} />}
+                                    {user.image ? <img className="mx-auto rounded-circle" src={user.image} style={{ width: '200px', height: '200px' }} /> : <CgProfile className='mx-auto my-5' size={100} height={100} width={100} />}
                                 </div>
                             </div>
 
@@ -61,8 +61,13 @@ function Profile (props) {
 
                             {/* Project and Role */}
                             <div className='row'>
-                                <span className='display-8 text-secondary'> {user.role} </span>
-                                <span className='display-8 text-secondary'> {user.project} </span>
+                                <span className='display-8 text-secondary'>
+                                    {user.role}
+                                </span>
+                                <span className='display-8 text-secondary'>
+                                    {user.project}
+                                </span>
+
                             </div>
 
                             {/* Social Icons */}
@@ -74,13 +79,7 @@ function Profile (props) {
                                     <a className='text-decoration-none text-dark' href={`tel:${user.phone}`}> <MdLocalPhone size={30} /> </a>
                                 </div>
                                 <div className='col-auto'>
-                                    <a className='text-decoration-none text-dark' href={user.githubLink} target="_blank" rel="noreferrer"> <FaGithub size={30} /> </a>
-                                </div>
-                            </div>
-
-                            <div className='row mt-3 p-2 justify-content-center'>
-                                <div className='col-auto'>
-                                    <Button className='mt-1' variant='outline-danger' onClick={handleLogout}>Logout</Button>
+                                    <a className='text-decoration-none text-dark' href={user.githubLink} target="_blank"> <FaGithub size={30} /> </a>
                                 </div>
                             </div>
                         </div>

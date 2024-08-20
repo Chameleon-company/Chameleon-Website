@@ -92,7 +92,7 @@ const Footer = () => {
 
           #root {
             ${theme === 'dark' ? `
-              background-color: #333333;
+              background-color: #151818;
             ` : `
               background-color:  white;
             `}

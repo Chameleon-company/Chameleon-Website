@@ -1,3 +1,5 @@
 {
-  "dependencies": {}
+  "dependencies": {
+    "react-bootstrap": "^2.10.2"
+  }
 }

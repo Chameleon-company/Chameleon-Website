@@ -19,6 +19,7 @@ const IotStatistics = lazy(() => import("./pages/resources/iotStatistics"));
 const IotUpdates = lazy(() => import("./pages/resources/iotUpdates"));
 const Main = lazy(() => import("./pages/faq/main"));
 const Report = lazy(() => import("./pages/report/report"));
+const Dashboard = lazy(() => import("./pages/admin_dashboard/admin_dashboard"));
 const Login = lazy(() => import("./pages/login/login"));
 const Logout = lazy(() => import("./pages/logout/logout"));
 const Signup = lazy(() => import("./pages/signup/signup"));
@@ -66,6 +67,7 @@ function App () {
             <Route path="/iotUpdates" component={IotUpdates} />
             <Route path="/profile" component={Profile} />
             <Route path="/faq" component={Main} />
+            <Route path="/admin_dashboard" component={Dashboard} />
             <Route path="/login" component={Login} />
             <Route exact path="/logout" component={Logout} />
             <Route path="/signup" component={Signup} />

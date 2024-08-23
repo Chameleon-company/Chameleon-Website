@@ -118,6 +118,14 @@ const Header = () => {
                       Login
                     </a>
                   </li>
+                  <li className="nav-item">
+                    <a
+                      className="px-3 py-2 flex items-center uppercase font-bold leading-snug hover:opacity-75 no-underline"
+                      href="/admin_dashboard"
+                    >
+                      Admin
+                    </a>
+                  </li>
                 </ul>
                 <hr className="border-gray-200 dark:border-gray-600" />
               </div>

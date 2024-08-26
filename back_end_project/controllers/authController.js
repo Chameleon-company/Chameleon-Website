@@ -1,7 +1,7 @@
 const authService = require('../services/authService');
 
 exports.userSignUp = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, fname, lname, role, project, phone, github } = req.body;
   if (!isStrongPassword(password)) {
     return res.status(400).json({ 
       error: 'Password does not meet security requirements',
@@ -15,10 +15,11 @@ exports.userSignUp = async (req, res) => {
     });
   }
   try {
-    const user = await authService.createUser(email, password);
+    const user = await authService.createUser(email, password, fname, lname, role, project, phone, github);
     res.status(201).json({ message: 'User signed up successfully', user });
   } catch (error) {
     res.status(500).json({ error: error.message });
+    console.log("hi");
   }
 };
 
@@ -74,6 +75,7 @@ exports.sendPasswordResetEmail = async (req, res) => {
     res.status(200).json({ message: 'Password reset email sent' });
   } catch (error) {
     res.status(500).json({ error: error.message });
+    // console.log("hi");
   }
 };
 
@@ -83,6 +85,7 @@ exports.userSignOut = async (req, res) => {
     res.status(200).json({ message: 'User signed out successfully' });
   } catch (error) {
     res.status(500).json({ error: error.message });
+    // console.log("hi22");
   }
 };
 

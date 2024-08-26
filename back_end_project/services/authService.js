@@ -2,6 +2,7 @@ const { initializeApp } = require('firebase/app');
 const firebaseConfig = require('../firebaseConfig');
 
 const { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, signOut } = require('firebase/auth');
+const { getFirestore, setDoc, doc } = require('firebase/firestore');
 
 // Initialize Firebase
 initializeApp(firebaseConfig);
@@ -9,12 +10,42 @@ initializeApp(firebaseConfig);
 // Get Firebase Authentication instance
 const auth = getAuth();
 
-// Function to create a user with email and password
-exports.createUser = async (email, password) => {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+// Get Firestore
+const db = getFirestore();
 
+// Function to create a user with email and password
+exports.createUser = async (email, password, fname, lname, role, project, phone, github) => {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
     await sendVerificationEmail();
-    return userCredential.user;
+
+    // Get user data from the web page
+    // const firstName = document.getElementById('fname').value;
+    // const lastName = document.getElementById('lname').value;
+    // const role = document.getElementById('role').value;
+    // const project = document.getElementById('project').value;
+    // const phone = document.getElementById('phone').value;
+    // const github = document.getElementById('github').value;
+
+    const userData = {
+        email: email,
+        firstName: fname,
+        lastName: lname,
+        role: role,
+        project: project,
+        phone: phone,
+        github: github
+    }
+
+    const docRef = doc(db, "users", user.uid);
+    try {
+        console.log(userData);
+        setDoc(docRef, userData);
+    }
+    catch (error) {
+        console.error("Error writing document", error);
+    }
+    return user;
 };
 
 // Function to sign in a user with email and password

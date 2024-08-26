@@ -1,11 +1,46 @@
 import chameleonHeader from "./images/Header-Chameleon.png";
 import { FaBars, FaSearch, FaMoon, FaSun } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SearchBox from "./SearchBox";
 import './header.css'
 
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  // roles
+  const [roleUser, setRoleUser] = useState(false);
+  const [roleAdmin, setRoleAdmin] = useState(false);
+
+  useEffect(() => {
+    if (sessionStorage.getItem('status') === 'logged in')
+    {
+      setLoggedIn(true);
+    }
+    else
+    {
+      setLoggedIn(false);
+    }
+
+    if (sessionStorage.getItem('userRole') === 'user')
+    {
+      setRoleUser(true);
+    }
+    else
+    {
+      setRoleUser(false);
+    }
+
+    if (sessionStorage.getItem('userRole') === 'Admin')
+    {
+      setRoleAdmin(true);
+    }
+    else
+    {
+      setRoleAdmin(false);
+    }
+  }, []);
   
   const toggleNavbar = () => {
     setNavbarOpen(!navbarOpen);
@@ -110,21 +145,43 @@ const Header = () => {
                       Resources
                     </a>
                   </li>
-                  <li className="nav-item">
+                  { loggedIn && ( // Conditional rendering for the Profile button
+                    <li className="nav-item">
                     <a
                       className="px-3 py-2 flex items-center uppercase font-bold leading-snug hover:opacity-75 no-underline"
-                      href="/login"
+                       href="/profile"
                     >
-                      Login
+                       Profile
                     </a>
                   </li>
+                   )}
+
+                  { loggedIn && roleAdmin && ( // Conditional rendering for admin dashboard
+                    <li className="nav-item">
+                      <a
+                        className="px-3 py-2 flex items-center uppercase font-bold leading-snug hover:opacity-75 no-underline"
+                        href="/admin_dashboard"
+                      >
+                        Admin
+                      </a>
+                    </li>
+                  )}
+
                   <li className="nav-item">
-                    <a
+                    { loggedIn ? 
+                      <a
                       className="px-3 py-2 flex items-center uppercase font-bold leading-snug hover:opacity-75 no-underline"
-                      href="/admin_dashboard"
-                    >
-                      Admin
-                    </a>
+                      href="/logout"
+                      >
+                        Log out
+                      </a>  :
+                      <a
+                        className="px-3 py-2 flex items-center uppercase font-bold leading-snug hover:opacity-75 no-underline"
+                        href="/login"
+                      >
+                        Login
+                      </a>
+                    }
                   </li>
                 </ul>
                 <hr className="border-gray-200 dark:border-gray-600" />

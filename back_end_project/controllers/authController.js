@@ -33,6 +33,17 @@ exports.userSignIn = async (req, res) => {
     }
 
     res.status(200).json({ message: 'User signed in successfully', user });
+
+    // retrieve user role
+    try {
+      const userRole = await authService.getUserRole(email, password);
+      // sessionStorage.setItem('userRole', userRole);
+      console.log("retrieved user role : " + userRole);
+    }
+    catch (error) {
+      res.status(500).json({ error: 'Can\'t retrieve the user role' });
+    }
+
   } catch (error) {
     res.status(401).json({ error: 'Authentication failed' });
   }

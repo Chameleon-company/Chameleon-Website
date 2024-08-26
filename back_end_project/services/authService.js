@@ -2,7 +2,7 @@ const { initializeApp } = require('firebase/app');
 const firebaseConfig = require('../firebaseConfig');
 
 const { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, signOut } = require('firebase/auth');
-const { getFirestore, setDoc, doc } = require('firebase/firestore');
+const { getFirestore, setDoc, getDoc, doc } = require('firebase/firestore');
 
 // Initialize Firebase
 initializeApp(firebaseConfig);
@@ -51,8 +51,25 @@ exports.createUser = async (email, password, fname, lname, role, project, phone,
 // Function to sign in a user with email and password
 exports.signInUser = async (email, password) => {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    // sessionStorage.setItem('loggedInUserId', userCredential.user.uid);
     return userCredential.user;
 };
+
+exports.getUserRole = async (email, password) => {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    // console.log(userCredential.user.uid);
+    const docRef = doc(db, "users", userCredential.user.uid);
+    var userRole = '';
+    getDoc(docRef)
+    .then((docSnap) => {
+        if(docSnap.exists()) {
+            userRole = docSnap.data().role;
+            console.log(userRole);
+            // sessionStorage.setItem('userRole', userRole);
+        }
+    })
+    return userRole;
+}
 
 // Function to send a verification email
 async function sendVerificationEmail() {

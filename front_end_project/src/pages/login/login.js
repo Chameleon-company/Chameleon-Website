@@ -86,7 +86,10 @@ class Login extends Component {
 
             // <Redirect to='/home' />
             sessionStorage.setItem('status', 'logged in');
-            sessionStorage.setItem('userRole', 'user');
+
+            // Assigning user roles according to the retrieved user data value
+            sessionStorage.setItem('userRole', data.userData.role);
+
             if (rememberMe) {
                 localStorage.setItem("rememberMe", "true");
             } else {

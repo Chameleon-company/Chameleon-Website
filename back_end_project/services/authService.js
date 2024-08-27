@@ -1,6 +1,9 @@
 const { initializeApp } = require('firebase/app');
 const firebaseConfig = require('../firebaseConfig');
 
+const express = require('express');
+const app = express();
+
 const { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, signOut } = require('firebase/auth');
 const { getFirestore, setDoc, getDoc, doc } = require('firebase/firestore');
 
@@ -51,7 +54,12 @@ exports.createUser = async (email, password, fname, lname, role, project, phone,
 // Function to sign in a user with email and password
 exports.signInUser = async (email, password) => {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    // sessionStorage.setItem('loggedInUserId', userCredential.user.uid);
+    // try {
+    //     sessionStorage.setItem('loggedInUserId', userCredential.user.uid);
+    // }
+    // catch (error) {
+    //     console.log(error);
+    // }
     return userCredential.user;
 };
 
@@ -59,16 +67,20 @@ exports.getUserRole = async (email, password) => {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     // console.log(userCredential.user.uid);
     const docRef = doc(db, "users", userCredential.user.uid);
-    var userRole = '';
-    getDoc(docRef)
-    .then((docSnap) => {
-        if(docSnap.exists()) {
-            userRole = docSnap.data().role;
-            console.log(userRole);
-            // sessionStorage.setItem('userRole', userRole);
-        }
-    })
-    return userRole;
+    // var userRoleTemp;
+    // getDoc(docRef)
+    // .then((docSnap) => {
+    //     if(docSnap.exists()) {
+    //         const userRole = docSnap.data();
+    //         // console.log(userRole);
+    //         // sessionStorage.setItem('userRole', userRole);
+    //         // userRole = docSnap.data().role;
+    //         // app.locals.userRole = userRole;
+    //         userRoleTemp = userRole.role;
+    //     }
+    // })
+    // sessionStorage.setItem('userRole', userRoleTemp);
+    return docRef;
 }
 
 // Function to send a verification email

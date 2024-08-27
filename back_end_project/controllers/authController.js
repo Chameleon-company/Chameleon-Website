@@ -1,4 +1,5 @@
 const authService = require('../services/authService');
+const { getFirestore, setDoc, getDoc, doc } = require('firebase/firestore');
 
 exports.userSignUp = async (req, res) => {
   const { email, password, fname, lname, role, project, phone, github } = req.body;
@@ -31,18 +32,25 @@ exports.userSignIn = async (req, res) => {
     if (!user.emailVerified) {
       return res.status(401).json({ error: 'Email is not verified. Please verify your email address.' });
     }
-
-    res.status(200).json({ message: 'User signed in successfully', user });
-
-    // retrieve user role
+    
     try {
       const userRole = await authService.getUserRole(email, password);
-      // sessionStorage.setItem('userRole', userRole);
-      console.log("retrieved user role : " + userRole);
+      // return userRole;
+      // console.log(userRole);
+      getDoc(userRole)
+      .then((docSnap) => {
+          if(docSnap.exists()) {
+              const userData = docSnap.data();
+              // console.log(userData);
+              return res.status(200).json({ message: 'User signed in successfully', user,  userData});
+          }
+      })
     }
     catch (error) {
-      res.status(500).json({ error: 'Can\'t retrieve the user role' });
+      res.status(500).json({ error: 'Can\'t retrieve the user role', error });
+      console.log(error);
     }
+    
 
   } catch (error) {
     res.status(401).json({ error: 'Authentication failed' });

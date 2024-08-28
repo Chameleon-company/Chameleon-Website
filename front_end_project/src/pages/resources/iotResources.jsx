@@ -1,19 +1,19 @@
 import { Component } from "react";
-import tech from "./images/tech.png";
-import IoTMelbourne from "./images/IoTMelbourne.jpg";
-import device from "./images/device.jpg";
-import IotResourcesComponent from "../../components/resources/iotResources";
-import Screen from '../../components/app/Screen';
-import Chatbox from '../Chatbot/Chatbox';
-import './iot.css';
-import '../Chatbot/chatbox.css';
 import chameleonLogo from "../../assets/ChameleonLogo.png";
-import chatOpenImg from "../Chatbot/images/chat-open.png";
+import Screen from '../../components/app/Screen';
+import IotResourcesComponent from "../../components/resources/iotResources";
+import Chatbox from '../Chatbot/Chatbox';
+import '../Chatbot/chatbox.css';
 import chatCloseImg from "../Chatbot/images/chat-close.png";
-import dotMenuImg from "../Chatbot/images/dot-menu.png";
 import chatIcon from "../Chatbot/images/chat-icon.png";
+import chatOpenImg from "../Chatbot/images/chat-open.png";
+import dotMenuImg from "../Chatbot/images/dot-menu.png";
 import fileSelectIcon from "../Chatbot/images/file-select.png";
 import sendMessageImg from "../Chatbot/images/send-message.png";
+import IoTMelbourne from "./images/IoTMelbourne.jpg";
+import device from "./images/device.jpg";
+import tech from "./images/tech.png";
+import './iot.css';
 
 class IotResources extends Component {
   render () {

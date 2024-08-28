@@ -11,6 +11,16 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 // init branch
 
+import Chatbox from '../Chatbot/Chatbox';
+import '../Chatbot/chatbox.css';
+import chameleonLogo from "../../assets/ChameleonLogo.png";
+import chatOpenImg from "../Chatbot/images/chat-open.png";
+import chatCloseImg from "../Chatbot/images/chat-close.png";
+import dotMenuImg from "../Chatbot/images/dot-menu.png";
+import chatIcon from "../Chatbot/images/chat-icon.png";
+import fileSelectIcon from "../Chatbot/images/file-select.png";
+import sendMessageImg from "../Chatbot/images/send-message.png";
+
 class Login extends Component {
   state = {
     name: "",

@@ -1,15 +1,6 @@
 import { Component } from "react";
-import chameleonLogo from "../../assets/ChameleonLogo.png";
 import Screen from '../../components/app/Screen';
 import IotResourcesComponent from "../../components/resources/iotResources";
-import Chatbox from '../Chatbot/Chatbox';
-import '../Chatbot/chatbox.css';
-import chatCloseImg from "../Chatbot/images/chat-close.png";
-import chatIcon from "../Chatbot/images/chat-icon.png";
-import chatOpenImg from "../Chatbot/images/chat-open.png";
-import dotMenuImg from "../Chatbot/images/dot-menu.png";
-import fileSelectIcon from "../Chatbot/images/file-select.png";
-import sendMessageImg from "../Chatbot/images/send-message.png";
 import IoTMelbourne from "./images/IoTMelbourne.jpg";
 import device from "./images/device.jpg";
 import tech from "./images/tech.png";
@@ -37,16 +28,6 @@ class IotResources extends Component {
 
           <br></br>
         </div>
-        {/* Add the Chatbox component */} {/* newly added */}
-        <Chatbox // newly added
-          chameleonLogo={chameleonLogo} // newly added
-          chatOpenImg={chatOpenImg} // newly added
-          chatCloseImg={chatCloseImg} // newly added
-          dotMenuImg={dotMenuImg} // newly added
-          chatIcon={chatIcon} // newly added
-          fileSelectIcon={fileSelectIcon} // newly added
-          sendMessageImg={sendMessageImg} // newly added
-        /> {/* newly added */}
       </Screen>
     );
   }

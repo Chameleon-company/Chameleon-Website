@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Chatbot.css";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+//import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Screen from "../../components/app/Screen";
 
 const Chatbot = () => {
@@ -61,9 +61,7 @@ const Chatbot = () => {
               />
               <h2>Chameleon</h2>
             </div>
-
             <button className="options-button">
-             <MoreHorizIcon style={{ color: 'white' }} />
             </button>
           </header>
           <ul className="chatbox" ref={chatboxRef}>

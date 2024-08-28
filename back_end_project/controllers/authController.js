@@ -1,5 +1,5 @@
 const authService = require('../services/authService');
-const { getFirestore, setDoc, getDoc, doc } = require('firebase/firestore');
+const { getFirestore, setDoc, getDoc, getDocs, doc, query } = require('firebase/firestore');
 
 exports.userSignUp = async (req, res) => {
   const { email, password, fname, lname, role, project, phone, github } = req.body;
@@ -35,13 +35,10 @@ exports.userSignIn = async (req, res) => {
     
     try {
       const userRole = await authService.getUserRole(email, password);
-      // return userRole;
-      // console.log(userRole);
       getDoc(userRole)
       .then((docSnap) => {
           if(docSnap.exists()) {
               const userData = docSnap.data();
-              // console.log(userData);
               return res.status(200).json({ message: 'User signed in successfully', user,  userData});
           }
       })
@@ -50,12 +47,43 @@ exports.userSignIn = async (req, res) => {
       res.status(500).json({ error: 'Can\'t retrieve the user role', error });
       console.log(error);
     }
-    
-
+  
   } catch (error) {
     res.status(401).json({ error: 'Authentication failed' });
   }
 };
+
+exports.getUserCollection = async (req, res) => {
+  try {
+    const { document } = req.body;
+    // getting the user collection
+    const userCollection = await authService.getCollection();
+
+    // getting the query snapshot of the collection
+    // const querySnapshot = await getDocs(query(userCollection, orderBy('firstName'))); // orderby not working <-- fix
+    const querySnapshot = await getDocs(userCollection);
+
+    // extracting documents from the query snapshot
+    var docs = querySnapshot.docs.map(doc => doc.data());
+
+    // console.log(docs);
+
+    return res.status(200).json({ message: 'Data retrieved successfully', docs});
+  } catch (error) {
+    res.status(401).json({ error: 'Authentication failed' });
+  }
+}
+
+exports.promoteUser = async (req, res) => {
+  try {
+    const { uid, role } = req.body;
+
+    const userRole = await authService.setUserRole(uid, role);
+  }
+  catch (error) {
+    res.status(401).json({ error: 'Authentication failed' });
+  }
+}
 
 // Function to check if the password meets security requirements
 function isStrongPassword(password) {

@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
-// import './login.css'; // Make sure the path is correct
+import React, { Component, useEffect } from 'react';
+import './admin_dashboard.css'; // Make sure the path is correct
 import Screen from '../../components/app/Screen';
 import { Redirect } from 'react-router-dom';
 import { auth } from '../utils/firebase';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { doc, QuerySnapshot, getDocs } from 'firebase/firestore';
+// const authService = require('../../../../back_end_project/services/authService');
 
-class Login extends Component {
+class Admin extends Component {
 
     state = {
         name: '',
@@ -93,6 +95,36 @@ class Login extends Component {
         }
     };
 
+    handleDocCollection = async (event) => {
+        event.preventDefault();
+        try {
+            const response = await fetch('http://localhost:3002/auth/getUserCollection', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ document })
+            });
+            const data = await response.json();
+            if (!response.ok) {
+                const errorMessage = data.error === "Data retrieved successfully"
+                    ? "Data retrieve failed."
+                    : data.error || 'An unknown error occurred.';
+                throw new Error(errorMessage);
+            }
+
+            this.clearRenderUsers();
+
+            var userData = JSON.parse(JSON.stringify(data.docs));
+            userData.forEach(element => {
+                // console.log(element.firstName);
+                this.renderUsers(element);
+            });
+        }
+        catch (error) {
+            console.log(error);
+        }
+    };
 
     handleSubmitSignUp = async (event) => {
         event.preventDefault();
@@ -144,11 +176,104 @@ class Login extends Component {
         this.setState(prevState => ({ isSignUp: !prevState.isSignUp }));
     };
 
+    // useEffect = () => {
+    //     this.handleDocCollection();
+    //     // console.log("hello");
+    // };
+
+    handlePromoteUser = async (uid, role) => {
+        // const uid = userId;
+        // const role = "User";
+        try {
+            const response = await fetch('http://localhost:3002/auth/promoteUser', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ uid, role })
+            });
+            const data = await response.json();
+
+        //     if (!response.ok) {
+        //         const errorMessage = data.error === "Email already exists"
+        //             ? "An account with this email already exists. Please use a different email or log in."
+        //             : data.error || 'An unknown error occurred during sign up.';
+        //         throw new Error(errorMessage);
+        //     }
+
+        } catch (error) {
+            this.displayToast(error.message);
+        }
+    };
+
+    // Dynamic functions
+    // function to make a list of users
+    renderUsers(doc)
+    {
+        const userList = document.querySelector('#user-list');
+
+        let li = document.createElement('li');
+        let name = document.createElement('span');
+        let email = document.createElement('span');
+        let role = document.createElement('span');
+        let promote_btn = document.createElement('button');
+        let demote_btn = document.createElement('button');
+
+        li.className = 'data';
+        name.className = 'data';
+        email.className = 'data';
+        role.className = 'data';
+        promote_btn.setAttribute('class', 'data-btn');
+        demote_btn.setAttribute('class', 'data-demote-btn');
+    
+        li.setAttribute('user-id', doc.uid);
+        name.textContent = doc.firstName;
+        email.textContent = doc.email;
+        role.textContent = doc.role;
+
+        promote_btn.textContent = 'Promote';
+        promote_btn.onclick = () => (this.handlePromoteUser(doc.uid, "Admin"));
+        demote_btn.textContent = 'Demote';
+        demote_btn.onclick = () => (this.handlePromoteUser(doc.uid, "User"));
+    
+        li.appendChild(name);
+        li.appendChild(email);
+        li.appendChild(role);
+        li.appendChild(promote_btn);
+        li.appendChild(demote_btn);
+
+        userList.appendChild(li);
+    }
+
+    clearRenderUsers() {
+        const userList = document.querySelector('#user-list');
+
+        // removing if any content is already loaded
+        while( userList.firstChild ){
+            userList.removeChild( userList.firstChild );
+        }
+    }
+    
     render () {
-        const { email, password, isSignUp, showToast, toastMessage, isAuthenticated, rememberMe } = this.state;
+        
+        // const { email, password, isSignUp, showToast, toastMessage, isAuthenticated, rememberMe } = this.state;
         return (
             <>
                 <Screen>
+                    {!(sessionStorage.getItem('userRole')=="Admin") && <Redirect to='/home'/>} 
+                    <div className='login-centered-container'>
+                        {/* <div className='container_2'> */}
+                            <label>User Count: </label>
+                            <span id="userCount"></span>
+                        {/* </div> */}
+                        <div>
+                            <button className='fb-btn' onClick={this.handleDocCollection}>Refresh</button>
+                        </div>
+                        <div>
+                            <ul id='user-list'></ul>
+                        </div>
+                    </div>
+
                     {/* {isAuthenticated && <Redirect to='/home' />} */}
                     {/* <div className='login-centered-container'>
                         <div className='container_2'>
@@ -220,4 +345,4 @@ class Login extends Component {
 }
 
 
-export default Login;
+export default Admin;

@@ -1,8 +1,16 @@
-import "./card.css"
-export const Card = () => {
-    return (
-        <div>
-               {/* This is incomplete and needs to be completed for the next iteration */}
-        </div>
-    )
-}
+import React from 'react';
+import './card.css';
+
+const Card = ({ title, value, description, children }) => {
+  return (
+    <div className="card">
+      {title && <h3>{title}</h3>}
+      {value && <p>{value}</p>}
+      {description && <p className="description">{description}</p>}
+      {children} {/* This renders any additional content passed to the Card */}
+    </div>
+  );
+};
+
+export default Card;
+

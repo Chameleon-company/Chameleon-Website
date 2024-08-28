@@ -1,156 +1,236 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 // import './login.css'; // Make sure the path is correct
-import Screen from '../../components/app/Screen';
-import { Redirect } from 'react-router-dom';
-import { auth } from '../utils/firebase';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import Screen from "../../components/app/Screen";
+import { Redirect } from "react-router-dom";
+import { auth } from "../utils/firebase";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import Card from "../../components/card/card";
+import "./admin_dashboard.css";
 
 class Login extends Component {
+  state = {
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    showToast: false,
+    toastMessage: "",
+    isSignUp: false,
+    isAuthenticated: false,
+    rememberMe: false,
+  };
 
-    state = {
-        name: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-        showToast: false,
-        toastMessage: '',
+  displayToast = (message) => {
+    this.setState({ showToast: true, toastMessage: message });
+
+    setTimeout(() => {
+      this.setState({ showToast: false });
+    }, 5000);
+  };
+
+  handleExternalSignIn = (service) => {
+    console.log(`Signing in with ${service}`); // Implement sign-in logic here
+  };
+
+  handleExternalSignUp = (service) => {
+    console.log(`Signing up with ${service}`); // Implement sign-up logic here
+  };
+
+  handleGoogleLogin = async () => {
+    const provider = new GoogleAuthProvider();
+    const { rememberMe } = this.state;
+    signInWithPopup(auth, provider)
+      .then(() => {
+        this.displayToast("Sign in successful!");
+        this.setState({ isAuthenticated: true });
+        sessionStorage.setItem("status", "logged in");
+      })
+      .catch((err) => alert(err));
+    if (rememberMe) {
+      localStorage.setItem("rememberMe", "true");
+    } else {
+      localStorage.removeItem("rememberMe");
+    }
+  };
+  handleSubmitSignIn = async (event) => {
+    event.preventDefault();
+    if (this.state.isSignUp) {
+      this.handleSubmitSignUp(event);
+      return;
+    }
+    const { email, password, rememberMe } = this.state;
+    if (!email || !password) {
+      this.displayToast("Please enter both email and password");
+      return;
+    }
+    try {
+      const response = await fetch("http://localhost:3002/auth/signin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await response.json();
+      this.setState({ showToast: true, toastMessage: "Sign in successful!" });
+      if (!response.ok) {
+        const errorMessage =
+          data.error === "Authentication failed"
+            ? "Authentication failed. Please check your username and password and try again."
+            : data.error || "An unknown error occurred.";
+        throw new Error(errorMessage);
+      }
+
+      this.displayToast("Sign in successful!");
+      this.setState({ isAuthenticated: true });
+
+      sessionStorage.setItem("status", "logged in");
+      if (rememberMe) {
+        localStorage.setItem("rememberMe", "true");
+      } else {
+        localStorage.removeItem("rememberMe");
+      }
+      // Redirect or perform other actions
+    } catch (error) {
+      this.displayToast(error.message);
+    }
+  };
+
+  handleSubmitSignUp = async (event) => {
+    event.preventDefault();
+    const { email, password, confirmPassword } = this.state;
+    if (password !== confirmPassword) {
+      this.setState({
+        showToast: true,
+        toastMessage: "Passwords do not match!",
+      });
+      return; // Stop the form submission if passwords do not match
+    }
+    try {
+      const response = await fetch("http://localhost:3002/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await response.json();
+      this.setState({
+        showToast: true,
+        toastMessage: "Sign up successful!",
+        email: "",
+        password: "",
+        confirmPassword: "",
+      });
+      if (!response.ok) {
+        const errorMessage =
+          data.error === "Email already exists"
+            ? "An account with this email already exists. Please use a different email or log in."
+            : data.error || "An unknown error occurred during sign up.";
+        throw new Error(errorMessage);
+      }
+      this.displayToast("One Step! Please verify your email now!");
+      this.setState({
+        email: "",
+        password: "",
+        confirmPassword: "",
         isSignUp: false,
-        isAuthenticated: false,
-        rememberMe: false
-    };
+      });
+      // Redirect or perform other actions
+    } catch (error) {
+      this.displayToast(error.message);
+    }
+  };
 
-    displayToast = (message) => {
-        this.setState({ showToast: true, toastMessage: message });
+  handleInputChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
 
-        setTimeout(() => {
-            this.setState({ showToast: false });
-        }, 5000);
-    };
+  // Placeholder for sign-up logic
+  handleSignUp = (event) => {
+    event.preventDefault();
+    // Implement sign-up logic here
+  };
 
-    handleExternalSignIn = (service) => {
-        console.log(`Signing in with ${service}`);  // Implement sign-in logic here 
-    };
+  //handle checkbox change of Remember Me prop
+  toggleRememberMe = () => {
+    this.setState((prevState) => ({ rememberMe: !prevState.rememberMe }));
+  };
 
-    handleExternalSignUp = (service) => {
-        console.log(`Signing up with ${service}`);  // Implement sign-up logic here 
-    };
+  toggleSignUp = () => {
+    this.setState((prevState) => ({ isSignUp: !prevState.isSignUp }));
+  };
 
-    handleGoogleLogin = async () => {
-        const provider = new GoogleAuthProvider();
-        const { rememberMe } = this.state;
-        signInWithPopup(auth, provider).then(() => {
-            this.displayToast('Sign in successful!');
-            this.setState({ isAuthenticated: true });
-            sessionStorage.setItem('status', 'logged in');
-        }).catch((err) => alert(err));
-        if (rememberMe) {
-            localStorage.setItem("rememberMe", "true");
-        } else {
-            localStorage.removeItem("rememberMe");
-        }
-    };
-    handleSubmitSignIn = async (event) => {
-        event.preventDefault();
-        if (this.state.isSignUp) {
-            this.handleSubmitSignUp(event);
-            return;
-        }
-        const { email, password, rememberMe } = this.state;
-        if (!email || !password) {
-            this.displayToast('Please enter both email and password');
-            return;
-        }
-        try {
-            const response = await fetch('http://localhost:3002/auth/signin', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password })
-            });
-            const data = await response.json();
-            this.setState({ showToast: true, toastMessage: 'Sign in successful!' });
-            if (!response.ok) {
-                const errorMessage = data.error === "Authentication failed"
-                    ? "Authentication failed. Please check your username and password and try again."
-                    : data.error || 'An unknown error occurred.';
-                throw new Error(errorMessage);
-            }
+  render() {
+    const {
+      email,
+      password,
+      isSignUp,
+      showToast,
+      toastMessage,
+      isAuthenticated,
+      rememberMe,
+    } = this.state;
+    return (
+      <>
+        <Screen>
+          {/*This part is for the cards*/}
+          <div className="dashboard-container">
+            <div className="top-cards">
+              <Card
+                title={<h3 className="card-title">Users</h3>}
+                value={<span className="card-value">338</span>}
+                description={<p className="card-description">Description</p>}
+              />
 
-            this.displayToast('Sign in successful!');
-            this.setState({ isAuthenticated: true });
+              <Card
+                title={<h3 className="card-title">Teams</h3>}
+                value={<span className="card-value">12</span>}
+                description={<p className="card-description">Description</p>}
+              />
 
-            sessionStorage.setItem('status', 'logged in');
-            if (rememberMe) {
-                localStorage.setItem("rememberMe", "true");
-            } else {
-                localStorage.removeItem("rememberMe");
+              <Card
+                title={<h3 className="card-title">Projects</h3>}
+                value={<span className="card-value">4</span>}
+                description={<p className="card-description">2 completed</p>}
+              />
 
-            }
-            // Redirect or perform other actions
-        } catch (error) {
-            this.displayToast(error.message);
-        }
-    };
+              <Card
+                title={<h3 className="card-title">Posts</h3>}
+                value={<span className="card-value">214</span>}
+                description={<p className="card-description">2 new posts</p>}
+              />
+            </div>
 
-
-    handleSubmitSignUp = async (event) => {
-        event.preventDefault();
-        const { email, password, confirmPassword } = this.state;
-        if (password !== confirmPassword) {
-            this.setState({ showToast: true, toastMessage: 'Passwords do not match!' });
-            return; // Stop the form submission if passwords do not match
-        }
-        try {
-            const response = await fetch('http://localhost:3002/auth/signup', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password })
-            });
-            const data = await response.json();
-            this.setState({ showToast: true, toastMessage: 'Sign up successful!', email: '', password: '', confirmPassword: '' });
-            if (!response.ok) {
-                const errorMessage = data.error === "Email already exists"
-                    ? "An account with this email already exists. Please use a different email or log in."
-                    : data.error || 'An unknown error occurred during sign up.';
-                throw new Error(errorMessage);
-            }
-            this.displayToast('One Step! Please verify your email now!');
-            this.setState({ email: '', password: '', confirmPassword: '', isSignUp: false });
-            // Redirect or perform other actions
-        } catch (error) {
-            this.displayToast(error.message);
-        }
-    };
-
-    handleInputChange = (event) => {
-        this.setState({ [event.target.name]: event.target.value });
-    };
-
-    // Placeholder for sign-up logic
-    handleSignUp = (event) => {
-        event.preventDefault();
-        // Implement sign-up logic here
-    };
-
-    //handle checkbox change of Remember Me prop
-    toggleRememberMe = () => {
-        this.setState(prevState => ({ rememberMe: !prevState.rememberMe }));
-    };
-
-    toggleSignUp = () => {
-        this.setState(prevState => ({ isSignUp: !prevState.isSignUp }));
-    };
-
-    render () {
-        const { email, password, isSignUp, showToast, toastMessage, isAuthenticated, rememberMe } = this.state;
-        return (
-            <>
-                <Screen>
-                    {/* {isAuthenticated && <Redirect to='/home' />} */}
-                    {/* <div className='login-centered-container'>
+            <div className="bottom-cards">
+              <Card>
+                <h5>Top contributors of the week</h5>
+                <ol type="1">
+                  <li>@username</li>
+                  <li>@username</li>
+                  <li>@username</li>
+                </ol>
+              </Card>
+              <Card>
+                <h5>Top author of the week</h5>
+                <ol type="1">
+                  <li>@username</li>
+                  <li>@username</li>
+                  <li>@username</li>
+                </ol>
+              </Card>
+              <Card>
+                <h5>Top post of the week</h5>
+                <ol type="1">
+                  <li>Post title</li>
+                  <li>Post title</li>
+                  <li>Post title</li>
+                </ol>
+              </Card>
+            </div>
+          </div>
+          {/* {isAuthenticated && <Redirect to='/home' />} */}
+          {/* <div className='login-centered-container'>
                         <div className='container_2'>
                             <div className={`dowebok ${isSignUp ? 's--signup' : ''}`}>
                                 {showToast && (
@@ -213,11 +293,10 @@ class Login extends Component {
                                 <span class="m--up">Log In</span>}
                         </div>
                     </div> */}
-                </Screen >
-            </>
-        );
-    }
+        </Screen>
+      </>
+    );
+  }
 }
-
 
 export default Login;

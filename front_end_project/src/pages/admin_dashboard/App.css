@@ -1,0 +1,94 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+  }
+  
+  .App-header {
+    background-color: #d8e4cc;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    height: 50px;
+    margin-left: 20px;
+  }
+  
+  .navbar a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .App-main {
+    flex: 1;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .projects-table {
+    width: 80%;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .projects-table h2 {
+    margin-bottom: 20px;
+  }
+  
+  .projects-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .projects-table th, .projects-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .projects-table th {
+    background-color: #f1f1f1;
+  }
+  
+  .projects-table td {
+    font-size: 16px;
+  }
+  
+  .App-footer {
+    background-color: #d8e4cc;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .footer-logo {
+    height: 30px;
+    margin-right: 20px;
+  }
+  
+  .social-icons img {
+    height: 20px;
+    margin-left: 10px;
+  }
+  

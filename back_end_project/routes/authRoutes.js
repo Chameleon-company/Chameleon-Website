@@ -24,4 +24,10 @@ router.get('/status', authController.LoginStatus);
 //get uid of current user
 router.get ('/getUID', authController.getUserID );
 
+// Get user collection
+router.post('/getUserCollection', authController.getUserCollection);
+
+// Promote user
+router.post('/promoteUser', authController.promoteUser);
+
 module.exports = router;

@@ -7,7 +7,7 @@ const Card = ({ title, value, description, children }) => {
       {title && <h3>{title}</h3>}
       {value && <p>{value}</p>}
       {description && <p className="description">{description}</p>}
-      {children} {/* This renders any additional content passed to the Card */}
+      {children} {/* This is for any additional content passed to the Card */}
     </div>
   );
 };

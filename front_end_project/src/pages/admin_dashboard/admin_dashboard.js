@@ -174,7 +174,7 @@ class Login extends Component {
     return (
       <>
         <Screen>
-          {/*This part is for the cards*/}
+          {/*This part is for the cards components*/}
           <div className="dashboard-container">
             <div className="top-cards">
               <Card
@@ -229,6 +229,7 @@ class Login extends Component {
               </Card>
             </div>
           </div>
+
           {/* {isAuthenticated && <Redirect to='/home' />} */}
           {/* <div className='login-centered-container'>
                         <div className='container_2'>

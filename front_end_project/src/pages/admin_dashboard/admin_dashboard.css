@@ -566,4 +566,31 @@ li button .data-demote-btn {
   .projects-table td {
     font-size: 16px;
   }  
+/* Search Bar Styles */
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
+.search-input {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.search-button {
+    padding: 8px 12px;
+    background-color: #d4af7a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #c0a16b;
+}

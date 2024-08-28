@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-// import './login.css'; // Make sure the path is correct
+import React, { Component, useEffect } from 'react';
+import './admin_dashboard.css'; // Make sure the path is correct
 import Screen from '../../components/app/Screen';
 import { Redirect } from 'react-router-dom';
 import { auth } from '../utils/firebase';

@@ -1,11 +1,8 @@
 const { initializeApp } = require('firebase/app');
 const firebaseConfig = require('../firebaseConfig');
 
-const express = require('express');
-const app = express();
-
 const { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, signOut } = require('firebase/auth');
-const { getFirestore, setDoc, getDoc, doc } = require('firebase/firestore');
+const { getFirestore, setDoc, getDoc, doc, collection, updateDoc } = require('firebase/firestore');
 
 // Initialize Firebase
 initializeApp(firebaseConfig);
@@ -20,17 +17,11 @@ const db = getFirestore();
 exports.createUser = async (email, password, fname, lname, role, project, phone, github) => {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
+
     await sendVerificationEmail();
 
-    // Get user data from the web page
-    // const firstName = document.getElementById('fname').value;
-    // const lastName = document.getElementById('lname').value;
-    // const role = document.getElementById('role').value;
-    // const project = document.getElementById('project').value;
-    // const phone = document.getElementById('phone').value;
-    // const github = document.getElementById('github').value;
-
     const userData = {
+        uid: user.uid,
         email: email,
         firstName: fname,
         lastName: lname,
@@ -42,7 +33,7 @@ exports.createUser = async (email, password, fname, lname, role, project, phone,
 
     const docRef = doc(db, "users", user.uid);
     try {
-        console.log(userData);
+        // console.log(userData);
         setDoc(docRef, userData);
     }
     catch (error) {
@@ -54,33 +45,28 @@ exports.createUser = async (email, password, fname, lname, role, project, phone,
 // Function to sign in a user with email and password
 exports.signInUser = async (email, password) => {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    // try {
-    //     sessionStorage.setItem('loggedInUserId', userCredential.user.uid);
-    // }
-    // catch (error) {
-    //     console.log(error);
-    // }
     return userCredential.user;
 };
 
+// Function to get the user role
 exports.getUserRole = async (email, password) => {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    // console.log(userCredential.user.uid);
     const docRef = doc(db, "users", userCredential.user.uid);
-    // var userRoleTemp;
-    // getDoc(docRef)
-    // .then((docSnap) => {
-    //     if(docSnap.exists()) {
-    //         const userRole = docSnap.data();
-    //         // console.log(userRole);
-    //         // sessionStorage.setItem('userRole', userRole);
-    //         // userRole = docSnap.data().role;
-    //         // app.locals.userRole = userRole;
-    //         userRoleTemp = userRole.role;
-    //     }
-    // })
-    // sessionStorage.setItem('userRole', userRoleTemp);
     return docRef;
+}
+
+// Function to set user role
+exports.setUserRole = async (uid, role) => {
+    const docRef = doc(db, "users", uid);
+    updateDoc(docRef, {
+        'role': role
+    });
+}
+
+// Function to get a collection (just user collection for now)
+exports.getCollection = async () => {
+    const colRef = collection(db, "users");
+    return colRef;
 }
 
 // Function to send a verification email

@@ -148,6 +148,7 @@ class SignUp extends Component {
     isSignUp: true,
     isAuthenticated: false,
     rememberMe: false,
+    passwordError: '',
   };
 
   displayToast = (message) => {
@@ -261,7 +262,31 @@ class SignUp extends Component {
   };
 
   handleInputChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+    const { name, value } = event.target;
+    this.setState({ [name]: value }, () => {
+      if (name === 'password') {
+        this.validatePassword(value);
+      }
+    });
+  };
+  validatePassword = (password) => {
+    let passwordError = '';
+
+    if (password.length < 8) {
+      passwordError = 'Password must be at least 8 characters long.';
+    } else if (!/[a-z]/.test(password)) {
+      passwordError = 'Password must contain at least one lowercase letter.';
+    } else if (!/[A-Z]/.test(password)) {
+      passwordError = 'Password must contain at least one uppercase letter.';
+    } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+      passwordError = 'Password must contain at least one special character.';
+    } else if (!/\d/.test(password)) {
+      passwordError = 'Password must contain at least one number';
+    } else {
+      passwordError = '';
+    }
+
+    this.setState({ passwordError });
   };
 
   // Placeholder for sign-up logic
@@ -286,6 +311,7 @@ class SignUp extends Component {
       toastMessage,
       isAuthenticated,
       rememberMe,
+      passwordError,
     } = this.state;
     return (
       <Screen>
@@ -472,6 +498,9 @@ class SignUp extends Component {
                     >
                       Sign Up
                     </button>
+                    {passwordError && (
+                      <div style={{ color: 'red' }}>{passwordError}</div>
+                    )}
                   </form>
                   <div className="bottom-box">
                     <svg

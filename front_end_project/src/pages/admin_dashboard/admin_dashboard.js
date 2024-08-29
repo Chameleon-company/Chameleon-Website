@@ -9,394 +9,446 @@ import Card from "../../components/card/card";
 // const authService = require('../../../../back_end_project/services/authService');
 
 class Admin extends Component {
-    state = {
-        name: "",
+  state = {
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    showToast: false,
+    toastMessage: "",
+    isSignUp: false,
+    isAuthenticated: false,
+    rememberMe: false,
+  };
+
+  displayToast = (message) => {
+    this.setState({ showToast: true, toastMessage: message });
+
+    setTimeout(() => {
+      this.setState({ showToast: false });
+    }, 5000);
+  };
+
+  handleExternalSignIn = (service) => {
+    console.log(`Signing in with ${service}`); // Implement sign-in logic here
+  };
+
+  handleExternalSignUp = (service) => {
+    console.log(`Signing up with ${service}`); // Implement sign-up logic here
+  };
+
+  handleGoogleLogin = async () => {
+    const provider = new GoogleAuthProvider();
+    const { rememberMe } = this.state;
+    signInWithPopup(auth, provider)
+      .then(() => {
+        this.displayToast("Sign in successful!");
+        this.setState({ isAuthenticated: true });
+        sessionStorage.setItem("status", "logged in");
+      })
+      .catch((err) => alert(err));
+    if (rememberMe) {
+      localStorage.setItem("rememberMe", "true");
+    } else {
+      localStorage.removeItem("rememberMe");
+    }
+  };
+  handleSubmitSignIn = async (event) => {
+    event.preventDefault();
+    if (this.state.isSignUp) {
+      this.handleSubmitSignUp(event);
+      return;
+    }
+    const { email, password, rememberMe } = this.state;
+    if (!email || !password) {
+      this.displayToast("Please enter both email and password");
+      return;
+    }
+    try {
+      const response = await fetch("http://localhost:3002/auth/signin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await response.json();
+      this.setState({ showToast: true, toastMessage: "Sign in successful!" });
+      if (!response.ok) {
+        const errorMessage =
+          data.error === "Authentication failed"
+            ? "Authentication failed. Please check your username and password and try again."
+            : data.error || "An unknown error occurred.";
+        throw new Error(errorMessage);
+      }
+
+      this.displayToast("Sign in successful!");
+      this.setState({ isAuthenticated: true });
+
+      sessionStorage.setItem("status", "logged in");
+      if (rememberMe) {
+        localStorage.setItem("rememberMe", "true");
+      } else {
+        localStorage.removeItem("rememberMe");
+      }
+      // Redirect or perform other actions
+    } catch (error) {
+      this.displayToast(error.message);
+    }
+  };
+
+  handleDocCollection = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch(
+        "http://localhost:3002/auth/getUserCollection",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ document }),
+        },
+      );
+      const data = await response.json();
+      if (!response.ok) {
+        const errorMessage =
+          data.error === "Data retrieved successfully"
+            ? "Data retrieve failed."
+            : data.error || "An unknown error occurred.";
+        throw new Error(errorMessage);
+      }
+
+      this.clearRenderUsers();
+
+      var userData = JSON.parse(JSON.stringify(data.docs));
+      userData.forEach((element) => {
+        // console.log(element.firstName);
+        this.renderUsers(element);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  handleSubmitSignUp = async (event) => {
+    event.preventDefault();
+    const { email, password, confirmPassword } = this.state;
+    if (password !== confirmPassword) {
+      this.setState({
+        showToast: true,
+        toastMessage: "Passwords do not match!",
+      });
+      return; // Stop the form submission if passwords do not match
+    }
+    try {
+      const response = await fetch("http://localhost:3002/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await response.json();
+      this.setState({
+        showToast: true,
+        toastMessage: "Sign up successful!",
         email: "",
         password: "",
         confirmPassword: "",
-        showToast: false,
-        toastMessage: "",
+      });
+      if (!response.ok) {
+        const errorMessage =
+          data.error === "Email already exists"
+            ? "An account with this email already exists. Please use a different email or log in."
+            : data.error || "An unknown error occurred during sign up.";
+        throw new Error(errorMessage);
+      }
+      this.displayToast("One Step! Please verify your email now!");
+      this.setState({
+        email: "",
+        password: "",
+        confirmPassword: "",
         isSignUp: false,
-        isAuthenticated: false,
-        rememberMe: false,
-    };
-
-    displayToast = (message) => {
-        this.setState({ showToast: true, toastMessage: message });
-
-        setTimeout(() => {
-            this.setState({ showToast: false });
-        }, 5000);
-    };
-
-    handleExternalSignIn = (service) => {
-        console.log(`Signing in with ${service}`); // Implement sign-in logic here
-    };
-
-    handleExternalSignUp = (service) => {
-        console.log(`Signing up with ${service}`); // Implement sign-up logic here
-    };
-
-    handleGoogleLogin = async () => {
-        const provider = new GoogleAuthProvider();
-        const { rememberMe } = this.state;
-        signInWithPopup(auth, provider)
-            .then(() => {
-                this.displayToast("Sign in successful!");
-                this.setState({ isAuthenticated: true });
-                sessionStorage.setItem("status", "logged in");
-            })
-            .catch((err) => alert(err));
-        if (rememberMe) {
-            localStorage.setItem("rememberMe", "true");
-        } else {
-            localStorage.removeItem("rememberMe");
-        }
-    };
-    handleSubmitSignIn = async (event) => {
-        event.preventDefault();
-        if (this.state.isSignUp) {
-            this.handleSubmitSignUp(event);
-            return;
-        }
-        const { email, password, rememberMe } = this.state;
-        if (!email || !password) {
-            this.displayToast("Please enter both email and password");
-            return;
-        }
-        try {
-            const response = await fetch("http://localhost:3002/auth/signin", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ email, password }),
-            });
-            const data = await response.json();
-            this.setState({ showToast: true, toastMessage: "Sign in successful!" });
-            if (!response.ok) {
-                const errorMessage =
-                    data.error === "Authentication failed"
-                        ? "Authentication failed. Please check your username and password and try again."
-                        : data.error || "An unknown error occurred.";
-                throw new Error(errorMessage);
-            }
-
-            this.displayToast("Sign in successful!");
-            this.setState({ isAuthenticated: true });
-
-            sessionStorage.setItem("status", "logged in");
-            if (rememberMe) {
-                localStorage.setItem("rememberMe", "true");
-            } else {
-                localStorage.removeItem("rememberMe");
-            }
-            // Redirect or perform other actions
-        } catch (error) {
-            this.displayToast(error.message);
-        }
-    };
-
-    handleDocCollection = async (event) => {
-        event.preventDefault();
-        try {
-            const response = await fetch(
-                "http://localhost:3002/auth/getUserCollection",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({ document }),
-                },
-            );
-            const data = await response.json();
-            if (!response.ok) {
-                const errorMessage =
-                    data.error === "Data retrieved successfully"
-                        ? "Data retrieve failed."
-                        : data.error || "An unknown error occurred.";
-                throw new Error(errorMessage);
-            }
-
-            this.clearRenderUsers();
-
-            var userData = JSON.parse(JSON.stringify(data.docs));
-            userData.forEach((element) => {
-                // console.log(element.firstName);
-                this.renderUsers(element);
-            });
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    handleSubmitSignUp = async (event) => {
-        event.preventDefault();
-        const { email, password, confirmPassword } = this.state;
-        if (password !== confirmPassword) {
-            this.setState({
-                showToast: true,
-                toastMessage: "Passwords do not match!",
-            });
-            return; // Stop the form submission if passwords do not match
-        }
-        try {
-            const response = await fetch("http://localhost:3002/auth/signup", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ email, password }),
-            });
-            const data = await response.json();
-            this.setState({
-                showToast: true,
-                toastMessage: "Sign up successful!",
-                email: "",
-                password: "",
-                confirmPassword: "",
-            });
-            if (!response.ok) {
-                const errorMessage =
-                    data.error === "Email already exists"
-                        ? "An account with this email already exists. Please use a different email or log in."
-                        : data.error || "An unknown error occurred during sign up.";
-                throw new Error(errorMessage);
-            }
-            this.displayToast("One Step! Please verify your email now!");
-            this.setState({
-                email: "",
-                password: "",
-                confirmPassword: "",
-                isSignUp: false,
-            });
-            // Redirect or perform other actions
-        } catch (error) {
-            this.displayToast(error.message);
-        }
-    };
-
-    handleInputChange = (event) => {
-        this.setState({ [event.target.name]: event.target.value });
-    };
-
-    // Placeholder for sign-up logic
-    handleSignUp = (event) => {
-        event.preventDefault();
-        // Implement sign-up logic here
-    };
-
-    //handle checkbox change of Remember Me prop
-    toggleRememberMe = () => {
-        this.setState((prevState) => ({ rememberMe: !prevState.rememberMe }));
-    };
-
-    toggleSignUp = () => {
-        this.setState((prevState) => ({ isSignUp: !prevState.isSignUp }));
-    };
-
-    // useEffect = () => {
-    //     this.handleDocCollection();
-    //     // console.log("hello");
-    // };
-
-    handlePromoteUser = async (uid, role) => {
-        // const uid = userId;
-        // const role = "User";
-        try {
-            const response = await fetch("http://localhost:3002/auth/promoteUser", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ uid, role }),
-            });
-            const data = await response.json();
-
-            //     if (!response.ok) {
-            //         const errorMessage = data.error === "Email already exists"
-            //             ? "An account with this email already exists. Please use a different email or log in."
-            //             : data.error || 'An unknown error occurred during sign up.';
-            //         throw new Error(errorMessage);
-            //     }
-        } catch (error) {
-            this.displayToast(error.message);
-        }
-    };
-
-    // Dynamic functions
-    // function to make a list of users
-    renderUsers(doc) {
-        const userList = document.querySelector("#user-list");
-
-        let li = document.createElement("li");
-        let name = document.createElement("span");
-        let email = document.createElement("span");
-        let role = document.createElement("span");
-        let promote_btn = document.createElement("button");
-        let demote_btn = document.createElement("button");
-
-        li.className = "data";
-        name.className = "data";
-        email.className = "data";
-        role.className = "data";
-        promote_btn.setAttribute("class", "data-btn");
-        demote_btn.setAttribute("class", "data-demote-btn");
-
-        li.setAttribute("user-id", doc.uid);
-        name.textContent = doc.firstName;
-        email.textContent = doc.email;
-        role.textContent = doc.role;
-
-        promote_btn.textContent = "Promote";
-        promote_btn.onclick = () => this.handlePromoteUser(doc.uid, "Admin");
-        demote_btn.textContent = "Demote";
-        demote_btn.onclick = () => this.handlePromoteUser(doc.uid, "User");
-
-        li.appendChild(name);
-        li.appendChild(email);
-        li.appendChild(role);
-        li.appendChild(promote_btn);
-        li.appendChild(demote_btn);
-
-        userList.appendChild(li);
+      });
+      // Redirect or perform other actions
+    } catch (error) {
+      this.displayToast(error.message);
     }
+  };
 
-    clearRenderUsers() {
-        const userList = document.querySelector("#user-list");
+  handleInputChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
 
-        // removing if any content is already loaded
-        while (userList.firstChild) {
-            userList.removeChild(userList.firstChild);
-        }
+  // Placeholder for sign-up logic
+  handleSignUp = (event) => {
+    event.preventDefault();
+    // Implement sign-up logic here
+  };
+
+  //handle checkbox change of Remember Me prop
+  toggleRememberMe = () => {
+    this.setState((prevState) => ({ rememberMe: !prevState.rememberMe }));
+  };
+
+  toggleSignUp = () => {
+    this.setState((prevState) => ({ isSignUp: !prevState.isSignUp }));
+  };
+
+  // useEffect = () => {
+  //     this.handleDocCollection();
+  //     // console.log("hello");
+  // };
+
+  handlePromoteUser = async (uid, role) => {
+    // const uid = userId;
+    // const role = "User";
+    try {
+      const response = await fetch("http://localhost:3002/auth/promoteUser", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ uid, role }),
+      });
+      const data = await response.json();
+
+      //     if (!response.ok) {
+      //         const errorMessage = data.error === "Email already exists"
+      //             ? "An account with this email already exists. Please use a different email or log in."
+      //             : data.error || 'An unknown error occurred during sign up.';
+      //         throw new Error(errorMessage);
+      //     }
+    } catch (error) {
+      this.displayToast(error.message);
     }
+  };
 
-    handleSearch = (event) => {
-        const query = event.target.value.toLowerCase();
-        const userList = document.querySelectorAll('#user-list li');
-        userList.forEach((user) => {
-            const userName = user.querySelector('span').textContent.toLowerCase();
-            if (userName.includes(query)) {
-                user.style.display = '';
-            } else {
-                user.style.display = 'none';
-            }
-        });
-    };
+  // Dynamic functions
+  // function to make a list of users
+  renderUsers(doc) {
+    const userList = document.querySelector("#user-list");
 
-    render() {
-        // const { email, password, isSignUp, showToast, toastMessage, isAuthenticated, rememberMe } = this.state;
-        return (
-            <>
-                <Screen>
-                    {/* Search Bar */}
-                    <div className='dashboard-container'>
-                        <div className="search-bar-container">
-                            <input
-                                type="text"
-                                placeholder="Search users"
-                                className="search-input"
-                                onChange={this.handleSearch}
-                            />
-                            <button className="search-button">Search</button>
-                        </div>
-                        {/*This part is for the cards components*/}
-                        <div className="dashboard-container">
-                            <div className="top-cards">
-                                <Card
-                                    title={<h3 className="card-title">Users</h3>}
-                                    value={<span className="card-value">338</span>}
-                                    description={<p className="card-description">Description</p>}
-                                />
+    let li = document.createElement("li");
+    let name = document.createElement("span");
+    let email = document.createElement("span");
+    let role = document.createElement("span");
+    let promote_btn = document.createElement("button");
+    let demote_btn = document.createElement("button");
 
-                                <Card
-                                    title={<h3 className="card-title">Teams</h3>}
-                                    value={<span className="card-value">12</span>}
-                                    description={<p className="card-description">Description</p>}
-                                />
+    li.className = "data";
+    name.className = "data";
+    email.className = "data";
+    role.className = "data";
+    promote_btn.setAttribute("class", "data-btn");
+    demote_btn.setAttribute("class", "data-demote-btn");
 
-                                <Card
-                                    title={<h3 className="card-title">Projects</h3>}
-                                    value={<span className="card-value">4</span>}
-                                    description={<p className="card-description">2 completed</p>}
-                                />
+    li.setAttribute("user-id", doc.uid);
+    name.textContent = doc.firstName;
+    email.textContent = doc.email;
+    role.textContent = doc.role;
 
-                                <Card
-                                    title={<h3 className="card-title">Posts</h3>}
-                                    value={<span className="card-value">214</span>}
-                                    description={<p className="card-description">2 new posts</p>}
-                                />
-                            </div>
+    promote_btn.textContent = "Promote";
+    promote_btn.onclick = () => this.handlePromoteUser(doc.uid, "Admin");
+    demote_btn.textContent = "Demote";
+    demote_btn.onclick = () => this.handlePromoteUser(doc.uid, "User");
 
-                            <div className="bottom-cards">
-                                <Card>
-                                    <h5>Top contributors of the week</h5>
-                                    <ol type="1">
-                                        <li>@username</li>
-                                        <li>@username</li>
-                                        <li>@username</li>
-                                    </ol>
-                                </Card>
-                                <Card>
-                                    <h5>Top author of the week</h5>
-                                    <ol type="1">
-                                        <li>@username</li>
-                                        <li>@username</li>
-                                        <li>@username</li>
-                                    </ol>
-                                </Card>
-                                <Card>
-                                    <h5>Top post of the week</h5>
-                                    <ol type="1">
-                                        <li>Post title</li>
-                                        <li>Post title</li>
-                                        <li>Post title</li>
-                                    </ol>
-                                </Card>
-                            </div>
-                        </div>
+    li.appendChild(name);
+    li.appendChild(email);
+    li.appendChild(role);
+    li.appendChild(promote_btn);
+    li.appendChild(demote_btn);
 
-                        <main className="App-main">
-                            <div className="projects-table">
-                                <h2>Active projects</h2>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Project name</th>
-                                            <th>Priority</th>
-                                            <th>Members</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Chameleon Website</td>
-                                            <td style={{ color: "red", fontWeight: "bold" }}>High</td>
-                                            <td>member list</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Project name</td>
-                                            <td>Priority</td>
-                                            <td>Members</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Project name</td>
-                                            <td>Priority</td>
-                                            <td>Members</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Project name</td>
-                                            <td>Priority</td>
-                                            <td>Members</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </main>
-                    </div>
+    userList.appendChild(li);
+  }
 
-                    {/* BACKEND TESTING AREA */}
-                    {!(sessionStorage.getItem('userRole') == "Admin") && <Redirect to='/home' />}
+  clearRenderUsers() {
+    const userList = document.querySelector("#user-list");
+
+    // removing if any content is already loaded
+    while (userList.firstChild) {
+      userList.removeChild(userList.firstChild);
+    }
+  }
+
+  handleSearch = (event) => {
+    const query = event.target.value.toLowerCase();
+    const userList = document.querySelectorAll("#user-list li");
+    userList.forEach((user) => {
+      const userName = user.querySelector("span").textContent.toLowerCase();
+      if (userName.includes(query)) {
+        user.style.display = "";
+      } else {
+        user.style.display = "none";
+      }
+    });
+  };
+
+  render() {
+    // const { email, password, isSignUp, showToast, toastMessage, isAuthenticated, rememberMe } = this.state;
+    return (
+      <>
+        <Screen>
+          {/* Search Bar */}
+          <div className="dashboard-container">
+            <div className="search-bar-container">
+              <input
+                type="text"
+                placeholder="Search users"
+                className="search-input"
+                onChange={this.handleSearch}
+              />
+              <button className="search-button">Search</button>
+            </div>
+            {/*This part is for the cards components*/}
+            <div className="dashboard-container">
+              <div className="top-cards">
+                <Card
+                  title={<h3 className="card-title">Users</h3>}
+                  value={<span className="card-value">338</span>}
+                  description={<p className="card-description">Description</p>}
+                />
+
+                <Card
+                  title={<h3 className="card-title">Teams</h3>}
+                  value={<span className="card-value">12</span>}
+                  description={<p className="card-description">Description</p>}
+                />
+
+                <Card
+                  title={<h3 className="card-title">Projects</h3>}
+                  value={<span className="card-value">4</span>}
+                  description={<p className="card-description">2 completed</p>}
+                />
+
+                <Card
+                  title={<h3 className="card-title">Posts</h3>}
+                  value={<span className="card-value">214</span>}
+                  description={<p className="card-description">2 new posts</p>}
+                />
+              </div>
+
+              <div className="bottom-cards">
+                <Card>
+                  <h5>Top contributors of the week</h5>
+                  <ol type="1">
+                    <li>@username</li>
+                    <li>@username</li>
+                    <li>@username</li>
+                  </ol>
+                </Card>
+                <Card>
+                  <h5>Top author of the week</h5>
+                  <ol type="1">
+                    <li>@username</li>
+                    <li>@username</li>
+                    <li>@username</li>
+                  </ol>
+                </Card>
+                <Card>
+                  <h5>Top post of the week</h5>
+                  <ol type="1">
+                    <li>Post title</li>
+                    <li>Post title</li>
+                    <li>Post title</li>
+                  </ol>
+                </Card>
+              </div>
+            </div>
+
+            <main className="App-main">
+              <div className="projects-table">
+                <h2>Active projects</h2>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Project name</th>
+                      <th>Priority</th>
+                      <th>Members</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Chameleon Website</td>
+                      <td style={{ color: "red", fontWeight: "bold" }}>High</td>
+                      <td>member list</td>
+                    </tr>
+                    <tr>
+                      <td>Project name</td>
+                      <td>Priority</td>
+                      <td>Members</td>
+                    </tr>
+                    <tr>
+                      <td>Project name</td>
+                      <td>Priority</td>
+                      <td>Members</td>
+                    </tr>
+                    <tr>
+                      <td>Project name</td>
+                      <td>Priority</td>
+                      <td>Members</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Posts Table with Action Buttons */}
+              <div className="posts-table">
+                <h2>Recent Posts</h2>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Post title</th>
+                      <th>Author</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Cloud Computing</td>
+                      <td>@username</td>
+                      <td>
+                        <button className="action-button edit">Edit</button>
+                        <button className="action-button hide">Hide</button>
+                        <button className="action-button delete">Delete</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cloud Computing</td>
+                      <td>@username</td>
+                      <td>
+                        <button className="action-button edit">Edit</button>
+                        <button className="action-button hide">Hide</button>
+                        <button className="action-button delete">Delete</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cloud Computing</td>
+                      <td>@username</td>
+                      <td>
+                        <button className="action-button edit">Edit</button>
+                        <button className="action-button hide">Hide</button>
+                        <button className="action-button delete">Delete</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cloud Computing</td>
+                      <td>@username</td>
+                      <td>
+                        <button className="action-button edit">Edit</button>
+                        <button className="action-button hide">Hide</button>
+                        <button className="action-button delete">Delete</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </main>
+          </div>
+
+          {/* BACKEND TESTING AREA */}
+          {!(sessionStorage.getItem('userRole') == "Admin") && <Redirect to='/home' />}
                     <div className='login-centered-container'>
                         <div className='container_2'>
                             <label>User Count: </label>
@@ -409,10 +461,10 @@ class Admin extends Component {
                             <ul id='user-list'></ul>
                         </div>
                     </div>
-                </Screen>
+        </Screen>
 
-                {/* {isAuthenticated && <Redirect to='/home' />} */}
-                {/* <div className='login-centered-container'>
+        {/* {isAuthenticated && <Redirect to='/home' />} */}
+        {/* <div className='login-centered-container'>
                         <div className='container_2'>
                             <div className={`dowebok ${isSignUp ? 's--signup' : ''}`}>
                                 {showToast && (
@@ -475,9 +527,9 @@ class Admin extends Component {
                                 <span class="m--up">Log In</span>}
                         </div>
                     </div> */}
-            </>
-        );
-    }
+      </>
+    );
+  }
 }
 
 export default Admin;

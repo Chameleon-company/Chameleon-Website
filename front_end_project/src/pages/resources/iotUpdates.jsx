@@ -128,46 +128,32 @@ class IotUpdates extends Component {
         ].map(({ title, content, index }) => (
           <div
             key={index}
-            className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px] mb-[20px]"
+            className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px] mb-[20px] px-8 rounded-md my-3"
           >
-            <h2 className="text-center font-bold">{title}</h2>
-            <div className="flex justify-center">
-              {isEditing[index] ? (
-                <ReactQuill
-                  value={content}
-                  onChange={(value) => this.handleContentChange(index, value)}
-                  theme="snow"
-                  className="w-full max-w-[940px] my-3"
-                  style={{
-                    padding: "30px",
-                    backgroundColor: "white",
-                    color: "black",
-                  }}
-                />
-              ) : (
-                <div
-                  className="w-full max-w-[940px] my-3"
-                  style={{
-                    padding: "30px",
-                    backgroundColor: "#fff",
-                    color: "#000",
-                  }}
-                  dangerouslySetInnerHTML={{ __html: content }}
-                />
-              )}
-            </div>
-            <div className="text-center mt-4">
+            <div className="flex items-center justify-between">
+              <h2 className="text-center font-bold">{title}</h2>
               <button
                 onClick={() => this.toggleEdit(index)}
-                className="bg-blue-500 text-white px-4 py-2 rounded"
+                className="bg-blue-500 text-white px-4 py-2 rounded bg-primary"
               >
                 {isEditing[index] ? "Save" : "Edit"}
               </button>
             </div>
+              {isEditing[index] ? (
+                <ReactQuill
+                  value={content}
+                  onChange={(value) => this.handleContentChange(index, value)}
+                  className="w-full max-w-[940px] bg-white my-3"
+                  theme="snow"
+                />
+              ) : (
+                <div
+                  className="w-full max-w-[940px] my-3 bg-white p-4"
+                  dangerouslySetInnerHTML={{ __html: content }}
+                />
+              )}
           </div>
         ))}
-
-        <br></br>
       </Screen>
     );
   }

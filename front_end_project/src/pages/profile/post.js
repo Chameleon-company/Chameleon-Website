@@ -6,11 +6,6 @@ function Post () {
     const location = useLocation();
     const { post } = location.state || {};
 
-    console.log('Post component rendered with post:', post);
-
-    // Inline style for centering the image and setting its width
-    const imageStyle = { display: 'block', margin: '0 auto', width: '50%' };
-
     return (
         <>
             <Screen>

@@ -5,7 +5,6 @@ function Posts ({ posts }) {
     const history = useHistory();
 
     const onClick = (post) => {
-        console.log('Navigating to post:', post); // Debugging line
         history.push({ pathname: `/posts/${post.id}`, state: { post } });
     };
 

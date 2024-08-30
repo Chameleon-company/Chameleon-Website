@@ -1,0 +1,104 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin-bottom: 20px;
+  }
+  
+  .labelHeading{
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+
+  .view-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 4px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .view-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .table-container {
+    width: 95%;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are combined */
+    border: 1px solid #ddd; /* Light border around the entire table */
+  }
+  .user-heading{
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 5px;
+  }
+  .user-table-header, td {
+    text-align: left;
+    padding: 15px;
+    border: 1px solid #ddd; /* Light horizontal and vertical lines */
+  }
+  
+  .user-table-header {
+    background-color: #579366;
+    color: rgb(241, 230, 230);
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light background for even rows */
+  }
+  
+  tr:hover {
+    background-color: #f9f9f9; /* Hover effect for better readability */
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .action-button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .promote {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .demote {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .action-button:hover {
+    opacity: 0.8;
+  }
+  

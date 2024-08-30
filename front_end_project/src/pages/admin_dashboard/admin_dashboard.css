@@ -670,3 +670,45 @@ li button .data-demote-btn {
 .action-button.delete:hover {
     background-color: #d32f2f; /* Darker red on hover */
 }
+
+/* Users-display css */
+.user-list-container {
+    margin-top: 20px;
+}
+
+.user-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.user-list-table th, .user-list-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.user-list-table th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+.data-btn {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.promote-btn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.demote-btn {
+    background-color: #F44336; /* Red */
+    color: white;
+}
+
+  

@@ -79,6 +79,7 @@ exports.promoteUser = async (req, res) => {
     const { uid, role } = req.body;
 
     const userRole = await authService.setUserRole(uid, role);
+    return res.status(200).json({ message: 'Data retrieved successfully', userRole});
   }
   catch (error) {
     res.status(401).json({ error: 'Authentication failed' });

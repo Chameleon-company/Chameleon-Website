@@ -6,6 +6,7 @@ import { auth } from "../utils/firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { doc, QuerySnapshot, getDocs } from "firebase/firestore";
 import Card from "../../components/card/card";
+import AdminUserTable from "../../components/Molecules/AdminUserTable/AdminUserTable";
 // const authService = require('../../../../back_end_project/services/authService');
 
 class Admin extends Component {
@@ -357,6 +358,12 @@ class Admin extends Component {
               </div>
             </div>
 
+            {/* BACKEND TESTING AREA */}
+            {!(sessionStorage.getItem("userRole") == "Admin") && (
+              <Redirect to="/home" />
+            )}
+            <AdminUserTable />
+
             <main className="App-main">
               <div className="projects-table">
                 <h2>Active projects</h2>
@@ -448,7 +455,7 @@ class Admin extends Component {
           </div>
 
           {/* BACKEND TESTING AREA */}
-          {!(sessionStorage.getItem('userRole') == "Admin") && <Redirect to='/home' />}
+          {/* {!(sessionStorage.getItem('userRole') == "Admin") && <Redirect to='/home' />}
                     <div className='login-centered-container'>
                         <div className='container_2'>
                             <label>User Count: </label>
@@ -460,7 +467,7 @@ class Admin extends Component {
                         <div>
                             <ul id='user-list'></ul>
                         </div>
-                    </div>
+                    </div> */}
         </Screen>
 
         {/* {isAuthenticated && <Redirect to='/home' />} */}

@@ -358,6 +358,7 @@ class Admin extends Component {
               </div>
             </div>
 
+
             {/* BACKEND TESTING AREA */}
             {!(sessionStorage.getItem("userRole") == "Admin") && (
               <Redirect to="/home" />
@@ -455,7 +456,7 @@ class Admin extends Component {
           </div>
 
           {/* BACKEND TESTING AREA */}
-          {/* {!(sessionStorage.getItem('userRole') == "Admin") && <Redirect to='/home' />}
+          {!(sessionStorage.getItem('userRole') == "Admin") && <Redirect to='/home' />}
                     <div className='login-centered-container'>
                         <div className='container_2'>
                             <label>User Count: </label>
@@ -467,7 +468,7 @@ class Admin extends Component {
                         <div>
                             <ul id='user-list'></ul>
                         </div>
-                    </div> */}
+                      </div>
         </Screen>
 
         {/* {isAuthenticated && <Redirect to='/home' />} */}
@@ -538,5 +539,6 @@ class Admin extends Component {
     );
   }
 }
+
 
 export default Admin;

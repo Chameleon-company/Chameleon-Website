@@ -669,6 +669,7 @@ li button .data-demote-btn {
 
 .action-button.delete:hover {
     background-color: #d32f2f; /* Darker red on hover */
+
 }
 
 /* Users-display css */
@@ -711,4 +712,3 @@ li button .data-demote-btn {
     color: white;
 }
 
-  

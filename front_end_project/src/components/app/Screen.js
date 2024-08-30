@@ -8,9 +8,9 @@ export default function Screen ({ children }) {
     <>
       <div className="flex flex-col h-screen">
         <Header />
-        <>
+        <div className='py-12'>
           {children}
-        </>
+        </div>
         <Footer />
       </div>
     </>

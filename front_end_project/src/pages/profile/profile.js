@@ -41,85 +41,85 @@ function Profile (props) {
     return (
         <>
             <Screen>
-                <div className='container mt-xl-auto my-auto p-5 bg-light text-dark' style={{ borderRadius: 25 }}>
-                    <div className='row'>
+                {/* <div className='container mt-xl-auto my-auto p-5 bg-light text-dark' style={{ borderRadius: 25 }}> */}
+                <div className='row'>
 
-                        {/* Profile */}
-                        <div className='col-12 col-lg-4 col-xl-3 text-center p-3 pt-4 pt-xl-5'>
+                    {/* Profile */}
+                    <div className='col-12 col-lg-4 col-xl-3 text-center p-3 pt-4 pt-xl-5'>
 
-                            {/* Profile Image */}
-                            <div className='row mt-auto'>
-                                <div className='col'>
-                                    {user.image ? <img className="mx-auto rounded-circle" src={user.image} alt='profile' style={{ width: '200px', height: '200px' }} /> : <CgProfile className='mx-auto my-5' size={100} height={100} width={100} />}
-                                </div>
-                            </div>
-
-                            {/* Full name */}
-                            <div className='row p-3'>
-                                <span className='display-5'><span>{user.firstname}</span> <span>{user.lastname}</span></span>
-                            </div>
-
-                            {/* Project and Role */}
-                            <div className='row'>
-                                <span className='display-8 text-secondary'> {user.role} </span>
-                                <span className='display-8 text-secondary'> {user.project} </span>
-                            </div>
-
-                            {/* Social Icons */}
-                            <div className='row mt-3 p-2 justify-content-center'>
-                                <div className='col-auto'>
-                                    <a className='text-decoration-none text-dark' href={`mailto:${user.email}`}> <MdEmail size={30} /> </a>
-                                </div>
-                                <div className='col-auto'>
-                                    <a className='text-decoration-none text-dark' href={`tel:${user.phone}`}> <MdLocalPhone size={30} /> </a>
-                                </div>
-                                <div className='col-auto'>
-                                    <a className='text-decoration-none text-dark' href={user.githubLink} target="_blank" rel="noreferrer"> <FaGithub size={30} /> </a>
-                                </div>
-                            </div>
-
-                            <div className='row mt-3 p-2 justify-content-center'>
-                                <div className='col-auto'>
-                                    <Button className='mt-1' variant='outline-danger' onClick={handleLogout}>Logout</Button>
-                                </div>
+                        {/* Profile Image */}
+                        <div className='row mt-auto'>
+                            <div className='col'>
+                                {user.image ? <img className="mx-auto rounded-circle" src={user.image} alt='profile' style={{ width: '200px', height: '200px' }} /> : <CgProfile className='mx-auto my-5' size={100} height={100} width={100} />}
                             </div>
                         </div>
 
+                        {/* Full name */}
+                        <div className='row p-3'>
+                            <span className='display-5'><span>{user.firstname}</span> <span>{user.lastname}</span></span>
+                        </div>
 
-                        {/* Content */}
-                        <div className='col-12 col-lg-8 col-xl-9'>
+                        {/* Project and Role */}
+                        <div className='row'>
+                            <span className='display-8 text-secondary'> {user.role} </span>
+                            <span className='display-8 text-secondary'> {user.project} </span>
+                        </div>
 
-                            {/* Navigation */}
-                            <div className='row'>
-                                <nav>
-                                    <div className="nav nav-tabs" id="nav-tab" role="tablist">
-                                        <button className={`nav-link text-muted disabled ${activeTab === 'dashboard' ? 'active' : ''}`} id="nav-dashboard-tab" data-toggle="tab" data-target="#nav-dashboard" type="button" role="tab" aria-controls="nav-dashboard" aria-selected="false" onClick={() => handleTabClick('dashboard')}>Dashboard</button>
-                                        <button className={`nav-link text-success ${activeTab === 'profile' ? 'active' : ''}`} id="nav-profile-tab" data-toggle="tab" data-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="true" onClick={() => handleTabClick('profile')}>Profile</button>
-                                        <button className={`nav-link text-success ${activeTab === 'password' ? 'active' : ''}`} id="nav-profile-tab" data-toggle="tab" data-target="#nav-Password" type="button" role="tab" aria-controls="nav-Password" aria-selected="false" onClick={() => handleTabClick('password')}>Password</button>
-                                        <button className={`nav-link text-success ${activeTab === 'posts' ? 'active' : ''}`} id="nav-posts-tab" data-toggle="tab" data-target="#nav-posts" type="button" role="tab" aria-controls="nav-posts" aria-selected="false" onClick={() => handleTabClick('posts')}>Posts</button>
-                                    </div>
-                                </nav>
+                        {/* Social Icons */}
+                        <div className='row mt-3 p-2 justify-content-center'>
+                            <div className='col-auto'>
+                                <a className='text-decoration-none text-dark' href={`mailto:${user.email}`}> <MdEmail size={30} /> </a>
+                            </div>
+                            <div className='col-auto'>
+                                <a className='text-decoration-none text-dark' href={`tel:${user.phone}`}> <MdLocalPhone size={30} /> </a>
+                            </div>
+                            <div className='col-auto'>
+                                <a className='text-decoration-none text-dark' href={user.githubLink} target="_blank" rel="noreferrer"> <FaGithub size={30} /> </a>
+                            </div>
+                        </div>
 
-                                <div className="tab-content" id="nav-tabContent">
-                                    <div className={`tab-pane fade ${activeTab === 'dashboard' ? 'show active' : ''}`} id="nav-dashboard" role="tabpanel" aria-labelledby="nav-dashboard-tab">Dashboard</div>
+                        <div className='row mt-3 p-2 justify-content-center'>
+                            <div className='col-auto'>
+                                <Button className='mt-1' variant='outline-danger' onClick={handleLogout}>Logout</Button>
+                            </div>
+                        </div>
+                    </div>
 
-                                    <div className={`tab-pane fade ${activeTab === 'profile' ? 'show active' : ''}`} id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                        <User user={user} handleUser={handleUser} />
-                                    </div>
 
-                                    <div className={`tab-pane fade ${activeTab === 'password' ? 'show active' : ''}`} id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">
-                                        <Password />
-                                    </div>
+                    {/* Content */}
+                    <div className='col-12 col-lg-8 col-xl-9'>
 
-                                    <div className={`tab-pane fade ${activeTab === 'posts' ? 'show active' : ''}`} id="nav-posts" role="tabpanel" aria-labelledby="nav-posts-tab">
-                                        <Posts posts={user.posts} />
-                                    </div>
+                        {/* Navigation */}
+                        <div className='row'>
+                            <nav>
+                                <div className="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <button className={`nav-link text-muted disabled ${activeTab === 'dashboard' ? 'active' : ''}`} id="nav-dashboard-tab" data-toggle="tab" data-target="#nav-dashboard" type="button" role="tab" aria-controls="nav-dashboard" aria-selected="false" onClick={() => handleTabClick('dashboard')}>Dashboard</button>
+                                    <button className={`nav-link text-success ${activeTab === 'profile' ? 'active' : ''}`} id="nav-profile-tab" data-toggle="tab" data-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="true" onClick={() => handleTabClick('profile')}>Profile</button>
+                                    <button className={`nav-link text-success ${activeTab === 'password' ? 'active' : ''}`} id="nav-profile-tab" data-toggle="tab" data-target="#nav-Password" type="button" role="tab" aria-controls="nav-Password" aria-selected="false" onClick={() => handleTabClick('password')}>Password</button>
+                                    <button className={`nav-link text-success ${activeTab === 'posts' ? 'active' : ''}`} id="nav-posts-tab" data-toggle="tab" data-target="#nav-posts" type="button" role="tab" aria-controls="nav-posts" aria-selected="false" onClick={() => handleTabClick('posts')}>Posts</button>
+                                </div>
+                            </nav>
+
+                            <div className="tab-content" id="nav-tabContent">
+                                <div className={`tab-pane fade ${activeTab === 'dashboard' ? 'show active' : ''}`} id="nav-dashboard" role="tabpanel" aria-labelledby="nav-dashboard-tab">Dashboard</div>
+
+                                <div className={`tab-pane fade ${activeTab === 'profile' ? 'show active' : ''}`} id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                    <User user={user} handleUser={handleUser} />
+                                </div>
+
+                                <div className={`tab-pane fade ${activeTab === 'password' ? 'show active' : ''}`} id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">
+                                    <Password />
+                                </div>
+
+                                <div className={`tab-pane fade ${activeTab === 'posts' ? 'show active' : ''}`} id="nav-posts" role="tabpanel" aria-labelledby="nav-posts-tab">
+                                    <Posts posts={user.posts} />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </Screen>
+                {/* </div> */}
+            </Screen >
         </>
     );
 }

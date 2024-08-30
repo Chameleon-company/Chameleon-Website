@@ -63,11 +63,3 @@ export const iotUpdatesSearchableContents = (state) => [
   state.content3,
   state.content4,
 ];
-
-// Optional: If you need to export the contents for other use
-export const iotUpdatesSearchableContents = (state) => [
-  state.content1,
-  state.content2,
-  state.content3,
-  state.content4,
-];

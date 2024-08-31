@@ -8,11 +8,14 @@ export default function Screen ({ children }) {
     <>
       <div className="flex flex-col h-screen">
         <Header />
-        <>
-          {children}
-        </>
+        <div className='my-auto'>
+          <div className='container mt-xl-auto my-auto p-5 bg-light text-dark' style={{ borderRadius: 25 }}>
+            {children}
+          </div>
+        </div>
         <Footer />
       </div>
+
     </>
   );
 }

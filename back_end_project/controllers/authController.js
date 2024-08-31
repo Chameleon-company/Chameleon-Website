@@ -4,7 +4,7 @@ exports.userSignUp = async (req, res) => {
   const { email, password } = req.body;
   if (!isStrongPassword(password)) {
     return res.status(400).json({ 
-      error: 'Password does not meet security requirements',
+      error: 'Password does not meet requirements',
       requirements: {
         minLength: 8,            // Minimum password length
         uppercase: true,         // Requires uppercase letters
@@ -17,8 +17,13 @@ exports.userSignUp = async (req, res) => {
   try {
     const user = await authService.createUser(email, password);
     res.status(201).json({ message: 'User signed up successfully', user });
+    
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    if (error.code === 'auth/email-already-in-use') {
+      return res.status(400).json({ error: 'Email already exists' });
+    } else {
+      return res.status(500).json({ error: error.message });
+    }
   }
 };
 

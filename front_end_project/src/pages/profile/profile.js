@@ -104,7 +104,7 @@ function Profile (props) {
 
                         <div className='row mt-3 p-2 justify-content-center'>
                             <div className='col-auto'>
-                                <Button className='mt-1' variant='outline-danger' onClick={handleLogout}>Logout</Button>
+                                <Button className='mt-1' variant='outline-danger' onClick={console.log('Logging out...')}>Logout</Button>
                             </div>
                         </div>
                     </div>
@@ -148,7 +148,7 @@ function Profile (props) {
                         </div>
                     </div>
                 </div>
-            </Screen>
+            </Screen >
         </>
     );
 }

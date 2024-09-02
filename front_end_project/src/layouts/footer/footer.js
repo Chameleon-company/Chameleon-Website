@@ -20,7 +20,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="mt-auto fixed-bottom">
+    <footer className="">
       <div className="footer-content">
 
         {/* Responsiveness using flex box */}

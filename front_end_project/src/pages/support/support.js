@@ -21,12 +21,7 @@ export default function Support (props) {
     ];
 
     return (
-        <Screen>
-            {/* Page Title */}
-            <Row className='p-3 text-center'>
-                <h1>Support</h1>
-            </Row>
-
+        <Screen title="Support">
 
             {/* Page Content */}
             <Row className='p-5'>

@@ -16,8 +16,8 @@ function Posts ({ posts }) {
                     <div className='card h-100' onClick={() => onClick(post)}>
                         <img src={post.image} className='card-img-top' alt='post' />
                         <div className='card-body'>
-                            <h5 className='card-title'>{post.title}</h5>
-                            <p className='card-text text-truncate'>{post.subtitle}.</p>
+                            {post.title && <h5 className='card-title'>{post.title}</h5>}
+                            {post.subtitle && <p className='card-text text-truncate'>{post.subtitle}.</p>}
                         </div>
                     </div>
                 </div>

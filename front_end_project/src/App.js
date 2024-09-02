@@ -4,6 +4,7 @@ import Screen from './components/app/Screen';
 import NotificationComponent from "./components/notificationComp/NotificationComponent";
 import NotFoundPage from "./pages/error404/404.js";
 import Profile from './pages/profile/profile.js';
+import Post from './pages/profile/post.js';
 
 
 const HomePage = lazy(() => import("./pages/homepage/Homepage"));
@@ -65,6 +66,7 @@ function App () {
               <Route path="/iotStatistics" component={IotStatistics} />
               <Route path="/iotUpdates" component={IotUpdates} />
               <Route path="/profile" component={Profile} />
+              <Route path="/posts/:id" component={Post} />
               <Route path="/faq" component={Main} />
               <Route path="/login" component={Login} />
               <Route exact path="/logout" component={Logout} />

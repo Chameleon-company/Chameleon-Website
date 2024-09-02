@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { changePassword } from '../../routes/user';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Password(props) {
     const [passwords, setPasswords] = useState({
@@ -39,7 +41,11 @@ function Password(props) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         validatePassword(passwords.newPassword);
-        if (error) return; // Prevent submission if there are errors
+        
+        error && toast.error(error);
+        if (error) {
+            return
+        }; // Prevent submission if there are errors
 
         const result = await changePassword(passwords.currentPassword, passwords.newPassword);
 
@@ -50,8 +56,10 @@ function Password(props) {
                 newPassword: '',
                 confirmNewPassword: ''
             });
+            toast.success(successMessage);
         } else {
             setError(result.message || 'An unknown error occurred.');
+           error && toast.error(error); 
         }
     };
 
@@ -91,7 +99,6 @@ function Password(props) {
                         value={passwords.confirmNewPassword}
                         onChange={handleChange}
                     />
-                    {error && <small id="passwordHelp" className="form-text text-danger">{error}</small>}
                 </div>
                 {successMessage && <div className="mt-3 alert alert-success">{successMessage}</div>}
                 <button type="submit" className="btn btn-success mt-3">Submit</button>

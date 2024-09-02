@@ -1,7 +1,6 @@
 
 import React, { Component } from "react";
-import "./login.css"; // Make sure the path is correct
-import Logo from "./image/Chameleon_Logo.png";
+import "./login.css";
 import Google from "./image/google.png";
 import Linkedin from "./image/linkedin.png";
 import Microsoft from "./image/microsoft.png";
@@ -9,18 +8,7 @@ import Screen from "../../components/app/Screen";
 import { Redirect } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-
-// init branch
-
-import Chatbox from '../Chatbot/Chatbox';
 import '../Chatbot/chatbox.css';
-import chameleonLogo from "../../assets/ChameleonLogo.png";
-import chatOpenImg from "../Chatbot/images/chat-open.png";
-import chatCloseImg from "../Chatbot/images/chat-close.png";
-import dotMenuImg from "../Chatbot/images/dot-menu.png";
-import chatIcon from "../Chatbot/images/chat-icon.png";
-import fileSelectIcon from "../Chatbot/images/file-select.png";
-import sendMessageImg from "../Chatbot/images/send-message.png";
 
 class Login extends Component {
   state = {
@@ -180,15 +168,7 @@ class Login extends Component {
   };
 
   render () {
-    const {
-      email,
-      password,
-      isSignUp,
-      showToast,
-      toastMessage,
-      isAuthenticated,
-      rememberMe,
-    } = this.state;
+    const { email, password, isSignUp, showToast, toastMessage, isAuthenticated, rememberMe, } = this.state;
 
     return (
       <>
@@ -198,56 +178,19 @@ class Login extends Component {
               <div className="max-w-5xl mx-auto my-14 flex flex-col lg:flex-row rounded-lg overflow-hidden drop-shadow-lg">
                 <div className="container_2 w-[540px] lg:w-[640px]">
                   <div className={`dowebok ${isSignUp ? "s--signup" : ""}`}>
-                    {showToast && (
-                      <div className="login-toast-message">{toastMessage}</div>
-                    )}
+                    {showToast && (<div className="login-toast-message">{toastMessage}</div>)}
 
                     <div className="form sign-in rounded-md">
                       <h2 className="text-gray-600 font-semibold">Login to Chameleon</h2>
-                      <form
-                        action="#"
-                        method="POST"
-                        className="space-y-6 flex flex-col items-center mt-5"
-                        onSubmit={this.handleSubmitSignIn}
-                      >
-                        <label
-                          htmlFor="email"
-                          className="text-sm text-gray-700 text-start"
-                        >
-                          Email address
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          value={email}
-                          onChange={this.handleInputChange}
-                          autoComplete="email"
-                          className="w-full rounded-2xl border-3 py-1.5 mt-2 text-gray-700 sm:text-sm sm:leading-6"
-                        />
+                      <form action="#" method="POST" className="space-y-6 flex flex-col items-center mt-5" onSubmit={this.handleSubmitSignIn} >
+                        <label htmlFor="email" className="text-sm text-gray-700 text-start" > Email address </label>
+                        <input type="email" name="email" value={email} onChange={this.handleInputChange} autoComplete="email" className="w-full rounded-2xl border-3 py-1.5 mt-2 text-gray-700 sm:text-sm sm:leading-6" />
 
-                        <label
-                          htmlFor="password"
-                          className="text-sm text-gray-700"
-                        >
-                          Password
-                        </label>
-                        <input
-                          type="password"
-                          name="password"
-                          value={password}
-                          onChange={this.handleInputChange}
-                          autoComplete="current-password"
-                          className="w-full rounded-2xl border-3 py-1.5 mt-2 text-gray-700 sm:text-sm sm:leading-6"
-                        />
+                        <label htmlFor="password" className="text-sm text-gray-700" > Password </label>
+                        <input type="password" name="password" value={password} onChange={this.handleInputChange} autoComplete="current-password" className="w-full rounded-2xl border-3 py-1.5 mt-2 text-gray-700 sm:text-sm sm:leading-6" />
 
                         <div className="flex items-center gap-2">
-                          <input
-                            type="checkbox"
-                            checked={rememberMe}
-                            onChange={this.toggleRememberMe}
-                            id="remember"
-                            className="mt-0"
-                          />
+                          <input type="checkbox" checked={rememberMe} onChange={this.toggleRememberMe} id="remember" className="mt-0" />
                           <label htmlFor="remember" className="text-gray-700">Remember Me</label>
                         </div>
 
@@ -255,10 +198,7 @@ class Login extends Component {
                           <a href="/reset" className="text-gray-500 text-sm">Forgot your password?</a>
                         </p>
 
-                        <button
-                          type="submit"
-                          className="submit bg-[#559166] flex justify-center rounded-3xl py-2 px-5 font-semibold shadow-sm text-gray-50 hover:text-[#559166] hover:bg-green-sage focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                        >
+                        <button type="submit" className="submit bg-[#559166] flex justify-center rounded-3xl py-2 px-5 font-semibold shadow-sm text-gray-50 hover:text-[#559166] hover:bg-green-sage focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" >
                           Login
                         </button>
                       </form>
@@ -269,10 +209,7 @@ class Login extends Component {
                         <a href=""><img className="inline h-7 w-7" src={Microsoft}></img></a>
                       </div>
                       <p className="text-center pt-4">
-                        Don't have an account?{" "}
-                        <a className="text-[#559166] no-underline font-semibold" href="signup" onClick={this.toggleSignUp}>
-                          Sign Up
-                        </a>
+                        Don't have an account?{" "} <a className="text-[#559166] no-underline font-semibold" href="signup" onClick={this.toggleSignUp}> Sign Up </a>
                       </p>
                     </div>
                   </div>
@@ -290,11 +227,7 @@ class Login extends Component {
                     </div>
                   )}
                   <div class="img__btn  hover:text-base" onClick={this.toggleSignUp}>
-                    {!this.state.isSignUp ? (
-                      <span class="m--up">Sign Up</span>
-                    ) : (
-                      <span class="m--up">Log In</span>
-                    )}
+                    {!this.state.isSignUp ? (<span class="m--up">Sign Up</span>) : (<span class="m--up">Log In</span>)}
                   </div>
                 </div>
               </div>

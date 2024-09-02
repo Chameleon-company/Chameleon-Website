@@ -1,14 +1,6 @@
 import { initializeApp } from "firebase/app";
-import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-} from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
-import userEvent from "@testing-library/user-event";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCgBPNTLuvfKQpZiOCJs1PRKVgy3nDhwn0",

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './signup.css';
 import Screen from '../../components/app/Screen';
-import { Redirect, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 class SignUp extends Component {
 

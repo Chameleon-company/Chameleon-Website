@@ -2,7 +2,6 @@ import React from "react";
 import SwiperNews from "./Swiper";
 import articleList from "./articles";
 import "./styles.css";
-import SearchButton from "./images/SearchButton.png";
 import Screen from '../../components/app/Screen';
 import Chatbox from '../Chatbot/Chatbox';
 import '../Chatbot/chatbox.css';

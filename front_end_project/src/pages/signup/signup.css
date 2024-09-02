@@ -75,6 +75,7 @@ input, button {
     position: relative;
     width: 640px;
     height: 100%;
+    overflow: scroll;  /* div container is now scrollable */
     transition: -webkit-transform 0.6s ease-in-out;
     transition: transform 0.6s ease-in-out;
     transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
@@ -317,4 +318,28 @@ input {
 .dowebok.s--signup .sign-up {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+}
+
+.password-checklist {
+    background-color: rgb(231, 231, 231);
+    width: 400px;
+    border-radius:1em;
+    
+}
+
+.password-checklist label {
+    display: block;
+    font-weight:bolder;
+    width: 260px;
+    margin: 15px auto 15px;
+    text-align: center;
+}
+
+.centered-container-2 {
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    text-align: center; 
+    position: relative;
 }

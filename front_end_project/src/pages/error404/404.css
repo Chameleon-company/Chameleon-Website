@@ -1,0 +1,33 @@
+
+.four_zero_four_bg {
+    background-image: url('./anime.gif');
+    height:auto;
+    width: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  };
+.txt404 
+{
+    font-style:italic;
+    font-weight: bold;
+    position: relative;
+    margin-top:-10%;
+    transform: translateY(-10%);
+    width: 300px;
+    height: 300px;
+    text-align: center;
+  }
+.button1
+{
+    color: black;
+    align-items: center;
+    background-color: yellowgreen;
+    position: relative;
+    margin-left: auto;
+    top: 250px;
+    width: 200px;
+    height: 80px;
+    border-radius: 40px;
+}
+  

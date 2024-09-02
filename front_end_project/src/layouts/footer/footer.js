@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { FaInstagram, FaFacebookSquare, FaTwitterSquare, FaSun, FaMoon } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { colors } from '../../constants/colors';
-import Chatbox from '../../pages/Chatbot/Chatbox';
-import { IoIosChatbubbles } from "react-icons/io";
 
 const Footer = () => {
   // Retrieve the theme from sessionStorage or default to the user's preference or 'dark'
@@ -43,7 +41,7 @@ const Footer = () => {
             <div className='ml-auto my-auto'>
               <div className="flex my-auto p-auto text-decoration-none">
                 {/* Chatbox */}
-                <Chatbox chatIcon={IoIosChatbubbles} />
+                {/* <Chatbox chatIcon={IoIosChatbubbles} /> */}
 
                 <a href="/https://www.instagram.com/deakinuniversity/?hl=en" className="mx-1">
                   <FaInstagram color={theme === 'dark' ? colors.white : colors.black} size={30} />

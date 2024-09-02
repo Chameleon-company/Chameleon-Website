@@ -12,7 +12,6 @@ const aboutUs = lazy(() => import('./pages/about/aboutUs'));
 const News = lazy(() => import('./pages/news/news'));
 const ProjectDetails = lazy(() => import('./pages/projects/ProjectDetails'));
 const Projects = lazy(() => import('./pages/projects/projects'));
-const Contact = lazy(() => import('./pages/contact/contact'));
 const IotResources = lazy(() => import('./pages/resources/iotResources'));
 const IotTechnologies = lazy(() => import('./pages/resources/iotTechnologies'));
 const IotStatistics = lazy(() => import('./pages/resources/iotStatistics'));
@@ -23,15 +22,9 @@ const Login = lazy(() => import('./pages/login/login'));
 const Logout = lazy(() => import('./pages/logout/logout'));
 const Signup = lazy(() => import('./pages/signup/signup'));
 const ResetPassword = lazy(() => import('./pages/reset_password/reset_demo'));
-const newsSignupForm = lazy(
-  () => import('./pages/email_newsletter_forms/subscribe'),
-);
-const newsUnsubForm = lazy(
-  () => import('./pages/email_newsletter_forms/unsubscribe'),
-);
-const newsRemoveForm = lazy(
-  () => import('./pages/email_newsletter_forms/remove'),
-);
+const newsSignupForm = lazy(() => import('./pages/email_newsletter_forms/subscribe'),);
+const newsUnsubForm = lazy(() => import('./pages/email_newsletter_forms/unsubscribe'),);
+const newsRemoveForm = lazy(() => import('./pages/email_newsletter_forms/remove'),);
 const SearchResults = lazy(() => import('./pages/search/SearchResults'));
 const Support = lazy(() => import('./pages/support/support'));
 
@@ -57,7 +50,6 @@ function App () {
               <Route path="/chatbot" component={Chatbot} />
               <Route path="/projects" component={Projects} />
               <Route path="/report" component={Report} />
-              <Route path="/contact" component={Contact} />
               <Route path="/iotResources" component={IotResources} />
               <Route path="/iotTechnologies" component={IotTechnologies} />
               <Route path="/iotStatistics" component={IotStatistics} />

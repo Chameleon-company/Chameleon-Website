@@ -16,7 +16,7 @@
     "axios": "^1.7.3",
     "bootstrap": "^5.3.3",
     "date-fns": "^2.30.0",
-    "firebase": "^10.11.1",
+    "firebase": "^10.12.5",
     "http-proxy-middleware": "^3.0.0",
     "openai": "^4.57.0",
     "query-string": "^8.1.0",

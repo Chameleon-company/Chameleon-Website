@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import "./login.css"; // Make sure the path is correct
 import Logo from "./image/Chameleon_Logo.png";
@@ -151,6 +152,7 @@ class Login extends Component {
         isSignUp: false,
       });
       // Redirect or perform other actions
+
     } catch (error) {
       this.displayToast(error.message);
     }
@@ -160,6 +162,7 @@ class Login extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
+
   // Placeholder for sign-up logic
   handleSignUp = (event) => {
     event.preventDefault();
@@ -167,6 +170,7 @@ class Login extends Component {
   };
 
   //handle checkbox change of Remember Me prop
+
   toggleRememberMe = () => {
     this.setState((prevState) => ({ rememberMe: !prevState.rememberMe }));
   };
@@ -185,6 +189,7 @@ class Login extends Component {
       isAuthenticated,
       rememberMe,
     } = this.state;
+
     return (
       <>
         {isAuthenticated ? <Redirect to="/home" /> :
@@ -302,3 +307,4 @@ class Login extends Component {
 }
 
 export default Login;
+

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
+
 function Posts ({ posts }) {
     const history = useHistory();
 
@@ -21,6 +22,7 @@ function Posts ({ posts }) {
                     </div>
                 </div>
             ))}
+
         </div>
     );
 }

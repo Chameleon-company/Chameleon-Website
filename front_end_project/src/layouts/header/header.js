@@ -1,6 +1,5 @@
 import chameleonHeader from "./images/Header-Chameleon.png";
 import { useState } from "react";
-import './header.css';
 import { Button, Nav, Navbar } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import { navigation } from '../../constants/navigation';

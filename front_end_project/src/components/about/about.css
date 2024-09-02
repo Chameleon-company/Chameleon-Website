@@ -1,9 +1,0 @@
-.home-link {
-	color: blue; /* Choose your color */
-	text-decoration: none;
-	font-weight: bold;
-}
-
-.home-link:hover {
-	text-decoration: underline;
-}

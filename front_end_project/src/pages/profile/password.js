@@ -10,6 +10,18 @@ function Password(props) {
     const [error, setError] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
 
+    const validatePassword = (password) => {
+        
+        if (password.length < 8 ||     // Password must be at least 8 characters long.
+            !/[A-Z]/.test(password) || // Password must contain at least one uppercase letter.
+            !/[a-z]/.test(password) || // Password must contain at least one lowercase letter.
+            !/[0-9]/.test(password) || // Password must contain at least one number.
+            !/[!@#$%^&*]/.test(password)//Password must contain at least one special character.
+        ) {
+          setError('Password must contain uppercase, lowercase, number and special character and at least 8 character long.');
+        }
+      };
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setPasswords(prevPasswords => ({ ...prevPasswords, [name]: value }));
@@ -26,6 +38,7 @@ function Password(props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        validatePassword(passwords.newPassword);
         if (error) return; // Prevent submission if there are errors
 
         const result = await changePassword(passwords.currentPassword, passwords.newPassword);

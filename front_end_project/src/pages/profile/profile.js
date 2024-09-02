@@ -9,7 +9,7 @@ import User from './user';
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import getUserProfileApi from '../../api/loginapi';
 
-function Profile(props) {
+function Profile (props) {
   const [user, setUser] = useState(null); // State to hold user data
   const [loading, setLoading] = useState(true); // State to track loading status
 
@@ -169,9 +169,8 @@ function Profile(props) {
                 <nav>
                   <div className="nav nav-tabs" id="nav-tab" role="tablist">
                     <button
-                      className={`nav-link text-muted disabled ${
-                        activeTab === 'dashboard' ? 'active' : ''
-                      }`}
+                      className={`nav-link text-muted disabled ${activeTab === 'dashboard' ? 'active' : ''
+                        }`}
                       id="nav-dashboard-tab"
                       data-toggle="tab"
                       data-target="#nav-dashboard"
@@ -184,9 +183,8 @@ function Profile(props) {
                       Dashboard
                     </button>
                     <button
-                      className={`nav-link text-success ${
-                        activeTab === 'profile' ? 'active' : ''
-                      }`}
+                      className={`nav-link text-success ${activeTab === 'profile' ? 'active' : ''
+                        }`}
                       id="nav-profile-tab"
                       data-toggle="tab"
                       data-target="#nav-profile"
@@ -199,9 +197,8 @@ function Profile(props) {
                       Profile
                     </button>
                     <button
-                      className={`nav-link text-success ${
-                        activeTab === 'password' ? 'active' : ''
-                      }`}
+                      className={`nav-link text-success ${activeTab === 'password' ? 'active' : ''
+                        }`}
                       id="nav-profile-tab"
                       data-toggle="tab"
                       data-target="#nav-Password"
@@ -214,9 +211,8 @@ function Profile(props) {
                       Password
                     </button>
                     <button
-                      className={`nav-link text-success ${
-                        activeTab === 'posts' ? 'active' : ''
-                      }`}
+                      className={`nav-link text-success ${activeTab === 'posts' ? 'active' : ''
+                        }`}
                       id="nav-posts-tab"
                       data-toggle="tab"
                       data-target="#nav-posts"
@@ -233,9 +229,8 @@ function Profile(props) {
 
                 <div className="tab-content" id="nav-tabContent">
                   <div
-                    className={`tab-pane fade ${
-                      activeTab === 'dashboard' ? 'show active' : ''
-                    }`}
+                    className={`tab-pane fade ${activeTab === 'dashboard' ? 'show active' : ''
+                      }`}
                     id="nav-dashboard"
                     role="tabpanel"
                     aria-labelledby="nav-dashboard-tab"
@@ -244,9 +239,8 @@ function Profile(props) {
                   </div>
 
                   <div
-                    className={`tab-pane fade ${
-                      activeTab === 'profile' ? 'show active' : ''
-                    }`}
+                    className={`tab-pane fade ${activeTab === 'profile' ? 'show active' : ''
+                      }`}
                     id="nav-profile"
                     role="tabpanel"
                     aria-labelledby="nav-profile-tab"
@@ -255,9 +249,8 @@ function Profile(props) {
                   </div>
 
                   <div
-                    className={`tab-pane fade ${
-                      activeTab === 'password' ? 'show active' : ''
-                    }`}
+                    className={`tab-pane fade ${activeTab === 'password' ? 'show active' : ''
+                      }`}
                     id="nav-password"
                     role="tabpanel"
                     aria-labelledby="nav-password-tab"
@@ -266,9 +259,8 @@ function Profile(props) {
                   </div>
 
                   <div
-                    className={`tab-pane fade ${
-                      activeTab === 'posts' ? 'show active' : ''
-                    }`}
+                    className={`tab-pane fade ${activeTab === 'posts' ? 'show active' : ''
+                      }`}
                     id="nav-posts"
                     role="tabpanel"
                     aria-labelledby="nav-posts-tab"

@@ -135,7 +135,7 @@
 import React, { Component } from 'react';
 import './signup.css';
 import Screen from '../../components/app/Screen';
-import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+import { Redirect, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 class SignUp extends Component {
   state = {
@@ -302,7 +302,7 @@ class SignUp extends Component {
     this.setState((prevState) => ({ rememberMe: !prevState.rememberMe }));
   };
 
-  render() {
+  render () {
     const {
       email,
       password,

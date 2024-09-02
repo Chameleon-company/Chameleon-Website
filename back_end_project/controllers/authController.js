@@ -20,8 +20,13 @@ exports.userSignUp = async (req, res) => {
   try {
     const user = await authService.createUser(email, password);
     res.status(201).json({ message: 'User signed up successfully', user });
+    
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    if (error.code === 'auth/email-already-in-use') {
+      return res.status(400).json({ error: 'Email already exists' });
+    } else {
+      return res.status(500).json({ error: error.message });
+    }
   }
 };
 
@@ -105,7 +110,8 @@ exports.LoginStatus = (req, res) => {
 exports.getUserID = (req, res) => {
   const user = authService.getCurrentUser();
   res.send(user.uid);
-};
+
+}
 
 const firestore = getFirestore(); // Initialize Firestore instance
 

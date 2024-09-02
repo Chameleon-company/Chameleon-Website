@@ -7,7 +7,6 @@ import Post from './pages/profile/post.js';
 
 const HomePage = lazy(() => import('./pages/homepage/Homepage'));
 const Chatbot = lazy(() => import('./pages/Chatbot/Chatbot'));
-const aboutUs = lazy(() => import('./pages/about/aboutUs'));
 const News = lazy(() => import('./pages/news/news'));
 const Projects = lazy(() => import('./pages/projects/projects'));
 const IotResources = lazy(() => import('./pages/resources/iotResources'));
@@ -33,9 +32,8 @@ function App () {
         <Suspense fallback={<div>Loading...</div>}>
           <main>
             <Switch>
+              <Route exact path="/home" component={HomePage} />
               <Route exact path="/home" component={Projects} />
-              <Route exact path="/home" component={Projects} />
-              <Route path="/aboutus" component={aboutUs} />
               <Route path="/news" component={News} />
               <Route path="/chatbot" component={Chatbot} />
               <Route path="/projects" component={Projects} />

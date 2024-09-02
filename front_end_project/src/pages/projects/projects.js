@@ -1,14 +1,5 @@
 import React, { useState } from "react";
-import styles from "./projects.module.css";
-import chameleonLogo from "../../assets/ChameleonLogo.png";
-import chatCloseImg from "./image/chat-close.png";
-import dotMenuImg from "./image/dot-menu.png";
-import chatIcon from "./image/chat-icon.png";
-import fileSelectIcon from "./image/file-select.png";
-import sendMessageImg from "./image/send-message.png";
-import projectList from "./data";
 import Screen from '../../components/app/Screen';
-import './project.css';
 import '../Chatbot/chatbox.css';
 import { Row } from 'react-bootstrap';
 import Posts from '../profile/posts';

@@ -9,7 +9,6 @@ const HomePage = lazy(() => import('./pages/homepage/Homepage'));
 const Chatbot = lazy(() => import('./pages/Chatbot/Chatbot'));
 const aboutUs = lazy(() => import('./pages/about/aboutUs'));
 const News = lazy(() => import('./pages/news/news'));
-const ProjectDetails = lazy(() => import('./pages/projects/ProjectDetails'));
 const Projects = lazy(() => import('./pages/projects/projects'));
 const IotResources = lazy(() => import('./pages/resources/iotResources'));
 const IotTechnologies = lazy(() => import('./pages/resources/iotTechnologies'));
@@ -34,9 +33,8 @@ function App () {
         <Suspense fallback={<div>Loading...</div>}>
           <main>
             <Switch>
-              <Route path="/project/:projectId" component={ProjectDetails} />
-              <Route exact path="/home" component={HomePage} />
-              <Route exact path="/home" component={HomePage} />
+              <Route exact path="/home" component={Projects} />
+              <Route exact path="/home" component={Projects} />
               <Route path="/aboutus" component={aboutUs} />
               <Route path="/news" component={News} />
               <Route path="/chatbot" component={Chatbot} />
@@ -51,9 +49,7 @@ function App () {
               <Route path="/signup" component={Signup} />
               <Route path="/reset" component={ResetPassword} />
               <Route path="/support" component={Support} />
-              {/* {session ? (<Route path='/' component={HomePage}/>) : (<Route path='/' component={Screen}/>)} */}
               <Route component={NotFoundPage} />
-              {/* {rememberMe ? (<Route path='/' component={HomePage}/>) : (session ? (<Route path='/' component={HomePage}/>) : (<Route path='/' component={Screen}/>))} */}
             </Switch>
           </main>
         </Suspense>

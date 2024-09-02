@@ -33,10 +33,34 @@ function Profile (props) {
 
     const [user, setUser] = useState(initial_object);
     const [activeTab, setActiveTab] = useState('profile');
+    const [emailError, setEmailError] = useState("");
+    const [phoneError, setPhoneError] = useState("");
+
 
     const handleTabClick = (tabId) => { setActiveTab(tabId); };
-    const handleUser = (user) => { setUser(prevUser => ({ ...prevUser, ...user })); };
-    const handleLogout = () => { signOut(); };
+
+    const validateEmail = (email) => { return email.includes("@"); };
+
+    const validatePhone = (phone) => {
+        const isNumeric = /^\d+$/.test(phone);
+        const isTenDigits = phone.length === 10;
+        return isNumeric && isTenDigits;
+    };
+
+    const handleUser = (updatedUser) => {
+        const { email, phone } = updatedUser;
+        let emailErrorMsg = "";
+        let phoneErrorMsg = "";
+
+        if (!validateEmail(email)) { emailErrorMsg = "Invalid email address. Must contain '@'."; }
+
+        if (!validatePhone(phone)) { phoneErrorMsg = "Invalid phone number. Must be numeric and 10 digits long."; }
+
+        setEmailError(emailErrorMsg);
+        setPhoneError(phoneErrorMsg);
+
+        if (!emailErrorMsg && !phoneErrorMsg) { setUser((prevUser) => ({ ...prevUser, ...updatedUser })); }
+    };
 
     return (
         <>
@@ -80,48 +104,54 @@ function Profile (props) {
 
                         <div className='row mt-3 p-2 justify-content-center'>
                             <div className='col-auto'>
-                                <Button className='mt-1' variant='outline-danger' onClick={handleLogout}>Logout</Button>
+                                <Button className='mt-1' variant='outline-danger' onClick={console.log('Logging out...')}>Logout</Button>
                             </div>
                         </div>
                     </div>
 
+                    <div className={`tab-pane fade ${activeTab === "profile" ? "show active" : ""}`} id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <User user={user} handleUser={handleUser} />
+                        {emailError && <div className="alert alert-danger">{emailError}</div>}
+                        {phoneError && <div className="alert alert-danger">{phoneError}</div>}
+                    </div>
 
-                    {/* Content */}
-                    <div className='col-12 col-lg-8 col-xl-9'>
 
-                        {/* Navigation */}
-                        <div className='row'>
-                            <nav>
-                                <div className="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <button className={`nav-link text-muted disabled ${activeTab === 'dashboard' ? 'active' : ''}`} id="nav-dashboard-tab" data-toggle="tab" data-target="#nav-dashboard" type="button" role="tab" aria-controls="nav-dashboard" aria-selected="false" onClick={() => handleTabClick('dashboard')}>Dashboard</button>
-                                    <button className={`nav-link text-success ${activeTab === 'profile' ? 'active' : ''}`} id="nav-profile-tab" data-toggle="tab" data-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="true" onClick={() => handleTabClick('profile')}>Profile</button>
-                                    <button className={`nav-link text-success ${activeTab === 'password' ? 'active' : ''}`} id="nav-profile-tab" data-toggle="tab" data-target="#nav-Password" type="button" role="tab" aria-controls="nav-Password" aria-selected="false" onClick={() => handleTabClick('password')}>Password</button>
-                                    <button className={`nav-link text-success ${activeTab === 'posts' ? 'active' : ''}`} id="nav-posts-tab" data-toggle="tab" data-target="#nav-posts" type="button" role="tab" aria-controls="nav-posts" aria-selected="false" onClick={() => handleTabClick('posts')}>Posts</button>
-                                </div>
-                            </nav>
+                    <div className={`tab-pane fade ${activeTab === 'password' ? 'show active' : ''}`} id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">
+                        <Password />
+                    </div>
 
-                            <div className="tab-content" id="nav-tabContent">
-                                <div className={`tab-pane fade ${activeTab === 'dashboard' ? 'show active' : ''}`} id="nav-dashboard" role="tabpanel" aria-labelledby="nav-dashboard-tab">Dashboard</div>
+                    {/* Navigation */}
+                    <div className='row'>
+                        <nav>
+                            <div className="nav nav-tabs" id="nav-tab" role="tablist">
+                                <button className={`nav-link text-muted disabled ${activeTab === 'dashboard' ? 'active' : ''}`} id="nav-dashboard-tab" data-toggle="tab" data-target="#nav-dashboard" type="button" role="tab" aria-controls="nav-dashboard" aria-selected="false" onClick={() => handleTabClick('dashboard')}>Dashboard</button>
+                                <button className={`nav-link text-success ${activeTab === 'profile' ? 'active' : ''}`} id="nav-profile-tab" data-toggle="tab" data-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="true" onClick={() => handleTabClick('profile')}>Profile</button>
+                                <button className={`nav-link text-success ${activeTab === 'password' ? 'active' : ''}`} id="nav-profile-tab" data-toggle="tab" data-target="#nav-Password" type="button" role="tab" aria-controls="nav-Password" aria-selected="false" onClick={() => handleTabClick('password')}>Password</button>
+                                <button className={`nav-link text-success ${activeTab === 'posts' ? 'active' : ''}`} id="nav-posts-tab" data-toggle="tab" data-target="#nav-posts" type="button" role="tab" aria-controls="nav-posts" aria-selected="false" onClick={() => handleTabClick('posts')}>Posts</button>
+                            </div>
+                        </nav>
 
-                                <div className={`tab-pane fade ${activeTab === 'profile' ? 'show active' : ''}`} id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                    <User user={user} handleUser={handleUser} />
-                                </div>
+                        <div className="tab-content" id="nav-tabContent">
+                            <div className={`tab-pane fade ${activeTab === 'dashboard' ? 'show active' : ''}`} id="nav-dashboard" role="tabpanel" aria-labelledby="nav-dashboard-tab">Dashboard</div>
 
-                                <div className={`tab-pane fade ${activeTab === 'password' ? 'show active' : ''}`} id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">
-                                    <Password />
-                                </div>
+                            <div className={`tab-pane fade ${activeTab === 'profile' ? 'show active' : ''}`} id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <User user={user} handleUser={handleUser} />
+                            </div>
 
-                                <div className={`tab-pane fade ${activeTab === 'posts' ? 'show active' : ''}`} id="nav-posts" role="tabpanel" aria-labelledby="nav-posts-tab">
-                                    <Posts posts={user.posts} />
-                                </div>
+                            <div className={`tab-pane fade ${activeTab === 'password' ? 'show active' : ''}`} id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">
+                                <Password />
+                            </div>
+
+                            <div className={`tab-pane fade ${activeTab === 'posts' ? 'show active' : ''}`} id="nav-posts" role="tabpanel" aria-labelledby="nav-posts-tab">
+                                <Posts posts={user.posts} />
                             </div>
                         </div>
                     </div>
                 </div>
-                {/* </div> */}
             </Screen >
         </>
     );
 }
+
 
 export default Profile;

@@ -93,7 +93,6 @@ function App () {
               {/* {rememberMe ? (<Route path='/' component={HomePage}/>) : (session ? (<Route path='/' component={HomePage}/>) : (<Route path='/' component={Screen}/>))} */}
             </Switch>
           </main>
-          {/* </Suspense> */}
         </Suspense>
       </Router >
     </>

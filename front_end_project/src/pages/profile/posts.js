@@ -11,7 +11,7 @@ function Posts ({ posts }) {
 
     return (
         <div className='row'>
-            {posts.map((post) => (
+            {Array.isArray(posts) && posts.map((post) => (
                 <div className='col-12 col-md-6 col-lg-4 p-2' key={post.id}>
                     <div className='card h-100' onClick={() => onClick(post)}>
                         <img src={post.image} className='card-img-top' alt='post' />

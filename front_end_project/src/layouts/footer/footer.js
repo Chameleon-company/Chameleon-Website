@@ -10,14 +10,10 @@ const Footer = () => {
   const [theme, setTheme] = useState(storedTheme);
 
   // Update sessionStorage whenever the theme changes
-  useEffect(() => {
-    sessionStorage.setItem('theme', theme);
-  }, [theme]);
+  useEffect(() => { sessionStorage.setItem('theme', theme); }, [theme]);
 
   // Function to toggle the theme
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
-  };
+  const toggleTheme = () => { setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark')); };
 
   return (
     <footer className="">
@@ -70,40 +66,19 @@ const Footer = () => {
       <style>
         {`
           .footer-content {
-
-            ${theme === 'dark' ? `
-              background-color: ${colors.primaryDark};
-              color: white;
-            ` : `
-              background-color: ${colors.primaryLight};
-              color: black;
-            `}
+            ${theme === 'dark' ? ` background-color: ${colors.primaryDark}; color: white; ` : ` background-color: ${colors.primaryLight}; color: black; `}
           }
 
           .header-content {
-            ${theme === 'dark' ? `
-              background-color: ${colors.primaryDark};
-              color: white;
-            ` : `
-              background-color: ${colors.primaryLight};
-              color: black;
-            `}
+            ${theme === 'dark' ? ` background-color: ${colors.primaryDark}; color: white; ` : ` background-color: ${colors.primaryLight}; color: black; `}
           }
 
           #root {
-            ${theme === 'dark' ? `
-              background-color: #333333;
-            ` : `
-              background-color:  white;
-            `}
+            ${theme === 'dark' ? ` background-color: #333333; ` : ` background-color:  white; `}
           }
 
           .nav-item a {
-            ${theme === 'dark' ? `
-              color: white;
-            ` : `
-              color: black;
-            `}
+            ${theme === 'dark' ? ` color: white; ` : ` color: black; `}
           }
         `}
       </style>

@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <>
-      <Navbar expand="lg" className='header-content'>
+      <Navbar expand="xl" className='header-content'>
         <Container>
           <Navbar.Brand href="#home" className='header-content'> <img alt="chameleon-logo" src={chameleonHeader} width="30" height="30" className="d-inline-block align-top" />{' '} Chameleon </Navbar.Brand>
 

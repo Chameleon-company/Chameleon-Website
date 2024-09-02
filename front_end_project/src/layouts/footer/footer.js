@@ -18,7 +18,7 @@ const Footer = () => {
   const toggleTheme = () => { setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark')); };
 
   return (
-    <footer className="footer">
+    <footer className="footer mt-auto">
       <div className="footer-content">
 
         {/* Responsiveness using flex box */}

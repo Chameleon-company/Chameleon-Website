@@ -15,7 +15,7 @@ export const signOut = async () => {
 
 export const changePassword = async (currentPassword, newPassword) => {
     try {
-        const response = await axios.post('http://localhost:3002/auth/change-password', {
+        const response = await axios.post('http://localhost:3002/auth/change-password', { // change API endpoint once implemented in backend
             currentPassword,
             newPassword
         });

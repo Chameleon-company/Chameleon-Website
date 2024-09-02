@@ -24,9 +24,7 @@ function Posts ({ posts }) {
             ))}
 
         </div>
-      ))}
-    </div>
-  );
+    );
 }
 
 export default Posts;

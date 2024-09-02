@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Screen from './components/app/Screen';
 import NotificationComponent from './components/notificationComp/NotificationComponent';
@@ -46,7 +46,7 @@ const TechnologyQues2 = lazy(() => import('./pages/support/technology_ques2'));
 const TechnologyQues3 = lazy(() => import('./pages/support/technology_ques3'));
 const TechnologyQues4 = lazy(() => import('./pages/support/technology_ques4'));
 
-function App() {
+function App () {
   // const rememberMe = localStorage.getItem('rememberMe') === 'true';
   // const status = sessionStorage.getItem('status') === 'logged in';
   // const session = rememberMe ? true : status;

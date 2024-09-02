@@ -1,9 +1,6 @@
 
 import React, { Component } from "react";
 import "./login.css";
-import Google from "./image/google.png";
-import Linkedin from "./image/linkedin.png";
-import Microsoft from "./image/microsoft.png";
 import Screen from "../../components/app/Screen";
 import { Redirect } from "react-router-dom";
 import { auth } from "../utils/firebase";
@@ -204,9 +201,9 @@ class Login extends Component {
                       </form>
                       <p className="text-center mt-3">-- or login with --</p>
                       <div className="flex justify-center items-center space-x-4">
-                        <a href=""><img className="inline h-9 w-9" src={Google}></img></a>
+                        {/* <a href=""><img className="inline h-9 w-9" src={Google}></img></a>
                         <a href=""><img className="inline h-12 w-12" src={Linkedin}></img></a>
-                        <a href=""><img className="inline h-7 w-7" src={Microsoft}></img></a>
+                        <a href=""><img className="inline h-7 w-7" src={Microsoft}></img></a> */}
                       </div>
                       <p className="text-center pt-4">
                         Don't have an account?{" "} <a className="text-[#559166] no-underline font-semibold" href="signup" onClick={this.toggleSignUp}> Sign Up </a>

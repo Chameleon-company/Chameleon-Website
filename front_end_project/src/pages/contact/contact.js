@@ -5,7 +5,7 @@ import Screen from '../../components/app/Screen';
 import { MdEmail } from "react-icons/md";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { IoChatbubbleEllipsesSharp } from "react-icons/io5";
-function Contact() {
+function Contact () {
   useEffect(() => {
     notifyWelcome(
       "Make sure to contact us only on working days 9:00 AM onwards!",
@@ -21,7 +21,7 @@ function Contact() {
         alert("Failed to copy Please try again.");
         console.error("Error copying text: ", err);
       });
-  }
+  };
 
   const page = {
     header: 'Contact Us',
@@ -30,7 +30,7 @@ function Contact() {
       email: { title: 'Email', description: 'We will get back to you soon', contact: 'info@chameleon.com.au' },
       chat: { title: 'Chat', description: 'Chat with our friendly Chameleon Bot', contact: 'Start Live Chat' }
     }
-  }
+  };
 
   return (
     <Screen>
@@ -83,7 +83,7 @@ function Contact() {
             <div className="contact_item_context w-[100%] p-2 text-center font-semibold text-black mt-3">
               {page.content.email.description}
               <button className="badge bg-success ml-auto align-self-center p-2"><a href="mailto:info@chameleon.com.au?subject=Hello%20there&body=Add%20your%20Query%20here%20for chameleon." className="text-black no-underline">Send Email</a></button>
-             
+
             </div>
           </div>
 

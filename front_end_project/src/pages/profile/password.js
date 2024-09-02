@@ -43,9 +43,7 @@ function Password(props) {
         validatePassword(passwords.newPassword);
         
         error && toast.error(error);
-        if (error) {
-            return
-        }; // Prevent submission if there are errors
+        if (error) return; // Prevent submission if there are errors
 
         const result = await changePassword(passwords.currentPassword, passwords.newPassword);
 

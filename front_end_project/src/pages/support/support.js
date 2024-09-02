@@ -21,70 +21,67 @@ export default function Support (props) {
     ];
 
     return (
-        <div className='bg-green-emrld'>
-            <Screen>
-                <div className='container bg-green-sage mt-xl-5 my-auto p-5 text-dark' style={{ borderRadius: 25 }}>
-                    {/* Page Title */}
-                    <Row className='p-2 text-center'>
-                        <h1>Support</h1>
-                    </Row>
+        <Screen>
+            {/* Page Title */}
+            <Row className='p-3 text-center'>
+                <h1>Support</h1>
+            </Row>
 
-                    {/* Page Content */}
-                    <Row className='p-5'>
 
-                        {/* FAQs TODO: Border*/}
-                        <Col className='p-3' xs={12} md={12} lg={6} xl={6} style={{ border: '1px solid #0fcd25', borderRadius: '0.25rem' }}>
+            {/* Page Content */}
+            <Row className='p-5'>
 
-                            {/* Section Title */}
-                            <div className='text-center p-1'>
-                                <h2>FAQs</h2>
-                            </div>
+                {/* FAQs TODO: Border*/}
+                <Col className='p-3 border-end' xs={12} md={12} lg={6} xl={6}>
 
-                            {/* Section Content */}
-                            <Accordion defaultActiveKey="0">
-                                {Array.isArray(general_questions) && general_questions.map((question) => (
-                                    <Accordion.Item eventKey={question.id} key={question.id}>
-                                        <Accordion.Header>{question.title}
-                                        </Accordion.Header>
-                                        <Accordion.Body>{question.content} </Accordion.Body>
-                                    </Accordion.Item>
-                                ))}
-                            </Accordion>
-                        </Col>
+                    {/* Section Title */}
+                    <div className='text-center p-1'>
+                        <h2>FAQs</h2>
+                    </div>
 
-                        {/* Submit Query */}
-                        <Col style={{ border: '1px solid #0fcd25', borderRadius: '0.25rem' }}>
-                            {/* Section Title */}
-                            <div className='text-center p-1'>
-                                <h2>Submit a Query</h2>
-                            </div>
+                    {/* Section Content */}
+                    <Accordion defaultActiveKey="0">
+                        {Array.isArray(general_questions) && general_questions.map((question) => (
+                            <Accordion.Item eventKey={question.id} key={question.id}>
+                                <Accordion.Header>{question.title}
+                                </Accordion.Header>
+                                <Accordion.Body>{question.content} </Accordion.Body>
+                            </Accordion.Item>
+                        ))}
+                    </Accordion>
+                </Col>
 
-                            {/* Section Content */}
-                            <Form className='p-2'>
-                                <fieldset>
-                                    <Form.Group className="mb-3" controlId="fullname">
-                                        <Form.Label>Name</Form.Label>
-                                        <Form.Control type="text" placeholder="John Doe" />
-                                    </Form.Group>
-                                    <Form.Group className="mb-3" controlId="email">
-                                        <Form.Label>Email address</Form.Label>
-                                        <Form.Control type="email" placeholder="john@doe.com" />
-                                    </Form.Group>
-                                    <Form.Group className="mb-3" controlId="query">
-                                        <Form.Label>Example textarea</Form.Label>
-                                        <Form.Control as="textarea" rows={3} placeholder='Type your query here' />
-                                    </Form.Group>
-                                    <Button type='submit' variant='outline-success'>Submit</Button>
-                                </fieldset>
-                            </Form>
-                        </Col>
+                {/* Submit Query */}
+                <Col>
+                    {/* Section Title */}
+                    <div className='text-center p-1'>
+                        <h2>Submit a Query</h2>
+                    </div>
 
-                    </Row>
-                </div>
+                    {/* Section Content */}
+                    <Form className='p-2'>
+                        <fieldset>
+                            <Form.Group className="mb-3" controlId="fullname">
+                                <Form.Label>Name</Form.Label>
+                                <Form.Control type="text" placeholder="John Doe" />
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="email">
+                                <Form.Label>Email address</Form.Label>
+                                <Form.Control type="email" placeholder="john@doe.com" />
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="query">
+                                <Form.Label>Example textarea</Form.Label>
+                                <Form.Control as="textarea" rows={3} placeholder='Type your query here' />
+                            </Form.Group>
+                            <Button type='submit' variant='outline-success'>Submit</Button>
+                        </fieldset>
+                    </Form>
+                </Col>
 
-                {/* Add the Chatbox component */}
-                <Chatbox chameleonLogo={chameleonLogo} chatOpenImg={chatOpenImg} chatCloseImg={chatCloseImg} dotMenuImg={dotMenuImg} chatIcon={chatIcon} fileSelectIcon={fileSelectIcon} sendMessageImg={sendMessageImg} />
-            </Screen>
-        </div>
+            </Row>
+
+            {/* Add the Chatbox component */}
+            <Chatbox chameleonLogo={chameleonLogo} chatOpenImg={chatOpenImg} chatCloseImg={chatCloseImg} dotMenuImg={dotMenuImg} chatIcon={chatIcon} fileSelectIcon={fileSelectIcon} sendMessageImg={sendMessageImg} />
+        </Screen>
     );
 }

@@ -3,30 +3,27 @@ import PropTypes from 'prop-types';
 import './Chatbot.css';
 import './chatbox.css';
 
-const Chatbox = ({
-  chameleonLogo = chameleonLogo,
-  chatOpenImg = chatOpenImg,
-  chatCloseImg = chatCloseImg,
-  dotMenuImg = dotMenuImg,
-  chatIcon = chatIcon,
-  fileSelectIcon = fileSelectIcon,
-  sendMessageImg = sendMessageImg
-}) => {
+import { IoIosChatbubbles } from "react-icons/io";
+import { IoMdClose } from "react-icons/io";
+import { IoMdAttach } from "react-icons/io";
+import { IoIosSend } from "react-icons/io";
+
+const Chatbox = ({ chatIcon }) => {
   const [chatOpen, setChatOpen] = useState(false);
 
   return (
     <div className="chatBot absolute bottom-5 flex flex-col">
       {!chatOpen && (
-        <img alt="" src={chatOpenImg} className="md:w-[60px] w-[50px]" onClick={() => setChatOpen(true)} />
+        <IoIosChatbubbles className='text-white' size={60} onClick={() => setChatOpen(true)} />
       )}
 
       {chatOpen && (
         <>
           <div className="chameleonBot sm:w-[350px] w-[90%]">
-            <div className="chatBotHeader flex items-center justify-between gap-3 bg-[#069f89] p-2">
-              <img alt="" src={chameleonLogo} className="lg:w-[70px] md:w-[70px] w-[60px]" />
-              <h5 className="m-0"> Chameleon Bot </h5>
-              <img alt="" src={dotMenuImg} className="w-[15px]" />
+            <div className="chatBotHeader flex items-center justify-between bg-[#069f89] p-2">
+              {/* <img alt="" src={chameleonLogo} className="lg:w-[70px] md:w-[70px] w-[60px]" /> */}
+              <h5 className="text-white"> Chameleon Bot </h5>
+              <IoMdClose className='text-white' size={30} onClick={() => setChatOpen(false)} />
             </div>
             <div className="chatBotMessage bg-[#deece3] p-2">
               <div className="greenMessage flex gap-3 items-end justify-between mb-3">
@@ -48,16 +45,15 @@ const Chatbox = ({
               <div className="sendMessage flex justify-between gap-3 mt-3">
                 <div>
                   <label htmlFor="file">
-                    <img alt="" src={fileSelectIcon} className="w-[30px]" />
+                    <IoMdAttach size={30} />
                   </label>
                   <input type="file" id="file" />
                 </div>
                 <input type="text" placeholder="Type a message" className="w-100 p-2 bg-[#d9d9d9] border-2 border-[#000000] rounded-[10px]" />
-                <input alt="" type="image" src={sendMessageImg} className="w-[30px] h-auto" />
+                <IoIosSend size={50} />
               </div>
             </div>
           </div>
-          <img alt="" src={chatCloseImg} className="md:w-[60px] w-[50px]" onClick={() => setChatOpen(false)} />
         </>
       )}
     </div>

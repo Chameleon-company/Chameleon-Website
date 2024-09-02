@@ -1,4 +1,4 @@
-import chameleonHeader from "./images/Header-Chameleon.png";
+import chameleonHeader from "../../assets/Header-Chameleon.png";
 import { useState } from "react";
 import { Button, Nav, Navbar } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';

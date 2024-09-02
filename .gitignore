@@ -4,3 +4,5 @@
 front_end_project/package-lock.json
 back_end_project/package-lock.json
 node_modules
+package-lock.json
+package.json

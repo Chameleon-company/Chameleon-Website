@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront_end_project=self.webpackChunkfront_end_project||[]).push([[600],{88579:()=>{}}]);

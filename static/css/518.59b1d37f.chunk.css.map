@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/518.59b1d37f.chunk.css","mappings":"AAAA,gBAEI,WAAY,CADZ,gBAEF,CAEA,oCACE,gBACI,WACJ,CACF","sources":["pages/resources/iot.css"],"sourcesContent":[".section-height{\n    padding-top: 80px;\n    height: 90vh;\n  }\n  \n  @media screen and (max-width: 600px) {\n    .section-height{\n        height: auto;\n    }\n  }"],"names":[],"sourceRoot":""}

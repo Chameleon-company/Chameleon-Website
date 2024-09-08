@@ -4,6 +4,7 @@ const cors = require('cors');
 const helloRoutes = require('./routes/helloRoutes');
 const authRoutes = require('./routes/authRoutes');
 const newsRouters = require('./routes/newsRoutes');
+const commentRouters = require('./routes/commentRouters');
 
 const app = express();
 
@@ -14,6 +15,8 @@ app.use(helloRoutes);
 app.use("/auth",authRoutes);
 // use newsRouters
 app.use('/news', newsRouters);
+
+app.use('/comment', commentRouters)
 
 app.listen(3002, () => {
   console.log('Server listening on port 3002');

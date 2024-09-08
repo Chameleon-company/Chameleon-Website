@@ -1,18 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CommentForm from './CommentForm';
+import axios from 'axios';
 
 // Comment section functionality
 const CommentSection = () => {
   const [comments, setComments] = useState([]);
 
-  const addComment = (commentText) => {
-    const currentTime = new Date();
-    const comment = {
-      text: commentText,
-      time: currentTime.toLocaleString(),
+  // Fetch comments from the backend
+  useEffect(() => {
+    const fetchComments = async () => {
+      try {
+        const response = await axios.get('http://localhost:3002/comment/getComments');  // Adjust API path if necessary
+        setComments(response.data);
+      } catch (error) {
+        console.error('Error fetching comments:', error);
+      }
     };
 
-    setComments((prevComments) => [...prevComments, comment]);
+    fetchComments();
+  }, []);
+
+  // Add a comment to the backend and update the state
+  const addComment = async (commentText) => {
+    const newComment = { text: commentText, user: 'Anonymous' };  // Adjust this as needed
+
+    try {
+      const response = await axios.post('http://localhost:3002/comment/addComment', newComment);  // Adjust API path if necessary
+      setComments((prevComments) => [...prevComments, response.data]);
+    } catch (error) {
+      console.error('Error adding comment:', error);
+    }
   };
 
   // Styling for comment box title

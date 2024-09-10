@@ -359,12 +359,11 @@ class SignUp extends Component {
                       type="submit"
                       className="submit signin-up-button"
                       href="/signup"
+                      onClick={this.handleSubmitSignIn}
                     >
                       Sign Up
                     </button>
-                    {passwordError && (
-                      <div style={{ color: 'red' }}>{passwordError}</div>
-                    )}
+                    
                   </form>
                   <div className="bottom-box">
                     <svg
@@ -435,10 +434,8 @@ class SignUp extends Component {
                     </svg>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
+              
+            
       </Screen>
     );
   }

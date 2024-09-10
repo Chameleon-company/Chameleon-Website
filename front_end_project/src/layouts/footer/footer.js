@@ -16,7 +16,7 @@ const Footer = () => {
   const toggleTheme = () => { setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark')); };
 
   return (
-    <footer className="footer mt-auto">
+    <footer className="footer mt-auto bg-transparent">
       <div className="footer-content">
 
         {/* Responsiveness using flex box */}
@@ -40,8 +40,6 @@ const Footer = () => {
           <div className="p-2 align-self-center">
             <div className='ml-auto my-auto'>
               <div className="flex my-auto p-auto text-decoration-none">
-                {/* Chatbox */}
-                {/* <Chatbox chatIcon={IoIosChatbubbles} /> */}
 
                 <a href="/https://www.instagram.com/deakinuniversity/?hl=en" className="mx-1">
                   <FaInstagram color={theme === 'dark' ? colors.white : colors.black} size={30} />
@@ -69,19 +67,19 @@ const Footer = () => {
       <style>
         {`
           .footer-content {
-            ${theme === 'dark' ? ` background-color: ${colors.primaryDark}; color: white; ` : ` background-color: ${colors.primaryLight}; color: black; `}
+             ${theme === 'dark' ? `color: white; ` : `color: black; `}
           }
 
           .header-content {
-            ${theme === 'dark' ? ` background-color: ${colors.primaryDark}; color: white; ` : ` background-color: ${colors.primaryLight}; color: black; `}
+            ${theme === 'dark' ? `color: white; ` : `color: black; `}
           }
 
           #root {
-            ${theme === 'dark' ? ` background-color: #333333; ` : ` background-color:  white; `}
+            ${theme === 'dark' ? ` background-color: #333333; color: #fff ` : ` background-color:  white; color: black `}
           }
 
           .nav-item a {
-            ${theme === 'dark' ? ` color: white; ` : ` color: black; `}
+             ${theme === 'dark' ? ` color: white; ` : ` color: black; `}
           }
         `}
       </style>

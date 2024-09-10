@@ -23,7 +23,7 @@ const convertToPageContents = ({ title, link, pageContents }) => {
 const searchContent = (searchText) => {
     const searchTerms = searchText.split(" ");
 
-    console.log("sldjkf")
+    console.log("sldjkf");
 
     return [
         ...convertToPageContents({
@@ -76,7 +76,7 @@ const SearchResults = () => {
     const { q } = queryString.parse(search);
 
     if (!q) {
-        return null
+        return null;
     }
 
 

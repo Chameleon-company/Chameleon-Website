@@ -4,6 +4,7 @@ import NotificationComponent from './components/notificationComp/NotificationCom
 import NotFoundPage from './pages/error404/404.js';
 import Profile from './pages/profile/profile.js';
 import Post from './pages/profile/post.js';
+import Screen from './components/app/Screen.js';
 
 const HomePage = lazy(() => import('./pages/homepage/Homepage'));
 const Chatbot = lazy(() => import('./pages/Chatbot/Chatbot'));

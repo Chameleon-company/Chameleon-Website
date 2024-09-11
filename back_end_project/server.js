@@ -16,8 +16,8 @@ app.use("/auth",authRoutes);
 // use newsRouters
 app.use('/news', newsRouters);
 
-app.use('/comment', commentRouters)
-
+app.use('/comments', commentRouters); 
+ 
 app.listen(3002, () => {
   console.log('Server listening on port 3002');
 });

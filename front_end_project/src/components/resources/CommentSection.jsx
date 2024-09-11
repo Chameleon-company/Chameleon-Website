@@ -2,35 +2,32 @@ import React, { useState, useEffect } from 'react';
 import CommentForm from './CommentForm';
 import axios from 'axios';
 
-// Comment section functionality
 const CommentSection = () => {
   const [comments, setComments] = useState([]);
 
-  // Fetch comments from the backend
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const response = await axios.get('http://localhost:3002/comment/getComments');  // Adjust API path if necessary
-        setComments(response.data);
+        const response = await axios.get('http://localhost:3002/comments/getComments'); 
+        setComments(response.data.comments); 
       } catch (error) {
         console.error('Error fetching comments:', error);
       }
     };
-
+  
     fetchComments();
   }, []);
 
-  // Add a comment to the backend and update the state
   const addComment = async (commentText) => {
-    const newComment = { text: commentText, user: 'Anonymous' };  // Adjust this as needed
+    const newComment = { text: commentText, user: 'Anonymous', time: new Date().toLocaleString() };
 
     try {
-      const response = await axios.post('http://localhost:3002/comment/addComment', newComment);  // Adjust API path if necessary
-      setComments((prevComments) => [...prevComments, response.data]);
+        const response = await axios.post('http://localhost:3002/comments/addComment', newComment); 
+        setComments((prevComments) => Array.isArray(prevComments) ? [...prevComments, response.data] : [response.data]);
     } catch (error) {
-      console.error('Error adding comment:', error);
+        console.error('Error adding comment:', error);
     }
-  };
+};
 
   // Styling for comment box title
   const titleStyle = {
@@ -64,12 +61,12 @@ const CommentSection = () => {
       <h2 style={titleStyle}>Comments</h2>
       <CommentForm addComment={addComment} />
       <ul style={{ padding: '0' }}>
-        {comments.map((comment, index) => (
-          <li key={index} style={commentBoxStyle}>
-            {comment.text}
-            <span style={timeStyle}>{comment.time}</span>
-          </li>
-        ))}
+        {Array.isArray(comments) && comments.slice().reverse().map((comment, index) => (
+        <li key={index} style={commentBoxStyle}>
+          <strong>{comment.user}</strong>: {comment.text}
+          <span style={timeStyle}>{comment.time}</span>
+        </li>
+      ))}
       </ul>
     </div>
   );

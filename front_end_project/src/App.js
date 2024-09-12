@@ -15,6 +15,8 @@ const ProjectDetails = lazy(() => import('./pages/projects/ProjectDetails'));
 const Projects = lazy(() => import('./pages/projects/projects'));
 const MopWebDev = lazy(() => import('./pages/projects/MopWebDev'));
 const MopDS = lazy(() => import('./pages/projects/MopDS'));
+const MopAIPage = lazy(() => import('./pages/projects/MopAI.js'));
+const EVToolsPage = lazy(() => import('./pages/projects/EVTools.js'));
 const ProjectLinksMoP = lazy(() => import('./pages/projects/ProjectLinksMoP'));
 const Contact = lazy(() => import('./pages/contact/contact'));
 const IotResources = lazy(() => import('./pages/resources/iotResources'));
@@ -49,7 +51,6 @@ const TechnologyQues1 = lazy(() => import('./pages/support/technology_ques1'));
 const TechnologyQues2 = lazy(() => import('./pages/support/technology_ques2'));
 const TechnologyQues3 = lazy(() => import('./pages/support/technology_ques3'));
 const TechnologyQues4 = lazy(() => import('./pages/support/technology_ques4'));
-const ai_blog_page = lazy(() => import('./pages/projects/ai-page.js'));
 
 function App () {
   // const rememberMe = localStorage.getItem('rememberMe') === 'true';
@@ -72,6 +73,8 @@ function App () {
               <Route path="/projects" component={Projects} />
               <Route path="/mopWebDev" component={MopWebDev} />
               <Route path="/mopDS" component={MopDS} />
+              <Route path="/mopAI" component={MopAIPage} />
+              <Route path="/evTools" component={EVToolsPage} />
               <Route path="/projectLinksMoP" component={ProjectLinksMoP} />
               <Route path="/report" component={Report} />
               <Route path="/contact" component={Contact} />
@@ -102,7 +105,6 @@ function App () {
               <Route path="/newsUnsubForm" component={newsUnsubForm} />
               <Route path="/newsRemoveForm" component={newsRemoveForm} />
               <Route path="/search-results" component={SearchResults} />
-              <Route path="/blog_1" component={ai_blog_page} />
               {/* {session ? (<Route path='/' component={HomePage}/>) : (<Route path='/' component={Screen}/>)} */}
               <Route component={NotFoundPage} />
               {/* {rememberMe ? (<Route path='/' component={HomePage}/>) : (session ? (<Route path='/' component={HomePage}/>) : (<Route path='/' component={Screen}/>))} */}

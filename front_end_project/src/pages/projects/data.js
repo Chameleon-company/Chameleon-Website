@@ -11,7 +11,7 @@ const projectList = [
     id: 1,
     details: `The EV Adoption Tools company announces a groundbreaking partnership with major electric vehicle manufacturers to further advance sustainable mobility solution...`,
     githubLink: "",
-    learnMoreLink: "",
+    learnMoreLink: "/evTools",
   },
   {
     image: img1,
@@ -20,11 +20,7 @@ const projectList = [
     details: `Melbourne Open Data refers to the City of Melbourne's initiative to make a wide range of public data sets available to the public for free...`,
 
     githubLink: "",
-<<<<<<< HEAD
-    learnMoreLink: "/blog_1",
-=======
     learnMoreLink: "/ProjectLinksMoP",
->>>>>>> 20cb108d78df52dc734c6505caa289631832b568
   },
   {
     image: img3,

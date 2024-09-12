@@ -1,13 +1,13 @@
 import React from 'react';
 import './blog_styles.css';
 import Screen from '../../components/app/Screen';
-// import webimage from "./image/webimage.jpeg"
+import aiImage from "./image/ai-image.jpg"
 
 const MopAIPage = () => (
     <Screen>
         <div className="blog-container">
             <h1 className="blog-title">Chameleon City of Melbourne (CoM) Artificial Intelligence</h1>
-            {/* <img src={webimage} alt="Descriptive Alt Text" className="featured-image" /> */}
+            <img src={aiImage} alt="Descriptive Alt Text" className="featured-image" />
             <p className="blog-description">
                 The City of Melbourne Open Data collaborates with The City of Melbourne to enhance knowledge and develop applications for businesses, researchers, and software developers. Through the educational platform 'The Melbourne Open Playground' (MOP), they investigate the potential uses of Open Data, aligning their efforts with Melbourne’s Smart City strategies.
             </p>

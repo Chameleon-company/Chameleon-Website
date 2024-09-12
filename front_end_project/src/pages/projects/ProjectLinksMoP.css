@@ -49,6 +49,10 @@ Link{
   background-color: #2196f3;
 }
 
+.ai {
+  background-color: #f3d021;
+}
+
 .project-button:hover {
   transform: scale(1.1);
 }

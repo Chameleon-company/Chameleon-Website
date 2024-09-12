@@ -14,6 +14,7 @@ const ProjectLinksMoP = () => {
             <div className="button-container">
                 <Link to="/MoPWebDev" className="project-button web-dev">MOP Web Development Project</Link>
                 <Link to="/MoPDS" className="project-button data-sci">MOP Data Science Project</Link>
+                <Link to="/MopAI" className="project-button ai">MOP Artificial Intelligence Project</Link>
             </div>
         </div>
         <Footer />

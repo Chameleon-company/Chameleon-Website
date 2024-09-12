@@ -34,7 +34,7 @@ const Homepage = () => {
   return (
     <>
       <Screen>
-        <section className="bg-green-emrld mt-auto mb-auto section-height">
+        <section className="bg-green-emrld mt-auto mb-auto">
           {/* <div className=""> */}
           <h1 className="text-center pt-3 font-bold">Our Projects</h1>
           <div className="flex flex-col items-center justify-center lg:flex-row text-center lg:justify-around gap-4 p-5 container">

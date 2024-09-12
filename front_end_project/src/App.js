@@ -16,6 +16,7 @@ const Contact = lazy(() => import('./pages/contact/contact'));
 const IotResources = lazy(() => import('./pages/resources/iotResources'));
 const IotTechnologies = lazy(() => import('./pages/resources/iotTechnologies'));
 const IotStatistics = lazy(() => import('./pages/resources/iotStatistics'));
+const IotSecurity = lazy(() => import('./pages/resources/iotSecurity'));
 const IotUpdates = lazy(() => import('./pages/resources/iotUpdates'));
 const Main = lazy(() => import('./pages/faq/main'));
 const Report = lazy(() => import('./pages/report/report'));
@@ -70,6 +71,7 @@ function App () {
               <Route path="/iotResources" component={IotResources} />
               <Route path="/iotTechnologies" component={IotTechnologies} />
               <Route path="/iotStatistics" component={IotStatistics} />
+              <Route path="/iotSecurity" component={IotSecurity} />
               <Route path="/iotUpdates" component={IotUpdates} />
               <Route path="/profile" component={Profile} />
               <Route path="/posts/:id" component={Post} />

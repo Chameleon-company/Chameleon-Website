@@ -1,0 +1,81 @@
+.page-container {
+    max-width: 960px;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .page-title {
+    font-size: 28px;
+    color: #2a5934; 
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .page-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: normal;
+    border-left: 5px solid #4CAF50; 
+    padding-left: 20px;
+  }
+  
+ 
+  .products-section h2, .links-section h2 {
+    font-size: 18px;
+    color: #509c61; 
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+ 
+  .page-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+
+  .page-container li {
+    background-color:  #bddcc8;; 
+    margin-bottom: 10px;
+    padding: 15px;
+    border-left: 5px solid #4CAF50; 
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+
+  .page-container a {
+    color: #006064; 
+    text-decoration: underline;
+  }
+  
+  .page-container a:hover {
+    text-decoration: underline;
+    color: #204D74; 
+  }
+  
+  
+  .link-description {
+    font-size: 16px;
+    color: #0e0d0d;
+    padding-left: 20px;
+  }
+  
+  
+  .featured-image {
+    width: 100%; 
+    max-width: 600px; 
+    height: auto; 
+    display: block; 
+    margin: 20px auto; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+  }
+  

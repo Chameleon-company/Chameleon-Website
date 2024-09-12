@@ -5,6 +5,7 @@ import NotificationComponent from './components/notificationComp/NotificationCom
 import NotFoundPage from './pages/error404/404.js';
 import Profile from './pages/profile/profile.js';
 import Post from './pages/profile/post.js';
+// import MopWebDev from './pages/projects/MopWebDev';
 
 const HomePage = lazy(() => import('./pages/homepage/Homepage'));
 const Chatbot = lazy(() => import('./pages/Chatbot/Chatbot'));
@@ -12,6 +13,9 @@ const aboutUs = lazy(() => import('./pages/about/aboutUs'));
 const News = lazy(() => import('./pages/news/news'));
 const ProjectDetails = lazy(() => import('./pages/projects/ProjectDetails'));
 const Projects = lazy(() => import('./pages/projects/projects'));
+const MopWebDev = lazy(() => import('./pages/projects/MopWebDev'));
+const MopDS = lazy(() => import('./pages/projects/MopDS'));
+const ProjectLinksMoP = lazy(() => import('./pages/projects/ProjectLinksMoP'));
 const Contact = lazy(() => import('./pages/contact/contact'));
 const IotResources = lazy(() => import('./pages/resources/iotResources'));
 const IotTechnologies = lazy(() => import('./pages/resources/iotTechnologies'));
@@ -66,6 +70,9 @@ function App () {
               <Route path="/news" component={News} />
               <Route path="/chatbot" component={Chatbot} />
               <Route path="/projects" component={Projects} />
+              <Route path="/mopWebDev" component={MopWebDev} />
+              <Route path="/mopDS" component={MopDS} />
+              <Route path="/projectLinksMoP" component={ProjectLinksMoP} />
               <Route path="/report" component={Report} />
               <Route path="/contact" component={Contact} />
               <Route path="/iotResources" component={IotResources} />

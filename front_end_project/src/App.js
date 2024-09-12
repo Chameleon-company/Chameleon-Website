@@ -45,6 +45,7 @@ const TechnologyQues1 = lazy(() => import('./pages/support/technology_ques1'));
 const TechnologyQues2 = lazy(() => import('./pages/support/technology_ques2'));
 const TechnologyQues3 = lazy(() => import('./pages/support/technology_ques3'));
 const TechnologyQues4 = lazy(() => import('./pages/support/technology_ques4'));
+const ai_blog_page = lazy(() => import('./pages/projects/ai-page.js'));
 
 function App () {
   // const rememberMe = localStorage.getItem('rememberMe') === 'true';
@@ -94,6 +95,7 @@ function App () {
               <Route path="/newsUnsubForm" component={newsUnsubForm} />
               <Route path="/newsRemoveForm" component={newsRemoveForm} />
               <Route path="/search-results" component={SearchResults} />
+              <Route path="/blog_1" component={ai_blog_page} />
               {/* {session ? (<Route path='/' component={HomePage}/>) : (<Route path='/' component={Screen}/>)} */}
               <Route component={NotFoundPage} />
               {/* {rememberMe ? (<Route path='/' component={HomePage}/>) : (session ? (<Route path='/' component={HomePage}/>) : (<Route path='/' component={Screen}/>))} */}

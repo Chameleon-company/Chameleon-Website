@@ -435,10 +435,10 @@ class SignUp extends Component {
                     </svg>
                   </div>
                 </div>
-              </div>
+              {/* </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </Screen>
     );
   }

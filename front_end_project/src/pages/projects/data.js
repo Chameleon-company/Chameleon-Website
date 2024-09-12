@@ -20,7 +20,7 @@ const projectList = [
     details: `Melbourne Open Data refers to the City of Melbourne's initiative to make a wide range of public data sets available to the public for free...`,
 
     githubLink: "",
-    learnMoreLink: "",
+    learnMoreLink: "/blog_1",
   },
   {
     image: img3,

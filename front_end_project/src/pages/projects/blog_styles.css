@@ -1,0 +1,88 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+   
+   
+  .blog-container {
+    max-width: 960px;
+    margin: 3px auto;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    font-family: 'Arial', sans-serif;
+    height: 100%;  
+  }
+   
+   
+   
+  .blog-title {
+    font-size: 28px;
+    color: #285239;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: bold;
+  }
+   
+   
+  .blog-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+  }
+   
+   
+  .blog-products h2, .blog-links h2 {
+    font-size: 18px;
+    color: #3c763d;
+    margin-bottom: 15px;
+    margin-top: 35px;
+    font-weight: bold;
+  }
+   
+   
+  .blog-products ul, .blog-links ul {
+    list-style-type: none;
+    padding: 0;
+  }
+   
+   
+  .blog-products li, .blog-links li {
+    background-color: #ebf5eb;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-left: 5px solid #3c763d;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+   
+   
+  .blog-links a {
+    color: #685cd2;
+    text-decoration: underline;
+    /* font-weight: bold; */
+  }
+   
+  .blog-links a:hover {
+    text-decoration: underline;
+    color: #285239;
+  }
+   
+   
+  .link-description {
+    font-size: 16px;
+    color: #010000;
+    padding-left: 20px;
+  }
+  .featured-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }

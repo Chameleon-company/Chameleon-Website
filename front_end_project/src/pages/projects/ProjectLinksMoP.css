@@ -1,0 +1,54 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .page-container-mop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;  /* Ensures the container takes full page height */
+    background-color: #7bd27b;
+    padding: 20px 80px;
+  }
+
+Link{
+    text-decoration: none;
+}
+
+.title {
+  font-size: 1.75em;
+  color: #333;
+  margin-bottom: 80px;
+  margin-top: 0px;
+}
+
+.button-container {
+  display: flex;
+  gap: 30px;
+  text-decoration: none;
+}
+
+.project-button {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease-in-out;
+}
+
+.web-dev {
+  background-color: #4caf50;
+}
+
+.data-sci {
+  background-color: #2196f3;
+}
+
+.project-button:hover {
+  transform: scale(1.1);
+}

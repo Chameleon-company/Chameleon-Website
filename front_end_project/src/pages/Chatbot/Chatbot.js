@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Chatbot.css";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+//import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Screen from "../../components/app/Screen";
+import { MdMoreHoriz } from 'react-icons/md'; // Correct import from react-icons
+
 
 const Chatbot = () => {
   const [userMessage, setUserMessage] = useState("");
@@ -63,8 +65,7 @@ const Chatbot = () => {
             </div>
 
             <button className="options-button">
-             <MoreHorizIcon style={{ color: 'white' }} />
-            </button>
+            <MdMoreHoriz style={{ color: 'white', fontSize: '32px' }} />            </button>
           </header>
           <ul className="chatbox" ref={chatboxRef}>
             <div style={{ display: "flex", flexDirection: "row" }}>

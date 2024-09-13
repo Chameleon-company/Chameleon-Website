@@ -34,17 +34,19 @@ function Contact() {
 
   return (
     <Screen>
-      <div className="bg-[#deece3] mt-auto mb-auto flex flex-col items-center">
+      <div className="bg-[#deece3] mt-auto mb-auto flex flex-col items-center py-6">
+
+
+
+        {/* Main Content */}
+        <div className={`${styles.contact_body}`}>
 
         {/* Header Text */}
         <div className={`${styles.contact_title} bg-[#4fa373] md:text-5xl text-4xl font-medium text-center text-white`}>
           <span>{page.header}</span>
         </div>
-
-        {/* Main Content */}
-        <div className={`${styles.contact_body}`}>
-
-
+        {/* Contact items */}
+        <div className="grid grid-cols-1 gap-4">
           {/* Phone */}
           <div className={`${styles.contact_item} p-2`}>
             <div className="flex justify-start items-center gap-3 p-3">
@@ -60,7 +62,7 @@ function Contact() {
                 {page.content.phone.contact}
               </button>
             </div>
-            <div className="contact_item_context w-[100%] p-2 text-center font-semibold text-black mt-3">
+            <div className="contact_item_context w-[100%] p-2 text-center font-semibold text-black">
               {page.content.phone.description}
             </div>
           </div>
@@ -80,9 +82,9 @@ function Contact() {
                 {page.content.email.contact}
               </button>
             </div>
-            <div className="contact_item_context w-[100%] p-2 text-center font-semibold text-black mt-3">
+            <div className="contact_item_context w-[100%] p-2 text-center font-semibold text-black">
               {page.content.email.description}
-              <button className="badge bg-success ml-auto align-self-center p-2"><a href="mailto:info@chameleon.com.au?subject=Hello%20there&body=Add%20your%20Query%20here%20for chameleon." className="text-black no-underline">Send Email</a></button>
+              <button className="badge bg-success ml-2 align-self-center p-2"><a href="mailto:info@chameleon.com.au?subject=Hello%20there&body=Add%20your%20Query%20here%20for chameleon." className="text-black no-underline">Send Email</a></button>
              
             </div>
           </div>
@@ -98,10 +100,11 @@ function Contact() {
               </div>
               <span className="badge bg-success ml-auto align-self-center p-2">{page.content.chat.contact}</span>
             </div>
-            <div className="contact_item_context w-[100%] p-2 text-center font-semibold text-black mt-3">
+            <div className="contact_item_context w-[100%] p-2 text-center font-semibold text-black">
               {page.content.chat.description}
             </div>
           </div>
+         </div>
         </div>
       </div>
     </Screen>

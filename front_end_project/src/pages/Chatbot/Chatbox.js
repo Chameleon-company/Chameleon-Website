@@ -15,7 +15,7 @@ const Chatbox = ({
   const [chatOpen, setChatOpen] = useState(false);
 
   return (
-    <div className="chatBot absolute bottom-5 flex flex-col">
+    <div className="chatBot absolute bottom-5 flex flex-col z-50">
       {!chatOpen && (
         <img alt="" src={chatOpenImg} className="md:w-[60px] w-[50px]" onClick={() => setChatOpen(true)} />
       )}

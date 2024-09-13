@@ -31,7 +31,7 @@ function News () {
           ))}
         </div>
         <div className="px-[10px] md:hidden block">
-          <SwiperNews />
+          <SwiperNews/>
         </div>
       </main>
       {/* Add the Chatbox component */}

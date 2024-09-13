@@ -1,5 +1,6 @@
 import React from 'react';
 import './Chatbot.css';
+import { FaPaperPlane } from 'react-icons/fa'; // Import icon from react-icons
 
 function ChatInput() {
     return (
@@ -9,7 +10,7 @@ function ChatInput() {
                 spellCheck="false"
                 required
             ></textarea>
-            <span id="send-btn" className="material-symbols-rounded">send</span>
+            <FaPaperPlane id="send-btn" size={24} style={{ cursor: 'pointer' }} />
         </div>
     );
 }

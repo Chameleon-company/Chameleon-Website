@@ -10,17 +10,16 @@ class IotResources extends Component {
   render() {
     return (
       <Screen>
-        <div className="m-auto flex max-w-[1500px] flex-row flex-wrap justify-between bg-[#67A170] p-5 section-height">
-          <div className="2xl:max-w-[1320px] ml-auto mr-auto w-full sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]">
-            <h1 className="pb-3 pt-3 text-center">RESOURCES</h1>
-          </div>
+        <div className="max-w-[1500px] bg-[#67A170] px-3 xl:px-5">
+            <h1 className="pb-3 pt-3 text-center font-bold">RESOURCES</h1>
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-4 xl:gap-5 mx-2 pb-2 xl:pb-4">
           <div className="hover:scale-105 hover:shadow-lg transition-transform duration-300">
             <IotResourcesComponent
               img={device}
               altImg="Technology Graphic"
               url="/iotTechnologies"
               heading="Technologies"
-            />
+              />
           </div>
 
           <div className="hover:scale-105 hover:shadow-lg transition-transform duration-300">
@@ -29,7 +28,7 @@ class IotResources extends Component {
               altImg="Melbourne Street View"
               url="/iotStatistics"
               heading="Statistics"
-            />
+              />
           </div>
 
           <div className="hover:scale-105 hover:shadow-lg transition-transform duration-300">
@@ -38,10 +37,9 @@ class IotResources extends Component {
               altImg="Technology Graphic"
               url="/iotUpdates"
               heading="Innovations"
-            />
+              />
           </div>
-
-          <br></br>
+        </div>
         </div>
       </Screen>
     );

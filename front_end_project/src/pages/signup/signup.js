@@ -1,16 +1,18 @@
-import React, { Component } from 'react';
-import './signup.css';
-import Screen from '../../components/app/Screen';
-import { Redirect, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import React, { Component } from "react";
+import "./signup.css";
+import Screen from "../../components/app/Screen";
+import {
+  Redirect,
+  useHistory,
+} from "react-router-dom/cjs/react-router-dom.min";
 
 class SignUp extends Component {
-
   state = {
-    email: '',
-    password: '',
-    confirmPassword: '',
+    email: "",
+    password: "",
+    confirmPassword: "",
     showToast: false,
-    toastMessage: '',
+    toastMessage: "",
     isSignUp: true,
     isAuthenticated: false,
     rememberMe: false,
@@ -25,30 +27,35 @@ class SignUp extends Component {
     const { email, password, rememberMe } = this.state;
 
     if (!email || !password) {
-      this.displayToast('Please enter both email and password');
+      this.displayToast("Please enter both email and password");
       return;
     }
 
     try {
-      const response = await fetch('http://localhost:3002/auth/signin', {
-        method: 'POST',
+      const response = await fetch("http://localhost:3002/auth/signin", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password }),
       });
       const data = await response.json();
 
       if (!response.ok) {
-        const errorMessage = data.error === "Authentication failed"
-          ? "Incorrect email or password. Please check your details and try again."
-          : data.error || 'An unknown error occurred.';
+        const errorMessage =
+          data.error === "Authentication failed"
+            ? "Incorrect email or password. Please check your details and try again."
+            : data.error || "An unknown error occurred.";
         throw new Error(errorMessage);
       }
 
-      this.displayToast('Sign in successful!');
-      this.setState({ showToast: true, toastMessage: 'Sign in successful!', isAuthenticated: true });
-      sessionStorage.setItem('status', 'logged in');
+      this.displayToast("Sign in successful!");
+      this.setState({
+        showToast: true,
+        toastMessage: "Sign in successful!",
+        isAuthenticated: true,
+      });
+      sessionStorage.setItem("status", "logged in");
       if (rememberMe) {
         localStorage.setItem("rememberMe", "true");
       } else {
@@ -59,39 +66,43 @@ class SignUp extends Component {
     }
   };
 
-
   handleSubmitSignUp = async (event) => {
     event.preventDefault();
     const { email, password, confirmPassword } = this.state;
     if (password !== confirmPassword) {
-      this.setState({ showToast: true, toastMessage: 'Passwords do not match!' });
+      this.setState({
+        showToast: true,
+        toastMessage: "Passwords do not match!",
+      });
       return;
     }
 
     try {
-      const response = await fetch('http://localhost:3002/auth/signup', {
-        method: 'POST',
+      const response = await fetch("http://localhost:3002/auth/signup", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        const errorMessage = data.error === "Email already exists"
-          ? "An account with this email already exists. Please use a different email."
-          : data.error || 'An unknown error occurred during sign up.';
+        const errorMessage =
+          data.error === "Email already exists"
+            ? "An account with this email already exists. Please use a different email."
+            : data.error || "An unknown error occurred during sign up.";
         throw new Error(errorMessage);
       }
       this.setState({
         showToast: true,
-        toastMessage: 'Sign up successful! Please check your email for verification.',
-        email: '',
-        password: '',
-        confirmPassword: '',
-        isSignUp: false
+        toastMessage:
+          "Sign up successful! Please check your email for verification.",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        isSignUp: false,
       });
     } catch (error) {
       this.setState({ showToast: true, toastMessage: error.message });
@@ -99,7 +110,10 @@ class SignUp extends Component {
   };
 
   handleInputChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value, showToast: false });
+    this.setState({
+      [event.target.name]: event.target.value,
+      showToast: false,
+    });
   };
 
   // Placeholder for sign-up logic
@@ -109,47 +123,76 @@ class SignUp extends Component {
   };
 
   toggleSignUp = () => {
-    this.setState(prevState => ({ isSignUp: !prevState.isSignUp }));
+    this.setState((prevState) => ({ isSignUp: !prevState.isSignUp }));
   };
   toggleRememberMe = () => {
-    this.setState(prevState => ({ rememberMe: !prevState.rememberMe }));
+    this.setState((prevState) => ({ rememberMe: !prevState.rememberMe }));
   };
 
-  render () {
-
-    const { email, password, isSignUp, showToast, toastMessage, isAuthenticated, rememberMe } = this.state;
+  render() {
+    const {
+      email,
+      password,
+      isSignUp,
+      showToast,
+      toastMessage,
+      isAuthenticated,
+      rememberMe,
+    } = this.state;
     return (
       <Screen>
-        {isAuthenticated && <Redirect to='/home' />}
-        <div className='centered-container'>
-          <div className='container_2'>
-            <div className={`dowebok ${isSignUp ? 's--signup' : ''}`}>
+        {isAuthenticated && <Redirect to="/home" />}
+        <div className="centered-container flex-col md:justify-center ">
+          <div className="container_2">
+            <div className={`dowebok ${isSignUp ? "s--signup" : ""}`}>
               <div class="form sign-in">
                 <h2>Welcome Back</h2>
                 <form onSubmit={this.handleSubmitSignIn}>
-                  <label>Email<input type="email"
-                    name="email"
-                    value={email}
-                    onChange={this.handleInputChange} />
+                  <label>
+                    Email
+                    <input
+                      type="email"
+                      name="email"
+                      value={email}
+                      onChange={this.handleInputChange}
+                    />
                   </label>
-                  <label>Password<input
-                    type="password"
-                    name="password"
-                    value={password}
-                    onChange={this.handleInputChange} />
+                  <label>
+                    Password
+                    <input
+                      type="password"
+                      name="password"
+                      value={password}
+                      onChange={this.handleInputChange}
+                    />
                   </label>
-                  {showToast && (<div className="toast-message">{toastMessage} </div>)}   {/* Show toast message */}
-                  <button type="button submit" class="submit signin-up-button">Log In</button>
-                  <div className='bottom-box'>
+                  {showToast && (
+                    <div className="toast-message">{toastMessage} </div>
+                  )}{" "}
+                  {/* Show toast message */}
+                  <button type="button submit" class="submit signin-up-button">
+                    Log In
+                  </button>
+                  <div className="bottom-box">
                     <div>
-                      <label className='text-sm'> <input type="checkbox" checked={rememberMe} onChange={this.toggleRememberMe} />Remember Me</label>
-                      <p className="forgot-pass"><a href="/reset">Forgot your password?</a></p>
+                      <label className="text-sm">
+                        {" "}
+                        <input
+                          type="checkbox"
+                          checked={rememberMe}
+                          onChange={this.toggleRememberMe}
+                        />
+                        Remember Me
+                      </label>
+                      <p className="forgot-pass">
+                        <a href="/reset">Forgot your password?</a>
+                      </p>
                     </div>
                   </div>
                 </form>
               </div>
-              <div class="sub-cont">
-                <div class="img">
+              <div className="sub-cont flex flex-col lg:flex-row lg:items-center">
+                <div className="img order-1 lg:order-2">
                   <div class="img__text m--up">
                     <h2>Not registered yet?</h2>
                     <p>Register now and explore abundant opportunities!</p>
@@ -163,27 +206,56 @@ class SignUp extends Component {
                     <span class="m--in">Log In</span>
                   </div>
                 </div>
-                <div class="form sign-up">
+
+                <div class="form sign-up flex-col md:justify-center lg:order-1">
                   <h2>Sign Up Now</h2>
                   <form onSubmit={this.handleSubmitSignUp}>
-                    <label>Email<input
-                      type="email"
-                      name="email"
-                      value={email}
-                      onChange={this.handleInputChange} /></label>
-                    <label>Password<input
-                      type="password"
-                      name="password"
-                      value={password}
-                      onChange={this.handleInputChange} /></label>
-                    <p className='password-requirement' onChange={this.handleInputChange}>(Requires at least 6 characters, including an uppercase letter, a lowercase letter, numbers, and special characters [!, @, $, etc.].)</p>
-                    <label>Confirm Password<input
-                      type="password"
-                      name="confirmPassword"
-                      value={this.state.confirmPassword}
-                      onChange={this.handleInputChange} required /></label>
-                    {showToast && (<div className="toast-message">{toastMessage} </div>)}
-                    <button type="submit" class="submit signin-up-button" href="/signup">Sign Up</button>
+                    <label>
+                      Email
+                      <input
+                        type="email"
+                        name="email"
+                        value={email}
+                        onChange={this.handleInputChange}
+                      />
+                    </label>
+                    <label>
+                      Password
+                      <input
+                        type="password"
+                        name="password"
+                        value={password}
+                        onChange={this.handleInputChange}
+                      />
+                    </label>
+                    <p
+                      className="password-requirement"
+                      onChange={this.handleInputChange}
+                    >
+                      (Requires at least 6 characters, including an uppercase
+                      letter, a lowercase letter, numbers, and special
+                      characters [!, @, $, etc.].)
+                    </p>
+                    <label>
+                      Confirm Password
+                      <input
+                        type="password"
+                        name="confirmPassword"
+                        value={this.state.confirmPassword}
+                        onChange={this.handleInputChange}
+                        required
+                      />
+                    </label>
+                    {showToast && (
+                      <div className="toast-message">{toastMessage} </div>
+                    )}
+                    <button
+                      type="submit"
+                      class="submit signin-up-button"
+                      href="/signup"
+                    >
+                      Sign Up
+                    </button>
                   </form>
                 </div>
               </div>
@@ -236,7 +308,7 @@ class SignUp extends Component {
             <svg
               t="1712763892469"
               type="button"
-              onClick={() => this.handleExternalSignUp('Facebook')}
+              onClick={() => this.handleExternalSignUp("Facebook")}
               className="icon"
               viewBox="0 0 1026 1024"
               version="1.1"
@@ -260,7 +332,7 @@ class SignUp extends Component {
             <svg
               t="1712763916510"
               type="button"
-              onClick={() => this.handleExternalSignUp('Google')}
+              onClick={() => this.handleExternalSignUp("Google")}
               className="icon"
               viewBox="0 0 1024 1024"
               version="1.1"
@@ -279,7 +351,7 @@ class SignUp extends Component {
             <svg
               t="1712763968675"
               type="button"
-              onClick={() => this.handleExternalSignUp('LinkedIn')}
+              onClick={() => this.handleExternalSignUp("LinkedIn")}
               className="icon"
               viewBox="0 0 1026 1024"
               version="1.1"

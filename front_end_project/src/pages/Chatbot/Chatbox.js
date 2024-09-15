@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Chatbot.css';
 import './chatbox.css';
+import { FaComments, FaTimes } from 'react-icons/fa'; // Import icons
 
 const Chatbox = ({
   chameleonLogo = chameleonLogo,
@@ -17,7 +18,8 @@ const Chatbox = ({
   return (
     <div className="chatBot absolute bottom-5 flex flex-col">
       {!chatOpen && (
-        <img alt="" src={chatOpenImg} className="md:w-[60px] w-[50px]" onClick={() => setChatOpen(true)} />
+        //<img alt="" src={chatOpenImg} className="md:w-[60px] w-[50px]" onClick={() => setChatOpen(true)} />
+        <FaComments size={50} onClick={() => setChatOpen(true)} style={{ cursor: 'pointer' }} />
       )}
 
       {chatOpen && (
@@ -57,8 +59,7 @@ const Chatbox = ({
               </div>
             </div>
           </div>
-          <img alt="" src={chatCloseImg} className="md:w-[60px] w-[50px]" onClick={() => setChatOpen(false)} />
-        </>
+          <FaTimes size={50} onClick={() => setChatOpen(false)} style={{ cursor: 'pointer' }} />        </>
       )}
     </div>
   );

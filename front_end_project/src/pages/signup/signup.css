@@ -369,3 +369,57 @@ input {
     position: relative;
 }
 
+/* Icons css */
+.icon {
+    font-size: 20px; /* Adjust the size as needed */
+    vertical-align: middle; /* Align the icon vertically with the text */
+    margin-right: 10px; /* Space between the icon and the text */
+  }
+  
+  /* Style the form labels to position text and icons correctly */
+  label {
+    display: flex; /* Use flexbox for aligning items */
+    align-items: center; /* Align items vertically in the center */
+    margin-bottom: 15px; /* Add space between form fields */
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    flex: 1; /* Make the input take up the remaining space */
+    padding: 8px;
+    margin-left: 10px; /* Space between the icon and the input */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .submit {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .submit:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Additional styling for other elements */
+  .toast-message {
+    margin-top: 10px;
+    color: red;
+    font-size: 14px;
+  }
+  
+  .bottom-box {
+    margin-top: 15px;
+  }
+  
+  .text-sm {
+    font-size: 12px;
+  }
+  

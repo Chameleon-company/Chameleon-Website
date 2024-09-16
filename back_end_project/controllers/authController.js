@@ -1,7 +1,11 @@
 const authService = require('../services/authService');
+const { getAuth } = require('firebase/auth');
+
+const auth = getAuth();
 
 exports.userSignUp = async (req, res) => {
   const { email, password } = req.body;
+
   if (!isStrongPassword(password)) {
     return res.status(400).json({ 
       error: 'Password does not meet security requirements',
@@ -14,9 +18,10 @@ exports.userSignUp = async (req, res) => {
       }
     });
   }
+
   try {
     const user = await authService.createUser(email, password);
-    res.status(201).json({ message: 'User signed up successfully', user });
+    res.status(201).json({ message: 'User signed up successfully. Please verify your email.', user });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -24,6 +29,7 @@ exports.userSignUp = async (req, res) => {
 
 exports.userSignIn = async (req, res) => {
   const { email, password } = req.body;
+
   try {
     const user = await authService.signInUser(email, password);
     
@@ -39,36 +45,38 @@ exports.userSignIn = async (req, res) => {
 
 // Function to check if the password meets security requirements
 function isStrongPassword(password) {
-  // Define password security requirements
   const minLength = 8;  // Minimum password length
   const hasUppercase = /[A-Z]/.test(password);  // Contains uppercase letters
   const hasLowercase = /[a-z]/.test(password);  // Contains lowercase letters
   const hasDigit = /\d/.test(password);  // Contains digits
   const hasSpecialChar = /[!@#$%^&*]/.test(password);  // Contains special characters
 
-  // Check if the password meets the requirements
-  if (
-    password.length < minLength ||
-    !hasUppercase ||
-    !hasLowercase ||
-    !hasDigit ||
-    !hasSpecialChar
-  ) {
-    return false;
-  }
-
-  return true;
+  return (
+    password.length >= minLength &&
+    hasUppercase &&
+    hasLowercase &&
+    hasDigit &&
+    hasSpecialChar
+  );
 }
 
 exports.sendVerificationEmail = async (req, res) => {
-  const user = auth.currentUser;
-  if (user) {
-    await sendEmailVerification(user);
+  try {
+    const user = auth.currentUser;
+    if (user) {
+      await authService.sendVerificationEmail();
+      res.status(200).json({ message: 'Verification email sent' });
+    } else {
+      res.status(401).json({ error: 'User not authenticated' });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 };
 
 exports.sendPasswordResetEmail = async (req, res) => {
   const { email } = req.body;
+  
   try {
     await authService.sendPasswordResetEmail(email);
     res.status(200).json({ message: 'Password reset email sent' });
@@ -89,13 +97,17 @@ exports.userSignOut = async (req, res) => {
 exports.LoginStatus = (req, res) => {
   const user = authService.getCurrentUser();
   if (user) {
-    res.send(`Hello, ${user.displayName || 'User'}`);
+    res.status(200).json({ message: `Hello, ${user.displayName || 'User'}` });
   } else {
-    res.send('Please sign in');
+    res.status(401).json({ message: 'Please sign in' });
   }
 };
 
-exports.getUserID = (req,res) =>{
+exports.getUserID = (req, res) => {
   const user = authService.getCurrentUser();
-  res.send(user.uid);
-}
+  if (user) {
+    res.status(200).json({ uid: user.uid });
+  } else {
+    res.status(401).json({ error: 'User not authenticated' });
+  }
+};

@@ -11,13 +11,15 @@ import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 import userEvent from "@testing-library/user-event";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCgBPNTLuvfKQpZiOCJs1PRKVgy3nDhwn0",
-  authDomain: "chameleon-website-login-page.firebaseapp.com",
-  projectId: "chameleon-website-login-page",
-  storageBucket: "chameleon-website-login-page.appspot.com",
-  messagingSenderId: "462355158431",
-  appId: "1:462355158431:web:ea9cfdc4489153ca8999aa",
+  apiKey: "AIzaSyCBi0MBnaKjADr0NcrF0g2roaTS5QKDl2s",
+  authDomain: "chameleon-50bd7.firebaseapp.com",
+  projectId: "chameleon-50bd7",
+  storageBucket: "chameleon-50bd7.appspot.com",
+  messagingSenderId: "107667412559",
+  appId: "1:107667412559:web:6d3206a9e31c0ada3bfc3a",
+  measurementId: "G-F1G501XQST"
 };
+
 
 // Initialize Firebase
 const firebaseapp = initializeApp(firebaseConfig);

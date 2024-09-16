@@ -1,4 +1,4 @@
-function getHelloMessage(name) {
-  return `Hello  ${name}!`;
+function getHelloMessage(name = "Guest") {
+  return `Hello, ${name}!`;
 }
 module.exports = { getHelloMessage };

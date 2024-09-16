@@ -33,10 +33,48 @@ function Profile (props) {
 
     const [user, setUser] = useState(initial_object);
     const [activeTab, setActiveTab] = useState('profile');
+    const [emailError, setEmailError] = useState("");
+    const [phoneError, setPhoneError] = useState("");
+
 
     const handleTabClick = (tabId) => { setActiveTab(tabId); };
+<<<<<<< HEAD
     const handleUser = (user) => { setUser(prevUser => ({ ...prevUser, ...user })); };
     const handleLogout = () => { signOut(); };
+=======
+
+    const validateEmail = (email) => {
+        return email.includes("@");
+    };
+
+    const validatePhone = (phone) => {
+        const isNumeric = /^\d+$/.test(phone);
+        const isTenDigits = phone.length === 10;
+        return isNumeric && isTenDigits;
+    };
+
+    const handleUser = (updatedUser) => {
+        const { email, phone } = updatedUser;
+        let emailErrorMsg = "";
+        let phoneErrorMsg = "";
+    
+        if (!validateEmail(email)) {
+          emailErrorMsg = "Invalid email address. Must contain '@'.";
+        }
+    
+        if (!validatePhone(phone)) {
+          phoneErrorMsg =
+            "Invalid phone number. Must be numeric and 10 digits long.";
+        }
+
+        setEmailError(emailErrorMsg);
+        setPhoneError(phoneErrorMsg);
+
+        if (!emailErrorMsg && !phoneErrorMsg) {
+           setUser((prevUser) => ({ ...prevUser, ...updatedUser }));
+        }
+    };
+>>>>>>> origin/Password-Backend-Validation
 
     return (
         <>
@@ -103,9 +141,12 @@ function Profile (props) {
                                 <div className="tab-content" id="nav-tabContent">
                                     <div className={`tab-pane fade ${activeTab === 'dashboard' ? 'show active' : ''}`} id="nav-dashboard" role="tabpanel" aria-labelledby="nav-dashboard-tab">Dashboard</div>
 
-                                    <div className={`tab-pane fade ${activeTab === 'profile' ? 'show active' : ''}`} id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                    <div className={`tab-pane fade ${activeTab === "profile" ? "show active" : ""}`} id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                                         <User user={user} handleUser={handleUser} />
+                                        {emailError && <div className="alert alert-danger">{emailError}</div>}
+                                        {phoneError && <div className="alert alert-danger">{phoneError}</div>}
                                     </div>
+
 
                                     <div className={`tab-pane fade ${activeTab === 'password' ? 'show active' : ''}`} id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">
                                         <Password />
@@ -123,5 +164,6 @@ function Profile (props) {
         </>
     );
 }
+
 
 export default Profile;

@@ -30,4 +30,8 @@
     height: 80px;
     border-radius: 40px;
 }
-  
+
+html {
+  background-color: #333333;
+  height: 100%;
+}

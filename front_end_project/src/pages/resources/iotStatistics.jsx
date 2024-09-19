@@ -43,6 +43,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Screen from '../../components/app/Screen';
+import CommentSection from "./CommentSection";
+
 let content = ""
 class IotStatistics extends Component {
   constructor(props) {
@@ -68,6 +70,16 @@ class IotStatistics extends Component {
       color: 'white'
     };
 
+    // Styling for comment section
+    const commentSectionStyle = {
+      width: '100%',           
+      maxWidth: '1000px',       
+      margin: '20px auto',     
+      padding: '60px',
+      backgroundColor: '#f9f9f9',
+      borderRadius: '8px',
+      };
+
     return (
       <Screen>
         <div className="2xl:max-w-[1320px] ml-auto mr-auto w-full sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]">
@@ -86,6 +98,7 @@ class IotStatistics extends Component {
             </div>
           </div>
         </div>
+        <div style={commentSectionStyle}><CommentSection /></div>
       </Screen>
     );
   }

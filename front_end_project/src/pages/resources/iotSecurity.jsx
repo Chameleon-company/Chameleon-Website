@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Screen from "../../components/app/Screen";
+import CommentSection from "./CommentSection";
 
 const content1 =
   "The proliferation of IoT devices introduces a significant challenge: security. With billions of devices connected to the internet, the potential attack surface for malicious actors has expanded exponentially. Ensuring the security of these devices is paramount to protect sensitive data, maintain user privacy, and ensure the reliability of IoT systems.";
@@ -17,6 +18,17 @@ class IotSecurity extends Component {
     const titleStyle = {
       color: "white",
     };
+
+  // Styling for comment section
+  const commentSectionStyle = {
+  width: '100%',           
+  maxWidth: '1000px',       
+  margin: '20px auto',     
+  padding: '60px',
+  backgroundColor: '#f9f9f9',
+  borderRadius: '8px',
+  };
+
     return (
       <Screen>
         <div>
@@ -97,7 +109,7 @@ class IotSecurity extends Component {
           </div>
         </div>
 
-        <br></br>
+        <div style={commentSectionStyle}><CommentSection /></div>
       </Screen>
     );
   }

@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Screen from '../../components/app/Screen';
+import CommentSection from "./CommentSection";
 
 const content1 =
   "The Internet of Things (IoT) is a network of connected computing devices, mechanical and digital machinery, items, animals, or people that can exchange data across a network without the need for human-to-human or human-to-computer interaction. The Internet of Things (IoT) is a huge network of physical items that are equipped with sensors, software, and network connectivity in order to gather and share data. By using this information, procedures can be automated and judgements can be improved.";
@@ -14,6 +15,16 @@ class IotTechnolgies extends Component {
     const titleStyle = {
       color: 'white'
     };
+
+    // Styling for comment section
+    const commentSectionStyle = {
+      width: '100%',           
+      maxWidth: '1000px',       
+      margin: '20px auto',     
+      padding: '60px',
+      backgroundColor: '#f9f9f9',
+      borderRadius: '8px',
+      };
 
     return (
       <Screen>
@@ -63,13 +74,11 @@ class IotTechnolgies extends Component {
             </div>
           </div>
         </div>
-
-        <br></br>
+        <div style={commentSectionStyle}><CommentSection /></div>
       </Screen>
     );
   }
 }
 
 export const iotTechnologiesSearchableContents = [content1, content2, content3];
-
 export default IotTechnolgies;

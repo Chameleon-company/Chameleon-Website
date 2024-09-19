@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/getIotStats', resourceController.getIotStats);
 router.get('/getIotSecurity', resourceController.getIotSecurity);
-// router.get('/getIotTech', resourceController.getIotTech);
-// router.get('/getIotUpdates', resourceController.getIotUpdates);
+router.get('/getIotTech', resourceController.getIotTech);
+router.get('/getIotUpdates', resourceController.getIotUpdates);
 
 module.exports = router;

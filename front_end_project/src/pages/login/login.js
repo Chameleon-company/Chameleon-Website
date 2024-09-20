@@ -1,26 +1,14 @@
 
-import React, { Component } from "react";
-import "./login.css"; // Make sure the path is correct
-import Logo from "./image/Chameleon_Logo.png";
-import Google from "./image/google.png";
-import Linkedin from "./image/linkedin.png";
-import Microsoft from "./image/microsoft.png";
-import Screen from "../../components/app/Screen";
-import { Redirect } from "react-router-dom";
-import { auth } from "../utils/firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import Screen from "../../components/app/Screen";
+import { auth } from "../utils/firebase";
+import "./login.css"; // Make sure the path is correct
 
 // init branch
 
-import Chatbox from '../Chatbot/Chatbox';
 import '../Chatbot/chatbox.css';
-import chameleonLogo from "../../assets/ChameleonLogo.png";
-import chatOpenImg from "../Chatbot/images/chat-open.png";
-import chatCloseImg from "../Chatbot/images/chat-close.png";
-import dotMenuImg from "../Chatbot/images/dot-menu.png";
-import chatIcon from "../Chatbot/images/chat-icon.png";
-import fileSelectIcon from "../Chatbot/images/file-select.png";
-import sendMessageImg from "../Chatbot/images/send-message.png";
 
 class Login extends Component {
   state = {
@@ -262,12 +250,7 @@ class Login extends Component {
                           Login
                         </button>
                       </form>
-                      <p className="text-center mt-3">-- or login with --</p>
-                      <div className="flex justify-center items-center space-x-4">
-                        <a href=""><img className="inline h-9 w-9" src={Google}></img></a>
-                        <a href=""><img className="inline h-12 w-12" src={Linkedin}></img></a>
-                        <a href=""><img className="inline h-7 w-7" src={Microsoft}></img></a>
-                      </div>
+                      
                       <p className="text-center pt-4">
                         Don't have an account?{" "}
                         <a className="text-[#559166] no-underline font-semibold" href="signup" onClick={this.toggleSignUp}>

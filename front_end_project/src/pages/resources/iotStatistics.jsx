@@ -1,12 +1,29 @@
-import { Component } from "react";
+import React, { Component } from "react";
+import axios from "axios";
 import Screen from '../../components/app/Screen';
-import CommentSection from "../../components/resources/CommentSection";
+import CommentSection from "./CommentSection";
 
-const content1 =
-  "By 2028, the Australian IoT market is projected to have increased from US$15.46 billion to US$27.13 billion. The largest IoT market in Australia is the automotive industry, followed by the industrial and retail sectors. In Australia, there will be 16.7 million linked IoT devices by 2022. By 2028, Australia is projected to have 28.9 million linked IoT devices. IoT devices are connected to 10 ordinary Australian homes. Smart speakers, smart thermostats, and smart security cameras are the most widely used IoT devices in Australia. The adoption of Industry 4.0 technologies, the rise of the Internet of Vehicles (IAV), and the desire for smart city solutions are what are driving the IoT market in Australia.";
-
+let content = ""
 class IotStatistics extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      content: ""
+    };
+  }
+
+  componentDidMount() {
+    axios.get('http://localhost:3002/resources/getIotStats')
+      .then(response => {
+        this.setState({ content: response.data.content });
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }
+
   render() {
+    ({ content } = this.state)
     const titleStyle = {
       color: 'white'
     };
@@ -19,7 +36,7 @@ class IotStatistics extends Component {
       padding: '60px',
       backgroundColor: '#f9f9f9',
       borderRadius: '8px',
-    };
+      };
 
     return (
       <Screen>
@@ -34,18 +51,15 @@ class IotStatistics extends Component {
           <div className="ml-3 mr-3 mt-0 flex flex-wrap">
             <div className="flex-[1_0]">
               <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: 'justify', padding: '30px'}}>
-                {content1}
+                {content}
               </p>
             </div>
           </div>
         </div>
-
         <div style={commentSectionStyle}><CommentSection /></div>
       </Screen>
     );
   }
 }
-
-export const iotStatisticsSearchableContents = [content1];
-
+export const iotStatisticsSearchableContents = [content];
 export default IotStatistics;

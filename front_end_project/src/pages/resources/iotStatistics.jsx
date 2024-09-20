@@ -21,6 +21,7 @@ class IotStatistics extends Component {
         console.error('Error fetching data:', error);
       });
   }
+  
 
   render() {
     ({ content } = this.state)

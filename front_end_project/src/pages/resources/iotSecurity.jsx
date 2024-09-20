@@ -18,13 +18,15 @@ class IotSecurity extends Component {
   componentDidMount() {
     axios.get('http://localhost:3002/resources/getIotSecurity')
       .then(response => {
+        const data = response.data;
         this.setState({
-          content1: response.data.content1,
-          content2: response.data.content2,
-          content3: response.data.content3,
-          content4: response.data.content4,
-          content5: response.data.content5
+          content1: data.find(item => item.content1) ? data.find(item => item.content1).content1 : '',
+          content2: data.find(item => item.content2) ? data.find(item => item.content2).content2 : '',
+          content3: data.find(item => item.content3) ? data.find(item => item.content3).content3 : '',
+          content4: data.find(item => item.content4) ? data.find(item => item.content4).content4 : '',
+          content5: data.find(item => item.content5) ? data.find(item => item.content5).content5 : ''
         });
+
       })
       .catch(error => {
         console.error('Error fetching data:', error);
@@ -55,12 +57,7 @@ class IotSecurity extends Component {
         <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px]">
           <h2 className="text-center font-bold">Importance of IoT Security</h2>
           <div className="flex justify-center">
-            <p
-              className="fw-normal fs-5 pb-3 pt-3 text-start text-black"
-              style={{ textAlign: "justify", padding: "30px" }}
-            >
-              {content1}
-            </p>
+            <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: "justify", padding: "30px" }}>{content1}</p>
           </div>
         </div>
 
@@ -69,12 +66,7 @@ class IotSecurity extends Component {
         <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px]">
           <h2 className="text-center font-bold">Common IoT Security Threats</h2>
           <div className="flex justify-center">
-            <p
-              className="fw-normal fs-5 pb-3 pt-3 text-start text-black"
-              style={{ textAlign: "justify", padding: "30px" }}
-            >
-              {content2}
-            </p>
+            <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: "justify", padding: "30px" }}>{content2}</p>
           </div>
         </div>
 
@@ -85,12 +77,7 @@ class IotSecurity extends Component {
             Strategies for Enhancing IoT Security
           </h2>
           <div className="flex justify-center">
-            <p
-              className="fw-normal fs-5 pb-3 pt-3 text-start text-black"
-              style={{ textAlign: "justify", padding: "30px" }}
-            >
-              {content3}
-            </p>
+            <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: "justify", padding: "30px" }}>{content3}</p>
           </div>
         </div>
 
@@ -99,12 +86,7 @@ class IotSecurity extends Component {
         <div className="bg-[#D1E2C4] max-w-[1000px] m-auto py-[20px]">
           <h2 className="text-center font-bold">Case Studies and Examples</h2>
           <div className="flex justify-center">
-            <p
-              className="fw-normal fs-5 pb-3 pt-3 text-start text-black"
-              style={{ textAlign: "justify", padding: "30px" }}
-            >
-              {content4}
-            </p>
+            <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: "justify", padding: "30px" }}>{content4}</p>
           </div>
         </div>
 
@@ -115,12 +97,7 @@ class IotSecurity extends Component {
             Future Trends in IoT Security
           </h2>
           <div className="flex justify-center">
-            <p
-              className="fw-normal fs-5 pb-3 pt-3 text-start text-black"
-              style={{ textAlign: "justify", padding: "30px" }}
-            >
-              {content5}
-            </p>
+            <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: "justify", padding: "30px" }}>{content5}</p>
           </div>
         </div>
 
@@ -129,13 +106,5 @@ class IotSecurity extends Component {
     );
   }
 }
-
-export const iotSecuritySearchableContents = [
-  content1,
-  content2,
-  content3,
-  content4,
-  content5,
-];
-
+export const iotSecuritySearchableContents = [content1, content2, content3, content4, content5];
 export default IotSecurity;

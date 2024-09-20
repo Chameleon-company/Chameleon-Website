@@ -16,10 +16,11 @@ class IotTechnologies extends Component {
   componentDidMount() {
     axios.get('http://localhost:3002/resources/getIotTech')
       .then(response => {
+        const data = response.data
         this.setState({
-          content1: response.data.content1,
-          content2: response.data.content2,
-          content3: response.data.content3
+          content1: data.find(item => item.content1) ? data.find(item => item.content1).content1 : '',
+          content2: data.find(item => item.content2) ? data.find(item => item.content2).content2 : '',
+          content3: data.find(item => item.content3) ? data.find(item => item.content3).content3 : '',
         });
       })
       .catch(error => {
@@ -52,7 +53,7 @@ class IotTechnologies extends Component {
           </h2>
           <div className="ml-3 mr-3 mt-0 flex flex-wrap">
             <div className="flex-[1_0]">
-              <p class="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: 'justify', padding: '30px' }} >
+              <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: 'justify', padding: '30px' }} >
                 {content1}
               </p>
             </div>
@@ -62,12 +63,12 @@ class IotTechnologies extends Component {
         <br></br>
 
         <div className="ml-auto mr-auto w-full max-w-[1000px] bg-[#D1E2C4]">
-          <h2 class="fw-bold pt-3 text-center text-black">
+          <h2 className="fw-bold pt-3 text-center text-black">
             The Advantages of IoT Technology
           </h2>
           <div className="ml-3 mr-3 mt-0 flex flex-wrap">
             <div className="flex-[1_0]">
-              <p class="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: 'justify', padding: '30px' }} >
+              <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: 'justify', padding: '30px' }} >
                 {content2}
               </p>
             </div>
@@ -77,12 +78,12 @@ class IotTechnologies extends Component {
         <br></br>
 
         <div className="mb-20 ml-auto mr-auto w-full max-w-[1000px] bg-[#D1E2C4]">
-          <h2 class="fw-bold pt-3 text-center text-black">
+          <h2 className="fw-bold pt-3 text-center text-black">
             How IoT Technology is Utilised
           </h2>
           <div className="ml-3 mr-3 mt-0 flex flex-wrap">
             <div className="flex-[1_0]">
-              <p class="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: 'justify', padding: '30px' }} >
+              <p className="fw-normal fs-5 pb-3 pt-3 text-start text-black" style={{ textAlign: 'justify', padding: '30px' }} >
                 {content3}
               </p>
             </div>

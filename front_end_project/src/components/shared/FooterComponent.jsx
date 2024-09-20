@@ -13,7 +13,7 @@ const FooterComponent = () => {
             />
           </div>
           <div className='w-full h-full flex flex-col justify-start items-start'>
-            <div className='flex  md:justify-start justify-center'>
+            {/* <div className='flex  md:justify-start justify-center'>
               <img
                 src='/AboutUs/insta.png'
                 alt=''
@@ -34,7 +34,7 @@ const FooterComponent = () => {
                 alt=''
                 className='w-[40px] h-[40px] object-contain rounded-md'
               />
-            </div>
+            </div> */}
             <div>
               <h1 className='text-white text-base flex md:justify-start justify-center'>
                 &copy;2023 Copyright reserved by Chameleon

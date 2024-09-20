@@ -41,7 +41,7 @@ const Footer = () => {
           </div>
 
           {/* Social Media */}
-          <div className="p-2 align-self-center">
+          {/* <div className="p-2 align-self-center">
             <div className='ml-auto my-auto'>
               <div className="flex my-auto p-auto text-decoration-none">
                 <a href="/https://www.instagram.com/deakinuniversity/?hl=en" className="mx-1">
@@ -58,7 +58,7 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Light-Dark Theme */}
           <div className="p-2 align-self-center">

@@ -10,7 +10,7 @@ function Post () {
     return (
         <>
             <Screen>
-                <div className='container mt-xl-auto my-auto p-5 bg-light text-dark' style={{ borderRadius: 25 }}>
+                <div className='container mt-xl-auto my-auto p-5 bg-light text-dark rounded-5'>
                     <div className='row'>
                         <AISummary content={post.content} />
                     </div>

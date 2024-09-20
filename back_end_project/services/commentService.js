@@ -8,10 +8,7 @@ const db = getFirestore();
 
 const commentsCollection = collection(db, 'comments');
 
-let commentsList = [
-    { id: 1, text: 'This is the first comment', user: 'User1', time: new Date().toLocaleString() },
-    { id: 2, text: 'This is the second comment', user: 'User2', time: new Date().toLocaleString() }
-];
+let commentsList = [];
 
 exports.getComments = async () => {
     try {

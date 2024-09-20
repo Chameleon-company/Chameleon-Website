@@ -1,21 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CommentForm from './CommentForm';
 
-// Comment section functionality
 const CommentSection = () => {
-    const [comments, setComments] = useState([]);
-  
-    const addComment = (commentText, author) => {
-      const currentTime = new Date();
-      const comment = {
-        text: commentText,
-        author: author,
-        time: currentTime.toLocaleString(),
-      };
-  
-      // Updating the state synchronously without causing UI suspension
-      setComments((prevComments) => [...prevComments, comment]);
-    };
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3002/comments/getComments')
+      .then(response => response.json())
+      .then(data => {
+        setComments(data.comments); 
+      })
+      .catch(error => console.error('Error fetching comments:', error));
+  }, []);
+
+  const addComment = (commentText, author) => {
+    const newComment = { text: commentText, author };
+
+    fetch('http://localhost:3002/comments/addComment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newComment),
+    })
+      .then(response => response.json())
+      .then((addedComment) => {
+        setComments((prevComments) => [...prevComments, addedComment]);
+      })
+      .catch(error => console.error('Error adding comment:', error));
+  };
   
     // Styling for comment box title
     const titleStyle = {

@@ -13,10 +13,7 @@ router.post('/signin', authController.userSignIn);
 router.post('/send-verification-email', authController.sendVerificationEmail);
 
 // Send password reset email
-router.post(
-  '/send-password-reset-email',
-  authController.sendPasswordResetEmail,
-);
+router.post('/send-password-reset-email', authController.sendPasswordResetEmail);
 
 // User logout
 router.post('/signout', authController.userSignOut);
@@ -25,7 +22,6 @@ router.post('/signout', authController.userSignOut);
 router.get('/status', authController.LoginStatus);
 
 //get uid of current user
-router.get('/getUID', authController.getUserID);
-router.post('/getUserProfile', authController.getUserProfile);
-router.post('/updateUser', authController.updateUserData);
+router.get ('/getUID', authController.getUserID );
+
 module.exports = router;

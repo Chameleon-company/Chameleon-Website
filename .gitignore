@@ -1,9 +1,5 @@
 
 /back_end_project/node_modules
-back_end_project/package-lock.json
 /front_end_project/node_modules
 front_end_project/package-lock.json
-node_modules
-package.json
-package-lock.json
-
+back_end_project/package-lock.json

@@ -20,7 +20,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="">
+    <footer className="mt-auto fixed-bottom">
       <div className="footer-content">
 
         {/* Responsiveness using flex box */}
@@ -92,7 +92,7 @@ const Footer = () => {
 
           #root {
             ${theme === 'dark' ? `
-              background-color: #333333;
+              background-color: #151818;
             ` : `
               background-color:  white;
             `}

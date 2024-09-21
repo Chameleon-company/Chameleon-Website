@@ -8,17 +8,7 @@ import achievmentIcon4 from "./assets/achievmentIcon4.png";
 import styles from "./aboutUs.module.css";
 import Screen from '../../components/app/Screen';
 
-import Chatbox from '../Chatbot/Chatbox';
-import '../Chatbot/chatbox.css';
-import chameleonLogo from "../../assets/ChameleonLogo.png";
-import chatOpenImg from "../Chatbot/images/chat-open.png";
-import chatCloseImg from "../Chatbot/images/chat-close.png";
-import dotMenuImg from "../Chatbot/images/dot-menu.png";
-import chatIcon from "../Chatbot/images/chat-icon.png";
-import fileSelectIcon from "../Chatbot/images/file-select.png";
-import sendMessageImg from "../Chatbot/images/send-message.png";
-
-function AboutUs () {
+function AboutUs() {
   return (
     <Screen>
       <div className="bg-[#deece3]">
@@ -102,10 +92,6 @@ function AboutUs () {
             </div>
           </div>
         </div>
-
-        {/* Add the Chatbox component */}
-        <Chatbox chameleonLogo={chameleonLogo} chatOpenImg={chatOpenImg} chatCloseImg={chatCloseImg} dotMenuImg={dotMenuImg} chatIcon={chatIcon} fileSelectIcon={fileSelectIcon} sendMessageImg={sendMessageImg} />
-
       </div>
     </Screen>
   );

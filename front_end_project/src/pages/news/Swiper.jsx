@@ -12,7 +12,7 @@ export default function SwiperNews () {
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
-      return '<span className="' + className + '">' + (index + 1) + "</span>";
+      return '<span className="' + className + '">' + (index + 1) + ' ' + "</span>";
     },
   };
 
@@ -26,10 +26,10 @@ export default function SwiperNews () {
         className="mySwiper md:hidden block mt-10 relative"
         style={{ width: "100%" }}
       >
-        {articleList.map((index, item) => (
+        {articleList.map((item, index) => (
           <SwiperSlide className=" w-[100%]" key={item.key}>
             {/* Swiper slide for each news item */}
-            <div className=" max-w-[360px] mx-auto flex flex-col justify-center items-center">
+            <div className=" max-w-[360px] mx-auto flex flex-col justify-center items-center bg-gray-100 rounded-md p-2">
               {/* Container for each news item with maximum width, centered, and flex layout */}
               <h2 className="text-[24px] font-bold text-center text-black uppercase">
                 {item.title}
@@ -38,10 +38,10 @@ export default function SwiperNews () {
               <img
                 alt={index}
                 src={item.image}
-                className="mt-2 w-[360px] h-[180px] border-white border-y-[16px] border-x-[20px]"
+                className="mt-2 w-[360px] h-[225px]"
               />
               {/* Image with specific dimensions and border styling */}
-              <p className="text-black font-medium text-[15px] max-w-[360px] pt-2 text-left hidetext">
+              <p className="text-black font-medium text-[15px] max-w-[360px] p-2 text-left hidetext">
                 {item.preview}
               </p>
               {/* News preview text with specific styling */}

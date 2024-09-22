@@ -2,8 +2,14 @@
     height: 60vh;
   }
   
+  @media screen and (min-width: 600px) {
+    .section-height {
+      height: 100%; 
+    }
+  }
+
   @media screen and (max-width: 600px) {
-    .section-height{
-        height: auto;
+    .section-height {
+      height: auto; 
     }
   }

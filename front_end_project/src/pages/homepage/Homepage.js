@@ -5,11 +5,23 @@ import { Col, Container, Row, Button } from 'react-bootstrap';
 import Header from '../../layouts/header/header';
 import Footer from '../../layouts/footer/footer';
 
+
+
 const Homepage = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  const title = "Chameleon Website";
-  const content = "At Chameleon, we thrive on innovation and diversity. With multiple projects like Melbourne Open Data and EV Tools, we explore various subsets of computer science. From software design and development to data science, AI, computer security, and project management, our team is dedicated to advancing technology and delivering exceptional results. Join us as we shape the future with cutting-edge solutions and unparalleled expertise.";
+  const content = {
+    welcome: {
+      title: "Chameleon",
+      content: "At Chameleon, we thrive on innovation and diversity. With multiple projects like Melbourne Open Data and EV Tools, we explore various subsets of computer science. From software design and development to data science, AI, computer security, and project management, our team is dedicated to advancing technology and delivering exceptional results. Join us as we shape the future with cutting-edge solutions and unparalleled expertise.",
+    },
+
+    projects: {
+      title: 'Our Projects',
+      content: 'At Chameleon, we are advancing technology through diverse projects. Chameleon Website showcases our innovative solutions, while Chameleon Security focuses on safeguarding digital assets. MOP Data Science harnesses data for actionable insights, and MOP Website provides a user-friendly interface for accessing data. MOP AI drives intelligent solutions for complex problems, and EV Tools supports the electric vehicle industry with cutting-edge technology. Each project reflects our commitment to excellence and innovation across various fields.'
+    }
+  };
+
 
   const toggleDarkMode = () => {
     setIsDarkMode(prevMode => !prevMode);
@@ -24,35 +36,25 @@ const Homepage = () => {
 
   return (
     <div className="homepage-background">
-      <div className="background-layer"></div>
       <div className="content-layer">
-        <Container fluid>
-          {/* Header */}
-          <Header />
+        {/* Header */}
+        <Header />
 
-          <Container className='h-100 p-3'>
-            {/* Content */}
-            <Row>
-              <Col md={12} xl={7}>
-                <div className='bg-transparent container-fluid'>
-                  <h1 className='display-2 gradient-heading'>{title}</h1>
-                </div>
-              </Col>
-
-              <Col md={12} xl={5} className='py-5'>
-                <p>{content}</p>
-              </Col>
-            </Row>
-            <Button onClick={toggleDarkMode}>
-              Toggle {isDarkMode ? 'Light' : 'Dark'} Mode
-            </Button>
-          </Container>
-
-          {/* Footer */}
-          <Footer />
+        <Container fluid className="d-flex flex-column justify-content-center align-items-center min-vh-100">
+          <section className="w-100 text-center my-5">
+            <div className="bg-transparent">
+              <h1 className="display-2 gradient-heading">{content.welcome.title}</h1>
+              <p className="fw-bold fs-5">{content.welcome.content}</p>
+            </div>
+          </section>
         </Container>
+
+
+        {/* Footer */}
+        <Footer />
       </div>
     </div>
+
   );
 };
 
